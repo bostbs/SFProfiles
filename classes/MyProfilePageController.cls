@@ -105,6 +105,7 @@ public void retrieveNotificationPreferences(){
     //test removed line
     //
     //test line 2
+    //test line 3
 }
 
     public void setup(){

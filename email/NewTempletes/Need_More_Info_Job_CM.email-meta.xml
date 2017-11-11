@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Need More Info Job CM</name>
+    <style>none</style>
+    <subject>More Information is Needed for Your Job Posting, {!CORECONNECT__CC_Community_Content__c.Title__c} with {!CORECONNECT__CC_Community_Content__c.Name}</subject>
+    <textOnly>{!CORECONNECT__CC_Community_Content__c.OwnerFirstName},
+
+Thank you for submitting {!CORECONNECT__CC_Community_Content__c.Title__c} with {!CORECONNECT__CC_Community_Content__c.Name} to be posted in the Jobs section of the Babson Connector. We&apos;d like to help you get the most out of your job posting. To that end, we’re suggesting the following changes:
+
+{!CORECONNECT__CC_Community_Content__c.More_Info_Required__c}
+
+
+For reference, you will find the information you have already submitted about your venture below.
+
+Job Title: {!CORECONNECT__CC_Community_Content__c.Title__c}
+Company: {!CORECONNECT__CC_Community_Content__c.Name}
+Job Summary: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}
+Job Description:
+{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}
+
+Industry: {!CORECONNECT__CC_Community_Content__c.Industry__c}
+Job Location: {!CORECONNECT__CC_Community_Content__c.Job_Location__c}
+Applicant Type: {!CORECONNECT__CC_Community_Content__c.Applicant_Type__c}
+Region: {!CORECONNECT__CC_Community_Content__c.Region__c}
+Job Status: {!CORECONNECT__CC_Community_Content__c.Job_Status__c}
+Degree Requirements: {!CORECONNECT__CC_Community_Content__c.Degree_Requirements__c}
+Work Eligibility Requirements: {!CORECONNECT__CC_Community_Content__c.Work_Eligibility_Fields__c}
+Preferred Start Date: {!CORECONNECT__CC_Community_Content__c.Preferred_Start_Date__c}
+
+Publish Date: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}
+Archive Date: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}
+
+If you’re open to such suggestions, please edit your job. To do so, please follow the steps below:
+1. Visit the Babson Connector and log in
+2. Once logged in, you can visit your posting, {!CORECONNECT__CC_Community_Content__c.Title__c}, edit your post, and resubmit it for our review.
+
+If you have any additional questions, please feel to reply to this email and I would be happy to chat with you further.
+Sincerely,
+
+Peter Latvis
+Community Manager
+Babson Connector
+communitymanager@babson.edu</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Date Type --></label>
+        <name>ACF_Date_Type__c</name>
+        <picklistValues>
+            <masterLabel>Absolute</masterLabel>
+            <translation><!-- Absolute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Total number of questions asked. Used in Process Builder when building the evaluation record. --></help>
+        <label><!-- Number of questions --></label>
+        <name>ACF_Number_of_questions__c</name>
+    </fields><fields>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- Q10 Category --></label>
+        <name>ACF_Q10_Category__c</name>
+    </fields><fields>
+        <label><!-- Q10 Scale --></label>
+        <name>ACF_Q10_Scale__c</name>
+    </fields><fields>
+        <help><!-- Q# + Question for display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q10__c</name>
+    </fields><fields>
+        <label><!-- Q11 Category --></label>
+        <name>ACF_Q11_Category__c</name>
+    </fields><fields>
+        <label><!-- Q11 Scale --></label>
+        <name>ACF_Q11_Scale__c</name>
+    </fields><fields>
+        <label><!-- . --></label>
+        <name>ACF_Q11__c</name>
+    </fields><fields>
+        <label><!-- Q12 Category --></label>
+        <name>ACF_Q12_Category__c</name>
+    </fields><fields>
+        <label><!-- Q12 Scale --></label>
+        <name>ACF_Q12_Scale__c</name>
+    </fields><fields>
+        <label><!-- . --></label>
+        <name>ACF_Q12__c</name>
+    </fields><fields>
+        <label><!-- Q13 Category --></label>
+        <name>ACF_Q13_Category__c</name>
+    </fields><fields>
+        <label><!-- Q13 Scale --></label>
+        <name>ACF_Q13_Scale__c</name>
+    </fields><fields>
+        <label><!-- . --></label>
+        <name>ACF_Q13__c</name>
+    </fields><fields>
+        <label><!-- Q14 Category --></label>
+        <name>ACF_Q14_Category__c</name>
+    </fields><fields>
+        <label><!-- Q14 Scale --></label>
+        <name>ACF_Q14_Scale__c</name>
+    </fields><fields>
+        <label><!-- . --></label>
+        <name>ACF_Q14__c</name>
+    </fields><fields>
+        <label><!-- Q15 Category --></label>
+        <name>ACF_Q15_Category__c</name>
+    </fields><fields>
+        <label><!-- Q15 Scale --></label>
+        <name>ACF_Q15_Scale__c</name>
+    </fields><fields>
+        <label><!-- . --></label>
+        <name>ACF_Q15__c</name>
+    </fields><fields>
+        <label><!-- Q1 Category --></label>
+        <name>ACF_Q1_Category__c</name>
+    </fields><fields>
+        <label><!-- Q1 Scale --></label>
+        <name>ACF_Q1_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q1__c</name>
+    </fields><fields>
+        <label><!-- Q2 Category --></label>
+        <name>ACF_Q2_Category__c</name>
+    </fields><fields>
+        <label><!-- Q2 Scale --></label>
+        <name>ACF_Q2_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q2__c</name>
+    </fields><fields>
+        <label><!-- Q3 Category --></label>
+        <name>ACF_Q3_Category__c</name>
+    </fields><fields>
+        <label><!-- Q3 Scale --></label>
+        <name>ACF_Q3_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q3__c</name>
+    </fields><fields>
+        <label><!-- Q4 Category --></label>
+        <name>ACF_Q4_Category__c</name>
+    </fields><fields>
+        <label><!-- Q4 Scale --></label>
+        <name>ACF_Q4_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q4__c</name>
+    </fields><fields>
+        <label><!-- Q5 Category --></label>
+        <name>ACF_Q5_Category__c</name>
+    </fields><fields>
+        <label><!-- Q5 Scale --></label>
+        <name>ACF_Q5_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q5__c</name>
+    </fields><fields>
+        <label><!-- Q6 Category --></label>
+        <name>ACF_Q6_Category__c</name>
+    </fields><fields>
+        <label><!-- Q6 Scale --></label>
+        <name>ACF_Q6_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q6__c</name>
+    </fields><fields>
+        <label><!-- Q7 Category --></label>
+        <name>ACF_Q7_Category__c</name>
+    </fields><fields>
+        <label><!-- Q7 Scale --></label>
+        <name>ACF_Q7_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q7__c</name>
+    </fields><fields>
+        <label><!-- Q8 Category --></label>
+        <name>ACF_Q8_Category__c</name>
+    </fields><fields>
+        <label><!-- Q8 Scale --></label>
+        <name>ACF_Q8_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q8__c</name>
+    </fields><fields>
+        <label><!-- Q9 Category --></label>
+        <name>ACF_Q9_Category__c</name>
+    </fields><fields>
+        <label><!-- Q9 Scale --></label>
+        <name>ACF_Q9_Scale__c</name>
+    </fields><fields>
+        <help><!-- Question display on template --></help>
+        <label><!-- . --></label>
+        <name>ACF_Q9__c</name>
+    </fields><fields>
+        <label><!-- Question 10 --></label>
+        <name>ACF_Question_10__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 10) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 11 --></label>
+        <name>ACF_Question_11__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 11) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 12 --></label>
+        <name>ACF_Question_12__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 12) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 13 --></label>
+        <name>ACF_Question_13__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 13) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 14 --></label>
+        <name>ACF_Question_14__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 14) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 15 --></label>
+        <name>ACF_Question_15__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 15) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 1 --></label>
+        <name>ACF_Question_1__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 1) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 2 --></label>
+        <name>ACF_Question_2__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 2) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 3 --></label>
+        <name>ACF_Question_3__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 3) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 4 --></label>
+        <name>ACF_Question_4__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 4) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 5 --></label>
+        <name>ACF_Question_5__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 5) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 6 --></label>
+        <name>ACF_Question_6__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 6) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 7 --></label>
+        <name>ACF_Question_7__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 7) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 8 --></label>
+        <name>ACF_Question_8__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 8) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question 9 --></label>
+        <name>ACF_Question_9__c</name>
+        <relationshipLabel><!-- Evaluation Template (Question 9) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Template Title --></label>
+        <name>ACF_Template_Title__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>EvaluationTemplate</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Evaluation Template</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Eval Template Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Questions --></label>
+            <section>Questions</section>
+        </sections>
+    </layouts><webLinks>
+        <label><!-- Generate_Evaluation_Form --></label>
+        <name>Generate_Evaluation_Form</name>
+    </webLinks></CustomObjectTranslation>

@@ -1,0 +1,42 @@
+<apex:component layout="none"    controller="BabsonTMController">
+    <apex:attribute name="modalID" type="String" description="The modal ID - must be unique" default="myModal" required="true" />
+    <apex:attribute name="linkText" type="String" description="The text in the trigger link" default="Open" required="false" />
+    <apex:attribute name="modalText" type="String" description="The main modal content" default="Hello" required="false" />
+    <apex:attribute name="TitleText" type="String" description="The main modal content" default="Hello" required="false" />
+    <apex:attribute name="linkClass" type="String" description="Link class" default="" required="false" />
+    <apex:attribute name="modalClass" type="String" description="Modal class" default="" required="false" />
+    
+    <style>
+        
+         span.abc > p > a {color: green !important}
+         span.abc > p {color: black !important}
+    </style>
+
+    <a href="#" style="color: white; font-size:11px" data-toggle="modal" data-target="#{!modalID}">{!linkText}</a>
+    
+    <div id="{!modalID}" class="modal fade {!modalClass}" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content -->
+          
+            <div class="modal-content">
+              
+                <div class="modal-body">
+                    <header class="well-header">
+                         <h3 >{!title}</h3>
+                     </header>
+                    
+                         <div  id="text"  style="color:black;">
+                           <apex:outputText escape="false"  value="{!body}"  style="color:black;" styleClass="abc"/>
+                             
+                         </div>
+                      
+                    
+                    <p class="text-center"><button type="button" class="btn btn-primary" data-dismiss="modal">OK</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+      
+    </style>
+</apex:component>

@@ -1,0 +1,65 @@
+<aura:component extends="hed:STG_CMP_Base" controller="hed.STG_Courses">
+	<div class="slds-card slds-m-top--medium">
+		<div class="slds-card__header slds-grid">
+			<header class="slds-media slds-media--center slds-has-flexi-truncate">
+				<div class="slds-media__body">
+					<h2>
+						<span class="slds-text-heading--small">
+							<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+				                <ui:outputText value="{!$Label.hed.stgTitleCoursesDescriptionDataMigration}" class="slds-text-body--small" />
+				                <aura:set attribute="else">
+				                    <ui:outputText value="{!$Label.hed.stgTitleCoursesDescriptionDataMigration}" class="slds-text-body--small" />
+				                </aura:set>
+				            </aura:if>
+        				</span>
+					</h2>
+				</div>
+			</header>
+		</div>
+		<div class="slds-card__body">
+			<div class="slds-p-around--medium">
+				<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+	                <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigration}" class="slds-text-body--small" />
+	                <aura:set attribute="else">
+	                    <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigration}" class="slds-text-body--small" />
+	                </aura:set>
+	            </aura:if><br />
+				<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+	                <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigrationCopiesValues}" class="slds-text-body--small" />
+	                <aura:set attribute="else">
+	                    <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigrationCopiesValues}" class="slds-text-body--small" />
+	                </aura:set>
+	            </aura:if><br />
+				<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+	                <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigrationDontOverwrite}" class="slds-text-body--small" />
+	                <aura:set attribute="else">
+	                    <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigrationDontOverwrite}" class="slds-text-body--small" />
+	                </aura:set>
+	            </aura:if><br /><br />
+
+				<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+	                <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigrationUpdatePageLayouts}" class="slds-text-body--small" />
+	                <aura:set attribute="else">
+	                    <ui:outputText value="{!$Label.hed.stgHelpCoursesDataMigrationUpdatePageLayouts}" class="slds-text-body--small" />
+	                </aura:set>
+	            </aura:if>
+			</div>
+		</div>
+		<div class="slds-card__footer">
+			<div class="slds-no-flex">
+				<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+					<ui:outputText aura:id="descCopyMsg" value="{!$Label.hed.stgHelpCopyQueuedEmailSent}" class="slds-text-color--weak slds-hide slds-m-right--medium" />
+	                <aura:set attribute="else">
+						<ui:outputText aura:id="descCopyMsg" value="{!$Label.hed.stgHelpCopyQueuedEmailSent}" class="slds-text-color--weak slds-hide slds-m-right--medium" />
+	                </aura:set>
+	            </aura:if>
+				<aura:if isTrue="{!v.namespacePrefix == 'hed__'}">
+	                <ui:outputText value="{!$Label.hed.stgBtnRunCopy}" class="slds-text-body--small" />
+	                <aura:set attribute="else">
+						<lightning:button variant="brand" label="{!$Label.hed.stgBtnRunCopy}" iconName="utility:copy" iconPosition="left" onclick="{! c.startCourseDescriptionCopy }" aura:id="descCopyBtn" />
+	                </aura:set>
+	            </aura:if>
+			</div>
+		</div>
+	</div>
+</aura:component>

@@ -1,0 +1,11 @@
+<apex:component layout="none">
+	<apex:attribute name="undergradYearPublic" description="" required="true" type="Boolean"/>
+	<apex:attribute name="undergradYear" description="" required="true" type="String"/>
+	<apex:attribute name="gradYearPublic" description="" required="true"  type="Boolean"/>
+	<apex:attribute name="gradYear" description="" required="true"  type="String"/>
+	
+	{!IF(undergradYearPublic,undergradYear,'')} <!-- Display undergrad year -->
+	{!IF(gradYearPublic && gradYearPublic && undergradYear != '' && gradYear != '','/','')}<!-- Display / if both dates public and present -->
+	{!IF(gradYearPublic,gradYear,'')} <!-- Display grad year -->
+
+</apex:component>

@@ -1,0 +1,150 @@
+<apex:page showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="false" 
+           applyHtmlTag="false" 
+           applyBodyTag="false" 
+           docType="html-5.0" 
+           standardController="CORECONNECT__CC_Community_Content__c" extensions="EventDetailController" 
+           action="{!SaveCurrentToCookie}">
+        
+        <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">{!CORECONNECT__CC_Community_Content__c.Name}</apex:define>
+        
+                <apex:define name="body" >
+                    <!-- Page Heading -->
+                    <c:BabsonPageHeader title="{!$Label.Events_Title}" breadCrumbText="{!$Label.coreconnect__cc_scheduledcontent_detail_back_to_scheduledcontent}" breadCrumbLink="{!$Page.Events}" showActions="{$Permission.Create_ScheduledContent}" btnText="{!$Label.coreconnect__cc_scheduledcontent_submit_freetext_scheduledcontent}" btnLink="{!$Page.EventCreate}#submit-ScheduledContent" btnText2="{!$Label.coreconnect__cc_scheduledcontent_update}" btnLink2="{!$Page.EventCreate}?Id={!CORECONNECT__CC_Community_Content__c.Id}&Clone=true"/>
+                        <div class="container event-detail">
+                            <div class="event-detail-date {!IF(AttachmentId == null,'col-sm-push-2','')}">
+                                <div class="ScheduledContent-date ScheduledContent-date-margin" itemprop="startDate" datetime="2014-07-07T08:00" >
+                                    <span class="dow">{!ScheduledcontentstartDayInMonth}</span>
+                                    <span class="m">{!ScheduledcontentstartMonth}</span>
+                                    <span class="d">{!ScheduledcontentstartDate}</span>
+                                    <apex:outputText escape="false" value="<hr/>" rendered="{!IF((ScheduledContentStartMonthAndYear == ScheduledContentEndMonthAndYear && ScheduledcontentstartDayInMonth == ScheduledcontentEndDayInMonth) || ScheduledContentEndMonthAndYear == '','false','true')}"/>
+                                    <span class="dow">{!IF(ScheduledContentStartMonthAndYear == ScheduledContentEndMonthAndYear && ScheduledcontentstartDayInMonth == ScheduledcontentEndDayInMonth && ScheduledContentEndMonthAndYear != '','',ScheduledcontentEndDayInMonth)}</span>
+                                    <span class="m">{!IF(ScheduledContentStartMonthAndYear == ScheduledContentEndMonthAndYear && ScheduledcontentstartDayInMonth == ScheduledcontentEndDayInMonth && ScheduledContentEndMonthAndYear != '','',ScheduledcontentEndMonth)}</span>
+                                    <span class="d">{!IF(ScheduledContentStartMonthAndYear == ScheduledContentEndMonthAndYear && ScheduledcontentstartDayInMonth == ScheduledcontentEndDayInMonth && ScheduledContentEndMonthAndYear != '','',ScheduledcontentEndDate)}</span>
+                                  </div>
+                            </div>
+                            <div class="event-detail-text">
+                                <header class="detail-header {!IF(AttachmentId == null,'col-sm-push-2','')} clearfix">
+                                    <h1  class="float-left"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.Name}"  /></h1>
+                                    <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}">
+                                        <div class="chatter-follow float-left"><chatter:follow entityId="{!CORECONNECT__CC_Community_Content__c.Id}" /></div>
+                                    </apex:outputPanel>
+                                    <!--<h5 class="clear"><apex:outputText value="{0, date, EEEE, MMMM d, YYYY}"><apex:param value="{!CORECONNECT__CC_Community_Content__c.CreatedDate}" /></apex:outputText>
+                                    </h5>-->
+                                </header>
+            
+                                <div class="row">
+                                    <div class="{!IF(AttachmentId != null,'col-sm-4 col-sm-push-8','hidden')} detail-image">
+                                        <apex:outputPanel layout="none" rendered="{!AttachmentId != null}">
+                                            <img src="{!URLFOR($Action.Attachment.Download, AttachmentId)}" alt="" class="img-responsive" />
+                                        </apex:outputPanel>
+                                    </div>
+            
+                                    <div class="{!IF(AttachmentId != null,'col-sm-8 col-sm-pull-4','col-sm-8 col-sm-push-2')} detail-text">
+
+                                        <!-- Article Content -->
+                                        <article class="news-details"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}" escape="false"></apex:outputText></article>
+
+                                        <!-- Article Meta -->
+                                        
+                                        <div class="container-fluid meta-container">
+                                           
+                                            <!-- Address is multiple meta items in one row, with needed line breaks -->
+                                            <apex:outputPanel layout="none" rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_Street_1__c != ''}">
+                                                <div class="row meta-row">
+                                                    <div class="col-xs-4 text-right">
+                                                        <p>Address</p>
+                                                    </div>
+                                                    <div class="col-xs-8">
+                                                        <h5>{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_Street_1__c}
+                                                            <apex:outputPanel layout="none" rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_Street_2__c != ''}"><br />{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_Street_2__c}</apex:outputPanel>
+                                                             <apex:outputPanel layout="none" rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_Street_3__c != ''}"><br />{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_Street_3__c}</apex:outputPanel>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </apex:outputPanel>
+                                            <!-- City State combined - only show if both are entered -->
+                                            <apex:outputPanel layout="none" rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_City__c != '' && CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_State_Province__c != ''}">
+                                                <c:BabsonMetaRow label="City, State" value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_City__c}, {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location_State_Province__c}" />
+                                            </apex:outputPanel>
+                                            
+                                            
+                 
+                                            <!-- From to -->
+                                            <div class="row meta-row">
+                                                <div class="col-xs-4 text-right">
+                                                    <p>Duration</p>
+                                                </div>
+                                                <div class="col-xs-8">
+                                                    <h5>
+                                                    <!-- How many day event - don't display if it's 0 or 1 -->
+                                                    <apex:outputPanel rendered="{!ScheduledContentDaysBetweenStartEnd != 0 && ScheduledContentDaysBetweenStartEnd != 1}">
+                                                        {!ScheduledContentDaysBetweenStartEnd} day event<br />
+                                                    </apex:outputPanel>
+                                                    <apex:outputText rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Is_All_Day_ScheduledContent__c == true}" value=" All Day" />
+                                                    <apex:outputText rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Is_All_Day_ScheduledContent__c == false}">
+                                                        From: {!IF(ScheduledContentStartMonthAndYear == ScheduledContentEndMonthAndYear && ScheduledcontentstartDayInMonth == ScheduledcontentendDayInMonth,
+                                                         '',
+                                                         ScheduledContentStartDateDiffDay + ' at ') + SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ScheduledContentStartTime, '12:00 AM', 'Midnight'),'12:00 PM', 'Noon'),'PM', 'p.m.'),'AM', 'a.m.')}<br />
+                                                    </apex:outputText>
+                                                    <apex:outputText rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Is_All_Day_ScheduledContent__c==false}">
+                                                        To: {!IF(ScheduledContentStartMonthAndYear == ScheduledContentEndMonthAndYear && ScheduledcontentstartDayInMonth == ScheduledcontentEndDayInMonth,
+                                                        '',
+                                                         ScheduledContentEndDateDiffDay + ' at ') + SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ScheduledContentEndTime, '12:00 AM', 'Midnight'),'12:00 PM', 'Noon'),'PM', 'p.m.'),'AM', 'a.m.')}
+                                                    </apex:outputText>
+                                                    <p>{!tz.displayName} </p>
+                                                    </h5>
+                                                </div>
+                                            </div>
+
+                                            <!-- Admission -->
+                                            <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.CORECONNECT__Admission_Fee__c.label}" value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Admission_Fee__c}" />
+
+                                            <!-- Who's attending -->
+                                            <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Who_s_Attending__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Who_s_Attending__c}" />
+                                        </div> 
+
+                                        <!-- Buttons and actions -->
+                                        <div class="ScheduledContent-actions">
+                                            <apex:outputPanel rendered="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__RSVP_Link__c != ''}" layout="none">
+                                                <p><a href="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__RSVP_Link__c}" class="btn btn-primary " rel="external">{!$Label.CORECONNECT__CC_ScheduledContent_Detail_RSVP}</a></p>
+                                            </apex:outputPanel>
+                                            
+                                            <p class="hidden-android">
+                                                <a href="{!$Page.CORECONNECT__CC_CommunityScheduledContentICS}?id={!CORECONNECT__CC_Community_Content__c.Id}" class="btn btn-primary btn-sm">{!$Label.CORECONNECT__CC_ScheduledContent_Detail_Add_To_Calendar}</a>
+                                                <small>{!$Label.CORECONNECT__CC_ScheduledContent_Detail_ICS}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Chatter -->
+                                <!--<apex:outputPanel rendered="{!IF( AND( $Profile.Name != GuestProfileName, NOT(CONTAINS($Profile.Name, 'Alumni Community - SSF'))) ,true, false)}">-->
+                                <apex:outputPanel rendered="{!IF($Profile.Name != GuestProfileName, true, false)}">
+                                    <section id="comments">
+                                        <div class="row">
+                                            <div class="comments {!IF(AttachmentId != null,'col-xs-12 col-md-8','col-xs-12 col-md-8 col-md-push-2')}">
+                                                <chatter:feed entityId="{!$CurrentPage.parameters.id}" />
+                                            </div>
+                                        </div>
+                                       <style>              
+            
+                                       .chatterUserGuestBadge{        
+                                       display:none;      
+                                        }
+                                        #flagTypeI{
+                                     margin-right: 30px;
+                                     }
+                                     #flagTypeS{
+                                      margin-right: 30px;
+                                   }
+                                      </style>
+                                    </section>
+                                </apex:outputPanel>
+                            </div>
+                        </div>
+                </apex:define>
+        </apex:composition>
+</apex:page>

@@ -1,0 +1,141 @@
+<aura:component controller="geopointe.NearbyListController" implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global">
+	<aura:attribute name="recordId" type="Id" default="null"/>
+	<aura:attribute name="dataSetId" type="String" access="global"/>
+	<aura:attribute name="componentLabel" type="String" default="Nearby Records" access="global"/>
+	<aura:attribute name="range" type="Integer" default="25" access="global"/>
+	<aura:attribute name="recordLimit" type="Integer" default="5" access="global"/>
+	<aura:attribute name="fieldsToDisplay" type="Integer" default="0" access="global"/>
+	<aura:attribute name="units" type="String" default="mi" access="global"/>
+	<aura:attribute name="qualityFilter" type="Boolean" default="false" access="global"/>
+	<aura:attribute name="records" type="Array"/>
+	<aura:attribute name="searchDone" type="Boolean" default="false"/>
+	<aura:attribute name="error" type="String"/>
+	<aura:attribute name="showMapPin" type="Boolean" default="false"/>
+	<aura:attribute name="isSF1" type="Boolean" default="false"/>
+	<aura:attribute name="latitude" type="Double"/>
+	<aura:attribute name="longitude" type="Double"/>
+
+	<aura:method name="requestNearbyRecords" action="{!c.requestNearbyRecords}" access="global"/>
+
+	<div>
+		<div style="float: left">
+			<h3 class="slds-text-heading--label">{!v.componentLabel}</h3>
+			<table cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
+				<tr>
+					<td>
+						<h3 class="slds-text-body--small" >Powered by</h3>
+					</td>
+					<td>
+						<div class="geopointelogo" title="Geopointe"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="float: right;">
+			<aura:if isTrue="{!v.showMapPin}">
+				<!-- Id center-->
+				<aura:if isTrue="{!v.recordId != 'null' &amp;&amp; v.recordId != ''}">
+					<a href="javascript:void(0)" data-params="{!'?id=' + v.recordId + '&amp;ds=' + v.dataSetId + '&amp;range=' + v.range + '&amp;units=' + v.units + '&amp;runRadialSearch=true'}" class="marker fa fa-map-marker faa-float animated-hover" onclick="{!c.navigateToMap}" title="Map Search"></a>
+				</aura:if>
+
+				<!-- Lat/lng center-->
+				<aura:if isTrue="{!v.recordId == 'null' || v.recordId == ''}">
+					<a href="javascript:void(0)" data-params="{!'?center=' + v.latitude +','+ v.longitude +'&amp;ds=' + v.dataSetId + '&amp;range=' + v.range + '&amp;units=' + v.units + '&amp;runRadialSearch=true'}" class="marker fa fa-map-marker faa-float animated-hover" onclick="{!c.navigateToMap}" title="Map Search"></a>
+				</aura:if>
+			</aura:if>	
+		</div>
+	</div>
+	<br clear="both"/>
+
+
+	<ul class="slds-list--vertical slds-has-cards--space has-selections">
+		<aura:iteration items="{!v.records}" var="record">
+			<li id="{!record.id}" class="{! 'slds-list__item fade-in' + ' ' +  (v.isSF1 ? 'whiteBackground' : '' )}" data-id="{!record.id}" onclick="{!c.navigateToSObject}">
+				<div class="slds-col--padded" style="float: left; font-size: 1.1em">
+					<a href="javascript:void(0)" class="{!(v.isSF1 &amp;&amp; $Browser.isIOS ? 'sf1RecordName' : '' )}">{!record.name}</a>
+				</div>
+				<div class="slds-col--padded" style="float: right">{!record.distance} {!v.units}</div>
+				<br clear="both"/>
+				<div class="slds-col--padded address">{!record.singleLineAddress}</div>
+				<aura:if isTrue="{!record.geocodeQuality == 'GEOMETRIC_CENTER' || record.geocodeQuality == 'APPROXIMATE'}">
+					<div class="slds-col--padded"><i class="fa fa-exclamation-triangle warning" style="color: red"/> Approximate</div>
+				</aura:if>
+				<aura:if isTrue="{!record.additionalFields.length != 0}">
+					<aura:iteration items="{!record.additionalFields}" var="field">
+						<aura:if isTrue="{!field.pathLabel}">
+							<div class="slds-col--padded" style="float: left; color: #568; margin: 3px 0 -3px 0">{!field.pathLabel + ' (' + field.label + ')'}</div>
+							<aura:set attribute="else">
+								<div class="slds-col--padded" style="float: left; color: #568; margin: 3px 0 -3px 0">{!field.label}</div>
+							</aura:set>
+						</aura:if>
+						<br/>
+						<aura:if isTrue="{!field.value != ''}">
+							<div class="slds-col--padded" style="color: #135">
+								<aura:if isTrue="{!field.type == 'BOOLEAN'}">
+									<aura:if isTrue="{!field.value}">
+										<ui:outputCheckbox aura:id="{!field.name}" value="{!true}"/>
+										<aura:set attribute="else">
+											<ui:outputCheckbox value="{!false}"/>
+										</aura:set>
+									</aura:if>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'CURRENCY'}">
+									<ui:outputCurrency value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'DATE'}">
+									<ui:outputDate value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'DATETIME'}">
+									<ui:outputDateTime value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'EMAIL'}">
+									<ui:outputEmail value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'INTEGER' || field.type == 'DOUBLE'}">
+									<ui:outputNumber value="{!field.value}" format="{!field.format}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'PHONE'}">
+									<ui:outputPhone value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'PERCENT'}">
+									<ui:outputNumber value="{!field.value + '%'}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'REFERENCE'}">
+									<ui:outputURL value="{!'#/sObject/' + field.value + '/view'}" label="{!field.formattedValue}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'STRING' || field.type == 'PICKLIST' || field.type == 'MULTIPICKLIST' || field.type == 'COMBOBOX'}">
+									<ui:outputText value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'TEXTAREA'}">
+									<ui:outputTextArea value="{!field.value}"/>
+								</aura:if>
+								<aura:if isTrue="{!field.type == 'URL'}">
+									<ui:outputURL value="{!field.value}" label="{!field.value}" target="_blank"/>
+								</aura:if>
+							</div>
+							<aura:set attribute="else"><br/></aura:set>
+						</aura:if>
+					</aura:iteration>
+				</aura:if>
+			</li>
+		</aura:iteration>
+	</ul>
+
+	<aura:if isTrue="{!v.searchDone &amp;&amp; v.error}">
+		<div class="slds-notify slds-notify--alert roundedCorners">
+			{!v.error}
+		</div>
+	</aura:if>
+
+	<aura:if isTrue="{!!v.searchDone}">
+		<center>
+			<span class="loading fa fa-refresh faa-spin animated"></span>
+		</center>
+	</aura:if>
+
+	<ltng:require afterScriptsLoaded="{!c.requestNearbyRecords}" styles="{!join(',', 
+		$Resource.geopointe__jquery + '/js/nearbyList/css/font-awesome-animation.min.css', 
+		$Resource.geopointe__FontAwesome + '/css/font-awesome.min.css',
+		$Resource.geopointe__jquery + '/js/nearbyList/css/nearbyList.css')}"/>
+
+</aura:component>

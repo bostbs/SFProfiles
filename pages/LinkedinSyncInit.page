@@ -1,0 +1,5 @@
+<apex:page controller="SyncLinkedInProfile">
+    <apex:form >
+        <apex:commandButton action="{!authorizeLinkedIn}" value="Sync"/>
+     </apex:form>
+</apex:page>

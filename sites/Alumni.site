@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>ConnectorCommunityDirectLogin</authorizationRequiredPage>
+    <bandwidthExceededPage>Exception</bandwidthExceededPage>
+    <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
+    <fileNotFoundPage>Exception</fileNotFoundPage>
+    <genericErrorPage>Exception</genericErrorPage>
+    <inMaintenancePage>Maintenance</inMaintenancePage>
+    <inactiveIndexPage>BabsonHome</inactiveIndexPage>
+    <indexPage>BabsonHome</indexPage>
+    <masterLabel>Alumni</masterLabel>
+    <requireHttps>true</requireHttps>
+    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
+    <selfRegPage>CommunitiesSelfReg</selfRegPage>
+    <siteAdmin>snoe@babson.edu</siteAdmin>
+    <siteRedirectMappings>
+        <action>Temporary</action>
+        <isActive>false</isActive>
+        <source>//uat1-babson.cs19.force.com</source>
+        <target>//connector.babson.edu</target>
+    </siteRedirectMappings>
+    <siteTemplate>BabsonSiteTemplate</siteTemplate>
+    <siteType>ChatterNetwork</siteType>
+    <subdomain>babson</subdomain>
+    <urlPathPrefix>connector</urlPathPrefix>
+</CustomSite>

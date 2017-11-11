@@ -1,0 +1,1325 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Active Program --></label>
+        <name>ACF_Active_Program__c</name>
+    </fields><fields>
+        <label><!-- Babson Collaborative Acceptance Date --></label>
+        <name>ACF_Babson_Collaborative_Acceptance_Date__c</name>
+    </fields><fields>
+        <label><!-- Babson Collaborative Member? --></label>
+        <name>ACF_Babson_Collaborative_Member__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospective</masterLabel>
+            <translation><!-- Prospective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Babson Collaborative Renewal Date --></label>
+        <name>ACF_Babson_Collaborative_Renewal_Date__c</name>
+    </fields><fields>
+        <label><!-- Benefits Fair --></label>
+        <name>ACF_Benefits_Fair__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Business Unit --></label>
+        <name>ACF_Business_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Babson Collaborative</masterLabel>
+            <translation><!-- Babson Collaborative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Programs</masterLabel>
+            <translation><!-- Corporate Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Programs</masterLabel>
+            <translation><!-- Enterprise Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experiential Learning</masterLabel>
+            <translation><!-- Experiential Learning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goldman Sachs</masterLabel>
+            <translation><!-- Goldman Sachs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Content --></label>
+        <name>ACF_Content__c</name>
+        <picklistValues>
+            <masterLabel>Accounting</masterLabel>
+            <translation><!-- Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Franchising</masterLabel>
+            <translation><!-- Franchising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth</masterLabel>
+            <translation><!-- Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Innovation</masterLabel>
+            <translation><!-- Innovation --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Currency --></label>
+        <name>ACF_Currency__c</name>
+        <picklistValues>
+            <masterLabel>CNY</masterLabel>
+            <translation><!-- CNY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR</masterLabel>
+            <translation><!-- EUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBP</masterLabel>
+            <translation><!-- GBP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USD</masterLabel>
+            <translation><!-- USD --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Department --></label>
+        <name>ACF_Department__c</name>
+        <relationshipLabel><!-- Academic Department --></relationshipLabel>
+    </fields><fields>
+        <help><!-- If checked, this business should not be contacted. --></help>
+        <label><!-- Do Not Call --></label>
+        <name>ACF_Do_Not_Call__c</name>
+    </fields><fields>
+        <label><!-- . --></label>
+        <name>ACF_Do_Not_Contact_image__c</name>
+    </fields><fields>
+        <label><!-- Inactive --></label>
+        <name>ACF_Inactive__c</name>
+    </fields><fields>
+        <label><!-- Migrated Modified By --></label>
+        <name>ACF_Migrated_Modified_By__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Migrated Modified Date --></label>
+        <name>ACF_Migrated_Modified_Date__c</name>
+    </fields><fields>
+        <help><!-- Low: 0 - 50
+Med: 51 - 500
+High: 501+ --></help>
+        <label><!-- Num Employee Size --></label>
+        <name>ACF_Num_Employee_Size__c</name>
+    </fields><fields>
+        <help><!-- Number of Students (HE institution) --></help>
+        <label><!-- Num Students --></label>
+        <name>ACF_Num_Students__c</name>
+    </fields><fields>
+        <label><!-- OrgID (18 chars) --></label>
+        <name>ACF_OrgID_18_chars__c</name>
+    </fields><fields>
+        <help><!-- Historical Pivotal ID --></help>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- Program Code --></label>
+        <name>ACF_Program_Code__c</name>
+    </fields><fields>
+        <label><!-- Program Type --></label>
+        <name>ACF_Program_Type__c</name>
+        <picklistValues>
+            <masterLabel>Custom</masterLabel>
+            <translation><!-- Custom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experiential Learning</masterLabel>
+            <translation><!-- Experiential Learning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Enrollment</masterLabel>
+            <translation><!-- Open Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Questionable Employer --></label>
+        <name>ACF_Questionable_Employer__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Person who referred this account to Babson --></help>
+        <label><!-- Referred By --></label>
+        <name>ACF_Referred_By__c</name>
+        <relationshipLabel><!-- Accounts (Referred By) --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Used to match the URL to the URL in Form Assembly; determines to program based on referring page. --></help>
+        <label><!-- Referring Page --></label>
+        <name>ACF_Referring_Page__c</name>
+    </fields><fields>
+        <help><!-- Low: $0 - 10 Mil
+Med: $11-250 Mil 
+Hi: $251+ Mil --></help>
+        <label><!-- Revenue Size --></label>
+        <name>ACF_Revenue_Size__c</name>
+    </fields><fields>
+        <help><!-- Describes employer culture as identifying / not identifying with Social Impact. --></help>
+        <label><!-- Social Impact --></label>
+        <name>ACF_Social_Impact__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Source Opportunity --></label>
+        <name>ACF_Source_Opportunity__c</name>
+        <relationshipLabel><!-- Sourced Program --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Sponsor International Students --></label>
+        <name>ACF_Sponsor_International_Students__c</name>
+        <picklistValues>
+            <masterLabel>Current Sponsor</masterLabel>
+            <translation><!-- Current Sponsor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Division Dependent</masterLabel>
+            <translation><!-- Division Dependent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested</masterLabel>
+            <translation><!-- Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Interested</masterLabel>
+            <translation><!-- Not Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Sponsor</masterLabel>
+            <translation><!-- Past Sponsor --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Company which is sponsoring this program --></help>
+        <label><!-- Sponsor --></label>
+        <name>ACF_Sponsor__c</name>
+        <relationshipLabel><!-- Programs Sponsored --></relationshipLabel>
+    </fields><fields>
+        <help><!-- is this company a start-up? --></help>
+        <label><!-- Startup? --></label>
+        <name>ACF_Startup__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Stock Symbol --></label>
+        <name>ACF_Stock_Symbol__c</name>
+    </fields><fields>
+        <label><!-- Strategic Alliance Enrollment Date --></label>
+        <name>ACF_Strategic_Alliance_Enrollment_Date__c</name>
+    </fields><fields>
+        <label><!-- Strategic Alliance Member? --></label>
+        <name>ACF_Strategic_Alliance_Member__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospective</masterLabel>
+            <translation><!-- Prospective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Strategic Alliance Renewal Date --></label>
+        <name>ACF_Strategic_Alliance_Renewal_Date__c</name>
+    </fields><fields>
+        <label><!-- Symplicity ID --></label>
+        <name>ACF_Symplicity_ID__c</name>
+    </fields><fields>
+        <label><!-- Tax Identification # --></label>
+        <name>ACF_Tax_Identification__c</name>
+    </fields><fields>
+        <help><!-- Types of employee training offered --></help>
+        <label><!-- Training --></label>
+        <name>ACF_Training__c</name>
+    </fields><fields>
+        <name>AccountSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alumni</masterLabel>
+            <translation><!-- Alumni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alumni and Development</masterLabel>
+            <translation><!-- Alumni and Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Babson Centers</masterLabel>
+            <translation><!-- Babson Centers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Babson Senior Management</masterLabel>
+            <translation><!-- Babson Senior Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data.com (Prospector)</masterLabel>
+            <translation><!-- Data.com (Prospector) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Education</masterLabel>
+            <translation><!-- Executive Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faculty</masterLabel>
+            <translation><!-- Faculty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend of Babson</masterLabel>
+            <translation><!-- Friend of Babson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grad CCD</masterLabel>
+            <translation><!-- Grad CCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grad OEL</masterLabel>
+            <translation><!-- Grad OEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Referral</masterLabel>
+            <translation><!-- Partner Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Inquiry</masterLabel>
+            <translation><!-- Phone Inquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Partner</masterLabel>
+            <translation><!-- Previous Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased List</masterLabel>
+            <translation><!-- Purchased List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral - Partner</masterLabel>
+            <translation><!-- Referral - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation><!-- Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Site</masterLabel>
+            <translation><!-- Web Site --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Affiliation --></label>
+        <name>Affiliation__c</name>
+        <picklistValues>
+            <masterLabel>Dummy value 1</masterLabel>
+            <translation><!-- Dummy value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 2</masterLabel>
+            <translation><!-- Dummy value 2 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Affinities --></label>
+        <name>Affinities__c</name>
+        <picklistValues>
+            <masterLabel>Dummy value 1</masterLabel>
+            <translation><!-- Dummy value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 2</masterLabel>
+            <translation><!-- Dummy value 2 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Alumni Discount --></label>
+        <name>Alumni_Discount__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Alumni Name and Affiliation --></label>
+        <name>Alumni_Name_and_Affiliation__c</name>
+    </fields><fields>
+        <label><!-- Archive date --></label>
+        <name>Archive_date__c</name>
+    </fields><fields>
+        <label><!-- Active --></label>
+        <name>BMCServiceDesk__Active__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>No</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>Sí</translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Support Hours --></label>
+        <name>BMCServiceDesk__Business_Hour__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Customer Priority --></label>
+        <name>BMCServiceDesk__CustomerPriority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation>Alta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation>Baja</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation>Media</translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Self Service 3.0 Theme --></label>
+        <name>BMCServiceDesk__FKSelfService3_Theme__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- SelfService Theme --></label>
+        <name>BMCServiceDesk__FKSelfService_Theme__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- FKUrgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Number of Locations --></label>
+        <name>BMCServiceDesk__NumberofLocations__c</name>
+    </fields><fields>
+        <label><!-- Remedyforce Account --></label>
+        <name>BMCServiceDesk__Remedyforce_Account__c</name>
+    </fields><fields>
+        <label><!-- SLA Expiration Date --></label>
+        <name>BMCServiceDesk__SLAExpirationDate__c</name>
+    </fields><fields>
+        <label><!-- SLA Serial Number --></label>
+        <name>BMCServiceDesk__SLASerialNumber__c</name>
+    </fields><fields>
+        <label><!-- SLA --></label>
+        <name>BMCServiceDesk__SLA__c</name>
+        <picklistValues>
+            <masterLabel>Bronze</masterLabel>
+            <translation>Bronce</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation>Oro</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation>Platino</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver</masterLabel>
+            <translation>Plata</translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- ServiceProvider --></label>
+        <name>BMCServiceDesk__ServiceProvider__c</name>
+    </fields><fields>
+        <label><!-- Upsell Opportunity --></label>
+        <name>BMCServiceDesk__UpsellOpportunity__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation>Quizás</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>Sí</translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Vendor --></label>
+        <name>BMCServiceDesk__Vendor__c</name>
+    </fields><fields>
+        <label><!-- Cost Center --></label>
+        <name>BMCServiceDesk__costCenter__c</name>
+    </fields><fields>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__inactive__c</name>
+    </fields><fields>
+        <label><!-- Business Details --></label>
+        <name>Business_Details__c</name>
+    </fields><fields>
+        <label><!-- Business Summary --></label>
+        <name>Business_Summary__c</name>
+    </fields><fields>
+        <label><!-- CoreId --></label>
+        <name>CoreId__c</name>
+    </fields><fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields><fields>
+        <label><!-- Date of Publication --></label>
+        <name>Date_of_publication__c</name>
+    </fields><fields>
+        <label><!-- Default content --></label>
+        <name>Default_content__c</name>
+    </fields><fields>
+        <label><!-- Discount --></label>
+        <name>Discount__c</name>
+    </fields><fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields><fields>
+        <name>Industry</name>
+        <picklistValues>
+            <masterLabel>Aerospace</masterLabel>
+            <translation><!-- Aerospace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apparel</masterLabel>
+            <translation><!-- Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banking</masterLabel>
+            <translation><!-- Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biotechnology</masterLabel>
+            <translation><!-- Biotechnology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation><!-- Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation><!-- Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food &amp; Beverage</masterLabel>
+            <translation><!-- Food &amp; Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation><!-- Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Machinery</masterLabel>
+            <translation><!-- Machinery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not For Profit</masterLabel>
+            <translation><!-- Not For Profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation><!-- Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation</masterLabel>
+            <translation><!-- Recreation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecommunications</masterLabel>
+            <translation><!-- Telecommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation><!-- Utilities --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Industry Classification --></label>
+        <name>Industry_Classification__c</name>
+        <picklistValues>
+            <masterLabel>Dummy Value 1</masterLabel>
+            <translation><!-- Dummy Value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 2</masterLabel>
+            <translation><!-- Dummy Value 2 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Industry Personalization --></label>
+        <name>Industry_Personalization__c</name>
+        <picklistValues>
+            <masterLabel>Dummy value 1</masterLabel>
+            <translation><!-- Dummy value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 2</masterLabel>
+            <translation><!-- Dummy value 2 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Interests --></label>
+        <name>Interests__c</name>
+        <picklistValues>
+            <masterLabel>Dummy value 1</masterLabel>
+            <translation><!-- Dummy value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 2</masterLabel>
+            <translation><!-- Dummy value 2 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Legacy_Lynx_Id__C --></label>
+        <name>Legacy_Lynx_Id_C__c</name>
+    </fields><fields>
+        <label><!-- Location Custom --></label>
+        <name>Location_Custom__c</name>
+    </fields><fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>ALL</masterLabel>
+            <translation><!-- ALL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia</masterLabel>
+            <translation><!-- Asia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe</masterLabel>
+            <translation><!-- Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Middle East</masterLabel>
+            <translation><!-- Middle East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America</masterLabel>
+            <translation><!-- North America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South &amp; Latin America</masterLabel>
+            <translation><!-- South &amp; Latin America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US - North</masterLabel>
+            <translation><!-- US - North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US – ALL</masterLabel>
+            <translation><!-- US – ALL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US – East Coast</masterLabel>
+            <translation><!-- US – East Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US – South/Southwest</masterLabel>
+            <translation><!-- US – South/Southwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US – West Coast</masterLabel>
+            <translation><!-- US – West Coast --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Other School Name --></label>
+        <name>Other_School_Name__c</name>
+    </fields><fields>
+        <name>Ownership</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public</masterLabel>
+            <translation><!-- Public --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subsidiary</masterLabel>
+            <translation><!-- Subsidiary --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields><fields>
+        <label><!-- Public BillingCity --></label>
+        <name>Public_BillingCity__c</name>
+    </fields><fields>
+        <label><!-- Public BillingCountry --></label>
+        <name>Public_BillingCountry__c</name>
+    </fields><fields>
+        <label><!-- Public BillingPostalCode --></label>
+        <name>Public_BillingPostalCode__c</name>
+    </fields><fields>
+        <label><!-- Public BillingState --></label>
+        <name>Public_BillingState__c</name>
+    </fields><fields>
+        <label><!-- Public BillingStreet --></label>
+        <name>Public_BillingStreet__c</name>
+    </fields><fields>
+        <label><!-- Public Industry --></label>
+        <name>Public_Industry__c</name>
+    </fields><fields>
+        <label><!-- Public Name --></label>
+        <name>Public_Name__c</name>
+    </fields><fields>
+        <label><!-- Public Phone --></label>
+        <name>Public_Phone__c</name>
+    </fields><fields>
+        <name>Rating</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Dummy value 1</masterLabel>
+            <translation><!-- Dummy value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 2</masterLabel>
+            <translation><!-- Dummy value 2 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- School ID --></label>
+        <name>School_ID__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1818</masterLabel>
+            <translation><!-- 1818 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1910</masterLabel>
+            <translation><!-- 1910 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2028</masterLabel>
+            <translation><!-- 2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2071</masterLabel>
+            <translation><!-- 2071 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2081</masterLabel>
+            <translation><!-- 2081 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2254</masterLabel>
+            <translation><!-- 2254 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>institutions</masterLabel>
+            <translation><!-- institutions --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields><fields>
+        <label><!-- Trump content --></label>
+        <name>Trump_content__c</name>
+    </fields><fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation</masterLabel>
+            <translation><!-- Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Household</masterLabel>
+            <translation><!-- Household --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nonprofit</masterLabel>
+            <translation><!-- Nonprofit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party</masterLabel>
+            <translation><!-- Third Party --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields><fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields><fields>
+        <help>La dirección actual con la que se cumplimentan los campos de facturación de la cuenta.</help>
+        <label><!-- Current Address --></label>
+        <name>hed__Current_Address__c</name>
+        <relationshipLabel><!-- Accounts (Current Address) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- _SYSTEM: One2OneContact --></label>
+        <name>hed__Primary_Contact__c</name>
+        <relationshipLabel><!-- Account --></relationshipLabel>
+    </fields><layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Donation Information --></label>
+            <section>Donation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Donation Totals --></label>
+            <section>Donation Totals</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Grantmaking Information --></label>
+            <section>Grantmaking Information</section>
+        </sections>
+        <sections>
+            <label><!-- Membership Information --></label>
+            <section>Membership Information</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson Academic Program Layout (HEDA)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson Administrative Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson CCD Academic Program Layout (HEDA)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson CCD Account Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data.com --></label>
+            <section>Data.com</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Interests --></label>
+            <section>Interests</section>
+        </sections>
+        <sections>
+            <label><!-- Memberships --></label>
+            <section>Memberships</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson EE Academic Program Layout (HEDA)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson EE Account Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data.com --></label>
+            <section>Data.com</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Memberships --></label>
+            <section>Memberships</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson Educational Inst Layout</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson SF ADMIN Account Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- BEE Information --></label>
+            <section>BEE Information</section>
+        </sections>
+        <sections>
+            <label><!-- CCD Information --></label>
+            <section>CCD Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data.com --></label>
+            <section>Data.com</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Interests --></label>
+            <section>Interests</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson Univ Department Layout (HEDA)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>HEDA Household Layout</layout>
+        <sections>
+            <label>Dirección</label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label>Vínculos personalizados</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Descripción</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Campos</label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>HEDA Organization Layout</layout>
+        <sections>
+            <label>Dirección</label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label>Vínculos personalizados</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Descripción</label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label>Campos</label>
+            <section>Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>SP Revised Account Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data.com --></label>
+            <section>Data.com</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Interests --></label>
+            <section>Interests</section>
+        </sections>
+        <sections>
+            <label><!-- Memberships --></label>
+            <section>Memberships</section>
+        </sections>
+    </layouts><quickActions>
+        <label><!-- New Donation --></label>
+        <name>New_Donation</name>
+    </quickActions><quickActions>
+        <label><!-- New Grant --></label>
+        <name>New_Grant</name>
+    </quickActions><quickActions>
+        <label><!-- New Major Gift --></label>
+        <name>New_Major_Gift</name>
+    </quickActions><quickActions>
+        <label><!-- New Matching Donation --></label>
+        <name>New_Matching_Donation</name>
+    </quickActions><quickActions>
+        <label><!-- New Membership --></label>
+        <name>New_Membership</name>
+    </quickActions><recordTypes>
+        <label><!-- Academic Program --></label>
+        <name>Academic_Program</name>
+    </recordTypes><recordTypes>
+        <label><!-- Administrative --></label>
+        <name>Administrative</name>
+    </recordTypes><recordTypes>
+        <label><!-- Business Organization --></label>
+        <name>Business_Organization</name>
+    </recordTypes><recordTypes>
+        <label><!-- Educational Institution --></label>
+        <name>Educational_Institution</name>
+    </recordTypes><recordTypes>
+        <label><!-- Household Account --></label>
+        <name>HH_Account</name>
+    </recordTypes><recordTypes>
+        <label><!-- Organization --></label>
+        <name>Organization</name>
+    </recordTypes><recordTypes>
+        <label><!-- Sports Organization --></label>
+        <name>Sports_Organization</name>
+    </recordTypes><recordTypes>
+        <label><!-- University Department --></label>
+        <name>University_Department</name>
+    </recordTypes><webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks><webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks><webLinks>
+        <label><!-- Create_Action_Plan --></label>
+        <name>Create_Action_Plan</name>
+    </webLinks><webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks><webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks><webLinks>
+        <label><!-- Map_Records_Account --></label>
+        <name>geopointe__Map_Records_Account</name>
+    </webLinks><webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks><webLinks>
+        <label><!-- Address_Finder --></label>
+        <name>pca__Address_Finder</name>
+    </webLinks><webLinks>
+        <label><!-- Address_Finder_Link --></label>
+        <name>pca__Address_Finder_Link</name>
+    </webLinks><webLinks>
+        <label><!-- Person_Address_Finder --></label>
+        <name>pca__Person_Address_Finder</name>
+    </webLinks><webLinks>
+        <label><!-- Person_Address_Finder_Link --></label>
+        <name>pca__Person_Address_Finder_Link</name>
+    </webLinks><workflowTasks>
+        <description><!-- Strategic Alliance Membership - Renewal Due --></description>
+        <name>Reminder_Renewal_due</name>
+        <subject><!-- Reminder: Renewal due --></subject>
+    </workflowTasks></CustomObjectTranslation>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Academic Program --></label>
+        <name>ACF_Academic_Program__c</name>
+        <relationshipLabel><!-- GL Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Account Manager --></label>
+        <name>ACF_Account_Manager__c</name>
+        <relationshipLabel><!-- GL Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Activity Code --></label>
+        <name>ACF_Activity_Code__c</name>
+    </fields><fields>
+        <label><!-- Billable Days --></label>
+        <name>ACF_Billable_Days__c</name>
+    </fields><fields>
+        <label><!-- Business Organization --></label>
+        <name>ACF_Business_Organization__c</name>
+        <relationshipLabel><!-- GL Accounts (Business Organization) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Contracted Amount --></label>
+        <name>ACF_Contracted_Amount__c</name>
+    </fields><fields>
+        <label><!-- Contracted Date --></label>
+        <name>ACF_Contracted_Date__c</name>
+    </fields><fields>
+        <label><!-- Contracted --></label>
+        <name>ACF_Contracted__c</name>
+    </fields><fields>
+        <label><!-- Description --></label>
+        <name>ACF_Description__c</name>
+    </fields><fields>
+        <label><!-- Fiscal Year --></label>
+        <name>ACF_Fiscal_Year__c</name>
+    </fields><fields>
+        <label><!-- GL Account --></label>
+        <name>ACF_GL_Account__c</name>
+    </fields><fields>
+        <label><!-- Management Center Name --></label>
+        <name>ACF_Management_Center_Name__c</name>
+    </fields><fields>
+        <help><!-- 112-BEE Custom Prgm
+113-BEE OE Prgs
+114 BEE Consortium Pgms
+115 BEE Institute Pgms
+116 BEE Research Ctrs
+122 BEE Admin Acct
+123 Grad Corp Pgms
+146 Eu Inst Pgms
+150 Ent Admin
+154 Ctr for W Ldrshp
+190 Ent-SEE
+191 Ent-MEE
+192 Ent-Short
+193 Other --></help>
+        <label><!-- Management Center --></label>
+        <name>ACF_Management_Center__c</name>
+        <picklistValues>
+            <masterLabel>112</masterLabel>
+            <translation><!-- 112 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>113</masterLabel>
+            <translation><!-- 113 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>114</masterLabel>
+            <translation><!-- 114 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>115</masterLabel>
+            <translation><!-- 115 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>116</masterLabel>
+            <translation><!-- 116 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>122</masterLabel>
+            <translation><!-- 122 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>123</masterLabel>
+            <translation><!-- 123 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>146</masterLabel>
+            <translation><!-- 146 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>150</masterLabel>
+            <translation><!-- 150 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>154</masterLabel>
+            <translation><!-- 154 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>190</masterLabel>
+            <translation><!-- 190 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>191</masterLabel>
+            <translation><!-- 191 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>192</masterLabel>
+            <translation><!-- 192 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>193</masterLabel>
+            <translation><!-- 193 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Sales Opportunity --></label>
+        <name>ACF_Opportunity__c</name>
+        <relationshipLabel><!-- GL Accounts --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- Temp GL Name --></label>
+        <name>ACF_Temp_GL_Name__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>GL Account</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>GL Accounts</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>GL Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Must have the format: Fiscal Year]:[Mgmnt Center]-[Activity Code] (e.g., 2017:113-1234). --></errorMessage>
+        <name>Validate_GL_Account_Name_field_format</name>
+    </validationRules></CustomObjectTranslation>

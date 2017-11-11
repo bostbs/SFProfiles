@@ -1,0 +1,200 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="SearchController">
+  <apex:variable var="searchTermWasProvided" value="{!TRIM(SearchString) != ''}" />
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="pagetitle">{!$Label.CORECONNECT__CC_Search_Title}</apex:define>
+
+    <apex:define name="body" >
+
+      <apex:pageMessages ></apex:pageMessages>
+
+      <article class="container box search-results">
+
+        <div class="row">
+
+          <aside class="sidebar first col-sm-4 col-md-3">
+
+            <h3>{!$Label.coreconnect__cc_search_search_for}</h3>
+            <!-- Alumni Section -->
+            <apex:outputPanel layout="none"  rendered="{!IF(AND(!CONTAINS($User.LastName, 'Site Guest User'), !(CONTAINS($Profile.Name, 'Alumni Community - SSF'))), true, false)}">
+              <ul class="nav nav-pills nav-stacked">
+                <li class="all {!IF($CurrentPage.parameters.SearchType == '','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}">{!$Label.CORECONNECT__CC_Search_All}</a>
+                </li>
+                <li class="news {!IF($CurrentPage.parameters.SearchType == 'FreeText','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=FreeText">{!$Label.CORECONNECT__CC_FreeText_Title}</a>
+                </li>
+                <li class="events {!IF($CurrentPage.parameters.SearchType == 'ScheduledContent','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=ScheduledContent">{!$Label.CORECONNECT__CC_ScheduledContent_Title}</a>
+                </li>
+                <li class="people {!IF($CurrentPage.parameters.SearchType == 'People','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=People">{!$Label.CORECONNECT__CC_Search_People}</a>
+                </li>
+                <!-- <li class="groups {!IF($CurrentPage.parameters.SearchType == 'Group','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=Group">{!$Label.CORECONNECT__CC_Search_Groups}</a>
+                </li> -->
+                <li class="files {!IF($CurrentPage.parameters.SearchType == 'File','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=File">{!$Label.CORECONNECT__CC_Search_Files}</a>
+                </li>
+                 <li class="ventures {!IF($CurrentPage.parameters.SearchType == 'Venture','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=Venture">{!$Label.BAB_Search_Ventures}</a>
+                </li>
+               <!-- <li class="jobs {!IF($CurrentPage.parameters.SearchType == 'Job','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=Job">{!$Label.BAB_Search_Jobs}</a>
+                </li>-->
+                <li class="businesses {!IF($CurrentPage.parameters.SearchType == 'Businesses','active','')}">
+                  <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=Businesses">{!$Label.BAB_Search_Businesses}</a>
+                </li>
+              </ul>
+            </apex:outputPanel>
+            
+            <!-- SSF Section -->
+            <apex:outputPanel rendered="{!IF(OR(CONTAINS($User.LastName, 'Site Guest User'), CONTAINS($Profile.Name, 'Alumni Community - SSF')), true, false)}">
+              <ul class="nav nav-pills nav-stacked">
+              <li class="all {!IF($CurrentPage.parameters.SearchType == '','active','')}">
+                <a href="{!$Page.Search}?SearchString={!SearchString}">{!$Label.coreconnect__cc_search_all}</a>
+              </li>
+              <li class="people {!IF($CurrentPage.parameters.SearchType == 'People','active','')}">
+                <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=People">{!$Label.coreconnect__cc_search_people}</a>
+              </li>
+               <li class="ventures {!IF($CurrentPage.parameters.SearchType == 'Venture','active','')}">
+                <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=Venture">{!$Label.BAB_Search_Ventures}</a>
+              </li>
+              <!-- <li class="jobs {!IF($CurrentPage.parameters.SearchType == 'Job','active','')}">
+                <a href="{!$Page.Search}?SearchString={!SearchString}&SearchType=Job">{!$Label.BAB_Search_Jobs}</a>
+              </li>-->
+            </ul>
+            </apex:outputPanel>
+          </aside>
+
+          <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 results">
+
+            <apex:outputPanel rendered="{!NOT(searchTermWasProvided)}" layout="none">
+              <div class="alert alert-danger fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{!$Label.CORECONNECT__CC_Search_Close}</span></button>
+                <p>{!$Label.Babson_Search_String_Is_Blank}</p>
+              </div>
+            </apex:outputPanel>
+
+            <apex:outputPanel rendered="{!searchTermWasProvided}" layout="none">
+              <section>
+                <header>
+                  <h2>{!$Label.BAB_Search_Results} "{!SearchString}"</h2>
+                </header>
+                <apex:outputPanel id="SearchResultsPanel"  >
+                  <apex:outputPanel layout="none" rendered="{!LisOfCCForALL.size == 0}">
+                    <div class="alert alert-warning fade in" role="alert">
+                      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">{!$Label.CORECONNECT__CC_Search_Close}</span></button>
+                      <p>{!$Label.CORECONNECT__CC_Search_No_Results}</p>
+                    </div>
+                  </apex:outputPanel>
+
+                   <ul class="search-results-list">
+                   <apex:repeat value="{!LisOfCCForALL}" var="rec" >
+                      <!-- FreeText -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'FreeText' && !(CONTAINS($Profile.Name, 'Alumni Community - SSF'))}">
+                        <li class="media result news">
+                          <div class="media-body">
+                            <a href="{!$Page.NewsDetail}?id={!rec.CC.Id}"><h4 class="media-heading">{!rec.CC.Name}</h4>
+                            {!rec.CC.CORECONNECT__Short_Description__c}
+                            <p class="date">Published: <em><c:DateToShow date1="{!rec.CC.CORECONNECT__FreeText_Desired_Publish_Date__c}" date2="{!rec.CC.CreatedDate}" /></em></p></a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+                      <!-- ScheduledContent -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'ScheduledContent' && !(CONTAINS($Profile.Name, 'Alumni Community - SSF'))}">
+                        <li class="media result event">
+                          <div class="media-body">
+                            <a href="{!$Page.EventDetail}?id={!rec.CC.Id}"><h4 class="media-heading">{!rec.CC.Name}</h4>
+                            <p><em>
+                              <apex:outputText value="{0,date,MMMM d', 'yyyy} " escape="false">
+                                <apex:param value="{!rec.CC.CORECONNECT__Start_Date__c}" />
+                              </apex:outputText>
+                              <apex:outputText value="ALL DAY" rendered="{!rec.CC.CORECONNECT__Is_All_Day_ScheduledContent__c==True}"/>
+                              <apex:outputText value="{!rec.StartAndEndTime}" rendered="{!rec.CC.CORECONNECT__Is_All_Day_ScheduledContent__c==false}"/>
+                            </em></p></a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+                      <!-- People -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'People'}">
+                        <li class="media result user">
+                          <div class="media-body">
+                            <a href="{!$Page.MyProfilePage}?userId={!rec.u.Id}"><h4 class="media-heading">{!rec.u.Name}</h4>
+                            <p><c:BabsonGradDates undergradYearPublic="{!rec.u.Public_Undergraduate_Year__c}" undergradYear="{!rec.u.Undergraduate_Year__c}" gradYearPublic="{!rec.u.Public_Graduate_Year__c}" gradYear="{!rec.u.Graduate_Year__c}"/>
+                            </p></a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+
+                      <!-- Group -->
+                      <!-- <apex:outputPanel layout="none" rendered="{!rec.CCType == 'Group' && !(CONTAINS($Profile.Name, 'Alumni Community - SSF'))}">
+                        <li class="media result group">
+                          <div class="media-body">
+                            <a href="{!$Page.CORECONNECT__CC_CommunityGroupDetail}?id={!rec.cg.Id}"><h4 class="media-heading">{!rec.cg.Name}</h4>
+                            <p>{!rec.cg.Description}</p></a>
+                          </div>
+                        </li>
+                      </apex:outputPanel> -->
+
+                      <!-- File -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'File' && !(CONTAINS($Profile.Name, 'Alumni Community - SSF'))}">
+                        <li class="media result ">
+                          <div class="media-body">
+                            <a href="{!$Site.BaseUrl}/{!rec.ChatterFile.Id}"><h4 class="media-heading">{!rec.ChatterFile.Title}</h4>
+                            <p>{!rec.ChatterFile.Description}</p></a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+                      
+                      <!-- Ventures -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'Venture'}">
+                        <li class="media result venture">
+                          <div class="media-body">
+                            <a href="{!$Page.VentureDetail}?id={!rec.CC.Id}"><h4 class="media-heading">{!rec.CC.Name}</h4>
+                            {!rec.CC.CORECONNECT__Short_Description__c}
+                            <p class="date">Published: <em><c:DateToShow date1="{!rec.CC.CORECONNECT__FreeText_Desired_Publish_Date__c}" date2="{!rec.CC.CreatedDate}" /></em></p>
+                            </a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+                      
+                      <!-- Jobs -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'Job'}">
+                        <li class="media result job">
+                          <div class="media-body">
+                            <a href="{!$Page.JobDetail}?id={!rec.CC.Id}"><h4 class="media-heading">{!rec.CC.Title__c}</h4>
+                            {!rec.CC.CORECONNECT__Short_Description__c}
+                            <p class="date">Published: <em><c:DateToShow date1="{!rec.CC.CORECONNECT__FreeText_Desired_Publish_Date__c}" date2="{!rec.CC.CreatedDate}" /></em></p></a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+
+                      <!-- Businesses -->
+                      <apex:outputPanel layout="none" rendered="{!rec.CCType == 'Business'}">
+                        <li class="media result business">
+                          <div class="media-body">
+                            <a href="{!$Page.BusinessDetail}?id={!rec.CC.Id}"><h4 class="media-heading">{!rec.CC.Name}</h4>
+                            {!rec.CC.Business_Summary__c}
+                            <!--<p class="date">Published: <em><c:DateToShow date1="{!rec.CC.CORECONNECT__FreeText_Desired_Publish_Date__c}" date2="{!rec.CC.CreatedDate}" /></em></p>-->
+                            </a>
+                          </div>
+                        </li>
+                      </apex:outputPanel>
+                      
+                   </apex:repeat>
+                  </ul>
+
+                </apex:outputPanel>
+              </section>
+            </apex:outputPanel>
+          </div>
+        </div>
+
+      </article>
+
+    </apex:define>
+
+    <apex:define name="footerjs">
+    </apex:define>
+  </apex:composition>
+</apex:page>

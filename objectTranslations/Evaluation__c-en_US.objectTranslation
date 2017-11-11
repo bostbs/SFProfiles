@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Anonymous --></label>
+        <name>ACF_Anonymous__c</name>
+    </fields><fields>
+        <label><!-- Answer 10 Comment --></label>
+        <name>ACF_Answer_10_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 10 --></label>
+        <name>ACF_Answer_10__c</name>
+    </fields><fields>
+        <label><!-- Answer 11 Comment --></label>
+        <name>ACF_Answer_11_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 11 --></label>
+        <name>ACF_Answer_11__c</name>
+    </fields><fields>
+        <label><!-- Answer 12 Comment --></label>
+        <name>ACF_Answer_12_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 12 --></label>
+        <name>ACF_Answer_12__c</name>
+    </fields><fields>
+        <label><!-- Answer 13 Comment --></label>
+        <name>ACF_Answer_13_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 13 --></label>
+        <name>ACF_Answer_13__c</name>
+    </fields><fields>
+        <label><!-- Answer 14 Comment --></label>
+        <name>ACF_Answer_14_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 14 --></label>
+        <name>ACF_Answer_14__c</name>
+    </fields><fields>
+        <label><!-- Answer 15 Comment --></label>
+        <name>ACF_Answer_15_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 15 --></label>
+        <name>ACF_Answer_15__c</name>
+    </fields><fields>
+        <label><!-- Answer 1 Comment --></label>
+        <name>ACF_Answer_1_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 1 --></label>
+        <name>ACF_Answer_1__c</name>
+    </fields><fields>
+        <label><!-- Answer 2 Comment --></label>
+        <name>ACF_Answer_2_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 2 --></label>
+        <name>ACF_Answer_2__c</name>
+    </fields><fields>
+        <label><!-- Answer 3 Comment --></label>
+        <name>ACF_Answer_3_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 3 --></label>
+        <name>ACF_Answer_3__c</name>
+    </fields><fields>
+        <label><!-- Answer 4 Comment --></label>
+        <name>ACF_Answer_4_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 4 --></label>
+        <name>ACF_Answer_4__c</name>
+    </fields><fields>
+        <label><!-- Answer 5 --></label>
+        <name>ACF_Answer_5__c</name>
+    </fields><fields>
+        <label><!-- Answer 6 Comment --></label>
+        <name>ACF_Answer_6_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 6 --></label>
+        <name>ACF_Answer_6__c</name>
+    </fields><fields>
+        <label><!-- Answer 7 Comment --></label>
+        <name>ACF_Answer_7_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 7 --></label>
+        <name>ACF_Answer_7__c</name>
+    </fields><fields>
+        <label><!-- Answer 8 Comment --></label>
+        <name>ACF_Answer_8_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 8 --></label>
+        <name>ACF_Answer_8__c</name>
+    </fields><fields>
+        <label><!-- Answer 9 Comment --></label>
+        <name>ACF_Answer_9_Comment__c</name>
+    </fields><fields>
+        <label><!-- Answer 9 --></label>
+        <name>ACF_Answer_9__c</name>
+    </fields><fields>
+        <label><!-- EE Program Offering --></label>
+        <name>ACF_EE_Program_Offering__c</name>
+        <relationshipLabel><!-- Evaluations --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Eval Template --></label>
+        <name>ACF_Eval_Template__c</name>
+        <relationshipLabel><!-- Evaluations --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Faculty / Presenter --></label>
+        <name>ACF_Faculty_Presenter__c</name>
+        <relationshipLabel><!-- Evaluations (Faculty / Presenter) --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Used for migration from Pivotal --></help>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <help><!-- Person who completed the evaluation/survey --></help>
+        <label><!-- Program Participant --></label>
+        <name>ACF_Program_Participant__c</name>
+        <relationshipLabel><!-- Evaluations --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Q10 Category --></label>
+        <name>ACF_Q10_Category__c</name>
+    </fields><fields>
+        <label><!-- Q10 --></label>
+        <name>ACF_Q10__c</name>
+    </fields><fields>
+        <label><!-- Q11 Category --></label>
+        <name>ACF_Q11_Category__c</name>
+    </fields><fields>
+        <label><!-- Q11 --></label>
+        <name>ACF_Q11__c</name>
+    </fields><fields>
+        <label><!-- Q12 Category --></label>
+        <name>ACF_Q12_Category__c</name>
+    </fields><fields>
+        <label><!-- Q12 --></label>
+        <name>ACF_Q12__c</name>
+    </fields><fields>
+        <label><!-- Q13 Category --></label>
+        <name>ACF_Q13_Category__c</name>
+    </fields><fields>
+        <label><!-- Q13 --></label>
+        <name>ACF_Q13__c</name>
+    </fields><fields>
+        <label><!-- Q14 Category --></label>
+        <name>ACF_Q14_Category__c</name>
+    </fields><fields>
+        <label><!-- Q14 --></label>
+        <name>ACF_Q14__c</name>
+    </fields><fields>
+        <label><!-- Q15 Category --></label>
+        <name>ACF_Q15_Category__c</name>
+    </fields><fields>
+        <label><!-- Q15 --></label>
+        <name>ACF_Q15__c</name>
+    </fields><fields>
+        <label><!-- Q1 Category --></label>
+        <name>ACF_Q1_Category__c</name>
+    </fields><fields>
+        <label><!-- Q1 --></label>
+        <name>ACF_Q1__c</name>
+    </fields><fields>
+        <label><!-- Q2 Category --></label>
+        <name>ACF_Q2_Category__c</name>
+    </fields><fields>
+        <label><!-- Q2. --></label>
+        <name>ACF_Q2__c</name>
+    </fields><fields>
+        <label><!-- Q3 Category --></label>
+        <name>ACF_Q3_Category__c</name>
+    </fields><fields>
+        <label><!-- Q3 --></label>
+        <name>ACF_Q3__c</name>
+    </fields><fields>
+        <label><!-- Q4 Category --></label>
+        <name>ACF_Q4_Category__c</name>
+    </fields><fields>
+        <label><!-- Q4 --></label>
+        <name>ACF_Q4__c</name>
+    </fields><fields>
+        <label><!-- Q5 Category --></label>
+        <name>ACF_Q5_Category__c</name>
+    </fields><fields>
+        <label><!-- Q5 --></label>
+        <name>ACF_Q5__c</name>
+    </fields><fields>
+        <label><!-- Q6 Category --></label>
+        <name>ACF_Q6_Category__c</name>
+    </fields><fields>
+        <label><!-- Q6 --></label>
+        <name>ACF_Q6__c</name>
+    </fields><fields>
+        <label><!-- Q7 Category --></label>
+        <name>ACF_Q7_Category__c</name>
+    </fields><fields>
+        <label><!-- Q7 --></label>
+        <name>ACF_Q7__c</name>
+    </fields><fields>
+        <label><!-- Q8 Category --></label>
+        <name>ACF_Q8_Category__c</name>
+    </fields><fields>
+        <label><!-- Q8 --></label>
+        <name>ACF_Q8__c</name>
+    </fields><fields>
+        <label><!-- Q9 Category --></label>
+        <name>ACF_Q9_Category__c</name>
+    </fields><fields>
+        <label><!-- Q9 --></label>
+        <name>ACF_Q9__c</name>
+    </fields><fields>
+        <label><!-- Session --></label>
+        <name>ACF_Session__c</name>
+        <relationshipLabel><!-- Evaluations --></relationshipLabel>
+    </fields><fields>
+        <label><!-- View --></label>
+        <name>ACF_View__c</name>
+    </fields><fields>
+        <label><!-- Answer 5 Comment --></label>
+        <name>Answer_5_Comment__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Evaluation</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Evaluations</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Evaluation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Questions/Answers --></label>
+            <section>Survey Questions/Answers</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

@@ -1,0 +1,45 @@
+<apex:component layout="none">
+	<apex:attribute name="title" type="String" description="Title" default="" required="true" />
+	<apex:attribute name="subTitle" type="String" description="Sub Title" default="" required="false" />
+	<apex:attribute name="text" type="String" description="Text" default="" required="false" />
+	<apex:attribute name="breadCrumbText" type="String" description="Sub Title Link" default="" required="false" />
+	<apex:attribute name="breadCrumbLink" type="String" description="Sub Title Link" default="" required="false" />
+	<apex:attribute name="showActions" type="Boolean" description="Text" default="" required="false" />
+	<!-- defaulted to true to not effect any other pages also using this component -->
+	<apex:attribute name="showUpdate" type="Boolean" description="Text" default="true" required="false" />
+	<apex:attribute name="btnLink" type="String" description="Button Link" default="" required="false" />
+	<apex:attribute name="btnText" type="String" description="Button Text" default="" required="false" />
+	<apex:attribute name="btnLink2" type="String" description="Button Link" default="" required="false" />
+	<apex:attribute name="btnText2" type="String" description="Button Text" default="" required="false" />
+
+	<header class="page-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 title">
+					<apex:outputPanel layout="none" rendered="{!title != ''}">
+						<h2>{!title}</h2>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!subTitle != ''}">
+						<h5>{!subTitle}</h5>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!breadCrumbText != ''}">
+						<h5><a href="{!breadCrumbLink}"><i class="fa fa-chevron-left" />{!breadCrumbText}</a></h5>
+					</apex:outputPanel>
+				</div>
+				<div class="col-xs-12 actions">
+					<apex:outputPanel layout="none" rendered="{!showActions && btnLink != ''}">
+						<a href="{!btnLink}" class="btn btn-alt"><span class='icon-submit'></span> {!btnText}</a>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!showActions && btnLink2 != '' && showUpdate}">
+						<a href="{!btnLink2}" class="btn btn-alt">{!btnText2}</a>
+					</apex:outputPanel>
+				</div>
+				<div class="col-xs-12">
+					<apex:outputPanel layout="none" rendered="{!text != ''}">
+						<h5 class="text">{!text}</h5>
+					</apex:outputPanel>
+				</div>
+			</div>
+		</div>
+	</header>
+</apex:component>

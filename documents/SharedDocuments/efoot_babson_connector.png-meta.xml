@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Footer image used in Babson Connector Chatter communication</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>efoot_babson_connector</name>
+    <public>true</public>
+</Document>

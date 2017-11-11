@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>hed__Affiliation__c.hed__Contact__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>hed__Affiliation__c.ACF_Tuition_Benefit_Recipient__c</field>
+    </columns>
+    <columns>
+        <field>hed__Affiliation__c.ACF_Employment_Verified_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Account.ACF_Strategic_Alliance_Member__c</column>
+            <operator>equals</operator>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>hed__Affiliation__c.hed__Status__c</column>
+            <operator>equals</operator>
+            <value>Current</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>SP - Cost and Revenue</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$hed__Affiliation__c@hed__Affiliation__c.hed__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>hed__Affiliation__c.hed__Contact__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>FK_$Account.ACF_Strategic_Alliance_Enrollment_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

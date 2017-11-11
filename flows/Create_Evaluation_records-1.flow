@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Attended</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Campaign.ACF_Eval_Template__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Check if eval record needed</label>
+        </rules>
+    </decisions>
+    <description>Create an Evaluation record for Program Participants - added Category</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  2,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q2_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_10_myRule_1_A1_9167191026</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  2,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q2_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  2,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q2__c    , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_11_myRule_1_A1_1422172045</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  2,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q2__c}    , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  3,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q3_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_12_myRule_1_A1_8261507988</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  3,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q3_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  3,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q3__c   , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_13_myRule_1_A1_2533628612</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  3,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q3__c}   , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  4,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q4_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_14_myRule_1_A1_6829630629</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  4,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q4_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  4,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q4__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_15_myRule_1_A1_2254916146</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  4,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q4__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  5,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q5_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_16_myRule_1_A1_6717587642</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  5,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q5_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  5,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q5__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_17_myRule_1_A1_8752896643</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  5,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q5__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  6,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q6_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_18_myRule_1_A1_6698063634</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  6,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q6_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  6,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q6__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_19_myRule_1_A1_0215415670</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  6,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q6__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  7,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q7_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_20_myRule_1_A1_6468530052</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  7,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q7_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  7,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q7__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_21_myRule_1_A1_4146016836</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  7,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q7__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  8,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q8_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_22_myRule_1_A1_6188042891</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  8,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q8_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  8,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q8__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_23_myRule_1_A1_0645283787</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  8,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q8__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  9,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q9__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_24_myRule_1_A1_1309351505</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  9,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q9__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  9,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q9_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_25_myRule_1_A1_6134459154</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  9,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q9_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  10,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q10_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_26_myRule_1_A1_2020802705</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  10,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q10_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  11,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q11_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_27_myRule_1_A1_5616437368</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  11,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q11_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  12,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q12_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_28_myRule_1_A1_5726630567</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  12,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q12_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  13,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q13_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_29_myRule_1_A1_0679983077</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  13,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q13_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  10,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q10__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_1208089540</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  10,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q10__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  14,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q14_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_30_myRule_1_A1_1158761307</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  14,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q14_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  15,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q15_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_31_myRule_1_A1_8919859643</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  15,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q15_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  11,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q11__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_6653050385</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  11,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q11__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  12,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q12__c  , NULL)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_4_myRule_1_A1_4982828064</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  12,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q12__c}  , NULL)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  13,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q13__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_5_myRule_1_A1_9985632790</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  13,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q13__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  14,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q14__c  , NULL)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_1_A1_5896229756</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  14,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q14__c}  , NULL)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  15,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q15__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_1_A1_4358360570</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  15,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q15__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  1,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q1_Category__c  , NULL
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_8_myRule_1_A1_9000655215</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  1,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q1_Category__c}  , NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c &gt;=  1,
+[CampaignMember].Campaign.ACF_Eval_Template__c.ACF_Q1__c  , NULL
+)
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_9_myRule_1_A1_9907571058</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Number_of_questions__c} &gt;=  1,
+{!myVariable_current.Campaign.ACF_Eval_Template__c.ACF_Q1__c}  , NULL
+)</expression>
+    </formulas>
+    <interviewLabel>Create_Evaluation_records-9_InterviewLabel</interviewLabel>
+    <label>Create Evaluation records</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>CampaignMember</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordCreates>
+        <name>myRule_1_A1</name>
+        <label>Create Evaluation record</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>EE Program Offering</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_EE_Program_Offering__c</field>
+            <value>
+                <elementReference>myVariable_current.CampaignId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Program Participant</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Program_Participant__c</field>
+            <value>
+                <elementReference>myVariable_current.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q10 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q10_Category__c</field>
+            <value>
+                <elementReference>formula_26_myRule_1_A1_2020802705</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q10</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q10__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_1208089540</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q11 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q11_Category__c</field>
+            <value>
+                <elementReference>formula_27_myRule_1_A1_5616437368</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q11</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q11__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_6653050385</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q12 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q12_Category__c</field>
+            <value>
+                <elementReference>formula_28_myRule_1_A1_5726630567</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q12</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q12__c</field>
+            <value>
+                <elementReference>formula_4_myRule_1_A1_4982828064</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q13 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q13_Category__c</field>
+            <value>
+                <elementReference>formula_29_myRule_1_A1_0679983077</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q13</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q13__c</field>
+            <value>
+                <elementReference>formula_5_myRule_1_A1_9985632790</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q14 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q14_Category__c</field>
+            <value>
+                <elementReference>formula_30_myRule_1_A1_1158761307</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q14</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q14__c</field>
+            <value>
+                <elementReference>formula_6_myRule_1_A1_5896229756</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q15 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q15_Category__c</field>
+            <value>
+                <elementReference>formula_31_myRule_1_A1_8919859643</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q15</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q15__c</field>
+            <value>
+                <elementReference>formula_7_myRule_1_A1_4358360570</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q1 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q1_Category__c</field>
+            <value>
+                <elementReference>formula_8_myRule_1_A1_9000655215</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q1</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q1__c</field>
+            <value>
+                <elementReference>formula_9_myRule_1_A1_9907571058</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q2 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q2_Category__c</field>
+            <value>
+                <elementReference>formula_10_myRule_1_A1_9167191026</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q2</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q2__c</field>
+            <value>
+                <elementReference>formula_11_myRule_1_A1_1422172045</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q3 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q3_Category__c</field>
+            <value>
+                <elementReference>formula_12_myRule_1_A1_8261507988</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q3</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q3__c</field>
+            <value>
+                <elementReference>formula_13_myRule_1_A1_2533628612</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q4 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q4_Category__c</field>
+            <value>
+                <elementReference>formula_14_myRule_1_A1_6829630629</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q4</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q4__c</field>
+            <value>
+                <elementReference>formula_15_myRule_1_A1_2254916146</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q5 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q5_Category__c</field>
+            <value>
+                <elementReference>formula_16_myRule_1_A1_6717587642</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q5</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q5__c</field>
+            <value>
+                <elementReference>formula_17_myRule_1_A1_8752896643</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q6 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q6_Category__c</field>
+            <value>
+                <elementReference>formula_18_myRule_1_A1_6698063634</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q6</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q6__c</field>
+            <value>
+                <elementReference>formula_19_myRule_1_A1_0215415670</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q7 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q7_Category__c</field>
+            <value>
+                <elementReference>formula_20_myRule_1_A1_6468530052</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q7</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q7__c</field>
+            <value>
+                <elementReference>formula_21_myRule_1_A1_4146016836</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q8 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q8_Category__c</field>
+            <value>
+                <elementReference>formula_22_myRule_1_A1_6188042891</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q8</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q8__c</field>
+            <value>
+                <elementReference>formula_23_myRule_1_A1_0645283787</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q9 Category</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q9_Category__c</field>
+            <value>
+                <elementReference>formula_25_myRule_1_A1_6134459154</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Q9</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ACF_Q9__c</field>
+            <value>
+                <elementReference>formula_24_myRule_1_A1_1309351505</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Evaluation__c</object>
+    </recordCreates>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

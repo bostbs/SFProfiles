@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Auth Home Section 5 is the &quot;Collaborate With Alumni Section&quot; section of the Home Page. Block 1 of this section is for the featured venture. This Record ID setting should be the ID of the Venture record that is featured. --></help>
+        <label><!-- Auth Home Section 5 Block 1 RecordId --></label>
+        <name>Auth_Home_Section_5_Block_1_RecordId__c</name>
+    </fields><fields>
+        <help><!-- Auth Home Section 5 is the &quot;Collaborate With Alumni Section&quot; section of the Home Page. Block 2 of this section is for the featured user. This Record ID setting should be the ID of the User record that is featured. --></help>
+        <label><!-- Auth Home Section 5 Block 2 RecordId --></label>
+        <name>Auth_Home_Section_5_Block_2_RecordId__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Body Block 1 --></label>
+        <name>Body_Block_1__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Body Block 2 --></label>
+        <name>Body_Block_2__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Body Block 3 --></label>
+        <name>Body_Block_3__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Body Block 4 --></label>
+        <name>Body_Block_4__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Body Block 5 --></label>
+        <name>Body_Block_5__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Body Block 6 --></label>
+        <name>Body_Block_6__c</name>
+    </fields><fields>
+        <label><!-- Default Job Attachment DocId --></label>
+        <name>Default_Job_Attachment_DocId__c</name>
+    </fields><fields>
+        <label><!-- Default News Attachment DocId --></label>
+        <name>Default_News_Attachment_DocId__c</name>
+    </fields><fields>
+        <help><!-- BabsonLogin - URL in the Forgot Password hyperlink --></help>
+        <label><!-- Forgot Password URL --></label>
+        <name>Forgot_Password_URL__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in headline of the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Headline Block 1 --></label>
+        <name>Headline_Block_1__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in headline of the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Headline Block 2 --></label>
+        <name>Headline_Block_2__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in headline of the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Headline Block 3 --></label>
+        <name>Headline_Block_3__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in headline of the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Headline Block 4 --></label>
+        <name>Headline_Block_4__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in headline of the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Headline Block 5 --></label>
+        <name>Headline_Block_5__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image.  This custom setting field is for the text that appears in headline of the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Headline Block 6 --></label>
+        <name>Headline_Block_6__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image, each with an icon in it, this custom setting sets the ID of the document of this icon in Salesforce for the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Icon Block 1 --></label>
+        <name>Icon_Block_1__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image, each with an icon in it, this custom setting sets the ID of the document of this icon in Salesforce for the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Icon Block 2 --></label>
+        <name>Icon_Block_2__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image, each with an icon in it, this custom setting sets the ID of the document of this icon in Salesforce for the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Icon Block 3 --></label>
+        <name>Icon_Block_3__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image, each with an icon in it, this custom setting sets the ID of the document of this icon in Salesforce for the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Icon Block 4 --></label>
+        <name>Icon_Block_4__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image, each with an icon in it, this custom setting sets the ID of the document of this icon in Salesforce for the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Icon Block 5 --></label>
+        <name>Icon_Block_5__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image, each with an icon in it, this custom setting sets the ID of the document of this icon in Salesforce for the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Icon Block 6 --></label>
+        <name>Icon_Block_6__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there is a main image that appears at the top of the screen with three icons overlaying it, this custom setting sets the ID of the document of this image in Salesforce for the n&apos;th icon. --></help>
+        <label><!-- UnAuth Banner Stat Icon 1 --></label>
+        <name>UnAuth_Banner_Stat_Icon_1__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there is a main image that appears at the top of the screen with three icons overlaying it, this custom setting sets the ID of the document of this image in Salesforce for the n&apos;th icon. --></help>
+        <label><!-- UnAuth Banner Stat Icon 2 --></label>
+        <name>UnAuth_Banner_Stat_Icon_2__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there is a main image that appears at the top of the screen with three icons overlaying it, this custom setting sets the ID of the document of this image in Salesforce for the n&apos;th icon. --></help>
+        <label><!-- UnAuth Banner Stat Icon 3 --></label>
+        <name>UnAuth_Banner_Stat_Icon_3__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there is a main image that appears at the top of the screen with three icons overlaying it, this custom setting sets the ID of the document of this image in Salesforce for the n&apos;th icon. --></help>
+        <label><!-- UnAuth Banner Stat Icon 4 --></label>
+        <name>UnAuth_Banner_Stat_Icon_4__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the text of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Button Block 1 --></label>
+        <name>UnAuth_Home_Button_Block_1__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the text of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Button Block 2 --></label>
+        <name>UnAuth_Home_Button_Block_2__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the text of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Button Block 3 --></label>
+        <name>UnAuth_Home_Button_Block_3__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the text of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Button Block 4 --></label>
+        <name>UnAuth_Home_Button_Block_4__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the text of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Button Block 5 --></label>
+        <name>UnAuth_Home_Button_Block_5__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the text of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home Button Block 6 --></label>
+        <name>UnAuth_Home_Button_Block_6__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there is a main image that appears at the top of the screen, this custom setting sets the ID of the document of this image in Salesforce. --></help>
+        <label><!-- UnAuth Home Logo --></label>
+        <name>UnAuth_Home_Logo__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the URL of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home URL Block 1 --></label>
+        <name>UnAuth_Home_URL_Block_1__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the URL of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home URL Block 2 --></label>
+        <name>UnAuth_Home_URL_Block_2__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the URL of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home URL Block 3 --></label>
+        <name>UnAuth_Home_URL_Block_3__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the URL of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home URL Block 4 --></label>
+        <name>UnAuth_Home_URL_Block_4__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the URL of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home URL Block 5 --></label>
+        <name>UnAuth_Home_URL_Block_5__c</name>
+    </fields><fields>
+        <help><!-- On the Unauthenticated home page, there are 6 blocks under the main image. This custom setting field is for the URL of the button that appears in the n&apos;th block. --></help>
+        <label><!-- UnAuth Home URL Block 6 --></label>
+        <name>UnAuth_Home_URL_Block_6__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Alumni Community</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Alumni Community</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

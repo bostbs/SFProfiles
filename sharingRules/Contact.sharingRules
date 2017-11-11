@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"><sharingCriteriaRules>
+        <fullName>Contact_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contact Sharing</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CRM Contact</value>
+        </criteriaItems>
+    </sharingCriteriaRules></SharingRules>

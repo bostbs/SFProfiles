@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowMembersToFlag>true</allowMembersToFlag>
+    <branding>
+        <loginFooterText>salesforce.com</loginFooterText>
+        <pageHeader>CORECONNECT__CC_Community_Resources/CC_Community_Header.html</pageHeader>
+        <primaryColor>#1797C0</primaryColor>
+        <primaryComplementColor>#FFFFFF</primaryComplementColor>
+        <quaternaryColor>#B1BAC1</quaternaryColor>
+        <quaternaryComplementColor>#222222</quaternaryComplementColor>
+        <secondaryColor>#51606E</secondaryColor>
+        <tertiaryColor>#DDE4E9</tertiaryColor>
+        <tertiaryComplementColor>#222222</tertiaryComplementColor>
+        <zeronaryColor>#51606E</zeronaryColor>
+        <zeronaryComplementColor>#FFFFFF</zeronaryComplementColor>
+    </branding>
+    <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
+    <emailSenderAddress>communitymanager@babson.edu</emailSenderAddress>
+    <emailSenderName>Babson Connector Community Manager</emailSenderName>
+    <enableGuestChatter>false</enableGuestChatter>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>true</enableKnowledgeable>
+    <enableNicknameDisplay>false</enableNicknameDisplay>
+    <enablePrivateMessages>true</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
+    <logoutUrl>https://babson.force.com/connector</logoutUrl>
+    <navigationLinkSet>
+        <navigationMenuItem>
+            <label>Topics</label>
+            <position>1</position>
+            <publiclyAvailable>true</publiclyAvailable>
+            <target>ShowMoreTopics</target>
+            <type>NavigationalTopic</type>
+        </navigationMenuItem>
+    </navigationLinkSet>
+    <networkMemberGroups>
+        <permissionSet>CoreConnect_Admin</permissionSet>
+        <profile>admin</profile>
+        <profile>alumni community - alumni</profile>
+        <profile>alumni community - ssf</profile>
+        <profile>alumni community - community manager</profile>
+        <profile>alumni community - content admin</profile>
+        <profile>customer community login user</profile>
+        <profile>test profile to be deleted</profile>
+    </networkMemberGroups>
+    <picassoSite>Alumni1</picassoSite>
+    <selfRegistration>false</selfRegistration>
+    <sendWelcomeEmail>false</sendWelcomeEmail>
+    <site>Alumni</site>
+    <status>Live</status>
+    <tabs>
+        <customTab>CORECONNECT__CC_Community_Content__c</customTab>
+        <customTab>BMCServiceDesk__Remedyforce_Dashboard</customTab>
+        <customTab>BMCServiceDesk__BMC_UserCommunity__c</customTab>
+        <defaultTab>Chatter</defaultTab>
+        <standardTab>Chatter</standardTab>
+        <standardTab>Account</standardTab>
+        <standardTab>Contact</standardTab>
+        <standardTab>Dashboard</standardTab>
+        <standardTab>home</standardTab>
+        <standardTab>Opportunity</standardTab>
+        <standardTab>OtherUserProfile</standardTab>
+        <standardTab>UserProfile</standardTab>
+        <standardTab>ProfilePlatformFeed</standardTab>
+    </tabs>
+    <urlPathPrefix>connector</urlPathPrefix>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>

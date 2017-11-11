@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_ACC_ADDR1_CITY</field>
+    </columns>
+    <columns>
+        <field>FK_ACC_ADDR1_STATE</field>
+    </columns>
+    <columns>
+        <field>FK_ACC_PHONE1</field>
+    </columns>
+    <columns>
+        <field>hed__Affiliation__c.hed__Role__c</field>
+    </columns>
+    <columns>
+        <field>hed__Affiliation__c.hed__Contact__c</field>
+    </columns>
+    <columns>
+        <field>hed__Affiliation__c.ACF_Contact_Primary_Bus_Org__c</field>
+    </columns>
+    <columns>
+        <field>FK_LAST_UPDATE</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_ACC_INDUSTRY</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Account Portfolio by Industry with RM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$hed__Affiliation__c@hed__Affiliation__c.hed__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>hed__Affiliation__c.hed__EndDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

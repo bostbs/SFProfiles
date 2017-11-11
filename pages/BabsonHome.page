@@ -1,0 +1,724 @@
+<apex:page showHeader="false"
+            sidebar="false"
+            standardStylesheets="false"
+            applyHtmlTag="false"
+            applyBodyTag="false"
+            docType="html-5.0"
+            cache="true"
+            controller="BabsonHomeController"  
+         >
+          
+        <!--added on 09-March-2017, ER09032017 for pagination in chatter feed-->
+     <script>
+         window.onload = function() {
+             var bodyLength = '{!body}';
+
+             if({!isDateExist}== false && bodyLength.length!=0){
+                 $("#tid").show();
+             }else if({!isDateExist}== true || bodyLength.length == 0){
+                  $("#tid").hide();   
+             }
+        };
+     </script>
+     
+     <style>
+     #flagTypeI{
+         margin-right: 30px;
+     }
+     #flagTypeS{
+         margin-right: 30px;
+     }
+     .branding .h3, .branding h3, .sfdcBody .h3, .sfdcBody h3 {
+         font-size: 1.8rem !important;
+     }     
+     .chatterUserGuestBadge{
+         display:none;
+     }
+     .showmorefeeditemscontainer{
+         display:none !important;
+     }
+     .cxallfeedactions .feeditemActionMenu .zen-options{
+         margin-left:-100px;
+     }
+      #footer-social-ctas{
+                 flex-wrap:nowrap !important; 
+            
+        }
+              .buttonLinks{
+                 flex-wrap:nowrap !important; 
+              }
+                   
+            .pager div
+            {
+                float: left;
+                margin: 0 3px;
+                display: inline-block;
+                cursor:pointer;
+            }
+
+            .pager div.disabled
+            {
+                opacity: 0.5;
+            }
+
+            
+            .pager 
+            {
+                overflow: hidden;
+            }
+            .feedcontainerdiv {
+                height:1045px;
+                overflow-y:auto;
+            }
+            
+  .text-left babson-block-venture{
+      height:187px;
+  }
+            
+        </style>
+        <!--/ER09032017--> 
+
+    <apex:composition template="{!$Site.Template}">
+
+        <apex:define name="pagetitle">Babson Home</apex:define>
+
+            <apex:define name="body" >
+             
+         <!--     
+             <apex:outputPanel layout="none"  rendered="{!IF(CONTAINS($User.LastName, 'Site Guest User'), true, false)}">
+                 <div id="tid"  style="display:none;" >
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                    
+                    
+                        <div class="modal-body">
+                            <header class="well-header">
+                                <h3 >{!title}</h3>
+                            </header>
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="acceptTM();return false;">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>
+             </apex:outputPanel>
+                -->
+                <apex:form id="homePageFormId" html-autocomplete="off">
+                
+                    <!--
+                    <apex:actionFunction name="filterLinks" action="{!fetchMyLinks}" rerender="myLinkId" >
+                        <apex:param name="firstParam" assignTo="{!linkFilter}" value="" />
+                    </apex:actionFunction>
+                    <apex:actionFunction name="followFilterLinks" action="{!fetchMyLinks}" rerender="myLinkId" >
+                        <apex:param name="firstParam" assignTo="{!followFilter}" value="" />
+                    </apex:actionFunction>
+                    -->
+                    <!--added for filtering on  20-03-2017 and  commented above functions-->
+                    <apex:actionFunction name="filterMyLinks" action="{!fetchMyLinks}" rerender="myLinkPnl" >
+                        <apex:param name="firstParam" assignTo="{!linkFilter}" value="" />
+                        <apex:param name="secondParam" assignTo="{!followFilter}" value="" />
+                    </apex:actionFunction>
+                    
+                    
+                    
+                    <apex:actionFunction name="filterRecommendedSection" action="{!fetchRecommendedContent}" rerender="homeRecommendedSectionId" >
+                        <apex:param name="firstParam" assignTo="{!recommendedFilter}" value="" />
+                    </apex:actionFunction>
+                  <!--  
+                    <apex:actionfunction action="{!setCookieForCurrentPage}"  name="login"  oncomplete="window.open('{!$Label.BAB_Login_URL}','_self')" status="loadingStatus2"/>
+                    <apex:actionFunction action="{!updateContactTermTimeStamp}" name="acceptTerms"    oncomplete="hideTM('{!logoutURL}');" status="loadingStatus2"></apex:actionFunction> 
+                  -->
+                </apex:form>
+
+                <!-- ================== -->
+                <!-- Guest User Section -->
+                <!-- ================== -->
+                
+              <!--  <div id="tid"  style="display:none;" >
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                        <div class="modal-body">
+                            <header class="well-header">
+                                <h3 >{!title}</h3>
+                            </header>
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="acceptTM();return false;">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="redirect();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>-->
+            <!--    =={!$User.LastName} ==<br/>-->
+                <apex:outputPanel layout="none"  rendered="{!IF(CONTAINS($User.LastName, 'Site Guest User'), true, false)}">
+                    <section class="banner" style="background-image: url('{!$Site.Prefix}{!homePageLogoURL}');">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                     <h1>{!$Label.BAB_Main_Banner_Text}</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 list">
+                                    <div class="item">
+                                        <i class="bab_{!$Label.BAB_Banner_Icon_1}" />
+                                        <h2>{!$Label.BAB_Banner_Stat_1}</h2>
+                                        <h5>{!$Label.BAB_Banner_Stat_Label_1}</h5>
+                                    </div>
+                                    <div class="item">
+                                        <i class="bab_{!$Label.BAB_Banner_Icon_2}" />
+                                        <h2>{!$Label.BAB_Banner_Stat_2}</h2>
+                                        <h5>{!$Label.BAB_Banner_Stat_Label_2}</h5>
+                                    </div>
+                                    <div class="item">
+                                        <i class="bab_{!$Label.BAB_Banner_Icon_3}" />
+                                        <h2>{!$Label.BAB_Banner_Stat_3}</h2>
+                                        <h5>{!$Label.BAB_Banner_Stat_Label_3}</h5>
+                                    </div>
+                                    <div class="item">
+                                        <i class="bab_{!$Label.BAB_Banner_Icon_4}" />
+                                        <h2>{!$Label.BAB_Banner_Stat_4}</h2>
+                                        <h5>{!$Label.BAB_Banner_Stat_Label_4}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <apex:outputPanel layout="none" rendered="{!CONTAINS($User.LastName, 'Site Guest User')}">
+                                <div class="row">
+                                  <!--  <p><a href=""   onclick="alert('=='+window.location.hash);" class="btn btn-primary">{!$Label.BAB_Section_3_Button_Label}</a></p> -->
+                                    <p><a href="{!$Label.BAB_Login_URL}" class="btn btn-primary">{!$Label.BAB_Section_3_Button_Label}</a></p>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                    </section>
+
+                    <div class="container">
+                        <section class="well large-cards">
+                            <header>
+                                <h2>{!$Label.BAB_UnAuthenticated_Home_Below_Logo}</h2>
+                            </header>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <c:BabsonBlockLink blockClass="babson-cardlink-darkGreen margin-bottom" title="{!$Label.BAB_UnAuthenticated_Block_1_Headline}" subTitle="" text="{!$Label.BAB_UnAuthenticated_Block_1_Body}" link="{!aluminiCustomSetting.UnAuth_Home_URL_Block_1__c}" imgSrc="{!$Site.Prefix}/servlet/servlet.ImageServer?id={!aluminiCustomSetting.Icon_Block_1__c}&oid={!$Organization.Id}"  />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <c:BabsonBlockLink blockClass="babson-cardlink-blue notch-tl  margin-bottom" title="{!$Label.BAB_UnAuthenticated_Block_2_Headline}" subTitle="" text="{!$Label.BAB_UnAuthenticated_Block_2_Body}" link="{!aluminiCustomSetting.UnAuth_Home_URL_Block_2__c}" imgSrc="{!$Site.Prefix}/servlet/servlet.ImageServer?id={!aluminiCustomSetting.Icon_Block_2__c}&oid={!$Organization.Id}"  />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <c:BabsonBlockLink blockClass="babson-cardlink-green notch-tl margin-bottom" title="{!$Label.BAB_UnAuthenticated_Block_3_Headline}" subTitle="" text="{!$Label.BAB_UnAuthenticated_Block_3_Body}" link="{!aluminiCustomSetting.UnAuth_Home_URL_Block_3__c}" imgSrc="{!$Site.Prefix}/servlet/servlet.ImageServer?id={!aluminiCustomSetting.Icon_Block_3__c}&oid={!$Organization.Id}"  />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <c:BabsonBlockLink blockClass="babson-cardlink-yellow notch-br margin-bottom" title="{!$Label.BAB_UnAuthenticated_Block_4_Headline}" subTitle="" text="{!$Label.BAB_UnAuthenticated_Block_4_Body}" link="{!aluminiCustomSetting.UnAuth_Home_URL_Block_4__c}" imgSrc="{!$Site.Prefix}/servlet/servlet.ImageServer?id={!aluminiCustomSetting.Icon_Block_4__c}&oid={!$Organization.Id}"  />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <c:BabsonBlockLink blockClass="babson-cardlink-gold notch-br margin-bottom" title="{!$Label.BAB_UnAuthenticated_Block_5_Headline}" subTitle="" text="{!$Label.BAB_UnAuthenticated_Block_5_Body}" link="{!aluminiCustomSetting.UnAuth_Home_URL_Block_5__c}" imgSrc="{!$Site.Prefix}/servlet/servlet.ImageServer?id={!aluminiCustomSetting.Icon_Block_5__c}&oid={!$Organization.Id}"  />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <c:BabsonBlockLink blockClass="babson-cardlink-gray margin-bottom" title="{!$Label.BAB_UnAuthenticated_Block_6_Headline}" subTitle="" text="{!$Label.BAB_UnAuthenticated_Block_6_Body}" link="{!aluminiCustomSetting.UnAuth_Home_URL_Block_6__c}" imgSrc="{!$Site.Prefix}/servlet/servlet.ImageServer?id={!aluminiCustomSetting.Icon_Block_6__c}&oid={!$Organization.Id}"  />
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <apex:outputPanel layout="none" rendered="{!CONTAINS($User.LastName, 'Site Guest User')}">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 text-banner">
+                                    <h3>{!$Label.BAB_UnAuthenticated_Home_Above_Media_Sites}</h3>
+                                    <p><a href="{!$Label.BAB_Login_URL}" class="btn btn-primary">{!$Label.BAB_Section_3_Button_Label}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                </apex:outputPanel> <!-- End Guest Section -->
+
+
+
+                <!-- ========================== -->
+                <!-- Authenticated User Section -->
+                <!-- ========================== -->
+                <apex:outputPanel layout="none"  rendered="{!IF(!CONTAINS($User.LastName, 'Site Guest User'), true, false)}">
+                    <div class="container" id="content-user-home">
+                         <apex:outputPanel id="homeRecommendedSectionId">
+                            <!-- Start - Recommended By Section -->
+                            <section class="well image-block">
+                                <header>
+                                    <h2>{!$Label.BAB_Section_1_Header}</h2>
+                                    <!--<apex:form >
+                                        <select class="select-link">
+                                            <option value="#">View All</option>
+                                            <option value="{!$Page.News}">News</option>
+                                            <option value="{!$Page.Events}">Events</option>
+                                            <option value="{!$Page.Ventures}">Ventures</option>
+                                            <option value="{!$Page.BusinessDirectory}">Business</option>
+                                        </select>
+                                    </apex:form>-->
+                                    <apex:form id="recomendForm" html-autocomplete="off">
+                                        <apex:selectList value="{!recommendedFilter}" onchange="filterRecommendedSection1(this.options[this.selectedIndex].getAttribute('value'));" size="1" styleClass="cls"  id="selc">
+                                            <apex:selectOption itemValue="All" itemLabel="View All"/>
+                                            <apex:selectOption itemValue="FreeText" itemLabel="News"/>
+                                            <apex:selectOption itemValue="ScheduledContent" itemLabel="Events"/>
+                                            <apex:selectOption itemValue="Venture" itemLabel="Ventures"/>
+                                            <apex:selectOption itemValue="Business" itemLabel="Businesses"/>
+                                           <!-- <apex:selectOption itemValue="Job" itemLabel="Jobs"/> -->
+                                        </apex:selectList>
+                                       
+                                    </apex:form>
+                                    <!--script added on 08-March-2017 to reset form on browser back button-->
+                                     <script>
+                                        $(window).bind("pageshow", function() {
+                                            //$("form[id$=recomendForm]")[0].reset();
+                                            var selVal=$("[id$=selc]").val();
+                                            filterRecommendedSection(selVal);
+                                        });
+                                        recommendedFilter=localStorage.getItem("recommendedFilter");        
+                                        console.log('@@@'+recommendedFilter);       
+                                        if(recommendedFilter!=null && recommendedFilter!='null'){     
+                                            $("[id$=selc]").val(recommendedFilter);     
+                                        }    
+                                        else{
+                                            $("[id$=selc]").val('All');   
+                                        }   
+                                        function filterRecommendedSection1(selectedValue) {     
+                                            localStorage.setItem("recommendedFilter", selectedValue);       
+                                            filterRecommendedSection(selectedValue);        
+                                        }
+                                      </script>
+                                </header>
+
+                                <div class="row row-no-margin">
+                                    <div class="col-xs-12 col-md-6 col-no-padding">
+                                        <apex:repeat value="{!lstCC}" var="varCC" rows="1">
+                                        
+                                            <!-- will need to be updated as content pages are created -->
+                                           <c:BabsonBlockImage title="{!IF(varCC.RecordType.Name == 'Job',varCC.Title__c,varCC.Name)}" text="{!varCC.CORECONNECT__Short_Description__c}" link="{!IF(varCC.RecordType.Name == 'FreeText', $Page.NewsDetail & '?id=' & varCC.Id, IF(varCC.RecordType.Name == 'ScheduledContent', $Page.EventDetail & '?id=' & varCC.Id, IF(varCC.RecordType.Name == 'Venture', $Page.VentureDetail & '?id=' & varCC.Id, IF(varCC.RecordType.Name == 'Job',$Page.JobDetail & '?id=' & varCC.Id,IF(varCC.RecordType.Name == 'Business',$Page.BusinessDetail & '?id=' & varCC.Id,$Page.BabsonHome)))))}" imgSrc="{!IF(mapOfCCToAttachId[varCC] != 'NC',URLFOR($Action.Attachment.Download, mapOfCCToAttachId[varCC]),'none')}" blockClass="news" isLarge="true"/>
+
+                                        </apex:repeat>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="row">
+                                            <apex:repeat value="{!lstCC}" var="varCC" first="1" rows="4">
+                                                <div class="col-xs-6 col-no-padding">
+                                                    <!-- will need to be updated as content pages are created -->
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'FreeText'}">
+                                                        <c:BabsonBlockImage title="{!varCC.Name}" text="{!varCC.CORECONNECT__Short_Description__c}" link="{!$Page.NewsDetail}?id={!varCC.Id}"  imgSrc="{!IF(mapOfCCToAttachId[varCC] != 'NC',URLFOR($Action.Attachment.Download, mapOfCCToAttachId[varCC]),'none')}"/>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'ScheduledContent'}">
+                                                          <c:BabsonBlockDate title="{!varCC.Name}" startDate="{!varCC.CORECONNECT__Start_Date__c}" endDate="{!varCC.CORECONNECT__End_Date__c}" imgSrc="{!IF(mapOfCCToAttachId[varCC] != 'NC',URLFOR($Action.Attachment.Download, mapOfCCToAttachId[varCC]),'none')}" city="{!varCC.CORECONNECT__Location_City__c}" state="{!varCC.CORECONNECT__Location_State_Province__c}" link="{!$Page.EventDetail}?id={!varCC.Id}" />
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'Venture'}">
+                                                        <c:BabsonBlockImage title="{!varCC.Name}" text="{!varCC.CORECONNECT__Short_Description__c}" link="{!$Page.VentureDetail}?id={!varCC.Id}"  imgSrc="{!IF(mapOfCCToAttachId[varCC] != 'NC',URLFOR($Action.Attachment.Download, mapOfCCToAttachId[varCC]),'none')}"/>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'Job'}">
+                                                        <c:BabsonBlockImage title="{!varCC.Title__c}" text="{!varCC.CORECONNECT__Short_Description__c}" link="{!$Page.JobDetail}?id={!varCC.Id}"  imgSrc="{!IF(mapOfCCToAttachId[varCC] != 'NC',URLFOR($Action.Attachment.Download, mapOfCCToAttachId[varCC]),'none')}"/>
+                                                    </apex:outputPanel>
+                                                    <!-- 
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'Venture'}">
+                                                        <c:BabsonBlockLink blockClass="babson-blocklink-venture boxme" title="{!varCC.Name}" subTitle="" metaTitle="" text="{!varCC.CORECONNECT__Short_Description__c}"  imgSrc= link="{!$Page.VentureDetail}?id={!varCC.Id}" />
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'Job'}">
+                                                        <c:BabsonBlockLink blockClass="babson-blocklink-job boxme" title="{!varCC.Name}" text="{!varCC.CORECONNECT__Short_Description__c}" imgSrc="" link="{!$Page.JobDetail}?id={!varCC.Id}" />
+                                                    </apex:outputPanel>
+                                                    -->
+                                                    <apex:outputPanel layout="none" rendered="{!varCC.RecordType.Name == 'Business'}">
+                                                        <c:BabsonBlockImage title="{!varCC.Name}" text="{!varCC.CORECONNECT__Short_Description__c}" link="{!$Page.BusinessDetail}?id={!varCC.Id}"  imgSrc="{!IF(mapOfCCToAttachId[varCC] != 'NC',URLFOR($Action.Attachment.Download, mapOfCCToAttachId[varCC]),'none')}"/>
+                                                    </apex:outputPanel>
+
+                                                </div>
+                                            </apex:repeat>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </apex:outputPanel>
+                        <!-- End - Recommended By Section -->
+
+                        <!-- Start - I want to Section -->
+                        <section class="well" id="i-want-to">
+                            <header>
+                                <h2>{!$Label.BAB_Section_2_Header}</h2>
+                            </header>
+
+                            <div class="buttonLinks">
+                                <apex:outputLink styleClass="upcoming-events flexme" value="{!$Label.BAB_Section_2_Block_1_URL}">
+                                    <i class="{!$Label.BAB_Section_2_Block_1_Icon}" />
+                                    <span>{!$Label.BAB_Section_2_Block_1}</span>
+                                </apex:outputLink>
+
+                                <apex:outputLink styleClass="users flexme" value="{!$Label.BAB_Section_2_Block_2_URL}">
+                                    <i class="{!$Label.BAB_Section_2_Block_2_Icon}" />
+                                    <span>{!$Label.BAB_Section_2_Block_2}</span>
+                                </apex:outputLink>    
+                                    <!-- Code added by Anisha(Line 272 to 275 and 290 to 294) for #15791-->
+                                    <apex:outputLink styleClass="create flexme" value="{!$Label.BAB_Section_5_Block_1_Button_URL}"> 
+                                      <!--<i class="bab_icon-create"/>-->  
+                                      <i><img style="width: 50px;" src="{!$Resource.bulb}"/></i>
+                                    <span>Find or Post a Venture</span>
+                          <!--      <apex:outputLink styleClass="jobs flexme" value="{!$Label.BAB_Section_2_Block_3_URL}">
+                                   <i class="{!$Label.BAB_Section_2_Block_3_Icon}"  >
+                                   <span>{!$Label.BAB_Section_2_Block_3}</span>-->
+                                </apex:outputLink> 
+
+                                <apex:outputLink styleClass="questions flexme" value="{!$Label.BAB_Section_2_Block_4_URL}">
+                                    <i class="{!$Label.BAB_Section_2_Block_4_Icon}" />
+                                    <span>{!$Label.BAB_Section_2_Block_4}</span>
+                                </apex:outputLink>
+
+                                <apex:outputLink styleClass="give flexme" value="{!giveToBabsonURl}" target="_blank">
+                                    <i class="{!$Label.BAB_Section_2_Block_5_Icon}" />
+                                    <span>{!$Label.BAB_Section_2_Block_5}</span>
+                                </apex:outputLink>
+                               <!-- Code added by Anisha(Line 272 to 275 and 290 to 294) for #15791--> 
+                               <div class="click-tip-wrapper jobs flexme create-link" >
+                                    <a href="#" class="create click-tip-link" >
+                                   <i class="{!$Label.BAB_Section_2_Block_3_Icon}" style=" background: #9eb284;"/>
+                                <!--<span>{!$Label.BAB_Section_2_Block_3}</span>-->
+                                       <span style=" color: #9eb284;">Find or Post a Job</span>
+                                       <i class="bab_icon-expand sm" style=" color: #9eb284;"/>
+                                   </a>
+                                   <div class="click-tip-container">
+                                        <div id="jobDiv" class="click-tip-inner">
+                                            <ul>
+                                                <li style=" color: #9eb284;"><a target="_blank" href="{!$Label.BAB_Section_2_Block_3_Search_URL}">Search</a></li>
+                                                <li style=" color: #9eb284;"><a target="_blank" href="{!$Label.BAB_Section_2_Block_3_Post_URL}">Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <!--    <div class="click-tip-wrapper flexme create-link">
+                                        <a href="#" class="create click-tip-link">
+                                            <i class="bab_icon-create" />
+                                            <span>Submit A...</span>
+                                            <i class="bab_icon-expand sm" />
+                                        </a>
+                                        <div class="click-tip-container">
+                                        <div class="click-tip-inner">
+                                            <ul>
+                                                <li><a href="{!$Label.BAB_Section_2_Block_6_1_URL}">{!$Label.BAB_Section_2_Block_6_1}</a></li>
+                                                <li><a href="{!$Label.BAB_Section_2_Block_6_2_URL}">{!$Label.BAB_Section_2_Block_6_2}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </section>
+                        <!-- End - I want to Section -->
+
+
+                        <!-- Left/Right Column -->
+                        <div class="row">
+                            <!-- Column 1 -->
+                            <div class="col-xs-12 col-md-6">
+                                <!-- Start - My Links Section -->
+                                <apex:outputPanel id="myLinkId">
+                                    <section class="well" id="my-links">
+                                        <header>
+                                            <h2>{!$Label.BAB_Section_3_Header}</h2>
+                                            <apex:form id="linkFilterForm" html-autocomplete="on">
+                                                <apex:selectList value="{!linkFilter}" onchange="filterMyLinksSel();" size="1" id="types" html-autocomplete="on">
+                                                    <apex:selectOption itemValue="All" itemLabel="All Types"/>
+                                                    <apex:selectOption itemValue="People" itemLabel="People"/>
+                                                    <apex:selectOption itemValue="FreeText" itemLabel="News"/>      
+                                                    <apex:selectOption itemValue="ScheduledContent" itemLabel="Events"/>
+                                                    <apex:selectOption itemValue="Venture" itemLabel="Ventures"/>
+                                                <!--    <apex:selectOption itemValue="Job" itemLabel="Jobs"/> -->
+                                                    <apex:selectOption itemValue="Business" itemLabel="Businesses"/>
+
+                                                </apex:selectList>
+
+                                                <apex:selectList value="{!followFilter}" id="followFilterSel" onchange="filterMyLinksSel();" size="1" html-autocomplete="on">
+                                                    <apex:selectOption itemValue="Follow" itemLabel="I'm Following"/>
+                                                    <apex:selectOption itemValue="Created" itemLabel="I Created"/>
+                                                </apex:selectList>
+
+                                                <!--<select class="select-link" id="linksToOpen">
+                                                    <option value="#">Create New</option>
+                                                    <option value="{!$Page.VentureCreate}">Venture</option>
+                                                    <option value="#">Business</option>
+                                                </select>-->
+
+                                            </apex:form>
+                                            <!--script added on 08-March-2017 to reset form on browser back button-->
+                                             <script>
+                                             followFiltetype=localStorage.getItem("followFilter");
+                                                followFilterSelVal=localStorage.getItem("followFilterSelVal");
+                                                console.log('@@@'+followFiltetype+followFilterSelVal);
+                                                if(followFiltetype!='null' && followFilterSelVal!='null' && followFiltetype!=null && followFilterSelVal!=null){
+                                                    $("[id$=types]").val(followFiltetype);
+                                                    $("[id$=followFilterSel]").val(followFilterSelVal);
+                                                }
+                                                function filterMyLinksSel() {
+                                                     followFiltetype=$("[id$=types]").val();
+                                                     followFilterSelVal=$("[id$=followFilterSel]").val();
+                                                    <!--alert(followFiltetype+' :: '+followFilterSelVal); -->
+                                                    localStorage.setItem("followFilter", followFiltetype);
+                                                    localStorage.setItem("followFilterSelVal", followFilterSelVal);
+                                                    console.log('@@localStorage'+localStorage.getItem("followFilter"));
+                                                    filterMyLinks(followFiltetype, followFilterSelVal);
+                                                }
+                                                $(window).bind("pageshow", function() {
+                                                    //$("form[id$=linkFilterForm]")[0].reset();
+                                                    filterMyLinksSel();
+                                                });
+                                              </script>
+                                        </header>
+                                        <apex:outputpanel id="myLinkPnl">
+                                        <ul id="my-links-slider" class="bxslider">
+                                            <apex:repeat value="{!mapOfIdToSObject}" var="entityId" rows="18">
+                                                <div class="col-xs-12 col-sm-6 col-no-padding slide-group">
+                                                        <!-- User/People -->
+                                                        <apex:outputPanel layout="none" rendered="{!IF(LEFT(entityId, 3) == userPrefix , true, false)}">
+                                                            <c:BabsonBlockLink blockClass="babson-cardlink-user" title="{!mapOfIdToSObject[entityId]['Name']}" subTitle="{!mapOfIdToSObject[entityId]['Contact.Graduate_Year__c']}" metaTitle="{!IF(mapOfIdToSObject[entityId]['Contact.Graduate_Year__c'] != '',"Alumni","")}" text="" imgSrc="{!mapOfIdToSObject[entityId]['SmallPhotoURL']}" link="{!$Page.MyProfilePage}?userId={!entityId}" />
+                                                        </apex:outputPanel>
+
+                                                        <!-- Group -->
+                                                        <apex:outputPanel layout="none" rendered="{!IF(LEFT(entityId, 3) == groupPrefix , true, false)}">
+                                                            <c:BabsonBlockLink blockClass="babson-cardlink-group" title="{!mapOfIdToSObject[entityId]['Name']}" subTitle="{!mapOfIdToSObject[entityId]['MemberCount']} members" metaTitle="" text=""  imgSrc="" link="{!entityId}" />
+                                                        </apex:outputPanel>
+
+                                                        <apex:outputPanel layout="none" rendered="{!IF(LEFT(entityId,3) != userPrefix && LEFT(entityId, 3) != groupPrefix , true, false)}">
+                                                           
+                                                            <c:BabsonBlockLink blockClass="
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Venture',"babson-cardlink-venture","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Job',"babson-cardlink-job","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Business',"babson-cardlink-business","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'News',"babson-cardlink-business","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'FreeText',"babson-cardlink-business","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'ScheduledContent',"babson-cardlink-business","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Class Note',"babson-cardlink-business","")}
+                                                            {!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Volunteer Opportunity',"babson-cardlink-business","")}
+                                                            " title="{!IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Job',mapOfIdToSObject[entityId]['Title__c'],'')}{!IF(mapOfIdToSObject[entityId]['RecordType.Name'] != 'Job',mapOfIdToSObject[entityId]['Name'],'')}" subTitle="" metaTitle="" text="{!LEFT(mapOfIdToSObject[entityId]['CORECONNECT__Short_Description__c'],100)}..."  imgSrc="" link="{!
+                                                            IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'FreeText', $Page.NewsDetail & '?id=' & mapOfIdToSObject[entityId]['Id'], 
+                                                            IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'ScheduledContent', $Page.EventDetail & '?id=' & mapOfIdToSObject[entityId]['Id'], 
+                                                            IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Venture', $Page.VentureDetail & '?id=' & mapOfIdToSObject[entityId]['Id'], 
+                                                            IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Job', $Page.JobDetail & '?id=' & mapOfIdToSObject[entityId]['Id'],
+                                                            IF(mapOfIdToSObject[entityId]['RecordType.Name'] == 'Business', $Page.BusinessDetail & '?id=' & mapOfIdToSObject[entityId]['Id']
+                                                            ,$Page.BabsonHome)))))}" />
+                                                    </apex:outputPanel>
+                                                </div>
+                                            </apex:repeat>
+                                        </ul>
+
+                                        <apex:outputPanel layout="none" rendered="{!noRecordSection}">
+                                            {!$Label.BAB_Section_3_No_Content}
+                                        </apex:outputPanel>
+                                        <script>
+                                            // Stuck here rather than in .js file for rerender... but also in JS for document.ready for first load
+                                            if (typeof slideGroups != 'undefined'){
+                                                slideGroups.group($('#my-links-slider'), 6, 3);
+                                            }
+                                            if (typeof $.fn.bxSlider != 'undefined'){
+                                                setTimeout(function(){
+                                                    $('#my-links-slider').bxSlider({});
+                                                },10);
+                                            }
+
+                                    </script>
+                                    </apex:outputPanel>
+                                    </section>
+                                </apex:outputPanel>
+                                <!-- End - My Links Section -->
+
+                                <!-- Start - My Colloborate Section -->
+                                <section class="well" id="collaborate">
+                                    <header>
+                                        <h2>{!$Label.BAB_Section_5_Header}</h2>
+                                    </header>
+
+                                    <div class="col-xs-12 col-sm-6 col-no-padding">
+                                        <c:BabsonBlock blockClass="text-left babson-block-venture" title="{!$Label.BAB_Section_5_Block_1_Header}" subTitle="" metaTitle="" text="{!$Label.BAB_Section_5_Block_1_Body}"  imgSrc=""  btnLink="{!$Label.BAB_Section_5_Block_1_Button_URL}" btnText="{!$Label.BAB_Section_5_Block_1_Button_Label}"/>
+
+                                        <apex:repeat value="{!lstFeatureCC}" var="featureCC">
+                                            <c:BabsonBlock blockClass="babson-block-venture" title="{!featureCC.Name}" subTitle="" metaTitle="" text="{!featureCC.CORECONNECT__Short_Description__c}"  imgSrc=""  btnLink="{!IF(featureCC.RecordType.Name == 'FreeText', $Page.NewsDetail & '?id=' & featureCC.Id, IF(featureCC.RecordType.Name == 'ScheduledContent', $Page.EventDetail & '?id=' & featureCC.Id, IF(featureCC.RecordType.Name == 'Venture', $Page.VentureDetail & '?id=' & featureCC.Id, $Page.BabsonHome)))}" btnText="{!featureCC.CORECONNECT__Short_Description__c}"/>
+                                        </apex:repeat>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-no-padding" >
+                                         
+                                        <c:BabsonBlock blockClass="text-left babson-block-backer" title="{!$Label.BAB_Section_5_Block_2_Header}" subTitle="" metaTitle="" text="{!$Label.BAB_Section_5_Block_2_Body}"  imgSrc=""  btnLink="{!$Label.BAB_Section_5_Block_2_Button_URL}" btnText="{!$Label.BAB_Section_5_Block_2_Button_Label}"/>
+                                      
+                                        <apex:repeat value="{!lstFeatureUser}" var="featureUser">
+                                            
+                                            <c:BabsonBlockLink blockClass="babson-blocklink-backer" title="{!featureUser.Contact.FirstName}" title1="{!featureUser.Contact.LastName}" nickName="{!featureUser.Contact.Preferred_Salutation__c}"  subtitle="" metaTitle="{!$Label.BAB_Section_5_Block_2_Feature}" text="{!featureUser.Contact.Affiliation_Display_Name__c}"  imgSrc="{!featureUser.SmallPhotoURL}"  link="{!$Page.MyProfilePage & '?userId=' & featureUser.Id}"/>
+                                        </apex:repeat>
+                                    </div>
+
+                                </section>
+                                <!-- End - My Colloborate Section -->
+                            </div><!-- End row 1 -->
+
+                            <!-- Column Two -->
+                            <div class="col-xs-12 col-md-6">
+                                <section  class="well" id="chatter-include">
+                                    <!-- Start - My Updates Section -->
+                                    <header>
+                                        <h2>{!$Label.BAB_Section_4_Header}</h2>
+                                    </header>
+                                    <!--ER09032017-->
+                                    <div class="paginate 1">
+                                        <div class="feedcontainerdiv">
+                                            <chatter:newsfeed id="feedId" />
+                                         </div>
+                                       <div class="pager paginator" style="float:right">
+                                            <div class="firstPage"><img src="/s.gif" title="First Page" alt="First Page" class="first"/></div>
+                                            <div class="previousPage"><img src="/s.gif" title="Previous" alt="Previous" class="prev"/></div>
+                                            <!--<div class="pageNumbers"></div>--><div> More Updates</div>
+                                            <div class="nextPage"><img src="/s.gif" title="Next" alt="Next" class="next"/></div>
+                                            <div class="lastPage"><img src="/s.gif" title="Last Page" alt="Last Page" class="last"/></div>
+                                       
+                                        </div>
+                                    </div>
+                                    <!--/ER09032017--> 
+                                </section>
+                                <!-- End - My Updates Section -->
+                            </div>
+                        </div> <!-- Row -->
+                    </div><!-- Container -->
+                </apex:outputPanel><!-- End Authenticated User Section -->
+                <apex:actionStatus startStyleClass="Processing" id="loadingStatus2"/>
+            </apex:define>
+    </apex:composition>
+    
+ <script src="{!URLFOR($Resource.pagingationResource, 'paginga.jquery.js')}"></script>
+        
+    <script>
+    
+        $(function() {
+        /*<!--    $("#publishersharebutton").click(function(){
+               window.top.location.href = window.top.location.href; 
+            }); -->
+            */
+            $(".paginate").paginga({
+                // use default options
+                itemsPerPage: 6,
+                itemsContainer: ".feedcontainer",
+                item: "> div.feeditem"
+
+            });
+        });
+    </script>
+
+    <!--/ER09032017-->
+    <!--Links colors Search and Post-->
+    <style>
+    #jobDiv ul li  a:hover{
+        background:#9eb284 !important;
+        color:#fff !important;
+        display:inherit !important;
+    }
+    #jobDiv a{
+        color:#9eb284 !important;
+    }
+    
+    .zen-options a {
+        
+    }
+  <!--  .cxallfeedactions .feeditemActionMenu .zen-options a, .feedcommentactions .commentActionMenu .zen-options a{
+    
+        padding: 0px;!important;
+            font-size: 1em;!important;
+            width:100px
+    
+    
+    }-->
+    </style>
+     <style>
+          .overlay {
+                background-color: #373632;
+                opacity: 0.6;
+                /* Generic for Major browsers */
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                /* IE 5-7 */
+                filter: alpha(opacity=60);
+                /* Netscape */
+                -moz-opacity: 0.6;
+                /* Safari 1.x */
+                -khtml-opacity: 0.6;            
+                position: Fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 99;
+       
+
+        }
+        
+        .dialog {
+            position: relative;;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            outline: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translate3d(0, 0, 0);
+            max-width:70%;
+            margin-left: 20%;
+            margin-top: 0%;            
+            
+            z-index: 99;
+    }
+     .Processing
+        {
+            position: fixed;
+            background-color: white;
+            background: url('/img/loading32.gif') no-repeat;
+            background-repeat: no-;
+            background-position: center;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            z-index: 1004;
+            left: 0%;
+            top: 0%;
+        }
+</style>
+
+
+    <input type="text"  value=""  id="hidden"/>
+    <script>
+    Filter();
+    
+    function acceptAgreement(isDateExist, recordid){
+        console.log('isDateExist  ::'+isDateExist );
+        if(isDateExist == 'false'){
+             $("#tid").show();
+             console.log('isDateExist  ::'+recordid );
+             document.getElementById('hidden').value =recordid;
+        }else{
+           $("#tid").hide();
+           window.open("{!$Page.VentureDetail}?id="+recordid,"_self");
+        }
+        
+    }
+    function showTM(){
+        $("#tid").show()
+    }
+    function redirect(){
+       $("#tid").hide();
+       window.open('{!$label.BCTAC_Cancel_URL}','_self');
+    }
+   
+    function hideTM(vURL){
+       // alert(vURL);
+        
+        $("#tid").hide();
+        window.open(vURL,'_self');
+        return false;
+    }
+    function openDP(){
+         //alert('hi'+document.getElementById('hidden').value);
+         $("#tid").hide();
+         window.open("{!$Page.VentureDetail}?id="+document.getElementById('hidden').value,"_self");
+         
+    }
+    function acceptTM(){
+      acceptTerms();  
+    }
+    </script>
+    
+</apex:page>

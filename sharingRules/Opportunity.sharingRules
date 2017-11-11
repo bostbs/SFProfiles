@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?><SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"><sharingCriteriaRules>
+        <fullName>Share_Addtl_Payroll_recs_with_BEE_Ops</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Addtl Payroll recs with BEE Ops</label>
+        <sharedTo>
+            <group>BEE_Operations</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Faculty Expense</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_CCD_Contracts_with_all_CCD</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share CCD Contracts with all CCD</label>
+        <sharedTo>
+            <group>CCD_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Contracts</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_FA_with_BEE_Bus_Dev</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share FA with BEE Bus Dev</label>
+        <sharedTo>
+            <group>BEE_Business_Dev</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BEE Faculty Agreements</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_FA_with_BEE_Ops</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunity (Faculty Agreements) only with BEE Ops</description>
+        <label>Share FA with BEE Ops</label>
+        <sharedTo>
+            <group>BEE_Operations</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BEE Faculty Agreements</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Invoice_Opp_with_BD</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Invoice (Opp) with BD</label>
+        <sharedTo>
+            <group>BEE_Business_Dev</group>
+        </sharedTo>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BEE Invoice</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BEE Invoice - locked</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Invoice_Opp_with_Ops</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Invoice (Opp) with Ops</label>
+        <sharedTo>
+            <group>BEE_Operations</group>
+        </sharedTo>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BEE Invoice</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BEE Invoice - locked</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_OEL_Projects_with_CCD_users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share OEL Projects with CCD users</label>
+        <sharedTo>
+            <group>CCD_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>OEL Project Proposals</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_OEL_Projects_with_all_BEE_users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share OEL Projects with all BEE users</label>
+        <sharedTo>
+            <group>BEE_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>OEL Project Proposals</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_OEL_Projects_with_all_CCD_EL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share OEL Projects with all CCD EL</label>
+        <sharedTo>
+            <group>CCD_EL_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>OEL Project Proposals</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Sales_FA_opps_with_Marketing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Sales and FA opps with Marketing</label>
+        <sharedTo>
+            <group>BEE_Marketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales,BEE Faculty Agreements,OE Registration,OEL Project Proposals</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Sales_Opps_with_All_BD</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Sales Opps with All BD</label>
+        <sharedTo>
+            <group>BEE_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Sales_Opps_with_BD</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Sales Opps with BD</label>
+        <sharedTo>
+            <group>BEE_Business_Dev</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Sales_and_OEL_projects_with_Student_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Sales and OEL projects with Student Users</label>
+        <sharedTo>
+            <group>BEE_Student_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales,OEL Project Proposals</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Std_Sales_with_CCD_EL_Read_only</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Std Sales with CCD EL Read-only</label>
+        <sharedTo>
+            <group>CCD_EL_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Std_Sales_with_CCD_Read_only</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Std Sales with CCD Read-only</label>
+        <sharedTo>
+            <group>CCD_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_Std_Sales_with_CCD_SP_Read_only</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Std Sales with CCD SP Read-only</label>
+        <sharedTo>
+            <group>Babson_Strategic_Partnership</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales</value>
+        </criteriaItems>
+    </sharingCriteriaRules><sharingCriteriaRules>
+        <fullName>Share_all_Opps_RTs_with_Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share all Opps RTs with Finance</label>
+        <sharedTo>
+            <group>BEE_Finance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Standard Sales,BEE Invoice,BEE Faculty Agreements,BEE Invoice - locked,Faculty Expense,OE Registration</value>
+        </criteriaItems>
+    </sharingCriteriaRules></SharingRules>

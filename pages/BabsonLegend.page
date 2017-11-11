@@ -1,0 +1,722 @@
+<apex:page showHeader="false" 
+			sidebar="false" 
+			standardStylesheets="false" 
+			applyHtmlTag="false" 
+			applyBodyTag="false" 
+			docType="html-5.0" 
+			controller="BabsonHomeController"
+			>
+<apex:composition template="{!$Site.Template}">
+		<apex:define name="pagetitle">Babson Legend</apex:define>
+			<apex:define name="body" >
+
+				<section class="banner" style="background-image: url(http://placehold.it/2000x500);">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								 <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								 tempor incididunt ut labore et dolore magna aliqua.</h1>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 list">
+								<div class="item">
+									<i class="fa fa-users" />
+									<h2>8,564</h2>
+									<h5>Active Users</h5>
+								</div>
+								<div class="item">
+									<i class="fa fa-briefcase" />
+									<h2>8,564</h2>
+									<h5>Active Users</h5>
+								</div>
+								<div class="item">
+									<i class="fa fa-leaf" />
+									<h2>8,564</h2>
+									<h5>Active Users</h5>
+								</div>
+								<div class="item">
+									<i class="fa fa-tags" />
+									<h2>8,564</h2>
+									<h5>Active Users</h5>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<p><a href="#" class="btn btn-info">Button</a></p>
+						</div>
+					</div>
+				</section>
+	
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 text-banner">
+							<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt.</h3>
+							<p><a href="#" class="btn btn-info">Button</a></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6">
+							<section class="well">
+								<header>
+									<h2>Headers and Text</h2>
+								</header>
+								<h1>Header 1</h1>
+								<h2>Header 2</h2>
+								<h3>Header 3</h3>
+								<h4>Header 4</h4>
+								<h5>Header 5</h5>
+								<h6>Header 6</h6>
+								<p>Paragraph</p>
+								<p class="meta">Paragraph Meta</p>
+							</section>
+						</div>
+
+						<div class="col-xs-12 col-sm-6">
+							<section class="well">
+								<header>
+									<h2>Links</h2>
+								</header>
+								<p>
+									<div class="modal-wrapper">
+                                        <a href="#" class="create modal-link">
+                                            <i class="fa fa-plus" />
+                                            <span>Create New</span>
+                                        </a>
+                                        <div class="modal-container">
+                                        <div class="modal-inner">
+                                            <ul>
+                                                <li><a href="#">Sample</a></li>
+                                                <li><a href="#">Sample</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                </p>
+								<p><a href="#">A Link</a></p>
+								<p><a href="#" class="btn btn-default">Button</a></p>
+								<p><a href="#" class="btn btn-link">Button</a></p>
+								<p><a href="#" class="btn btn-primary">Button</a></p>
+								<p><a href="#" class="btn btn-primary-dark">Button</a></p>
+								<p><a href="#" class="btn btn-alt">Button</a></p>
+								<p><a href="#" class="btn btn-success">Button</a></p>
+								<p><a href="#" class="btn btn-info">Button</a></p>
+								<p><a href="#" class="btn btn-warning">Button</a></p>
+								<p><a href="#" class="btn btn-danger">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-primary">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-primary-dark">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-alt">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-success">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-info">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-warning">Button</a></p>
+								<p><a href="#" class="btn btn-reverse-danger">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-primary">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-primary-dark">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-alt">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-success">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-info">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-warning">Button</a></p>
+								<p><a href="#" class="btn btn-ghost-danger">Button</a></p>
+							</section>
+						</div>
+					</div>
+
+
+					<section class="well">
+						<header>
+							<h2>Alerts</h2>
+						</header>
+						<div class="alert alert-success">
+							<strong>Some text </strong>please contact administrator at <a href="#">Link</a>
+						</div>
+						<div class="alert alert-info">
+							<strong>Some text </strong>please contact administrator at <a href="#">Link</a>
+						</div>
+						<div class="alert alert-warning">
+							<strong>Some text </strong>please contact administrator at <a href="#">Link</a>
+						</div>
+						<div class="alert alert-danger">
+							<strong>Some text </strong>please contact administrator at <a href="#">Link</a>
+						</div>
+					</section>
+
+					<section class="well image-block">
+						<header>
+							<h2>Image Cards</h2>
+						</header>
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-md-6  col-no-padding">
+								<c:BabsonBlockImage title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+												proident, sunt in culpa qui officia deserunt mollit anim id est laborum." link="http://example.com"  imgSrc="http://placehold.it/600x300" isLarge="true"/>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="row">
+									<div class="col-xs-6 col-no-padding">
+										<c:BabsonBlockImage title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+												proident, sunt in culpa qui officia deserunt mollit anim id est laborum." link="http://example.com"  imgSrc="http://placehold.it/600x300" />
+									</div>
+									<div class="col-xs-6 col-no-padding">
+										<c:BabsonBlockDate title="Test Event" startDate="{!NOW()}" endDate="{!NOW()}"  imgSrc="http://placehold.it/600x300" city="Rochester" state="NY" link="http://example.com" />
+									</div>
+									<div class="col-xs-6 col-no-padding">
+										<c:BabsonBlockImage title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+												proident, sunt in culpa qui officia deserunt mollit anim id est laborum." link="http://example.com"  imgSrc="http://placehold.it/600x300" />
+									</div>
+									<div class="col-xs-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-blocklink-venture boxme" title="Full Title" metaTitle="" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+												proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Link="http://example.com"   />
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Full Cards</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockFull blockClass="babson-card-full-blue" title="Full Title That is Also Very Long Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockFull blockClass="babson-card-full-orange" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockFull blockClass="babson-card-full-yellow" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users" />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockFull blockClass="babson-card-full-gold" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockFull blockClass="babson-card-full-lightgreen" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users" />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockFull blockClass="babson-card-full-green"  title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+							</div>
+						</div>
+						
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Alt Blocks</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-gold" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-orange" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-yellow" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-green" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-lightgreen" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+						</div>
+					</section>
+
+
+					<section class="well">
+						<header>
+							<h2>Blocks</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-green" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-blue" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-gold" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-yellow" title="Full Title"  imgSrc="http://placehold.it/100x65" text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-gray" title="Full Title"  imgSrc="http://placehold.it/100x65" text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-teal" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-lightgreen" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+						</div>
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Assigned Blocks</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-contact" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-group" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-question" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-user" title="Full Title"  imgSrc="http://placehold.it/100x100" text="Some text which is not very long" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-backer" title="Full Title"  imgSrc="http://placehold.it/100x100" text="Some text which is not very long" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-job" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-venture" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-business" title="Full Title"  text="" btnLink="http://example.com" btnText="Button"   />
+							</div>
+						</div>
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Block Links</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-green" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-blue" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-gold" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-yellow" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-gray" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-teal" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-lightgreen" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="well">
+						<header>
+							<h2>Assigned Block Links</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-contact" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-group" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-question" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-user" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-backer" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-job" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-venture" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-blocklink-business" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+						</div>
+					</section>
+
+					<section class="well large-cards">
+						<header>
+							<h2>Cards with Images</h2>
+						</header>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-green margin-bottom" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-blue notch-tl  margin-bottom" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-lightgreen notch-tl margin-bottom" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-yellow notch-br margin-bottom" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-block-gold notch-br margin-bottom" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 margin-bottom">
+								<c:BabsonBlock blockClass="babson-block-gray margin-bottom" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc="http://placehold.it/100x100"  />
+							</div>
+						</div>
+					</section>
+
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<section class="well">
+								<header>
+									<h2>Color Cards</h2>
+								</header>
+
+								<div class="row row-no-margin">
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-green" title="Full Title" metaTitle="Meta Title" text="" btnExternal="true" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-gold" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-yellow" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-gray" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-teal" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-lightgreen" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-gold" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+								</div>
+							</section>
+						</div>
+
+						<div class="col-xs-12 col-md-6">
+							<section class="well">
+								<header>
+									<h2>Assigned Cards</h2>
+								</header>
+
+								<div class="row row-no-margin">
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-contact" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-group" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-question" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button" imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-user" title="Full Title" metaTitle="Meta Title" text="" btnLink="" btnText="" imgSrc="http://placehold.it/100x100"  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-backer" title="Full Title" metaTitle="Meta Title" text="" btnLink="" btnText="" imgSrc="http://placehold.it/100x100"  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-job" title="Full Title" metaTitle="Meta Title" text=""  btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-venture" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlock blockClass="babson-card-business" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<section class="well">
+								<header>
+									<h2>Color Card Links</h2>
+								</header>
+
+								<div class="row row-no-margin">
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-green" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-blue" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-gold" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-yellow" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-gray" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div  href="#" class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-teal" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-lightgreen" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+								</div>
+							</section>
+						</div>
+
+						<div class="col-xs-12 col-md-6">
+							<section class="well">
+								<header>
+									<h2>Assigned Card Links</h2>
+								</header>
+
+								<div class="row row-no-margin">
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-contact" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-group" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-question" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-user" title="Full Title" metaTitle="Meta Title" text=""  imgSrc="http://placehold.it/100x100"  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-backer" title="Full Title" metaTitle="Meta Title" text=""  imgSrc="http://placehold.it/100x100"  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-job" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-venture" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-no-padding">
+										<c:BabsonBlockLink blockClass="babson-cardlink-business" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<section class="well">
+						<header>
+							<h2>Alt Cards</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-green" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-lightgreen" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-blue" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-gold" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-gray" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-orange" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+
+						</div>
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Assigned Alt Cards</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-group" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-contact" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-question" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-user" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-backer" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-job" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-venture" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlock blockClass="babson-card-alt-business" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  btnLink="http://example.com"/>
+							</div>
+						</div>
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Alt Card Links</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-green" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-lightgreen" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-blue" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-gold" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-gray" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-orange" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+
+						</div>
+					</section>
+
+					<section class="well">
+						<header>
+							<h2>Assigned Alt Card Links</h2>
+						</header>
+
+						<div class="row row-no-margin">
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-group" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-contact" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-question" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-user" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-backer" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-job" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-venture" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4">
+								<c:BabsonBlockLink blockClass="babson-cardlink-alt-business" title="Full Title" metaTitle="Meta Title" text=""  imgSrc=""  link="http://example.com"/>
+							</div>
+						</div>
+					</section>
+
+
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<section class="well">
+								<header>
+									<h2>Notch List &amp; Notch List Alt</h2>
+								</header>
+
+								<div class="row row-no-margin">
+									<div class="col-xs-6  col-no-padding">
+										<div class="notch-list">
+											<c:BabsonBlock blockClass="notch babson-card-green" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-green" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-green" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-green" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-green" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+										</div>
+									</div>
+									<div class="col-xs-6 col-no-padding">
+										<div class="notch-list-alt">
+											<c:BabsonBlock blockClass="notch babson-card-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+											<c:BabsonBlock blockClass="notch babson-card-blue" title="Full Title" metaTitle="Meta Title" text="" btnLink="http://example.com" btnText="Button"  imgSrc=""  />
+										</div>
+									</div>
+								</div>
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</apex:define>
+	</apex:composition>			
+</apex:page>

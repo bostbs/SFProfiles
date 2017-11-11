@@ -1,0 +1,70 @@
+<apex:component layout="none">
+    <apex:attribute name="blockClass" type="String" description="Block Class" default="babson-block-gray" required="false" />
+    <apex:attribute name="imgSrc" type="String" description="Image Source" default="" required="false" />
+    <apex:attribute name="metaTitle" type="String" description="Meta Title" default="" required="false" />
+    <apex:attribute name="title" type="String" description="Title" default="" required="true" />
+    <apex:attribute name="imgLink" type="String" description="Image Link" default="" required="false" />
+    <apex:attribute name="subTitle" type="String" description="Sub Title" default="" required="false" />
+    <apex:attribute name="text" type="String" description="Text" default="" required="false" />
+    <apex:attribute name="btnLink" type="String" description="Button Link" default="" required="false" />
+    <apex:attribute name="btnText" type="String" description="Button Text" default="" required="false" />
+    <apex:attribute name="btnExternal" type="Boolean" description="External Link" default="false" required="false" />
+    <apex:attribute name="btnLink2" type="String" description="Button Link" default="" required="false" />
+    <apex:attribute name="btnText2" type="String" description="Button Text" default="" required="false" />
+    <apex:attribute name="btnExternal2" type="Boolean" description="External Link" default="false" required="false" />
+    <apex:attribute name="textIconClass" type="String" description="Text Icon Class" default="false" required="false" />
+
+    <div class="{!blockClass}"  style="height:187px;">
+        <!-- Use flex if an image is involved -->
+        <div class="inner {!IF(imgSrc == "", '', 'flex')}">
+            <!-- Optionally show an image -->
+            <apex:outputPanel layout="none" rendered="{!imgSrc != ''}">
+                <div class="image">
+                    <apex:outputPanel layout="none" rendered="{!imgLink != ''}">
+                        <a href="{!imgLink}"><img src="{!imgSrc}" /></a>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!imgLink == ''}">
+                        <img src="{!imgSrc}" />  
+                    </apex:outputPanel>
+                </div>
+            </apex:outputPanel>
+            
+            <div class="text">
+                <!-- Optionally show meta title -->
+                <apex:outputPanel layout="none" rendered="{!metaTitle != ''}">
+                    <h5>{!metaTitle}</h5>
+                </apex:outputPanel>
+                
+                <!-- Title is required -->
+                <h3>
+                    <apex:outputPanel layout="none" rendered="{!imgLink != ''}"><a href="{!imgLink}">{!title}</a></apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!imgLink == ''}">{!title}</apex:outputPanel>
+                </h3>
+
+                <!-- Optionally show sub title -->
+                <apex:outputPanel layout="none" rendered="{!subTitle != ''}">
+                    <h5>{!subTitle}</h5>
+                </apex:outputPanel>
+
+                <!-- Optionally show text -->
+                <apex:outputPanel layout="none" rendered="{!text != ''}">
+                    <p><apex:outputPanel layout="none" rendered="{!textIconClass != ''}"><i class="{!textIconClass}"></i>&nbsp;</apex:outputPanel>{!text}</p>
+                </apex:outputPanel>
+
+                
+
+                <!-- Optionally show button -->
+                <apex:outputPanel layout="none" rendered="{!btnLink != '' && btnText != ''}">
+                    <p><a href="{!btnLink}" class="btn">{!btnText}<apex:outputPanel layout="none" rendered="{!btnExternal == false}"></apex:outputPanel><apex:outputPanel layout="none" rendered="{!btnExternal}">&nbsp;<i class="fa fa-external-link"></i></apex:outputPanel></a>
+
+                    <!-- Show 2nd button -->
+                    <apex:outputPanel layout="none" rendered="{!btnLink2 != '' && btnText2 != ''}">
+                        <a href="{!btnLink2}" class="btn">{!btnText2}<apex:outputPanel layout="none" rendered="{!btnExternal2 == false}"></apex:outputPanel><apex:outputPanel layout="none" rendered="{!btnExternal2}">&nbsp;<i class="fa fa-external-link"></i></apex:outputPanel></a>
+                    </apex:outputPanel>
+
+                    </p>
+                </apex:outputPanel>
+            </div>
+        </div>
+    </div>
+</apex:component>

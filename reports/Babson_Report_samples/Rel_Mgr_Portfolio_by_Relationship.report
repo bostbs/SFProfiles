@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>fkc</joinTable>
+        </blockInfo>
+        <columns>
+            <field>CUST_NAME</field>
+        </columns>
+        <columns>
+            <field>FK_CNTC_FIRST_NAME</field>
+        </columns>
+        <columns>
+            <field>FK_NAME</field>
+        </columns>
+        <columns>
+            <field>hed__Relationship__c.hed__Type__c</field>
+        </columns>
+        <columns>
+            <field>hed__Relationship__c.hed__Relationship_Explanation__c</field>
+        </columns>
+        <format>Summary</format>
+        <name>Relationships with Contact block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntity$hed__Relationship__c@hed__Relationship__c.hed__Contact__c</reportType>
+        <scope>organization</scope>
+        <timeFrameFilter>
+            <dateColumn>CUST_CREATED_DATE</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>fkc</joinTable>
+        </blockInfo>
+        <columns>
+            <field>FK_CNTC_FIRST_NAME</field>
+        </columns>
+        <columns>
+            <field>FK_NAME</field>
+        </columns>
+        <columns>
+            <field>Engagement__c.ACF_Engagement_Type__c</field>
+        </columns>
+        <columns>
+            <field>Engagement__c.ACF_Engagement_Interests__c</field>
+        </columns>
+        <columns>
+            <field>CUST_NAME</field>
+        </columns>
+        <format>Summary</format>
+        <name>Engagements with Contact block 2</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntity$Engagement__c@Engagement__c.ACF_Contact__c</reportType>
+        <scope>organization</scope>
+        <timeFrameFilter>
+            <dateColumn>Engagement__c.ACF_Dean_s_Acknowledgement__c</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>fkc</joinTable>
+    </blockInfo>
+    <description>Report of RELATIONSHIPS between Babson relationship managers and organization contacts. Also has Contact Engagements.</description>
+    <format>MultiBlock</format>
+    <name>Rel. Mgr Portfolio by Relationship</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$hed__Relationship__c@hed__Relationship__c.hed__Contact__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

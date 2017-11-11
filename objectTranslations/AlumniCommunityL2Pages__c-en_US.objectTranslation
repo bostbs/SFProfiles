@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Career Services - Main header image that appears at top of the page, this custom setting sets the ID of the document of this image in Salesforce. --></help>
+        <label><!-- CS Splash Image --></label>
+        <name>CS_Splash_Image__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CS Tile 1 Block Color --></label>
+        <name>CS_Tile_1_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CS Tile 1 Button URL External --></label>
+        <name>CS_Tile_1_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CS Tile 1 Button URL --></label>
+        <name>CS_Tile_1_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CS Tile 1 Icon --></label>
+        <name>CS_Tile_1_Icon__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CS Tile 2 Block Color --></label>
+        <name>CS_Tile_2_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CS Tile 2 Button URL External --></label>
+        <name>CS_Tile_2_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CS Tile 2 Button URL --></label>
+        <name>CS_Tile_2_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CS Tile 2 Icon --></label>
+        <name>CS_Tile_2_Icon__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CS Tile 3 Block Color --></label>
+        <name>CS_Tile_3_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CS Tile 3 Button URL External --></label>
+        <name>CS_Tile_3_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CS Tile 3 Button URL --></label>
+        <name>CS_Tile_3_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CS Tile 3 Icon --></label>
+        <name>CS_Tile_3_Icon__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CS Tile 4 Block Color --></label>
+        <name>CS_Tile_4_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CS Tile 4 Button URL External --></label>
+        <name>CS_Tile_4_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CS Tile 4 Button URL --></label>
+        <name>CS_Tile_4_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CS Tile 4 Icon --></label>
+        <name>CS_Tile_4_Icon__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CS Tile 5 Block Color --></label>
+        <name>CS_Tile_5_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CS Tile 5 Button URL External --></label>
+        <name>CS_Tile_5_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CS Tile 5 Button URL --></label>
+        <name>CS_Tile_5_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CS Tile 5 Icon --></label>
+        <name>CS_Tile_5_Icon__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CS Tile 6 Block Color --></label>
+        <name>CS_Tile_6_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CS Tile 6 Button URL External --></label>
+        <name>CS_Tile_6_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CS Tile 6 Button URL --></label>
+        <name>CS_Tile_6_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Career Services - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CS Tile 6 Icon --></label>
+        <name>CS_Tile_6_Icon__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 7 Block Color --></label>
+        <name>CS_Tile_7_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 7 Button URL External --></label>
+        <name>CS_Tile_7_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 7 Button URL --></label>
+        <name>CS_Tile_7_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 7 Icon --></label>
+        <name>CS_Tile_7_Icon__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 8 Block Color --></label>
+        <name>CS_Tile_8_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 8 Button URL External --></label>
+        <name>CS_Tile_8_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 8 Button URL --></label>
+        <name>CS_Tile_8_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 8 Icon --></label>
+        <name>CS_Tile_8_Icon__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 9 Block Color --></label>
+        <name>CS_Tile_9_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 9 Button URL External --></label>
+        <name>CS_Tile_9_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 9 Button URL --></label>
+        <name>CS_Tile_9_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CS Tile 9 Icon --></label>
+        <name>CS_Tile_9_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - Main header image that appears at top of the page, this custom setting sets the ID of the document of this image in Salesforce. --></help>
+        <label><!-- CWA Splash Image --></label>
+        <name>CWA_Splash_Image__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWA Tile 1 Block Color --></label>
+        <name>CWA_Tile_1_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWA Tile 1 Button URL External --></label>
+        <name>CWA_Tile_1_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWA Tile 1 Button URL --></label>
+        <name>CWA_Tile_1_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWA Tile 1 Icon --></label>
+        <name>CWA_Tile_1_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWA Tile 2 Block Color --></label>
+        <name>CWA_Tile_2_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWA Tile 2 Button URL External --></label>
+        <name>CWA_Tile_2_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWA Tile 2 Button URL --></label>
+        <name>CWA_Tile_2_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWA Tile 2 Icon --></label>
+        <name>CWA_Tile_2_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWA Tile 3 Block Color --></label>
+        <name>CWA_Tile_3_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWA Tile 3 Button URL External --></label>
+        <name>CWA_Tile_3_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWA Tile 3 Button URL --></label>
+        <name>CWA_Tile_3_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWA Tile 3 Icon --></label>
+        <name>CWA_Tile_3_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWA Tile 4 Block Color --></label>
+        <name>CWA_Tile_4_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWA Tile 4 Button URL External --></label>
+        <name>CWA_Tile_4_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWA Tile 4 Button URL --></label>
+        <name>CWA_Tile_4_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWA Tile 4 Icon --></label>
+        <name>CWA_Tile_4_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWA Tile 5 Block Color --></label>
+        <name>CWA_Tile_5_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWA Tile 5 Button URL External --></label>
+        <name>CWA_Tile_5_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWA Tile 5 Button URL --></label>
+        <name>CWA_Tile_5_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWA Tile 5 Icon --></label>
+        <name>CWA_Tile_5_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWA Tile 6 Block Color --></label>
+        <name>CWA_Tile_6_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWA Tile 6 Button URL External --></label>
+        <name>CWA_Tile_6_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWA Tile 6 Button URL --></label>
+        <name>CWA_Tile_6_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Alumni - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWA Tile 6 Icon --></label>
+        <name>CWA_Tile_6_Icon__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 7 Block Color --></label>
+        <name>CWA_Tile_7_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 7 Button URL External --></label>
+        <name>CWA_Tile_7_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 7 Button URL --></label>
+        <name>CWA_Tile_7_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 7 Icon --></label>
+        <name>CWA_Tile_7_Icon__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 8 Block Color --></label>
+        <name>CWA_Tile_8_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 8 Button URL External --></label>
+        <name>CWA_Tile_8_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 8 Button URL --></label>
+        <name>CWA_Tile_8_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 8 Icon --></label>
+        <name>CWA_Tile_8_Icon__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 9 Block Color --></label>
+        <name>CWA_Tile_9_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 9 Button URL External --></label>
+        <name>CWA_Tile_9_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 9 Button URL --></label>
+        <name>CWA_Tile_9_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CWA Tile 9 Icon --></label>
+        <name>CWA_Tile_9_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - Main header image that appears at top of the page, this custom setting sets the ID of the document of this image in Salesforce. --></help>
+        <label><!-- CWB Splash Image --></label>
+        <name>CWB_Splash_Image__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWB Tile 1 Block Color --></label>
+        <name>CWB_Tile_1_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWB Tile 1 Button URL External --></label>
+        <name>CWB_Tile_1_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWB Tile 1 Button URL --></label>
+        <name>CWB_Tile_1_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWB Tile 1 Icon --></label>
+        <name>CWB_Tile_1_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWB Tile 2 Block Color --></label>
+        <name>CWB_Tile_2_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWB Tile 2 Button URL External --></label>
+        <name>CWB_Tile_2_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWB Tile 2 Button URL --></label>
+        <name>CWB_Tile_2_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWB Tile 2 Icon --></label>
+        <name>CWB_Tile_2_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWB Tile 3 Block Color --></label>
+        <name>CWB_Tile_3_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWB Tile 3 Button URL External --></label>
+        <name>CWB_Tile_3_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWB Tile 3 Button URL --></label>
+        <name>CWB_Tile_3_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWB Tile 3 Icon --></label>
+        <name>CWB_Tile_3_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWB Tile 4 Block Color --></label>
+        <name>CWB_Tile_4_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWB Tile 4 Button URL External --></label>
+        <name>CWB_Tile_4_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWB Tile 4 Button URL --></label>
+        <name>CWB_Tile_4_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWB Tile 4 Icon --></label>
+        <name>CWB_Tile_4_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWB Tile 5 Block Color --></label>
+        <name>CWB_Tile_5_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWB Tile 5 Button URL External --></label>
+        <name>CWB_Tile_5_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWB Tile 5 Button URL --></label>
+        <name>CWB_Tile_5_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWB Tile 5 Icon --></label>
+        <name>CWB_Tile_5_Icon__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- CWB Tile 6 Block Color --></label>
+        <name>CWB_Tile_6_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- CWB Tile 6 Button URL External --></label>
+        <name>CWB_Tile_6_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- CWB Tile 6 Button URL --></label>
+        <name>CWB_Tile_6_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Connect With Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- CWB Tile 6 Icon --></label>
+        <name>CWB_Tile_6_Icon__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 7 Block Color --></label>
+        <name>CWB_Tile_7_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 7 Button URL External --></label>
+        <name>CWB_Tile_7_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 7 Button URL --></label>
+        <name>CWB_Tile_7_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 7 Icon --></label>
+        <name>CWB_Tile_7_Icon__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 8 Block Color --></label>
+        <name>CWB_Tile_8_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 8 Button URL External --></label>
+        <name>CWB_Tile_8_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 8 Button URL --></label>
+        <name>CWB_Tile_8_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 8 Icon --></label>
+        <name>CWB_Tile_8_Icon__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 9 Block Color --></label>
+        <name>CWB_Tile_9_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 9 Button URL External --></label>
+        <name>CWB_Tile_9_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 9 Button URL --></label>
+        <name>CWB_Tile_9_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- CWB Tile 9 Icon --></label>
+        <name>CWB_Tile_9_Icon__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - Main header image that appears at top of the page, this custom setting sets the ID of the document of this image in Salesforce. --></help>
+        <label><!-- GI Splash Image --></label>
+        <name>GI_Splash_Image__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GI Tile 1 Block Color --></label>
+        <name>GI_Tile_1_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GI Tile 1 Button URL External --></label>
+        <name>GI_Tile_1_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GI Tile 1 Button URL --></label>
+        <name>GI_Tile_1_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GI Tile 1 Icon --></label>
+        <name>GI_Tile_1_Icon__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GI Tile 2 Block Color --></label>
+        <name>GI_Tile_2_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GI Tile 2 Button URL External --></label>
+        <name>GI_Tile_2_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GI Tile 2 Button URL --></label>
+        <name>GI_Tile_2_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GI Tile 2 Icon --></label>
+        <name>GI_Tile_2_Icon__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GI Tile 3 Block Color --></label>
+        <name>GI_Tile_3_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GI Tile 3 Button URL External --></label>
+        <name>GI_Tile_3_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GI Tile 3 Button URL --></label>
+        <name>GI_Tile_3_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GI Tile 3 Icon --></label>
+        <name>GI_Tile_3_Icon__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GI Tile 4 Block Color --></label>
+        <name>GI_Tile_4_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GI Tile 4 Button URL External --></label>
+        <name>GI_Tile_4_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GI Tile 4 Button URL --></label>
+        <name>GI_Tile_4_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GI Tile 4 Icon --></label>
+        <name>GI_Tile_4_Icon__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GI Tile 5 Block Color --></label>
+        <name>GI_Tile_5_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GI Tile 5 Button URL External --></label>
+        <name>GI_Tile_5_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GI Tile 5 Button URL --></label>
+        <name>GI_Tile_5_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GI Tile 5 Icon --></label>
+        <name>GI_Tile_5_Icon__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GI Tile 6 Block Color --></label>
+        <name>GI_Tile_6_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GI Tile 6 Button URL External --></label>
+        <name>GI_Tile_6_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GI Tile 6 Button URL --></label>
+        <name>GI_Tile_6_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Get Involved - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GI Tile 6 Icon --></label>
+        <name>GI_Tile_6_Icon__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 7 Block Color --></label>
+        <name>GI_Tile_7_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 7 Button URL External --></label>
+        <name>GI_Tile_7_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 7 Button URL --></label>
+        <name>GI_Tile_7_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 7 Icon --></label>
+        <name>GI_Tile_7_Icon__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 8 Block Color --></label>
+        <name>GI_Tile_8_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 8 Button URL External --></label>
+        <name>GI_Tile_8_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 8 Button URL --></label>
+        <name>GI_Tile_8_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 8 Icon --></label>
+        <name>GI_Tile_8_Icon__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 9 Block Color --></label>
+        <name>GI_Tile_9_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 9 Button URL External --></label>
+        <name>GI_Tile_9_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 9 Button URL --></label>
+        <name>GI_Tile_9_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- GI Tile 9 Icon --></label>
+        <name>GI_Tile_9_Icon__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - Main header image that appears at top of the page, this custom setting sets the ID of the document of this image in Salesforce. --></help>
+        <label><!-- GTB Splash Image --></label>
+        <name>GTB_Splash_Image__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GTB Tile 1 Block Color --></label>
+        <name>GTB_Tile_1_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GTB Tile 1 Button URL External --></label>
+        <name>GTB_Tile_1_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GTB Tile 1 Button URL --></label>
+        <name>GTB_Tile_1_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GTB Tile 1 Icon --></label>
+        <name>GTB_Tile_1_Icon__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GTB Tile 2 Block Color --></label>
+        <name>GTB_Tile_2_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GTB Tile 2 Button URL External --></label>
+        <name>GTB_Tile_2_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GTB Tile 2 Button URL --></label>
+        <name>GTB_Tile_2_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GTB Tile 2 Icon --></label>
+        <name>GTB_Tile_2_Icon__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GTB Tile 3 Block Color --></label>
+        <name>GTB_Tile_3_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GTB Tile 3 Button URL External --></label>
+        <name>GTB_Tile_3_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GTB Tile 3 Button URL --></label>
+        <name>GTB_Tile_3_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GTB Tile 3 Icon --></label>
+        <name>GTB_Tile_3_Icon__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GTB Tile 4 Block Color --></label>
+        <name>GTB_Tile_4_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GTB Tile 4 Button URL External --></label>
+        <name>GTB_Tile_4_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GTB Tile 4 Button URL --></label>
+        <name>GTB_Tile_4_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GTB Tile 4 Icon --></label>
+        <name>GTB_Tile_4_Icon__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GTB Tile 5 Block Color --></label>
+        <name>GTB_Tile_5_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GTB Tile 5 Button URL External --></label>
+        <name>GTB_Tile_5_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GTB Tile 5 Button URL --></label>
+        <name>GTB_Tile_5_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GTB Tile 5 Icon --></label>
+        <name>GTB_Tile_5_Icon__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page,this custom setting sets the color of the button, icon and header in the n&apos;th tile. See field description for options. --></help>
+        <label><!-- GTB Tile 6 Block Color --></label>
+        <name>GTB_Tile_6_Block_Color__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting determines if the URL is external from the community of that button in the n&apos;th tile. Checked=External Link. Unchecked=Internal --></help>
+        <label><!-- GTB Tile 6 Button URL External --></label>
+        <name>GTB_Tile_6_Button_URL_External__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with a button in the bottom of it, this custom setting sets the destination URL of that button in the n&apos;th tile. --></help>
+        <label><!-- GTB Tile 6 Button URL --></label>
+        <name>GTB_Tile_6_Button_URL__c</name>
+    </fields><fields>
+        <help><!-- Give To Babson - There are a total of 6 tiles on this page, each with an icon on it, this custom setting determines the Font Awesome icon in the n&apos;th tile. Ex. fa fa-users --></help>
+        <label><!-- GTB Tile 6 Icon --></label>
+        <name>GTB_Tile_6_Icon__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 7 Block Color --></label>
+        <name>GTB_Tile_7_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 7 Button URL External --></label>
+        <name>GTB_Tile_7_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 7 Button URL --></label>
+        <name>GTB_Tile_7_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 7 Icon --></label>
+        <name>GTB_Tile_7_Icon__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 8 Block Color --></label>
+        <name>GTB_Tile_8_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 8 Button URL External --></label>
+        <name>GTB_Tile_8_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 8 Button URL --></label>
+        <name>GTB_Tile_8_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 8 Icon --></label>
+        <name>GTB_Tile_8_Icon__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 9 Block Color --></label>
+        <name>GTB_Tile_9_Block_Color__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 9 Button URL External --></label>
+        <name>GTB_Tile_9_Button_URL_External__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 9 Button URL --></label>
+        <name>GTB_Tile_9_Button_URL__c</name>
+    </fields><fields>
+        <label><!-- GTB Tile 9 Icon --></label>
+        <name>GTB_Tile_9_Icon__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Alumni Community L2 Pages</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Alumni Community L2 Pages</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

@@ -1,0 +1,644 @@
+<apex:page showHeader="false" 
+            sidebar="false" 
+            standardStylesheets="false" 
+            applyHtmlTag="false" 
+            applyBodyTag="false" 
+            docType="html-5.0" 
+            controller="BabsonPeopleController"   id="page"
+            >
+    <script>
+        function fetchdata(value){
+            if(value.length!=0){
+                processing();
+                adVSearch();
+            }
+        }
+        function filterResult(e,value){       
+        
+            if(e.keyCode == 13 && value.length!=0){
+                processing();
+                adVSearch();
+            }
+        
+        }
+        function doResize() {
+            $(window).trigger('resize');
+        }
+      
+      window.onload = function(){
+        
+         document.getElementById('messageCotainer').style.display='none';
+      }
+      function processing(){
+        document.getElementById('divProcessing').style.display = 'block';
+        //(function(){ document.getElementById('divProcessing').style.display = 'none'; }, 2000);
+     }
+     function processingStop(){
+        document.getElementById('divProcessing').style.display = 'none';
+        //(function(){ document.getElementById('divProcessing').style.display = 'none'; }, 2000);
+     }
+     function searchUser(value){
+          if(value.checked == true){
+              processing();
+              adVSearch();
+              
+          }    
+     }
+      
+
+     </script>
+    <style>
+        .chosen-container chosen-container-single chosen-container-single-nosearch{
+            width : 25%; !important;
+        }
+         .Processing
+        {
+           .position: fixed;
+            background-color: white;
+            background: url('/img/loading32.gif') no-repeat;
+            background-repeat: no-;
+            background-position: center;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            z-index: 1004;
+            left: 0%;
+            top: 0%;
+        }
+    </style>
+    
+    <apex:composition template="{!$Site.Template}">
+            <apex:define name="pagetitle">{!$Label.BAB_People_Title}</apex:define>
+            
+            <apex:define name="body" > 
+
+                    <!-- Page Heading -->
+                   <!-- <c:BabsonPageHeader title="{!$Label.BAB_People_Header}" subtitle="" text="{!$Label.BAB_People_Header_Body}" showActions="false" btnText="" btnLink="" />-->
+               
+               <head>
+                  
+              <!--  <apex:stylesheet value="{!URLFOR($Resource.bootStrap, 'bootStrap.css')}"/>
+                <apex:stylesheet value="{!URLFOR($Resource.style, 'style.css')}"/>  -->        
+               </head>
+                    <!-- Main Content -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <apex:form >
+                                        
+                                        
+                                        <apex:actionFunction action="{!adVancedSerach}" name="adVSearch" reRender="paginationTop,peopleList,paginationBottom" oncomplete="doResize();processingStop();"></apex:actionFunction> 
+                                        <nav class="navbar navbar-default filter-row">
+                                            <apex:variable var="filterMode" value="partial" />
+                                         
+                            
+                                            <apex:outputPanel rendered="{!filterMode == 'partial'}">
+                                                <div class="filter-section " role="form">
+                                                    <div class="container-fluid">
+                                                    <div class="col-sm-12">
+                                                    <h3 class="color_green">
+                                                        <strong>Search the Babson Directory</strong>
+                                                    </h3>
+                                                    <p>{!$Label.BD_Search_Help_Text}</p> 
+                                                    
+                                                </div>
+                                                        <div class="row margin-top-sm margin-bottom-sm">
+                                                        
+                                                            <div class="col-xs-12">
+                                                                 <table width="100%"  border="0">
+                                                                  <!--   <tr>
+                                                                         <td colspan="3">
+                                                                               <br/>
+                                                                               <h3 class="color_green"  style="font-size: 16px">
+                                                                                   <strong>QUICK SEARCH</strong>
+                                                                               </h3>
+                                                                               <apex:inputText value="{!SearchString}" styleClass="form-control" html-placeholder="Search... "   style="width:30%;"   onkeypress="filterResult(event,this.value)"/>
+                                                                         </td>
+                                                                         
+                                                                     </tr>
+                                                                     <tr>
+                                                                         <td colspan="3">  
+                                                                              <div class="row margin-top-sm margin-bottom-sm">                                        
+                                                                                    <div class="col-xs-12 col-sm-4 col-md-3">
+                                                                                        <a href="javascript:void(0)" class="btn btn-alt lg" onclick="fetchdata(this.value); return false;">Search</a>
+                                                                                    </div>
+                                                                               </div>
+                                                                         </td>
+                                                                     </tr> -->
+                                                                     <tr>                                                                         
+                                                                         <td >
+                                                                             <br/>
+                                                                             <apex:inputCheckbox value="{!bVentureBacker}" ></apex:inputCheckbox>&nbsp;{!$Label.BAB_People_Filter_Venture}
+                                                                              &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                                                                     
+                                                                             <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}">
+                                                                                 <apex:inputCheckbox value="{!following}" ></apex:inputCheckbox>&nbsp;Only people I follow
+                                                                             </apex:outputPanel>                                                                     
+                                                                         </td>  
+                                                                         <td colspan="2">
+                                                                         </td> 
+                                                                    </tr>
+                                                                 </table>
+                                                            </div>
+                                                        </div>                                                     
+                                                        
+                                                        <div class="col-xs-12">
+                                                            <table width="100%"  border="0">
+                                                              <!--  <tr>
+                                                                    <td colspan="3">  
+                                                                        <h3 class="color_green"  style="font-size: 16px">
+                                                                            <strong>ADVANCED SEARCH</strong>
+                                                                        </h3>
+                                                                        <p>{!$Label.BD_Advance_Search_Help_Text}</p>
+                                                                    </td>         
+                                                                </tr> -->
+                                                                <tr>
+                                                                    <td colspan="3">
+                                                                          <br/>
+                                                                          <apex:outputText style="font-size: 16px">
+                                                                              <strong><h3 style="font-weight: bold; color: black;font-size: 18px;">Search by Name</h3></strong> 
+                                                                          </apex:outputText>      
+                                                                    </td>
+                                                                </tr>          
+                                                           </table>
+                                                       </div>
+                                                       
+                                                        
+                                                        <div class="row">        
+                                                                                                               
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">                                                                                                                                
+                                                                <label>First Name</label>                                                                
+                                                                <apex:inputText value="{!strFname}" styleClass="form-control" onkeypress="filterResult(event,this.value)"/>
+                                                           </div>
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Last Name</label>
+                                                                <apex:inputText value="{!strLname}" styleClass="form-control" onkeypress="filterResult(event,this.value)"/>
+                                                           </div>
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Maiden/Former Name</label>
+                                                                <apex:inputText value="{!strMname}" styleClass="form-control" onkeypress="filterResult(event,this.value)"/>                                                              
+                                                           </div>
+                                                       </div>
+                                                      
+                                           <!--             <div class="col-xs-12">
+                                                            <table width="100%"  border="0">
+                                                                <tr>
+                                                                    <td colspan="3">  
+                                                                        <br/>
+                                                                        <apex:outputText style="font-size: 15px">
+                                                                            <strong><h3 style="font-weight: bold; color: black; font-size: 18px;">Search by Home Town</h3></strong> 
+                                                                        </apex:outputText>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="row">                                                              
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home Town</label>
+                                                                <apex:inputText value="{!strHomeTown}" styleClass="form-control" html-placeholder="" onkeypress="filterResult(event,this.value)"/>
+                                                           </div> 
+                                                       </div>
+                                                -->
+                                                       
+                                                       <div class="col-xs-12">
+                                                           <table width="100%"  border="0">
+                                                               <tr>
+                                                                   <td colspan="3">  
+                                                                       <br/>
+                                                                       <apex:outputText style="font-size: 16px">
+                                                                           <strong><h3 style="font-weight: bold; color: black; font-size: 18px;">Search by Location</h3></strong> 
+                                                                       </apex:outputText>      
+                                                                   </td>
+                                                                </tr>                                                                  
+                                                           </table>                                                              
+                                                       </div>
+                                                       
+                                                       <div class="row">                                                              
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home City</label>
+                                                                <apex:inputText value="{!strHomeCity}" styleClass="form-control" html-placeholder="" onkeypress="filterResult(event,this.value)"/>
+                                                           </div>                                                           
+                                                  
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home State</label>
+                                                                 <apex:selectList styleClass="form-control"  size="1" value="{!strHomeState}" id="statePL" >
+                                                                        <apex:selectOptions value="{!HomeState}"/>
+                                                                  </apex:selectList>                                                                                                                             
+                                                           </div>
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home Country</label>                                                               
+                                                                <apex:selectList styleClass="form-control"  size="1" value="{!strHomeCountry}" >
+                                                                    <apex:actionSupport event="onchange" action="{!filterStates}" rerender="statePL"/>
+                                                                        <apex:selectOptions value="{!HomeCountry}"/>
+                                                                </apex:selectList>
+                                                           </div>
+                                                       </div>
+                                                                                                             
+                                                       <div class="col-xs-12">
+                                                           <table width="100%"  border="0">                                                            
+                                                               <tr>
+                                                                   <td colspan="3">  
+                                                                       <br/>
+                                                                       <apex:outputText style="font-size: 16px">
+                                                                           <strong><h3 style="font-weight: bold; color: black; font-size: 18px;">Search by Employment</h3></strong> 
+                                                                       </apex:outputText>      
+                                                                   </td>
+                                                               </tr>                                                                     
+                                                           </table>                                                              
+                                                       </div>
+                                                            
+                                                       <div class="row">                                                              
+                                                    
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                               <label>Company Name</label>
+                                                               <apex:inputText value="{!strCompany}" styleClass="form-control" onkeypress="filterResult(event,this.value)"/>                                                         
+                                                           </div>
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Business City</label>
+                                                                <apex:inputText value="{!strCity}" styleClass="form-control" html-placeholder="" onkeypress="filterResult(event,this.value)"/>
+                                                            </div>
+                                                           
+                                                            <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>{!$Label.BAB_People_Filter_Business_State}</label>
+                                                                <apex:selectList styleClass="form-control"  size="1" id="businessVal" value="{!strBusinessState}" >
+                                                                    <apex:selectOptions value="{!businessState}"/>
+                                                                </apex:selectList>
+                                                            </div>
+                                                            
+                                                            <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>{!$Label.BAB_People_Filter_Business_Country}</label>
+                                                                <apex:selectList styleClass="form-control"  size="1" value="{!strBusinessCountry}">
+                                                                    <apex:actionSupport event="onchange" action="{!filterBusinessStates}" rerender="businessVal"/>
+                                                                    <apex:selectOptions value="{!businessCountry}"/>
+                                                                </apex:selectList>
+                                                                <strong><h3 style="font-weight: bold; color: black; font-size: 10px;"></h3></strong>
+                                                                
+                                                            </div> 
+                                                       </div>
+                                                       
+                                                       <div class="row">
+                                                       
+                                                      <!--     <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home City</label>
+                                                                <apex:inputText value="{!strHomeCity}" styleClass="form-control" html-placeholder="" onkeypress="filterResult(event)"/>
+                                                           </div>                                                           
+                                                  
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home State</label>
+                                                                 <apex:selectList styleClass="form-control"  size="1" value="{!strHomeState}" onchange="fetchdata()">
+                                                                        <apex:selectOptions value="{!HomeState}"/>
+                                                                  </apex:selectList>                                                                                                                             
+                                                           </div>
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Home Country</label>                                                               
+                                                                <apex:selectList styleClass="form-control"  size="1" value="{!strHomeCountry}" onchange="fetchdata()">
+                                                                    <apex:selectOptions value="{!HomeCountry}"/>
+                                                                </apex:selectList>
+                                                           </div>-->
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                               <label>Job Title</label>
+                                                               <apex:inputText value="{!title}" styleClass="form-control" onkeypress="filterResult(event)"/>                                                                                                                          
+                                                           </div>
+                                                            
+                                                            <div  class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>{!$Label.BAB_People_Filter_Job_Function}</label>
+                                                                    <apex:selectList styleClass="form-control"  size="1" value="{!strJobFunction}">                                                             
+                                                                        <apex:selectOptions value="{!AdvJobFunction}"/>
+                                                                    </apex:selectList>                                       
+                                                            </div>
+
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                <label>Industry</label>
+                                                                 <apex:selectList styleClass="chosen"  size="1" value="{!strArrayIndustry}"   multiselect="true" html-data-placeholder="None">
+                                                                    <apex:selectOptions value="{!industry}"/>
+                                                                </apex:selectList>
+                                                                <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>                                                                                                                                                                                          
+                                                           </div>
+                                                       </div>
+                                                       
+                                                       <div class="col-xs-12">
+                                                           <table width="100%"  border="0">
+                                                               <tr>
+                                                                   <td colspan="3">  
+                                                                       <br/>
+                                                                       <apex:outputText style="font-size: 16px">
+                                                                           <strong><h3 style="font-weight: bold; color: black; font-size: 18px;">Search by Babson Degree Information</h3></strong> 
+                                                                       </apex:outputText>      
+                                                                   </td>
+                                                               </tr>                                                                     
+                                                           </table>                                                              
+                                                       </div>
+                                                            
+                                                       <div class="row">                                                              
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                               <label>Graduate Degree Year</label>
+                                                                   <apex:selectList styleClass="chosen"  size="1" value="{!strArrayGraduateYear}"   multiselect="true"  html-data-placeholder="None"  style="font-size:14px;!important;">
+                                                                       <apex:selectOptions value="{!graduateYear}"/>
+                                                                   </apex:selectList>
+                                                                   <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>
+                                                           </div>
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                               <label>Undergrad Degree Year</label>
+                                                                   <apex:selectList styleClass="chosen"  size="1" value="{!strArrayUnderGraduateYear}"   multiselect="true"  html-data-placeholder="None"  style="font-size:14px;!important;">
+                                                                       <apex:selectOptions value="{!graduateYear}"/>
+                                                                   </apex:selectList>
+                                                                   <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>
+                                                           </div>
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                               <label>Certificate Year</label>
+                                                                   <apex:selectList styleClass="chosen"  size="1" value="{!strArrayCertificationYear}"   multiselect="true"  html-data-placeholder="None"  style="font-size:14px;!important;">
+                                                                       <apex:selectOptions value="{!graduateYear}"/>
+                                                                   </apex:selectList>
+                                                                   <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>
+                                                           </div>                                                       
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                 <label>{!$Label.BAB_People_Filter_Degree}</label>                                                                
+                                                                 <apex:selectList styleClass="chosen"  size="1" value="{!strArraydegree}"  multiselect="true"  html-data-placeholder="None">
+                                                                    <apex:selectOptions value="{!Degrees}"/>
+                                                                 </apex:selectList>
+                                                                 <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>                                                                                                                       
+                                                           </div>                                                           
+                                                       </div>                                            
+                                                       
+                                                       <div class="row"> 
+                                                           
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                                 <label>{!$Label.BAB_People_Filter_Program}</label>
+                                                                 <apex:selectList styleClass="chosen"  size="1" value="{!strArrayPrograme}"  multiselect="true"  html-data-placeholder="None">
+                                                                     <apex:selectOptions value="{!Programe}"/>
+                                                                 </apex:selectList>
+                                                                 <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>
+                                                           </div>  
+                                                       </div>
+                                                       
+                                                       <div class="col-xs-12">
+                                                           <table width="100%"  border="0">
+                                                               <tr>
+                                                                   <td colspan="3">  
+                                                                       <br/>
+                                                                       <apex:outputText style="font-size: 16px">
+                                                                           <strong><h3 style="font-weight: bold; color: black; font-size: 18px;">Search by Constituent Type (e.g. Alumni, Student, Parent, Faculty)</h3></strong> 
+                                                                       </apex:outputText>      
+                                                                   </td>
+                                                               </tr>
+                                                           </table>                                                              
+                                                       </div>
+                                                            
+                                                       <div class="row">        
+                                                           <div class="col-xs-3 col-sm-4 col-md-3">
+                                                               <label>Constituency</label>
+                                                               <apex:selectList styleClass="chosen" size="4" value="{!strArrayConstituency}"  multiselect="true" html-data-placeholder="None">
+                                                                   <apex:selectOptions value="{!Constituency}"/>
+                                                               </apex:selectList>
+                                                               <strong><h3 style="font-weight: bold; color: black; font-size: 12px;">&nbsp;Choose Multiple options from this list</h3></strong>
+                                                           </div>
+                                                       </div>
+                                                       
+                                                       <div class="row margin-top-sm margin-bottom-sm">                                        
+                                                           <div class="col-xs-12 col-sm-4 col-md-3">
+                                                               <a href="javascript:void(0)" class="btn btn-alt lg" onclick="searchValue(); return false;">Search</a>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                </div>
+                                            </apex:outputPanel>
+                                            
+
+                                            <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                <div class="pagination-wrapper pull-right hidden-xs hidden-sm" style="{!IF(iscalledOnload==false, '', 'display:none;')}">
+                                                    <apex:outputPanel id="paginationTop"  rendered="{!NOT(ListOfUsers.size == 0)}">
+                                                        <div class="form-inline pull-left" role="form">
+                                                            <div class="form-group">
+                                                                <label for="pageInputAbove">Page</label>
+                                                                <input type="text" class="form-control input-sm" id="pageInputAbove" name="page" value="{!pageNumber}" onchange="goToPage(this.value);onScreenResize(determineBreakpoint());" />
+                                                            </div>
+                                                            <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                                        </div>
+                                                        <ul class="pagination pagination-sm pull-right hidden-xs">
+                                                            <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                                <li>
+                                                                    <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-primary" rerender="peopleList,paginationTop,paginationBottom" status="rerenderPeople" oncomplete="doResize()"></apex:commandLink>
+                                                                </li>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                                <li>
+                                                                    <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-primary" rerender="peopleList,paginationTop,paginationBottom" status="rerenderPeople" oncomplete="doResize()"></apex:commandLink>
+                                                                </li>
+                                                            </apex:outputPanel>
+                                                        </ul>
+                                                        <apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="peopleList,paginationTop,paginationBottom" >
+                                                            <apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+                                                        </apex:actionFunction>
+                                                    </apex:outputPanel>
+                                                </div>
+                                            </div>
+                                            <!-- /.navbar-collapse -->
+                                        </nav>
+                                        
+                                   
+                                    <apex:outputPanel id="peopleList"  >
+                                        <span  id="messageCotainer">
+                                            <apex:outputPanel layout="none" rendered="{!ListOfUsers.size == 0}">
+                                                <div class="alert alert-success fade in" role="alert">
+                                                    <button type="button" class="close" data-dismiss="alert">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        <span class="sr-only">Close</span>
+                                                    </button>
+                                                    <p>No Results</p>
+                                                </div>
+                                            </apex:outputPanel>
+                                            </span >
+                                        <ul class="people-list row" style="{!IF(iscalledOnload==false, '', 'display:none;')}">
+                                       
+                                            <apex:repeat value="{!ListOfUsers}" var="rec">
+                                         
+                                                <!--<li class="col-sm-6 col-md-4 person-column">-->
+                                                <li class="col-sm-6 col-md-4 person-column" style="{!IF(rec.u.contact.Name==null, 'display:none;', 'display:block;')};height:auto;">
+                                                    <!--<div class="person clearfix margin-bottom">-->
+                                                    <div class="person clearfix" style="align-items:initial;margin-bottom: 25px;">
+                                                        <div class="image"  style="{!IF(rec.u.contact.Name==null, 'display:none;', 'display:block;')}">
+                                                            <a href="{!$Page.MyProfilePage}?userid={!rec.u.id}">
+                                                                <img src="{!rec.u.SmallPhotoUrl}" alt="rec.u.contact.Name"  />
+                                                            </a>                                                                                                                      
+                                                        </div>
+                                                         
+                                                        <div class="text" style="{!IF(rec.u.contact.Name==null, 'display:none;', 'display:block;')}">
+                                                            <table width="100%" border="0"  style="height:155px;max-height: 155px;"  cellpadding="0" cellspacing="0">
+                                                            
+                                                                <tr>
+                                                                    <td  colspan="2">                                                                         
+                                                                           <h3> 
+                                                                               <a href="{!$Page.MyProfilePage}?userid={!rec.u.id}" style="font-size: 16px;">{!rec.u.contact.Name}</a>
+                                                                           </h3>                                                                          
+                                                                           {!rec.u.contact.Affiliation_Display_Name__c}
+                                                                      </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                    <td  colspan="2">
+                                                                          <div class="chatter-follow  float-left" style="margin-left:0px"><chatter:follow entityId="{!rec.u.id}" /></div>
+                                                                      </td>
+                                                                 </tr>
+                                                                 <tr  style="display:{!if(rec.u.Constituency__c !=null,'block','none')};">
+                                                                     <td  colspan="2">
+                                                                      {!rec.u.Constituency__c}
+                                                                     </td>
+                                                                 </tr>
+                                                               
+                                                                 <tr >
+                                                                     <td  colspan="2" style="display:{!if(AND(rec.u.contact.Preferred_Email__c !=null,rec.u.contact.Public_Preferred_Email__c== true),'block','none')};">
+                                                                         <a href="mailto:{!rec.u.contact.Preferred_Email__c}"  class="nound">
+                                                                                    <span class="icon-mail"></span> Email
+                                                                         </a>
+                                                                     </td>                                                                     
+                                                                 </tr>
+                                                                  <tr >
+                                                                     <td  colspan="2" style="display:{!if(AND(rec.u.contact.Preferred_Email__c ==null,rec.u.contact.Public_Preferred_Email__c== true),'block','none')};">
+                                                                         <a href="mailto:{!rec.u.email}" class="nound">
+                                                                             <span class="icon-mail"></span> Email
+                                                                         </a>
+                                                                     </td>
+                                                                     
+                                                                 </tr>
+                                                                
+                                                                  <tr style="display:{!if(rec.businessW.size >0,'block','none')};">
+                                                                     <td  colspan="2">
+                                                                         <apex:repeat value="{!rec.businessW}" var="business">
+                                                                           <apex:outputPanel rendered="{!business.isCEO}">
+                                                                                <h5><a href="{!$Page.BusinessDetail}?id={!business.bid}" target="_self">{!business.Name}</a></h5>
+                                                                            </apex:outputPanel>
+                                                                            <apex:outputPanel rendered="{!!business.isCEO}">
+                                                                                <h5>{!business.name}</h5>
+                                                                            </apex:outputPanel> 
+                                                                            <div style="float:clear;">
+                                                                            </div>
+                                                                         </apex:repeat>
+                                                                         
+                                                                     </td>
+                                                                    
+                                                                 </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </li>
+                                                <div style="float:clear;">
+                                                 </div> 
+                                            </apex:repeat>
+                                        </ul>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel >
+                                    
+                                        <div class="col-xs-12 col-sm-6">
+                                            <c:BabsonTermsOfUseModal />
+                                            
+                                        </div>
+                                        
+                                    </apex:outputPanel>
+                                     
+                                    
+                                    <apex:outputPanel id="paginationBottom" style="{!IF(AND(iscalledOnload==false,ListOfUsers.size != 0), '', 'display:none;')}">
+                                        <div class="pagination-wrapper">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                  <!--  <c:BabsonTermsOfUseModal /> -->
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="pull-right">
+                                                        
+                                                        <div class="form-inline pull-left" role="form">
+                                                            <div class="form-group">
+                                                                <label for="page">Page</label>
+                                                                <input type="text" class="form-control input-sm" id="pageInputBelow" name="page" value="{!pageNumber}" onchange="goToPage(this.value);onScreenResize(determineBreakpoint());" />
+                                                            </div>
+                                                            <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                                        </div>
+
+                                                        
+
+                                                        <ul class="pagination pagination-sm pull-right">
+                                                            <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                                <li>
+                                                                    <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-primary" rerender="peopleList,paginationTop,paginationBottom" status="rerenderPeople" oncomplete="doResize()"></apex:commandLink>
+                                                                </li>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                                <li>
+                                                                    <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-primary" rerender="peopleList,paginationTop,paginationBottom" status="rerenderPeople" oncomplete="doResize()"></apex:commandLink>
+                                                                </li>
+                                                            </apex:outputPanel>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>                                
+                                </apex:outputPanel>                                
+                               </apex:form>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                
+                <script type="text/javascript">
+                        function checkEnter(event) {
+                                var ms_ie = false;
+                                var ua = window.navigator.userAgent;
+                                if ((ua.indexOf('MSIE ') > -1) || (ua.indexOf('Trident/') > -1)) ms_ie = true;
+                                if ( ms_ie && event.keyCode==13) filter();
+                        }
+                        //search();//commented on 16042017 as it was unnesecessary calling backend on page load
+                </script>
+            </apex:define>
+    </apex:composition>
+    <style type="text/css">
+        .bPageBlock {
+            border-top: 3px solid #fc4f59;
+        }
+        .ProcessingBackground{
+            background-color: #696969;
+            opacity: 0.50;
+            filter: alpha(opacity = 50);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 8551;
+            top:0;
+            left:0;
+        }
+        .Processing{
+            z-index: 8552;
+         //   left: 50%;
+            top: 50%;
+            text-align: center;
+            position: fixed;
+        } 
+        .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+            font-size: 14px;
+        }
+    </style>
+    <div id="divProcessing" style="display:none;">
+    <div class="ProcessingBackground"></div>
+    <div class="Processing">
+        <image alt="Processing" width="20" height="20" src="/img/loading32.gif" />
+    </div>
+</div>  
+<script>
+function searchValue(){
+             processing();
+             adVSearch();
+         
+    }
+    </script>
+</apex:page>

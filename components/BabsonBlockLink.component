@@ -1,0 +1,56 @@
+<apex:component layout="none">
+    <apex:attribute name="blockClass" type="String" description="Block Class" default="babson-block-gray" required="false" />
+    <apex:attribute name="imgSrc" type="String" description="Image Source" default="" required="false" />
+    <apex:attribute name="metaTitle" type="String" description="Meta Title" default="" required="false" />
+    <apex:attribute name="title" type="String" description="Title" default="" required="true" />
+    <apex:attribute name="subTitle" type="String" description="Sub Title" default="" required="false" /> <!-- use either this OR subtitleDate -->
+    <apex:attribute name="subTitleDate" type="Date" description="Use if subtitle is actually a date" default="" required="false" />
+    <apex:attribute name="text" type="String" description="Text" default="" required="false" />
+    <apex:attribute name="link" type="String" description="Link" default="#" required="false" />
+    <apex:attribute name="nickName" type="String" description="nickName" default="" required="false" />  <!-- added on 24 Mar 17_#15315 (code added in lines 10,11,35 & 36)-->   
+    <apex:attribute name="title1" type="String" description="Title1" default="" required="false" />  <!-- added on 24 Mar 17_#15315 (code added in lines 10,11,35 & 36)-->
+
+    <!-- 
+    Why so many spans? http://salesforce.stackexchange.com/questions/51535/rerendering-outputlink-with-block-elements-inside-of-it
+    -->
+    
+    <a class="{!blockClass}" href="{!link}" style="height:187px;">
+        <!-- Use flex if an image is involved -->
+        <span class="inner {!IF(imgSrc == "", '', 'flex')}">
+            <!-- Optionally show an image -->
+            <apex:outputPanel layout="none" rendered="{!imgSrc != ''}">
+                <span class="image">
+                    <img src="{!imgSrc}" />  
+                </span>
+            </apex:outputPanel>
+            
+            <span class="text">
+                <!-- Optionally show meta title -->
+                <apex:outputPanel layout="none" rendered="{!metaTitle != ''}">
+                    <span class="h5">{!metaTitle}</span>
+                </apex:outputPanel>
+                
+                <!-- Title is required -->
+                <span class="h3" style="font-size:1.8rem !important; font-weight:bold; font-family:verdana,sans-serif;">{!title}</span>
+                <span class="h3">{!title1}</span>   <!-- added on 24 Mar 17_#15315 (code added in lines 10,11,35 & 36)-->
+                <span class="h3"  style="{!IF(nickName!=null,'display:block','display:none')}">"{!nickName}"</span>    <!-- added on 24 Mar 17_#15315 (code added in lines 10,11,35 & 36)-->
+
+                <!-- Optionally show text -->
+                <apex:outputPanel layout="none" rendered="{!text != ''}">
+                    <span class="paragraph truncate-75" style="font-size:1.8rem">{!text}</span>
+                </apex:outputPanel>
+
+                
+
+                <!-- Optionally show sub title -->
+                <apex:outputPanel layout="none" rendered="{!subTitle != '' || subTitleDate != null}">
+                    <span class="h5">
+                        <apex:outputText value="{0, date, EE, MMMM d, YYYY}" rendered="{!subTitleDate != null}"><apex:param value="{!subTitleDate}" /></apex:outputText>
+                        <apex:outputText rendered="{!subTitle != ''}" value="{!subTitle}"></apex:outputText>
+                    </span>
+                </apex:outputPanel>
+
+            </span>
+        </span>
+    </a>
+</apex:component>

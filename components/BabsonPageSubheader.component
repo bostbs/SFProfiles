@@ -1,0 +1,19 @@
+<apex:component layout="none">
+	<apex:attribute name="title" type="String" description="Title" default="" required="true" />
+	<apex:attribute name="subTitle" type="String" description="Sub Title" default="" required="false" />
+
+	<header class="page-sub-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<apex:outputPanel layout="none" rendered="{!title != ''}">
+						<h1><apex:outputText escape="false" value="{!title}" /></h1>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!subTitle != ''}">
+						<h3><apex:outputText escape="false" value="{!subTitle}" /></h3>
+					</apex:outputPanel>
+				</div>
+			</div>
+		</div>	
+	</header>
+</apex:component>

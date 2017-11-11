@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Submit Job CM</name>
+    <style>none</style>
+    <subject>We Received your Job Posting for {!CORECONNECT__CC_Community_Content__c.Title__c}</subject>
+    <textOnly>{!CORECONNECT__CC_Community_Content__c.OwnerFirstName},
+
+Thank you for submitting {!CORECONNECT__CC_Community_Content__c.Title__c} with {!CORECONNECT__CC_Community_Content__c.Name}  to be posted in the Jobs section of the Babson Connector. Our team will review your post (typically within one to two business days). Once approved, you’ll receive a confirmation and your posting will appear on the Babson Connector.
+
+For reference here is what you submitted.
+
+Job Title: {!CORECONNECT__CC_Community_Content__c.Title__c}
+Company: {!CORECONNECT__CC_Community_Content__c.Name}
+Job Summary: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}
+Job Description:
+{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}
+
+Industry: {!CORECONNECT__CC_Community_Content__c.Industry__c}
+Job Location: {!CORECONNECT__CC_Community_Content__c.Job_Location__c}
+Applicant Type: {!CORECONNECT__CC_Community_Content__c.Applicant_Type__c}
+Region: {!CORECONNECT__CC_Community_Content__c.Region__c}
+Job Status: {!CORECONNECT__CC_Community_Content__c.Job_Status__c}
+Job Level: {!CORECONNECT__CC_Community_Content__c.Job_Level__c}
+Degree Requirements: {!CORECONNECT__CC_Community_Content__c.Degree_Requirements__c}
+Work Eligibility Requirements: {!CORECONNECT__CC_Community_Content__c.Work_Eligibility_Fields__c}
+Perferred Start Date: {!CORECONNECT__CC_Community_Content__c.Preferred_Start_Date__c}
+
+Publish Date: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}
+Archive Date: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}
+
+If you have any questions, please feel free to reply to this email.
+
+Sincerely,
+
+Peter Latvis
+Community Manager
+Babson Connector
+communitymanager@babson.edu</textOnly>
+    <type>custom</type>
+</EmailTemplate>

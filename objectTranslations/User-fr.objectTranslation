@@ -1,0 +1,2235 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Account ID --></label>
+        <name>BMCServiceDesk__Account_ID__c</name>
+    </fields><fields>
+        <label><!-- Account Name --></label>
+        <name>BMCServiceDesk__Account_Name__c</name>
+    </fields><fields>
+        <label><!-- Account --></label>
+        <name>BMCServiceDesk__Account__c</name>
+    </fields><fields>
+        <label><!-- Asset Management View --></label>
+        <name>BMCServiceDesk__AssetManagementView__c</name>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation>Masqué</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read-Only</masterLabel>
+            <translation>Lecture seule</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update</masterLabel>
+            <translation>Mise à jour</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update and Delete</masterLabel>
+            <translation>Mettre à jour et supprimer</translation>
+        </picklistValues>
+    </fields><fields>
+        <help>Sélectionnez cette case à cocher pour affecter une licence par siège Remedyforce.</help>
+        <label><!-- Assign Remedyforce License --></label>
+        <name>BMCServiceDesk__AssignRemedyforceLic__c</name>
+    </fields><fields>
+        <help>Saisissez une valeur comprise entre 1 et 10, où 1 = lent et 10 = rapide.</help>
+        <label><!-- Broadcast ticker speed --></label>
+        <name>BMCServiceDesk__Broadcast_ticker_speed__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Building --></label>
+        <name>BMCServiceDesk__Building__c</name>
+    </fields><fields>
+        <label><!-- Business Hours ID --></label>
+        <name>BMCServiceDesk__Business_Hours_ID__c</name>
+    </fields><fields>
+        <help>Sélectionnez l'équipe dans laquelle travaille l'employé.</help>
+        <label><!-- Business Hours --></label>
+        <name>BMCServiceDesk__Business_Hours__c</name>
+    </fields><fields>
+        <label><!-- CI Management View --></label>
+        <name>BMCServiceDesk__CIManagementView__c</name>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation>Masqué</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read-Only</masterLabel>
+            <translation>Lecture seule</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update</masterLabel>
+            <translation>Mise à jour</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update and Delete</masterLabel>
+            <translation>Mettre à jour et supprimer</translation>
+        </picklistValues>
+    </fields><fields>
+        <help>Sélectionnez le statut de la discussion.</help>
+        <label><!-- Chat Status --></label>
+        <name>BMCServiceDesk__ChatStatus__c</name>
+        <picklistValues>
+            <masterLabel>Available</masterLabel>
+            <translation>Disponible</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Busy</masterLabel>
+            <translation>Occupé</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offline</masterLabel>
+            <translation>Hors ligne</translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- ContactId --></label>
+        <name>BMCServiceDesk__ContactId__c</name>
+    </fields><fields>
+        <help>Sélectionnez cette case à cocher pour autoriser l'utilisateur à accéder à la discussion.</help>
+        <label><!-- Enable Chat --></label>
+        <name>BMCServiceDesk__EnableChat__c</name>
+    </fields><fields>
+        <label><!-- Extension --></label>
+        <name>BMCServiceDesk__Extension__c</name>
+    </fields><fields>
+        <help>Ce champ enregistre l'ID de connexion de l'utilisateur validé de BMC Client Management.</help>
+        <label><!-- BCM Login ID --></label>
+        <name>BMCServiceDesk__FPLoginID__c</name>
+    </fields><fields>
+        <label><!-- BCM Login Validated --></label>
+        <name>BMCServiceDesk__FP_Login_Validated__c</name>
+    </fields><fields>
+        <label><!-- Image Name --></label>
+        <name>BMCServiceDesk__ImageName__c</name>
+    </fields><fields>
+        <label><!-- Out of Office --></label>
+        <name>BMCServiceDesk__IsOutOfOffice__c</name>
+    </fields><fields>
+        <label><!-- Remedyforce Administrator --></label>
+        <name>BMCServiceDesk__IsRemedyforceAdministrator__c</name>
+    </fields><fields>
+        <label><!-- ServiceDesk Staff --></label>
+        <name>BMCServiceDesk__IsStaffUser__c</name>
+    </fields><fields>
+        <help>Affiche la dernière fois que le statut de l'utilisateur était Disponible.</help>
+        <label><!-- Last Available Time --></label>
+        <name>BMCServiceDesk__LastAvailableTime__c</name>
+    </fields><fields>
+        <help>Affiche l'heure de fin de la dernière discussion.</help>
+        <label><!-- Last Chat End Time --></label>
+        <name>BMCServiceDesk__LastChatEndTime__c</name>
+    </fields><fields>
+        <label><!-- Manage QuickViews --></label>
+        <name>BMCServiceDesk__Manage_QV__c</name>
+    </fields><fields>
+        <label><!-- Manage ServiceDesk Staff Member --></label>
+        <name>BMCServiceDesk__Manage_ServiceDesk_Staff_Member__c</name>
+    </fields><fields>
+        <label><!-- Note --></label>
+        <name>BMCServiceDesk__Note__c</name>
+    </fields><fields>
+        <label><!-- Picture --></label>
+        <name>BMCServiceDesk__Picture__c</name>
+    </fields><fields>
+        <label><!-- Remedyforce Casual User --></label>
+        <name>BMCServiceDesk__Remedyforce_Casual_User__c</name>
+    </fields><fields>
+        <label><!-- Remedyforce Knowledge User --></label>
+        <name>BMCServiceDesk__Remedyforce_Knowledge_User__c</name>
+    </fields><fields>
+        <label><!-- Room --></label>
+        <name>BMCServiceDesk__Room__c</name>
+    </fields><fields>
+        <help>Permet de planifier des demandes de changement pendant une coupure et de créer une coupure lorsqu'il existe des demandes de changement pour cette durée.</help>
+        <label><!-- Override Blackouts --></label>
+        <name>BMCServiceDesk__Schedule_CR_and_Blackouts_During_Overlap__c</name>
+    </fields><fields>
+        <label><!-- SelfService Preferences --></label>
+        <name>BMCServiceDesk__SelfService_Preferences__c</name>
+    </fields><fields>
+        <label><!-- Unique User ID in Source --></label>
+        <name>BMCServiceDesk__UniqueUserIDInSource__c</name>
+    </fields><fields>
+        <label><!-- User License --></label>
+        <name>BMCServiceDesk__User_License__c</name>
+    </fields><fields>
+        <help>Indique si l'utilisateur est un VIP.</help>
+        <label><!-- VIP --></label>
+        <name>BMCServiceDesk__VIP__c</name>
+    </fields><fields>
+        <label><!-- Pager --></label>
+        <name>BMCServiceDesk__pager__c</name>
+    </fields><fields>
+        <label><!-- Remarks --></label>
+        <name>BMCServiceDesk__remarks__c</name>
+    </fields><fields>
+        <label><!-- Skip QV Wizard Introduction screen --></label>
+        <name>BMCServiceDesk__skipQVWizIntro__c</name>
+    </fields><fields>
+        <label><!-- Business Country --></label>
+        <name>Business_Country__c</name>
+        <picklistValues>
+            <masterLabel>Afghanistan</masterLabel>
+            <translation><!-- Afghanistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Albania</masterLabel>
+            <translation><!-- Albania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Algeria</masterLabel>
+            <translation><!-- Algeria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andorra</masterLabel>
+            <translation><!-- Andorra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angola</masterLabel>
+            <translation><!-- Angola --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antigua and Barbuda</masterLabel>
+            <translation><!-- Antigua and Barbuda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Argentina</masterLabel>
+            <translation><!-- Argentina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armenia</masterLabel>
+            <translation><!-- Armenia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia</masterLabel>
+            <translation><!-- Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austria</masterLabel>
+            <translation><!-- Austria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azerbaijan</masterLabel>
+            <translation><!-- Azerbaijan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahamas</masterLabel>
+            <translation><!-- Bahamas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahrain</masterLabel>
+            <translation><!-- Bahrain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangladesh</masterLabel>
+            <translation><!-- Bangladesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barbados</masterLabel>
+            <translation><!-- Barbados --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belarus</masterLabel>
+            <translation><!-- Belarus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belgium</masterLabel>
+            <translation><!-- Belgium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belize</masterLabel>
+            <translation><!-- Belize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benin</masterLabel>
+            <translation><!-- Benin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhutan</masterLabel>
+            <translation><!-- Bhutan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolivia</masterLabel>
+            <translation><!-- Bolivia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bosnia and Herzegovina</masterLabel>
+            <translation><!-- Bosnia and Herzegovina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Botswana</masterLabel>
+            <translation><!-- Botswana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation><!-- Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brunei</masterLabel>
+            <translation><!-- Brunei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bulgaria</masterLabel>
+            <translation><!-- Bulgaria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burkina Faso</masterLabel>
+            <translation><!-- Burkina Faso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burundi</masterLabel>
+            <translation><!-- Burundi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cabo Verde</masterLabel>
+            <translation><!-- Cabo Verde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cambodia</masterLabel>
+            <translation><!-- Cambodia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cameroon</masterLabel>
+            <translation><!-- Cameroon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation><!-- Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central African Republic</masterLabel>
+            <translation><!-- Central African Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chad</masterLabel>
+            <translation><!-- Chad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chile</masterLabel>
+            <translation><!-- Chile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colombia</masterLabel>
+            <translation><!-- Colombia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comoros</masterLabel>
+            <translation><!-- Comoros --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo, Democratic Republic of the</masterLabel>
+            <translation><!-- Congo, Democratic Republic of the --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo, Republic of the</masterLabel>
+            <translation><!-- Congo, Republic of the --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costa Rica</masterLabel>
+            <translation><!-- Costa Rica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cote d'Ivoire</masterLabel>
+            <translation><!-- Cote d&apos;Ivoire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Croatia</masterLabel>
+            <translation><!-- Croatia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuba</masterLabel>
+            <translation><!-- Cuba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyprus</masterLabel>
+            <translation><!-- Cyprus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Czech Republic</masterLabel>
+            <translation><!-- Czech Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denmark</masterLabel>
+            <translation><!-- Denmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Djibouti</masterLabel>
+            <translation><!-- Djibouti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dominica</masterLabel>
+            <translation><!-- Dominica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dominican Republic</masterLabel>
+            <translation><!-- Dominican Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecuador</masterLabel>
+            <translation><!-- Ecuador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Egypt</masterLabel>
+            <translation><!-- Egypt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Salvador</masterLabel>
+            <translation><!-- El Salvador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equatorial Guinea</masterLabel>
+            <translation><!-- Equatorial Guinea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eritrea</masterLabel>
+            <translation><!-- Eritrea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estonia</masterLabel>
+            <translation><!-- Estonia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ethiopia</masterLabel>
+            <translation><!-- Ethiopia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiji</masterLabel>
+            <translation><!-- Fiji --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finland</masterLabel>
+            <translation><!-- Finland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gabon</masterLabel>
+            <translation><!-- Gabon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gambia</masterLabel>
+            <translation><!-- Gambia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghana</masterLabel>
+            <translation><!-- Ghana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greece</masterLabel>
+            <translation><!-- Greece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grenada</masterLabel>
+            <translation><!-- Grenada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guatemala</masterLabel>
+            <translation><!-- Guatemala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guinea</masterLabel>
+            <translation><!-- Guinea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guinea-Bissau</masterLabel>
+            <translation><!-- Guinea-Bissau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guyana</masterLabel>
+            <translation><!-- Guyana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haiti</masterLabel>
+            <translation><!-- Haiti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honduras</masterLabel>
+            <translation><!-- Honduras --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hungary</masterLabel>
+            <translation><!-- Hungary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iceland</masterLabel>
+            <translation><!-- Iceland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indonesia</masterLabel>
+            <translation><!-- Indonesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iran</masterLabel>
+            <translation><!-- Iran --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iraq</masterLabel>
+            <translation><!-- Iraq --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ireland</masterLabel>
+            <translation><!-- Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Israel</masterLabel>
+            <translation><!-- Israel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italy</masterLabel>
+            <translation><!-- Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jamaica</masterLabel>
+            <translation><!-- Jamaica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japan</masterLabel>
+            <translation><!-- Japan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jordan</masterLabel>
+            <translation><!-- Jordan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kazakhstan</masterLabel>
+            <translation><!-- Kazakhstan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kenya</masterLabel>
+            <translation><!-- Kenya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiribati</masterLabel>
+            <translation><!-- Kiribati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kosovo</masterLabel>
+            <translation><!-- Kosovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kuwait</masterLabel>
+            <translation><!-- Kuwait --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kyrgyzstan</masterLabel>
+            <translation><!-- Kyrgyzstan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laos</masterLabel>
+            <translation><!-- Laos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latvia</masterLabel>
+            <translation><!-- Latvia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lebanon</masterLabel>
+            <translation><!-- Lebanon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lesotho</masterLabel>
+            <translation><!-- Lesotho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberia</masterLabel>
+            <translation><!-- Liberia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Libya</masterLabel>
+            <translation><!-- Libya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liechtenstein</masterLabel>
+            <translation><!-- Liechtenstein --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lithuania</masterLabel>
+            <translation><!-- Lithuania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luxembourg</masterLabel>
+            <translation><!-- Luxembourg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macedonia</masterLabel>
+            <translation><!-- Macedonia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madagascar</masterLabel>
+            <translation><!-- Madagascar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malawi</masterLabel>
+            <translation><!-- Malawi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malaysia</masterLabel>
+            <translation><!-- Malaysia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maldives</masterLabel>
+            <translation><!-- Maldives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mali</masterLabel>
+            <translation><!-- Mali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malta</masterLabel>
+            <translation><!-- Malta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marshall Islands</masterLabel>
+            <translation><!-- Marshall Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritania</masterLabel>
+            <translation><!-- Mauritania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritius</masterLabel>
+            <translation><!-- Mauritius --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mexico</masterLabel>
+            <translation><!-- Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Micronesia</masterLabel>
+            <translation><!-- Micronesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moldova</masterLabel>
+            <translation><!-- Moldova --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monaco</masterLabel>
+            <translation><!-- Monaco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mongolia</masterLabel>
+            <translation><!-- Mongolia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montenegro</masterLabel>
+            <translation><!-- Montenegro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morocco</masterLabel>
+            <translation><!-- Morocco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mozambique</masterLabel>
+            <translation><!-- Mozambique --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Myanmar (Burma)</masterLabel>
+            <translation><!-- Myanmar (Burma) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namibia</masterLabel>
+            <translation><!-- Namibia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nauru</masterLabel>
+            <translation><!-- Nauru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nepal</masterLabel>
+            <translation><!-- Nepal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Zealand</masterLabel>
+            <translation><!-- New Zealand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicaragua</masterLabel>
+            <translation><!-- Nicaragua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niger</masterLabel>
+            <translation><!-- Niger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nigeria</masterLabel>
+            <translation><!-- Nigeria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Korea</masterLabel>
+            <translation><!-- North Korea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norway</masterLabel>
+            <translation><!-- Norway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oman</masterLabel>
+            <translation><!-- Oman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pakistan</masterLabel>
+            <translation><!-- Pakistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palau</masterLabel>
+            <translation><!-- Palau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palestine</masterLabel>
+            <translation><!-- Palestine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panama</masterLabel>
+            <translation><!-- Panama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Papua New Guinea</masterLabel>
+            <translation><!-- Papua New Guinea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraguay</masterLabel>
+            <translation><!-- Paraguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peru</masterLabel>
+            <translation><!-- Peru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Philippines</masterLabel>
+            <translation><!-- Philippines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poland</masterLabel>
+            <translation><!-- Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugal</masterLabel>
+            <translation><!-- Portugal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qatar</masterLabel>
+            <translation><!-- Qatar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Romania</masterLabel>
+            <translation><!-- Romania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russia</masterLabel>
+            <translation><!-- Russia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rwanda</masterLabel>
+            <translation><!-- Rwanda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samoa</masterLabel>
+            <translation><!-- Samoa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Marino</masterLabel>
+            <translation><!-- San Marino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sao Tome and Principe</masterLabel>
+            <translation><!-- Sao Tome and Principe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saudi Arabia</masterLabel>
+            <translation><!-- Saudi Arabia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senegal</masterLabel>
+            <translation><!-- Senegal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Serbia</masterLabel>
+            <translation><!-- Serbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seychelles</masterLabel>
+            <translation><!-- Seychelles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sierra Leone</masterLabel>
+            <translation><!-- Sierra Leone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore</masterLabel>
+            <translation><!-- Singapore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovakia</masterLabel>
+            <translation><!-- Slovakia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovenia</masterLabel>
+            <translation><!-- Slovenia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solomon Islands</masterLabel>
+            <translation><!-- Solomon Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Somalia</masterLabel>
+            <translation><!-- Somalia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa</masterLabel>
+            <translation><!-- South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Korea</masterLabel>
+            <translation><!-- South Korea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Sudan</masterLabel>
+            <translation><!-- South Sudan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation><!-- Spain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sri Lanka</masterLabel>
+            <translation><!-- Sri Lanka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Kitts and Nevis</masterLabel>
+            <translation><!-- St. Kitts and Nevis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Lucia</masterLabel>
+            <translation><!-- St. Lucia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Vincent and The Grenadines</masterLabel>
+            <translation><!-- St. Vincent and The Grenadines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sudan</masterLabel>
+            <translation><!-- Sudan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suriname</masterLabel>
+            <translation><!-- Suriname --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swaziland</masterLabel>
+            <translation><!-- Swaziland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sweden</masterLabel>
+            <translation><!-- Sweden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switzerland</masterLabel>
+            <translation><!-- Switzerland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syria</masterLabel>
+            <translation><!-- Syria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taiwan</masterLabel>
+            <translation><!-- Taiwan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tajikistan</masterLabel>
+            <translation><!-- Tajikistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tanzania</masterLabel>
+            <translation><!-- Tanzania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thailand</masterLabel>
+            <translation><!-- Thailand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timor-Leste</masterLabel>
+            <translation><!-- Timor-Leste --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Togo</masterLabel>
+            <translation><!-- Togo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tonga</masterLabel>
+            <translation><!-- Tonga --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trinidad and Tobago</masterLabel>
+            <translation><!-- Trinidad and Tobago --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tunisia</masterLabel>
+            <translation><!-- Tunisia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkey</masterLabel>
+            <translation><!-- Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkmenistan</masterLabel>
+            <translation><!-- Turkmenistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuvalu</masterLabel>
+            <translation><!-- Tuvalu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uganda</masterLabel>
+            <translation><!-- Uganda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ukraine</masterLabel>
+            <translation><!-- Ukraine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Arab Emirates</masterLabel>
+            <translation><!-- United Arab Emirates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom (UK)</masterLabel>
+            <translation><!-- United Kingdom (UK) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United States of America (USA)</masterLabel>
+            <translation><!-- United States of America (USA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uruguay</masterLabel>
+            <translation><!-- Uruguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uzbekistan</masterLabel>
+            <translation><!-- Uzbekistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanuatu</masterLabel>
+            <translation><!-- Vanuatu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vatican City (Holy See)</masterLabel>
+            <translation><!-- Vatican City (Holy See) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venezuela</masterLabel>
+            <translation><!-- Venezuela --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vietnam</masterLabel>
+            <translation><!-- Vietnam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yemen</masterLabel>
+            <translation><!-- Yemen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zambia</masterLabel>
+            <translation><!-- Zambia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zimbabwe</masterLabel>
+            <translation><!-- Zimbabwe --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Business Email --></label>
+        <name>Business_Email__c</name>
+    </fields><fields>
+        <label><!-- Business State --></label>
+        <name>Business_State__c</name>
+        <picklistValues>
+            <masterLabel>AK</masterLabel>
+            <translation><!-- AK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT</masterLabel>
+            <translation><!-- CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL</masterLabel>
+            <translation><!-- FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HI</masterLabel>
+            <translation><!-- HI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS</masterLabel>
+            <translation><!-- KS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MI</masterLabel>
+            <translation><!-- MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ND</masterLabel>
+            <translation><!-- ND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NJ</masterLabel>
+            <translation><!-- NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NV</masterLabel>
+            <translation><!-- NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OH</masterLabel>
+            <translation><!-- OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD</masterLabel>
+            <translation><!-- SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UT</masterLabel>
+            <translation><!-- UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT</masterLabel>
+            <translation><!-- VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA</masterLabel>
+            <translation><!-- WA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WI</masterLabel>
+            <translation><!-- WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WV</masterLabel>
+            <translation><!-- WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WY</masterLabel>
+            <translation><!-- WY --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- CC List In Directory --></label>
+        <name>CORECONNECT__CC_List_In_Directory__c</name>
+    </fields><fields>
+        <label><!-- Classification1 --></label>
+        <name>CORECONNECT__Classification1__c</name>
+        <picklistValues>
+            <masterLabel>Dummy Value 1</masterLabel>
+            <translation><!-- Dummy Value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 2</masterLabel>
+            <translation><!-- Dummy Value 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 3</masterLabel>
+            <translation><!-- Dummy Value 3 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Classification2 --></label>
+        <name>CORECONNECT__Classification2__c</name>
+        <picklistValues>
+            <masterLabel>Dummy Value 1</masterLabel>
+            <translation><!-- Dummy Value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 2</masterLabel>
+            <translation><!-- Dummy Value 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 3</masterLabel>
+            <translation><!-- Dummy Value 3 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Classification3 --></label>
+        <name>CORECONNECT__Classification3__c</name>
+        <picklistValues>
+            <masterLabel>Dummy Value 1</masterLabel>
+            <translation><!-- Dummy Value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 2</masterLabel>
+            <translation><!-- Dummy Value 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy Value 3</masterLabel>
+            <translation><!-- Dummy Value 3 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Connector Contact Id --></label>
+        <name>Connector_Contact_Id__c</name>
+    </fields><fields>
+        <help><!-- Choose multiple items to describe user. --></help>
+        <label><!-- Constituency --></label>
+        <name>Constituency__c</name>
+        <picklistValues>
+            <masterLabel>Alumni</masterLabel>
+            <translation><!-- Alumni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate</masterLabel>
+            <translation><!-- Certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faculty</masterLabel>
+            <translation><!-- Faculty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Governance</masterLabel>
+            <translation><!-- Governance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graduate</masterLabel>
+            <translation><!-- Graduate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation><!-- Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undergraduate</masterLabel>
+            <translation><!-- Undergraduate --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- CoreId --></label>
+        <name>CoreId__c</name>
+    </fields><fields>
+        <label><!-- Degree --></label>
+        <name>Degree__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- External Import ID - Used for importing data from CCD, BEE Spreadsheets 
+&quot;111&quot; or could be &quot;Patty&quot; or  ??? --></help>
+        <label><!-- External Import ID --></label>
+        <name>External_Import_ID__c</name>
+    </fields><fields>
+        <label><!-- Give to Babson --></label>
+        <name>Give_to_Babson__c</name>
+    </fields><fields>
+        <label><!-- Graduate Year --></label>
+        <name>Graduate_Year__c</name>
+        <picklistValues>
+            <masterLabel>1920</masterLabel>
+            <translation><!-- 1920 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1921</masterLabel>
+            <translation><!-- 1921 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1922</masterLabel>
+            <translation><!-- 1922 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1923</masterLabel>
+            <translation><!-- 1923 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1924</masterLabel>
+            <translation><!-- 1924 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1925</masterLabel>
+            <translation><!-- 1925 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1926</masterLabel>
+            <translation><!-- 1926 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1927</masterLabel>
+            <translation><!-- 1927 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1928</masterLabel>
+            <translation><!-- 1928 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1929</masterLabel>
+            <translation><!-- 1929 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1930</masterLabel>
+            <translation><!-- 1930 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1931</masterLabel>
+            <translation><!-- 1931 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1932</masterLabel>
+            <translation><!-- 1932 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1933</masterLabel>
+            <translation><!-- 1933 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1934</masterLabel>
+            <translation><!-- 1934 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1935</masterLabel>
+            <translation><!-- 1935 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1936</masterLabel>
+            <translation><!-- 1936 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1937</masterLabel>
+            <translation><!-- 1937 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1938</masterLabel>
+            <translation><!-- 1938 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1939</masterLabel>
+            <translation><!-- 1939 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1940</masterLabel>
+            <translation><!-- 1940 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1941</masterLabel>
+            <translation><!-- 1941 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1942</masterLabel>
+            <translation><!-- 1942 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1943</masterLabel>
+            <translation><!-- 1943 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1944</masterLabel>
+            <translation><!-- 1944 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1945</masterLabel>
+            <translation><!-- 1945 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1946</masterLabel>
+            <translation><!-- 1946 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1947</masterLabel>
+            <translation><!-- 1947 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1948</masterLabel>
+            <translation><!-- 1948 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1949</masterLabel>
+            <translation><!-- 1949 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1950</masterLabel>
+            <translation><!-- 1950 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1951</masterLabel>
+            <translation><!-- 1951 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1952</masterLabel>
+            <translation><!-- 1952 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1953</masterLabel>
+            <translation><!-- 1953 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1954</masterLabel>
+            <translation><!-- 1954 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1955</masterLabel>
+            <translation><!-- 1955 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1956</masterLabel>
+            <translation><!-- 1956 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1957</masterLabel>
+            <translation><!-- 1957 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1958</masterLabel>
+            <translation><!-- 1958 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1959</masterLabel>
+            <translation><!-- 1959 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1960</masterLabel>
+            <translation><!-- 1960 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1961</masterLabel>
+            <translation><!-- 1961 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1962</masterLabel>
+            <translation><!-- 1962 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1963</masterLabel>
+            <translation><!-- 1963 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1964</masterLabel>
+            <translation><!-- 1964 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1965</masterLabel>
+            <translation><!-- 1965 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1966</masterLabel>
+            <translation><!-- 1966 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1967</masterLabel>
+            <translation><!-- 1967 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1968</masterLabel>
+            <translation><!-- 1968 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1969</masterLabel>
+            <translation><!-- 1969 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1970</masterLabel>
+            <translation><!-- 1970 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1971</masterLabel>
+            <translation><!-- 1971 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1972</masterLabel>
+            <translation><!-- 1972 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1973</masterLabel>
+            <translation><!-- 1973 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1974</masterLabel>
+            <translation><!-- 1974 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1975</masterLabel>
+            <translation><!-- 1975 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1976</masterLabel>
+            <translation><!-- 1976 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1977</masterLabel>
+            <translation><!-- 1977 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1978</masterLabel>
+            <translation><!-- 1978 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1979</masterLabel>
+            <translation><!-- 1979 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1980</masterLabel>
+            <translation><!-- 1980 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1981</masterLabel>
+            <translation><!-- 1981 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1982</masterLabel>
+            <translation><!-- 1982 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1983</masterLabel>
+            <translation><!-- 1983 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1984</masterLabel>
+            <translation><!-- 1984 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1985</masterLabel>
+            <translation><!-- 1985 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1986</masterLabel>
+            <translation><!-- 1986 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1987</masterLabel>
+            <translation><!-- 1987 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1988</masterLabel>
+            <translation><!-- 1988 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1989</masterLabel>
+            <translation><!-- 1989 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1990</masterLabel>
+            <translation><!-- 1990 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1991</masterLabel>
+            <translation><!-- 1991 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1992</masterLabel>
+            <translation><!-- 1992 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1993</masterLabel>
+            <translation><!-- 1993 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1994</masterLabel>
+            <translation><!-- 1994 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1995</masterLabel>
+            <translation><!-- 1995 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1996</masterLabel>
+            <translation><!-- 1996 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1997</masterLabel>
+            <translation><!-- 1997 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1998</masterLabel>
+            <translation><!-- 1998 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1999</masterLabel>
+            <translation><!-- 1999 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2000</masterLabel>
+            <translation><!-- 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2001</masterLabel>
+            <translation><!-- 2001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2002</masterLabel>
+            <translation><!-- 2002 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2003</masterLabel>
+            <translation><!-- 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2004</masterLabel>
+            <translation><!-- 2004 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2005</masterLabel>
+            <translation><!-- 2005 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2006</masterLabel>
+            <translation><!-- 2006 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2007</masterLabel>
+            <translation><!-- 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2008</masterLabel>
+            <translation><!-- 2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2009</masterLabel>
+            <translation><!-- 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Habitat for Humanity --></label>
+        <name>Habitat_for_Humanity__c</name>
+    </fields><fields>
+        <label><!-- Industry --></label>
+        <name>Industry__c</name>
+        <picklistValues>
+            <masterLabel>Ag</masterLabel>
+            <translation><!-- Ag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services</masterLabel>
+            <translation><!-- Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Tech</masterLabel>
+            <translation><!-- High Tech --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Job Function --></label>
+        <name>Job_Function__c</name>
+        <picklistValues>
+            <masterLabel>Consultant</masterLabel>
+            <translation><!-- Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director</masterLabel>
+            <translation><!-- Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager</masterLabel>
+            <translation><!-- Manager --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Last Mille Update Date --></label>
+        <name>Last_Mille_Update_Date__c</name>
+    </fields><fields>
+        <label><!-- Legacy Lynx Id --></label>
+        <name>Legacy_Lynx_Id__c</name>
+    </fields><fields>
+        <label><!-- Lynx Record Number --></label>
+        <name>Lynx_Record_Number__c</name>
+    </fields><fields>
+        <label><!-- Nameprefkey --></label>
+        <name>Nameprefkey__c</name>
+    </fields><fields>
+        <label><!-- Preferred Constituency --></label>
+        <name>Preferred_Constituency__c</name>
+    </fields><fields>
+        <label><!-- Public Graduate Year --></label>
+        <name>Public_Graduate_Year__c</name>
+    </fields><fields>
+        <label><!-- Public Undergraduate Year --></label>
+        <name>Public_Undergraduate_Year__c</name>
+    </fields><fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Dummy value 1</masterLabel>
+            <translation><!-- Dummy value 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 2</masterLabel>
+            <translation><!-- Dummy value 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dummy value 3</masterLabel>
+            <translation><!-- Dummy value 3 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Show Business 3 Section --></label>
+        <name>Show_Business_3_Section__c</name>
+    </fields><fields>
+        <label><!-- Show Business 4 Section --></label>
+        <name>Show_Business_4_Section__c</name>
+    </fields><fields>
+        <label><!-- Show Education Information --></label>
+        <name>Show_Education_Information__c</name>
+    </fields><fields>
+        <label><!-- Show Giving Information --></label>
+        <name>Show_Giving_Information__c</name>
+    </fields><fields>
+        <label><!-- Show Home Town Information --></label>
+        <name>Show_Home_Town_Information__c</name>
+    </fields><fields>
+        <label><!-- Undergraduate Year --></label>
+        <name>Undergraduate_Year__c</name>
+        <picklistValues>
+            <masterLabel>1920</masterLabel>
+            <translation><!-- 1920 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1921</masterLabel>
+            <translation><!-- 1921 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1922</masterLabel>
+            <translation><!-- 1922 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1923</masterLabel>
+            <translation><!-- 1923 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1924</masterLabel>
+            <translation><!-- 1924 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1925</masterLabel>
+            <translation><!-- 1925 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1926</masterLabel>
+            <translation><!-- 1926 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1927</masterLabel>
+            <translation><!-- 1927 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1928</masterLabel>
+            <translation><!-- 1928 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1929</masterLabel>
+            <translation><!-- 1929 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1930</masterLabel>
+            <translation><!-- 1930 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1931</masterLabel>
+            <translation><!-- 1931 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1932</masterLabel>
+            <translation><!-- 1932 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1933</masterLabel>
+            <translation><!-- 1933 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1934</masterLabel>
+            <translation><!-- 1934 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1935</masterLabel>
+            <translation><!-- 1935 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1936</masterLabel>
+            <translation><!-- 1936 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1937</masterLabel>
+            <translation><!-- 1937 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1938</masterLabel>
+            <translation><!-- 1938 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1939</masterLabel>
+            <translation><!-- 1939 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1940</masterLabel>
+            <translation><!-- 1940 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1941</masterLabel>
+            <translation><!-- 1941 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1942</masterLabel>
+            <translation><!-- 1942 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1943</masterLabel>
+            <translation><!-- 1943 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1944</masterLabel>
+            <translation><!-- 1944 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1945</masterLabel>
+            <translation><!-- 1945 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1946</masterLabel>
+            <translation><!-- 1946 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1947</masterLabel>
+            <translation><!-- 1947 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1948</masterLabel>
+            <translation><!-- 1948 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1949</masterLabel>
+            <translation><!-- 1949 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1950</masterLabel>
+            <translation><!-- 1950 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1951</masterLabel>
+            <translation><!-- 1951 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1952</masterLabel>
+            <translation><!-- 1952 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1953</masterLabel>
+            <translation><!-- 1953 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1954</masterLabel>
+            <translation><!-- 1954 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1955</masterLabel>
+            <translation><!-- 1955 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1956</masterLabel>
+            <translation><!-- 1956 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1957</masterLabel>
+            <translation><!-- 1957 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1958</masterLabel>
+            <translation><!-- 1958 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1959</masterLabel>
+            <translation><!-- 1959 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1960</masterLabel>
+            <translation><!-- 1960 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1961</masterLabel>
+            <translation><!-- 1961 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1962</masterLabel>
+            <translation><!-- 1962 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1963</masterLabel>
+            <translation><!-- 1963 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1964</masterLabel>
+            <translation><!-- 1964 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1965</masterLabel>
+            <translation><!-- 1965 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1966</masterLabel>
+            <translation><!-- 1966 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1967</masterLabel>
+            <translation><!-- 1967 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1968</masterLabel>
+            <translation><!-- 1968 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1969</masterLabel>
+            <translation><!-- 1969 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1970</masterLabel>
+            <translation><!-- 1970 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1971</masterLabel>
+            <translation><!-- 1971 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1972</masterLabel>
+            <translation><!-- 1972 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1973</masterLabel>
+            <translation><!-- 1973 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1974</masterLabel>
+            <translation><!-- 1974 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1975</masterLabel>
+            <translation><!-- 1975 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1976</masterLabel>
+            <translation><!-- 1976 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1977</masterLabel>
+            <translation><!-- 1977 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1978</masterLabel>
+            <translation><!-- 1978 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1979</masterLabel>
+            <translation><!-- 1979 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1980</masterLabel>
+            <translation><!-- 1980 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1981</masterLabel>
+            <translation><!-- 1981 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1982</masterLabel>
+            <translation><!-- 1982 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1983</masterLabel>
+            <translation><!-- 1983 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1984</masterLabel>
+            <translation><!-- 1984 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1985</masterLabel>
+            <translation><!-- 1985 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1986</masterLabel>
+            <translation><!-- 1986 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1987</masterLabel>
+            <translation><!-- 1987 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1988</masterLabel>
+            <translation><!-- 1988 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1989</masterLabel>
+            <translation><!-- 1989 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1990</masterLabel>
+            <translation><!-- 1990 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1991</masterLabel>
+            <translation><!-- 1991 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1992</masterLabel>
+            <translation><!-- 1992 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1993</masterLabel>
+            <translation><!-- 1993 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1994</masterLabel>
+            <translation><!-- 1994 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1995</masterLabel>
+            <translation><!-- 1995 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1996</masterLabel>
+            <translation><!-- 1996 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1997</masterLabel>
+            <translation><!-- 1997 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1998</masterLabel>
+            <translation><!-- 1998 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1999</masterLabel>
+            <translation><!-- 1999 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2000</masterLabel>
+            <translation><!-- 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2001</masterLabel>
+            <translation><!-- 2001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2002</masterLabel>
+            <translation><!-- 2002 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2003</masterLabel>
+            <translation><!-- 2003 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2004</masterLabel>
+            <translation><!-- 2004 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2005</masterLabel>
+            <translation><!-- 2005 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2006</masterLabel>
+            <translation><!-- 2006 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2007</masterLabel>
+            <translation><!-- 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2008</masterLabel>
+            <translation><!-- 2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2009</masterLabel>
+            <translation><!-- 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- User Login Count --></label>
+        <name>User_Login_Count__c</name>
+    </fields><fields>
+        <label><!-- SECONDARY ADDRESS 2 --></label>
+        <name>addrseas2key__c</name>
+    </fields><fields>
+        <label><!-- SECONDARY ADDRESS 1 --></label>
+        <name>addrseaskey__c</name>
+    </fields><layouts>
+        <layout>Remedyforce  User</layout>
+        <sections>
+            <label>BMC Remedyforce</label>
+            <section>BMC Remedyforce</section>
+        </sections>
+        <sections>
+            <label>Liens personnalisés</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Préférences</label>
+            <section>Preferences</section>
+        </sections>
+    </layouts><layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label><!-- About --></label>
+            <section>About</section>
+        </sections>
+        <sections>
+            <label><!-- Contact --></label>
+            <section>Contact</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- You can delete a BMC Client Management Login ID from here but you cannot edit it. --></errorMessage>
+        <name>BMCServiceDesk__Validate_FootPrints_Login</name>
+    </validationRules><webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks><webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks></CustomObjectTranslation>

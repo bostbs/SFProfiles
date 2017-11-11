@@ -1,0 +1,15 @@
+<apex:component layout="none">
+	<section id="brand-bar">
+		<div class="container">
+			<div class="flex-container">
+				<h1><a href="http://www.babson.edu" target="_blank">Babson College</a> 
+
+				</h1>
+				<span class="pull-right">
+					<a href="{!$Label.BAB_Feedback_URL}" class="btn btn-link">Connector Feedback</a>
+				</span>
+				<!--<h3><a href="http://www.babson.edu" target="_blank"><span class="hidden-xs">Babson College Home</span> <span class="visible-xs">Babson.edu</span> <i class="fa fa-angle-right"></i></a></h3>-->
+			</div>
+		</div>
+	</section>
+</apex:component>

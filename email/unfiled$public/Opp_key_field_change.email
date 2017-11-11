@@ -1,0 +1,7 @@
+This is an automated notification that key attributes of an Sales Opportunity have been updated. 
+
+Opportunity Name:    {!Opportunity.Name}
+Opportunity Amount: {!Opportunity.Amount}
+Opportunity Stage:    {!Opportunity.StageName}
+
+Click here to see this record in Salesforce: {!Opportunity.Link}

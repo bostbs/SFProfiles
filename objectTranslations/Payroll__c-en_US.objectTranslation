@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Address to which payment will be sent --></help>
+        <label><!-- Address Locator --></label>
+        <name>ACF_Address_Locator__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Comments --></label>
+        <name>ACF_Comments__c</name>
+    </fields><fields>
+        <label><!-- Compensation Description --></label>
+        <name>ACF_Compensation_Description__c</name>
+    </fields><fields>
+        <label><!-- Course Release --></label>
+        <name>ACF_Course_Release__c</name>
+    </fields><fields>
+        <label><!-- Employee ID --></label>
+        <name>ACF_Employee_ID__c</name>
+    </fields><fields>
+        <label><!-- Expected Compensation Date --></label>
+        <name>ACF_Expected_Compensation_Date__c</name>
+    </fields><fields>
+        <label><!-- Faculty Agreement --></label>
+        <name>ACF_Faculty_Agreement__c</name>
+        <relationshipLabel><!-- Payroll --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Faculty --></label>
+        <name>ACF_Faculty__c</name>
+    </fields><fields>
+        <label><!-- Form 1099? --></label>
+        <name>ACF_Form_1099__c</name>
+    </fields><fields>
+        <label><!-- GL Account --></label>
+        <name>ACF_GL_Account__c</name>
+        <relationshipLabel><!-- Payroll --></relationshipLabel>
+    </fields><fields>
+        <help><!-- If True, this payroll record is locked and cannot be changed. --></help>
+        <label><!-- Lock --></label>
+        <name>ACF_Lock__c</name>
+    </fields><fields>
+        <label><!-- Payee Address --></label>
+        <name>ACF_Payee_Address__c</name>
+    </fields><fields>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- Total Compensation (Calc) --></label>
+        <name>ACF_Total_Compensation__c</name>
+    </fields><fields>
+        <label><!-- US Citizen? --></label>
+        <name>ACF_US_Citizen__c</name>
+    </fields><fields>
+        <label><!-- View --></label>
+        <name>ACF_View__c</name>
+    </fields><fields>
+        <label><!-- Void --></label>
+        <name>ACF_Void__c</name>
+    </fields><fields>
+        <label><!-- Adjunct --></label>
+        <name>Adjunct__c</name>
+    </fields><fields>
+        <label><!-- GL Account2 --></label>
+        <name>GL_Account2__c</name>
+        <relationshipLabel><!-- Payroll (GL Account2) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- GL Account Relationship --></label>
+        <name>GL_Account_Relationship__c</name>
+    </fields><fields>
+        <label><!-- New GL Account Field --></label>
+        <name>New_GL_Account_Field__c</name>
+    </fields><fields>
+        <label><!-- Offering --></label>
+        <name>Offering__c</name>
+        <relationshipLabel><!-- Payroll --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Payroll</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Payroll</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Locked-Payroll Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payee --></label>
+            <section>Payee</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Payroll Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payee --></label>
+            <section>Payee</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Unlocked Payroll Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payee --></label>
+            <section>Payee</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Locked --></label>
+        <name>Locked</name>
+    </recordTypes><recordTypes>
+        <label><!-- Unlocked --></label>
+        <name>Unlocked</name>
+    </recordTypes><webLinks>
+        <label><!-- New_Payroll --></label>
+        <name>New_Payroll</name>
+    </webLinks></CustomObjectTranslation>

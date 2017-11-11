@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- API Name of the field on the CC Community Content object that will be used first to find personalized results --></help>
+        <label><!-- Content Personalization Field 1 --></label>
+        <name>Content_Personalization_Field_1__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the CC Community Content object that will be used second to find personalized results --></help>
+        <label><!-- Content Personalization Field 2 --></label>
+        <name>Content_Personalization_Field_2__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the CC Community Content object that will be used third to find personalized results --></help>
+        <label><!-- Content Personalization Field 3 --></label>
+        <name>Content_Personalization_Field_3__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the CC Community Content object that will be used fourth to find personalized results --></help>
+        <label><!-- Content Personalization Field 4 --></label>
+        <name>Content_Personalization_Field_4__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the CC Community Content object that will be used fifth to find personalized results --></help>
+        <label><!-- Content Personalization Field 5 --></label>
+        <name>Content_Personalization_Field_5__c</name>
+    </fields><fields>
+        <label><!-- Content Personalization Field 6 --></label>
+        <name>Content_Personalization_Field_6__c</name>
+    </fields><fields>
+        <help><!-- API Name of the CC Community Content Record Type that should be displayed in tile 1 on the Home Page --></help>
+        <label><!-- Content Type Home Page Tile 1 --></label>
+        <name>Content_Type_Home_Page_Tile_1__c</name>
+    </fields><fields>
+        <help><!-- API Name of the CC Community Content Record Type that should be displayed in tile 2 on the Home Page --></help>
+        <label><!-- Content Type Home Page Tile 2 --></label>
+        <name>Content_Type_Home_Page_Tile_2__c</name>
+    </fields><fields>
+        <help><!-- API Name of the CC Community Content Record Type that should be displayed in tile 3 on the Home Page --></help>
+        <label><!-- Content Type Home Page Tile 3 --></label>
+        <name>Content_Type_Home_Page_Tile_3__c</name>
+    </fields><fields>
+        <help><!-- API Name of the CC Community Content Record Type that should be displayed in tile 4 on the Home Page --></help>
+        <label><!-- Content Type Home Page Tile 4 --></label>
+        <name>Content_Type_Home_Page_Tile_4__c</name>
+    </fields><fields>
+        <help><!-- API Name of the CC Community Content Record Type that should be displayed in tile 5 on the Home Page --></help>
+        <label><!-- Content Type Home Page Tile 5 --></label>
+        <name>Content_Type_Home_Page_Tile_5__c</name>
+    </fields><fields>
+        <label><!-- Content Type Home Page Tile 6 --></label>
+        <name>Content_Type_Home_Page_Tile_6__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the Contact object that will be used first to find personalized results --></help>
+        <label><!-- User Personalization Field 1 --></label>
+        <name>User_Personalization_Field_1__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the Contact object that will be used second to find personalized results --></help>
+        <label><!-- User Personalization Field 2 --></label>
+        <name>User_Personalization_Field_2__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the Contact object that will be used third to find personalized results --></help>
+        <label><!-- User Personalization Field 3 --></label>
+        <name>User_Personalization_Field_3__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the Contact object that will be used fourth to find personalized results --></help>
+        <label><!-- User Personalization Field 4 --></label>
+        <name>User_Personalization_Field_4__c</name>
+    </fields><fields>
+        <help><!-- API Name of the field on the Contact object that will be used fifth to find personalized results --></help>
+        <label><!-- User Personalization Field 5 --></label>
+        <name>User_Personalization_Field_5__c</name>
+    </fields><fields>
+        <label><!-- User Personalization Field 6 --></label>
+        <name>User_Personalization_Field_6__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Alumni Community Personalization</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Alumni Community Personalization</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

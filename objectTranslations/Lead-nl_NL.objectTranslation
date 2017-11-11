@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Volunteer Availability --></label>
+        <name>GW_Volunteers__Volunteer_Availability__c</name>
+        <picklistValues>
+            <masterLabel>Afternoon</masterLabel>
+            <translation>'s Middags</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morning</masterLabel>
+            <translation>'s Ochtends</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekdays</masterLabel>
+            <translation>Doordeweeks</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekends</masterLabel>
+            <translation><!-- Weekends --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation>Wekelijks</translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Volunteer Notes --></label>
+        <name>GW_Volunteers__Volunteer_Notes__c</name>
+    </fields><fields>
+        <help>Selecteer de vaardigheden van deze persoon die gebruikt zouden moeten worden met het zoeken naar vrijwilligersbanen</help>
+        <label><!-- Volunteer Skills --></label>
+        <name>GW_Volunteers__Volunteer_Skills__c</name>
+        <picklistValues>
+            <masterLabel>Computer usage</masterLabel>
+            <translation>Computer gebruik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Planning</masterLabel>
+            <translation><!-- Event Planning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundraising</masterLabel>
+            <translation>Fondsenwerving</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landscaping</masterLabel>
+            <translation>Tuinieren</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual labor</masterLabel>
+            <translation>Handenarbeid</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Volunteer Status --></label>
+        <name>GW_Volunteers__Volunteer_Status__c</name>
+        <picklistValues>
+            <masterLabel>New Sign Up</masterLabel>
+            <translation>Nieuwe Aanmelding</translation>
+        </picklistValues>
+    </fields><fields>
+        <name>Industry</name>
+        <picklistValues>
+            <masterLabel>Aerospace</masterLabel>
+            <translation><!-- Aerospace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apparel</masterLabel>
+            <translation><!-- Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banking</masterLabel>
+            <translation><!-- Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biotechnology</masterLabel>
+            <translation><!-- Biotechnology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation><!-- Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation><!-- Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food &amp; Beverage</masterLabel>
+            <translation><!-- Food &amp; Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation><!-- Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Machinery</masterLabel>
+            <translation><!-- Machinery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not For Profit</masterLabel>
+            <translation><!-- Not For Profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation><!-- Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation</masterLabel>
+            <translation><!-- Recreation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecommunications</masterLabel>
+            <translation><!-- Telecommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation><!-- Utilities --></translation>
+        </picklistValues>
+    </fields><fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alumni</masterLabel>
+            <translation><!-- Alumni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alumni and Development</masterLabel>
+            <translation><!-- Alumni and Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Babson Centers</masterLabel>
+            <translation><!-- Babson Centers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Babson Senior Management</masterLabel>
+            <translation><!-- Babson Senior Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data.com (Prospector)</masterLabel>
+            <translation><!-- Data.com (Prospector) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Education</masterLabel>
+            <translation><!-- Executive Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faculty</masterLabel>
+            <translation><!-- Faculty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend of Babson</masterLabel>
+            <translation><!-- Friend of Babson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grad CCD</masterLabel>
+            <translation><!-- Grad CCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grad OEL</masterLabel>
+            <translation><!-- Grad OEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Referral</masterLabel>
+            <translation><!-- Partner Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Inquiry</masterLabel>
+            <translation><!-- Phone Inquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Partner</masterLabel>
+            <translation><!-- Previous Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased List</masterLabel>
+            <translation><!-- Purchased List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral - Partner</masterLabel>
+            <translation><!-- Referral - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation><!-- Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Site</masterLabel>
+            <translation><!-- Web Site --></translation>
+        </picklistValues>
+    </fields><fields>
+        <name>Rating</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields><fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Closed - Converted</masterLabel>
+            <translation><!-- Closed - Converted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Not Converted</masterLabel>
+            <translation><!-- Closed - Not Converted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open - Not Contacted</masterLabel>
+            <translation><!-- Open - Not Contacted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working - Contacted</masterLabel>
+            <translation><!-- Working - Contacted --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- SIC Code --></label>
+        <name>cazoomi__SICCode__c</name>
+    </fields><fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields><layouts>
+        <layout>Babson EL Project Proposal Layout</layout>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Primary Contact Detail --></label>
+            <section>Primary Contact Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Project Proposal --></label>
+            <section>Project Proposal</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Babson Standard Lead Layout</layout>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Details --></label>
+            <section>Contact Details</section>
+        </sections>
+        <sections>
+            <label><!-- Web to Lead Tracking --></label>
+            <section>Web to Lead Tracking</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label><!-- Volunteer Information --></label>
+            <section>Volunteer Information</section>
+        </sections>
+    </layouts><webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks><webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks><webLinks>
+        <label><!-- Create_Action_Plan --></label>
+        <name>Create_Action_Plan</name>
+    </webLinks><webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks><webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks><webLinks>
+        <label><!-- Map_Records_Lead --></label>
+        <name>geopointe__Map_Records_Lead</name>
+    </webLinks><webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks><webLinks>
+        <label><!-- Address_Finder --></label>
+        <name>pca__Address_Finder</name>
+    </webLinks><webLinks>
+        <label><!-- Address_Finder_Link --></label>
+        <name>pca__Address_Finder_Link</name>
+    </webLinks><workflowTasks>
+        <description>Een automatische e-mail is verzonden naar de lead om hem of haar te bedanken voor het inschrijven als vrijwilliger.</description>
+        <name>GW_Volunteers__Volunteer_Signup_Thank_You_Sent_Lead</name>
+    </workflowTasks></CustomObjectTranslation>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields><fields>
+        <label><!-- Community Content Status --></label>
+        <name>Community_Content_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archived</masterLabel>
+            <translation><!-- Archived --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Updated</masterLabel>
+            <translation><!-- Updated --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields><fields>
+        <label><!-- Publish Date --></label>
+        <name>Publish_Date__c</name>
+    </fields><fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>BCTAC</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>BCTAC</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>BCTAC Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

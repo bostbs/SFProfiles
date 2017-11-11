@@ -1,0 +1,77 @@
+<apex:page showHeader="false" 
+			sidebar="false" 
+			standardStylesheets="false" 
+			applyHtmlTag="false" 
+			applyBodyTag="false" 
+			docType="html-5.0" 
+			controller="BabsonHomeController"
+			>
+
+<apex:composition template="{!$Site.Template}">
+		<apex:define name="pagetitle">Babson L2 Template</apex:define>
+			<apex:define name="body" >
+
+			<header class="banner-header" style="background-image: url('http://placehold.it/2000x300');">
+				<div class="text-row">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								 <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2>
+								 <h5>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="container">
+				<div class="row row-no-margin">
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<c:BabsonBlockFull blockClass="babson-card-full-blue" title="Full Title That is Also Very Long Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users" btnExternal="true" />
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<c:BabsonBlockFull blockClass="babson-card-full-orange" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users" />
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<c:BabsonBlockFull blockClass="babson-card-full-yellow" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<c:BabsonBlockFull blockClass="babson-card-full-gold" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users" />
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<c:BabsonBlockFull blockClass="babson-card-full-lightgreen" title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<c:BabsonBlockFull blockClass="babson-card-full-green"  title="Full Title" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur." btnLink="http://example.com" btnText="Button" iconClass="fa fa-users"  />
+					</div>
+				</div>
+			</div>
+
+			</apex:define>
+	</apex:composition>			
+</apex:page>

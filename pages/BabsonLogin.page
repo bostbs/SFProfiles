@@ -1,0 +1,38 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" 
+           applyHtmlTag="false" cache="false" applyBodyTag="false" docType="html-5.0" controller="BabsonLoginController" action="{!redirectToSSO}" >
+    <script>
+        //window.onload = function(){
+           //window.location.href='https://testssoeasy.babson.edu/SAMLfwd/default.aspx';
+        //}
+    </script>
+    <!-- Bootstrap will be removed later -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+            integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+    <!-- Bootstrap will be removed later -->
+
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">{!$Label.BAB_Login_Page_Title}</apex:define>
+            <apex:define name="body">
+                <div class="container margin-top margin-bottom">
+                    <section id="content">
+                        <apex:form >
+                            <apex:pageMessages />
+                            <h1>{!$Label.BAB_Login_Screen_Message}</h1>
+                            <div>
+                                <apex:outputLabel value="{!$Label.BAB_Login_Username}:" for="Email address"/>
+                                <apex:inputText value="{!username}" id="username" styleClass="form-control" />
+                            </div>
+                            <div>   
+                                <apex:outputLabel value="{!$Label.BAB_Login_Password}:" for="password"/>
+                                <apex:inputSecret id="password" value="{!password}" styleClass="form-control" />
+                            </div>
+                            <div>
+                                <apex:commandButton action="{!login}" styleClass="btn btn-primary" value="Login"/>
+                                <a href="{!forgotPasswordURL}" target="_blank" style = "float:right;cursor:pointer;">{!$Label.BAB_Forgot_Password}</a>
+                            </div>
+                        </apex:form>
+                    </section>
+                </div>
+            </apex:define>
+    </apex:composition>
+</apex:page>

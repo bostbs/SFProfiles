@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Updated Need More Info Venture CM</name>
+    <style>none</style>
+    <subject>Your Venture Posting, {!CORECONNECT__CC_Community_Content__c.Name}, Has Been Approved</subject>
+    <textOnly>{!CORECONNECT__CC_Community_Content__c.OwnerFirstName},
+
+Thank you for updating your venture posting for {!CORECONNECT__CC_Community_Content__c.Name}. Our team will review your post (typically within one to two business days). Once approved, you&apos;ll receive a confirmation and your posting will appear on the Babson Connector.
+
+For reference, here is what you submitted:
+
+Venture Title: {!CORECONNECT__CC_Community_Content__c.Name}
+Short Description: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}
+Full Article:
+{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}
+
+Seeking Backers: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification1__c}
+Seeking BETA Testers: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification2__c}
+Seeking Other Help: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification3__c}
+Region: {!CORECONNECT__CC_Community_Content__c.Region__c}
+Industry: {!CORECONNECT__CC_Community_Content__c.Industry__c}
+Number Backers Needed: {!CORECONNECT__CC_Community_Content__c.Backers__c}
+Funding Amount Requested: {!CORECONNECT__CC_Community_Content__c.Pledged_Dollars__c}
+Link to Funding: {!CORECONNECT__CC_Community_Content__c.Funding_Link__c}
+Resources Needed By: {!CORECONNECT__CC_Community_Content__c.Deadline__c}
+Venture Contact: {!CORECONNECT__CC_Community_Content__c.OwnerFullName}
+Additional Team Members: {!CORECONNECT__CC_Community_Content__c.Additional_Team_Members__c}
+
+Publish Date: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}
+Archive Date: {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}
+
+If you have any questions, please feel to reply to this email.
+
+Thank you again for updating your venture information.
+Peter Latvis
+Community Manager
+Babson Connector
+communitymanager@babson.edu</textOnly>
+    <type>custom</type>
+</EmailTemplate>

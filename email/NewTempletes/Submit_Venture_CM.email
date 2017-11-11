@@ -1,0 +1,46 @@
+<html>
+	<body>
+		{!CORECONNECT__CC_Community_Content__c.OwnerFirstName},  
+		<p>
+			Thank you for submitting {!CORECONNECT__CC_Community_Content__c.Name} to be posted in the Ventures section of the Babson Connector. Our team will review your post (typically within one to two business days). Once approved, you’ll receive a confirmation and your posting will appear on the Babson Connector.
+
+		</p>
+		
+<p>
+For reference, here is what you submitted:<br><hr><strong>
+Venture Title:</strong> {!CORECONNECT__CC_Community_Content__c.Name}<br><strong>
+Short Description:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}<br><strong>
+Full Article:</strong><br>{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}<br><br><strong>
+Seeking Backers:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification1__c}<br><strong>
+Seeking BETA Testers:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification2__c}<br><strong>
+Seeking Other Help:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification3__c}<br><strong>
+Region:</strong> {!CORECONNECT__CC_Community_Content__c.Region__c} <br> <strong>
+Industry:</strong> {!CORECONNECT__CC_Community_Content__c.Industry__c} <br> <strong>
+Number Backers Needed:</strong> {!CORECONNECT__CC_Community_Content__c.Backers__c}<br><strong>
+Funding Amount Requested:</strong> {!CORECONNECT__CC_Community_Content__c.Pledged_Dollars__c}<br><strong>
+Link to Funding:</strong> {!CORECONNECT__CC_Community_Content__c.Funding_Link__c}<br><strong>
+Resources Needed By:</strong> {!CORECONNECT__CC_Community_Content__c.Deadline__c}<br><strong>
+Venture Contact:</strong> {!CORECONNECT__CC_Community_Content__c.OwnerFullName}<br><strong>
+Additional Team Members:</strong> {!CORECONNECT__CC_Community_Content__c.Additional_Team_Members__c}<br>
+</p>
+
+<hr>
+
+<p><strong>
+Publish Date:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}  <br> <strong>
+Archive Date:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}
+</p>
+
+<hr>
+<p>
+If you have any questions, please feel free to reply to this email.</p>
+
+<p>
+Thank you again for submitting your venture. Best wishes with your endeavor.<br><br>
+Peter Latvis  <br>
+Community Manager<br>
+Babson Connector<br>
+<a href="mailto:communitymanager@babson.edu" target="_top">communitymanager@babson.edu</a>
+</p>
+
+</body></html>

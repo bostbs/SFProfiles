@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.ACF_Company_Name__c</field>
+    </columns>
+    <columns>
+        <field>Contact.ACF_Prospect__c</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>Contact.ACF_Rating__c</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_CITY</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>CONTACT_OWNER</field>
+    </columns>
+    <columns>
+        <field>CONTACT_LAST_UPDATE_BY</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Campaign.ACF_Program__c</column>
+            <operator>equals</operator>
+            <value>Surge and Grow</value>
+        </criteriaItems>
+        <operation>without</operation>
+        <primaryTableColumn>CONTACT_ID</primaryTableColumn>
+        <relatedTable>CampaignMember-Campaign</relatedTable>
+        <relatedTableJoinColumn>Contact</relatedTableJoinColumn>
+    </crossFilters>
+    <crossFilters>
+        <criteriaItems>
+            <column>ACF_Program__c</column>
+            <operator>equals</operator>
+            <value>Surge and Grow</value>
+        </criteriaItems>
+        <operation>with</operation>
+        <primaryTableColumn>CONTACT_ID</primaryTableColumn>
+        <relatedTable>Interest__c</relatedTable>
+        <relatedTableJoinColumn>ACF_Contact__c</relatedTableJoinColumn>
+    </crossFilters>
+    <description>Prospects with Interest Groups without Campaigns (adjust program criteria)</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.ACF_Prospect__c</column>
+            <operator>equals</operator>
+            <value>New Prospect,Active_Prospect</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Uncoverted Leads with Interest</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

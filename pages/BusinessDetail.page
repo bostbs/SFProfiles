@@ -1,0 +1,190 @@
+<apex:page showHeader="false" 
+                     sidebar="false" 
+                     standardStylesheets="false" 
+                     applyHtmlTag="false" 
+                     applyBodyTag="false" 
+                     docType="html-5.0" 
+                     standardController="CORECONNECT__CC_Community_Content__c" 
+                     extensions="BusinessDetailController" action="{!goToList}" >
+                     
+        
+        <apex:composition template="{!$Site.Template}">
+                <apex:define name="pagetitle">{!CORECONNECT__CC_Community_Content__c.Name}</apex:define>
+        
+                <apex:define name="body" >
+                    <!-- Page Heading -->
+
+                    <c:BabsonPageHeader title="{!$Label.BAB_Business_Account_Detail_Title}" breadCrumbText="{!$Label.BAB_Business_Account_Detail_Back_To_Business_Accounts}" 
+                    breadCrumbLink="{!$Page.BusinessDirectory}" showActions="{!$Permission.Create_Businesses}" btnText2="{!$Label.coreconnect__cc_scheduledcontent_update}" btnLink2="{!$Page.BusinessCreate}?Id={!CORECONNECT__CC_Community_Content__c.Id}&Clone=true"
+                    showUpdate="{! IF(CORECONNECT__CC_Community_Content__c.ownerId == $User.Id ,true,false) }" />
+                    <!--<c:BabsonPageHeader title="{!$Label.BAB_Business_Account_Detail_Title}" breadCrumbText="{!$Label.BAB_Business_Account_Detail_Back_To_Business_Accounts}" 
+                    breadCrumbLink="{!$Page.BusinessDirectory}" showActions="{!$Permission.Create_Businesses}" btnText="{!$Label.BAB_Business_Submit_Business}" 
+                    btnLink="{!$Page.BusinessCreate}" btnText2="{!$Label.coreconnect__cc_scheduledcontent_update}" btnLink2="{!$Page.BusinessCreate}?Id={!CORECONNECT__CC_Community_Content__c.Id}&Clone=true"
+                    showUpdate="{! IF(CORECONNECT__CC_Community_Content__c.ownerId == $User.Id ,true,false) }" />-->
+        
+                        <div class="container">
+                            <header class="detail-header clearfix">
+                                    <h1 class="float-left"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.Name}"  /></h1>
+                                    <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}">
+                                        <div class="chatter-follow float-left"><chatter:follow entityId="{!CORECONNECT__CC_Community_Content__c.Id}" /></div>
+                                    </apex:outputPanel>
+                                    <h5 class="clear"><!--{!FreeTextPublishDate}--></h5>
+                            </header>
+        
+                            <div class="row">
+                                <div class="{!IF(AttachmentId != null,'col-sm-4 col-sm-push-8','hidden')} detail-image">
+                                    <apex:outputPanel layout="none" rendered="{!AttachmentId != null}">
+                                        <img src="{!URLFOR($Action.Attachment.Download, AttachmentId)}" alt="" class="img-responsive" />
+                                    </apex:outputPanel>
+                                </div>
+        
+                                <div class="{!IF(AttachmentId != null,'col-sm-8 col-sm-pull-4','col-sm-8 col-sm-push-2')} detail-text">
+
+                                    <!-- Article Content -->
+                                    <!--<article class="news-details">
+                                        <p><i>{!CORECONNECT__CC_Community_Content__c.Business_Summary__c}</i></p>
+                                        <apex:outputText value="{!CORECONNECT__CC_Community_Content__c.Business_Description__c}" escape="false"></apex:outputText>
+                                    </article>-->
+
+                                    <!-- Article Meta -->
+                                    <div class="container-fluid meta-container">
+
+                                        <!--
+
+                                        <c:BabsonMetaRow label="{!$Label.BAB_Business_Classification}" value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification1__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Business_Location_Classification_Filter__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Business_Location_Classification_Filter__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation_1__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Affiliation_1__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation_2__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Affiliation_2__c}"/>
+                                       
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affinities__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Affinities__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Interests__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Interests__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Business_Industry__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Business_Industry__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Industry__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Industry__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Region__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Region__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.My_Company_Discount__c.label}" value="{!IF(CORECONNECT__CC_Community_Content__c.My_Company_Discount__c,'Yes','No')}"/>
+
+                                        
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.CORECONNECT__Location__c.label}" value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Location__c}"/>  
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Phone__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Phone__c}"/>
+                                        
+                                        -->
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Business_Summary__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Business_Summary__c}"/>                                             
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Business_Descriptions__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Business_Descriptions__c}"/>
+                                        <apex:outputPanel layout="none" rendered="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Website__c.label != '' && CORECONNECT__CC_Community_Content__c.Website__c != null }">
+                                            <div class="row meta-row">
+                                                <div class="col-xs-4 text-right">
+                                                    <p>{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Website__c.label}</p>
+                                                </div>
+                                                <div class="col-xs-8">
+                                                    <h5><a href="{!IF(!OR(contains(CORECONNECT__CC_Community_Content__c.Website__c, "http://"),contains(CORECONNECT__CC_Community_Content__c.Website__c, "https://")), "http://", "")}{!CORECONNECT__CC_Community_Content__c.Website__c}" target="_blank">{!CORECONNECT__CC_Community_Content__c.Website__c}</a></h5>
+                                                </div>
+                                            </div>
+                                        </apex:outputPanel>
+
+                                        <apex:outputPanel layout="none" rendered="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Email__c.label != '' && CORECONNECT__CC_Community_Content__c.Email__c != null }">
+                                            <div class="row meta-row">
+                                                <div class="col-xs-4 text-right">
+                                                    <p>{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Email__c.label}</p>
+                                                </div>
+                                                <div class="col-xs-8">
+                                                    <h5><a href="mailto:{!CORECONNECT__CC_Community_Content__c.Email__c}">{!CORECONNECT__CC_Community_Content__c.Email__c}</a></h5>
+                                                </div>
+                                            </div>
+                                        </apex:outputPanel>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Business_Industry__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Business_Industry__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Family_Business__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Family_Business__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Start_up__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Start_up__c}"/>
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Matching_Gift_Company__c.label}" value="{!IF(CORECONNECT__CC_Community_Content__c.Matching_Gift_Company__c,'Yes','No')}"/>
+                                        
+                                        <!--<c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Business_Descriptions__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Business_Descriptions__c}"/>-->
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.My_Company_Online__c.label}" value="{!IF(CORECONNECT__CC_Community_Content__c.My_Company_Online__c,'Yes','No')}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$Label.BAB_Create_Business_Classification1_Label}" value="{!IF(CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification1__c=='Yes','Yes','No')}"/>
+                                         <!-- Code added on 18th March, 2017 for Jira Tickets--#15169 and #15391 (Line 115 to 117)-->   
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Discount_Coupon_Code__c.label}"                                                       
+                                            value="{!IF(CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification1__c=='Yes',IF(CORECONNECT__CC_Community_Content__c.Discount_Coupon_Code__c!=null,CORECONNECT__CC_Community_Content__c.Discount_Coupon_Code__c,'0'),'')}"/>                                       
+                                       <!-- <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Discount_Coupon_Code__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Discount_Coupon_Code__c}"/> -->
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Address_1__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Address_1__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Address_2__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Address_2__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Address_3__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Address_3__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.City__c.label}" value="{!CORECONNECT__CC_Community_Content__c.City__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.State_Province__c.label}" value="{!IF(ISBLANK(CORECONNECT__CC_Community_Content__c.State_Province__c),'',mpStates[CORECONNECT__CC_Community_Content__c.State_Province__c])}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Postal_Code__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Postal_Code__c}"/>
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Country__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Country__c}"/>
+                                
+<c:BabsonMetaRow label="Owner" linkValue="{!CORECONNECT__CC_Community_Content__c.ownerId}" linkLabel="{!CORECONNECT__CC_Community_Content__c.owner.name}"/>
+                                        
+                                        <!-- User relation to business fields -->
+                                        <apex:outputPanel layout="none" rendered="{!CORECONNECT__CC_Community_Content__c.ownerId == $User.Id}">
+                                            <div class="row margin-top-sm margin-bottom-sm">
+                                                <div class="col-xs-12">
+                                                  <h4>My Role in the Business</h4>
+                                                </div>
+                                            </div>
+
+                                            <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Level__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Level__c}"/>
+
+                                            <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Part_Time__c.label}" value="{!IF(CORECONNECT__CC_Community_Content__c.Part_Time__c,'Yes','No')}"/>
+
+                                            <!-- <c:BabsonMetaRow label="I am the CEO, President, Founder or Owner of this company" value="{!IF(CORECONNECT__CC_Community_Content__c.I_am_the_CEO_President_Founder_or_Owne__c,'Yes','No')}"/> -->
+
+                                            <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Function__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Function__c}"/>
+                                            
+                                        </apex:outputPanel>
+                                        
+                                        <!-- End user relation to business fields -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Chatter -->
+                            <!--<apex:outputPanel rendered="{!IF( OR($Profile.Name = GuestProfileName,  CONTAINS($Profile.Name, 'Alumni Community - SSF')), false, true)}">-->
+                            <apex:outputPanel rendered="{!IF($Profile.Name != GuestProfileName, true, false)}">
+                                <section id="comments">
+                                    <div class="row">
+                                        <div class="comments {!IF(AttachmentId != null,'col-xs-12 col-md-8','col-xs-12 col-md-8 col-md-push-2')}">
+                                            <chatter:feed entityId="{!$CurrentPage.parameters.id}" />
+                                        </div>
+                                    </div>
+                                    <style>             
+            
+                                    .chatterUserGuestBadge{        
+                                     display:none;      
+                                    }
+                                    
+                                     #flagTypeI{
+                                     margin-right: 30px;
+                                     }
+                                     #flagTypeS{
+                                      margin-right: 30px;
+                                   }
+                                </style>
+                                </section>
+                            </apex:outputPanel>
+                        </div>
+                </apex:define>
+        </apex:composition>
+</apex:page>

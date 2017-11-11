@@ -1,0 +1,9 @@
+<design:component label="Geopointe: Nearby List">
+	<design:attribute name="dataSetId" label="Data Set ID" required="true" description="The data set used for nearby searches."/>
+	<design:attribute name="componentLabel" label="Component Label" description="Label displayed at the top of the nearby list component."/>
+	<design:attribute name="units" label="Units" datasource="mi,km" description="Units can be either miles or kilometers and are used for distance calculations."/>
+	<design:attribute name="range" label="Max Range" description="The maximum limit on nearby search radius."/>
+	<design:attribute name="recordLimit" label="Record Limit" description="The maximum limit on total records found from the search."/>
+	<design:attribute name="fieldsToDisplay" label="Number of Fields to Display" description="The maximum number of configured fields to display with each record."/>
+	<design:attribute name="qualityFilter" label="Only Show High Quality Geocodes" description="Filters out low quality geocodes to only show high quality results."/>
+</design:component>

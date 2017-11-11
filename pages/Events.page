@@ -1,0 +1,232 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="EventsController" cache="false" action="{!SaveCurrentToCookie}">
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">{!$Label.coreconnect__cc_scheduledcontent_title}</apex:define>
+        <apex:define name="body" >
+        <style>
+    .branding .h3, .branding h3, .sfdcBody .h3, .sfdcBody h3 {
+        font-size: 1.8rem !important;
+    }
+    </style>
+
+
+            <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.coreconnect__cc_scheduledcontent_title}" subtitle="{!TodayString}" showActions="false" btnText="{!$Label.coreconnect__cc_scheduledcontent_submit_freetext_scheduledcontent}" btnLink="{!$Page.EventCreate}#submit-ScheduledContent" />
+
+            <!-- Sub Heading 
+            <apex:outputPanel layout="none" rendered="{!IF(LOWER($Label.CORECONNECT__CC_ScheduledContent_Enable_Summary) == 'true','true','false')}">
+                <c:BabsonPageSubheader title="{!$Label.CORECONNECT__CC_ScheduledContent_Summary_Title}" subTitle="{!$Label.CORECONNECT__CC_ScheduledContent_Summary}" />
+            </apex:outputPanel>-->
+
+            <!-- Thank you message from CC_CommunityCreateFTSC -->
+            <apex:outputPanel layout="none" rendered="{!$CurrentPage.parameters.thankyou == 'true'}">
+                <div class="container">
+                    <div class="alert alert-success fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <strong>{!$Label.CORECONNECT__CC_ScheduledContent_Submission_Thank_You}</strong>{!$Label.CORECONNECT__CC_ScheduledContent_Submission_Message}
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+            <!-- Main Content -->
+            <div class="container">
+
+                <!-- Featured Events -->
+                <section class="well">
+                    <header>
+                        <h3 id="featured-ScheduledContent">{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), $Label.BAB_Jobs_Featured_SSF, $Label.CORECONNECT__CC_ScheduledContent_Featured)}</h3>
+                    </header>
+
+                    <!-- Display of Featured News-->
+                    <div class="row">
+                        <div class="col-xs-12 events-slider">
+                            <ul id="featured-slider" class="bxslider">
+                                    <apex:repeat value="{!lstCommunityContent}" var="ScheduledContent" rows="8">
+                                        <div class="col-xs-6 col-md-3 margin-bottom-sm slide-group">
+                                            <c:BabsonBlockImage title="{!ScheduledContent.Name}" 
+                                                                        text="{!ScheduledContent.CORECONNECT__Short_Description__c}" 
+                                                                        link="{!$Page.EventDetail}?id={!ScheduledContent.Id}"  
+                                                                        imgSrc="{!IF(mapCCIdToisAttachment[ScheduledContent.Id],URLFOR($Action.Attachment.Download, mapOfCCToAttachId[ScheduledContent.Id]),'none')}" 
+                                                                        isLarge="false" blockClass="event" />
+                                        </div>
+                                    </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Remaining COntent -->
+                <section class="well">
+                    <header>
+                        <h3>{!$Label.CORECONNECT__CC_ScheduledContent_More}</h3>
+                        <a class="btn btn-link tip" data-toggle="popover" data-placement="top" title="More Events" data-content="{!$Label.CORECONNECT__CC_ScheduledContent_More_Tooltip}">
+                            <span class="icon-question"></span>
+                        </a>
+                    </header>
+
+                    <apex:form >
+                        <!-- Need to rerender to make actionFunction work -->
+                        <apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="moreScheduledContent,moreScheduledContentPagination" >
+                            <apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+                        </apex:actionFunction>
+                        <nav class="navbar navbar-default  filter-row">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">Toggle Filters</span>
+                                        <span class="icon-menu"></span>
+                                    </button>
+                                </div>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <apex:outputPanel id="filterPanel" rendered="{!!isAutomatedfiltering}">
+                                        <div class="navbar-form navbar-left" role="form">
+                                            <!--<div class="form-group">
+                                                <apex:selectList value="{!orderScheduledContent}" multiselect="false" size="1" styleClass="form-control chosen" onchange="filter();onScreenResize(determineBreakpoint());">
+                                                    <apex:selectOption itemValue="ASC" itemLabel="Oldest First"/>
+                                                    <apex:selectOption itemValue="DESC" itemLabel="Newest First"/>
+                                                </apex:selectList>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <label class="sr-only" for="Classification_type1">{!$Label.CORECONNECT__CC_ScheduledContent_Classification1_Filter_Label}</label>
+                                                <label class="visible-xs">{!$Label.coreconnect__cc_scheduledcontent_classification1_filter_placeholder}</label>
+                                                <apex:selectList value="{!ClassificationType1}" multiselect="false" size="1" styleClass="form-control chosen" onchange="filter();onScreenResize(determineBreakpoint());" html-data-placeholder="{!$Label.coreconnect__cc_scheduledcontent_classification1_filter_placeholder}">
+                                                    <apex:selectOptions value="{!ClassificationValues1}"/>
+                                                </apex:selectList>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="Classification_type2">{!$Label.coreconnect__cc_scheduledcontent_classification2_filter_label}</label>
+                                                <label class="visible-xs">{!$Label.coreconnect__cc_scheduledcontent_classification2_filter_placeholder}</label>
+                                                <apex:selectList value="{!ClassificationType2}" multiselect="false" size="1" styleClass="form-control chosen" onchange="filter();onScreenResize(determineBreakpoint());" html-data-placeholder="{!$Label.coreconnect__cc_scheduledcontent_classification2_filter_placeholder}" >
+                                                    <apex:selectOptions value="{!ClassificationValues2}"/>
+                                                </apex:selectList>
+                                            </div>
+                                            <div class="form-group">
+                                                <apex:outputText value="{!$Label.coreconnect__cc_scheduledcontent_include_past} "/>
+                                                <apex:inputCheckBox value="{!includePastScheduledContent}" onchange="filter();onScreenResize(determineBreakpoint());"/>
+                                            </div>
+                                        </div>
+                                    </apex:outputPanel>
+                                    <apex:actionFunction action="{!Filter}" name="filter" reRender="moreScheduledContent,moreScheduledContentPagination" status="rerenderScheduledContent"></apex:actionFunction>
+                                    <div class="pagination-wrapper pull-right hidden-xs">
+                                        <apex:outputPanel id="moreScheduledContentPagination" >
+                                            <div class="form-inline pull-left" role="form">
+                                                <div class="form-group">
+                                                    <label for="page">Page</label>
+                                                    <input type="text" class="form-control input-sm" id="page" name="page" value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                                </div>
+                                                <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                            </div>
+                                            <ul class="pagination pagination-sm pull-right hidden-xs">
+                                                <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                    <li>
+                                                        <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-primary" rerender="moreScheduledContent,moreScheduledContentPagination" status="rerenderScheduledContent"></apex:commandLink>
+                                                    </li>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                    <li>
+                                                        <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-primary" rerender="moreScheduledContent,moreScheduledContentPagination" status="rerenderScheduledContent"></apex:commandLink>
+                                                    </li>
+                                                </apex:outputPanel>
+                                            </ul>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </nav>
+                        <apex:outputPanel id="moreScheduledContent" >
+                            <apex:outputPanel rendered="{!ListOfMoreScheduledContent.size == 0}">
+                                <div class="alert alert-warning" role="alert">
+                                    <strong>{!$Label.CORECONNECT__CC_ScheduledContent_Sorry}</strong>&nbsp;{!$Label.CORECONNECT__CC_ScheduledContent_No_Match_Message}
+                                </div>
+                            </apex:outputPanel>
+                            <ul class='ScheduledContent-list'>
+                                <apex:repeat value="{!ListOfMoreScheduledContent}" var="MoreScheduledContent">
+                                    <li class="col-xs-12 col-sm-6 col-md-4">
+                                        <a href="{!$Page.EventDetail}?id={!MoreScheduledContent.CC.Id}" title="{!MoreScheduledContent.CC.Name}" class="ScheduledContent">
+                                            <span class="inner">
+                                                <span class="ScheduledContent-date">
+                                                    <span class="dow">{!MoreScheduledContent.DayOfWeek}</span>
+                                                    <span class="m">{!MoreScheduledContent.Month}</span>
+                                                    <span class="d">{!MoreScheduledContent.DayInMonth}</span>
+                                                    <apex:outputText escape="false" value="<hr/>" rendered="{!IF((MoreScheduledContent.MonthAndYear == MoreScheduledContent.EndMonthAndYear && MoreScheduledContent.DayInMonth == MoreScheduledContent.EndDayInMonth) || MoreScheduledContent.EndMonthAndYear == '','false','true')}"/>
+                                                    <span class="dow">{!IF(MoreScheduledContent.MonthAndYear == MoreScheduledContent.EndMonthAndYear && MoreScheduledContent.DayInMonth == MoreScheduledContent.EndDayInMonth && MoreScheduledContent.EndMonthAndYear != '','',MoreScheduledContent.EndDayOfWeek)}</span>
+                                                    <span class="m">{!IF(MoreScheduledContent.MonthAndYear == MoreScheduledContent.EndMonthAndYear && MoreScheduledContent.DayInMonth == MoreScheduledContent.EndDayInMonth && MoreScheduledContent.EndMonthAndYear != '','',MoreScheduledContent.EndMonth)}</span>
+                                                    <span class="d">{!IF(MoreScheduledContent.MonthAndYear == MoreScheduledContent.EndMonthAndYear && MoreScheduledContent.DayInMonth == MoreScheduledContent.EndDayInMonth && MoreScheduledContent.EndMonthAndYear != '','',MoreScheduledContent.EndDayInMonth)}</span>
+                                                </span>
+                                                <span class="ScheduledContent-detail">
+                                                    <span class="h3" itemprop="name">{!MoreScheduledContent.CC.Name}</span>
+                                                    <span>
+                                                        <apex:outputText rendered="{!MoreScheduledContent.CC.CORECONNECT__Is_All_Day_ScheduledContent__c == true}" value="All Day" />
+                                                        <apex:outputText rendered="{!MoreScheduledContent.CC.CORECONNECT__Is_All_Day_ScheduledContent__c==false}">From: {!IF(MoreScheduledContent.MonthAndYear == MoreScheduledContent.EndMonthAndYear && MoreScheduledContent.DayInMonth == MoreScheduledContent.EndDayInMonth,
+                                                     '',
+                                                     MoreScheduledContent.StartDateDiffDay + ' at ') + SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(MoreScheduledContent.StartTime, '12:00 AM', 'Midnight'),'12:00 PM', 'Noon'),'PM', 'p.m.'),'AM', 'a.m.')}</apex:outputText>
+                                                        <apex:outputPanel rendered="{!MoreScheduledContent.CC.CORECONNECT__Is_All_Day_ScheduledContent__c==false}">
+                                                            <p>
+                                                                <apex:outputText rendered="{!MoreScheduledContent.CC.CORECONNECT__Is_All_Day_ScheduledContent__c==false}">To: {!IF(MoreScheduledContent.MonthAndYear == MoreScheduledContent.EndMonthAndYear && MoreScheduledContent.DayInMonth == MoreScheduledContent.EndDayInMonth,
+                                                    '',
+                                                     MoreScheduledContent.EndDateDiffDay + ' at ') + SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(MoreScheduledContent.EndTime, '12:00 AM', 'Midnight'),'12:00 PM', 'Noon'),'PM', 'p.m.'),'AM', 'a.m.')}</apex:outputText>
+                                                            </p>
+                                                        </apex:outputPanel>
+                                                        <p>
+                                                            <apex:outputText value=" {!tz.displayName}"/>
+                                                        </p>
+                                                    </span>
+                                                    <p class="location" itemprop="location">
+                                                        <apex:outputText value="{!MoreScheduledContent.CC.CORECONNECT__Location_City__c} ,  {!MoreScheduledContent.CC.CORECONNECT__Location_State_Province__c}" rendered="{!MoreScheduledContent.CC.CORECONNECT__Location_City__c != null && MoreScheduledContent.CC.CORECONNECT__Location_State_Province__c != null}"/>
+                                                    </p>
+                                                </span>
+                                            </span>
+                                        </a>
+                                        <div class="btn-group btn-group-xs">
+                                            <apex:outputPanel rendered="{!MoreScheduledContent.CC.CORECONNECT__RSVP_Link__c != ''}" layout="none">
+                                                <a href="{!MoreScheduledContent.CC.CORECONNECT__RSVP_Link__c}" class="btn btn-default btn-sm" rel="external">RSVP</a>
+                                            </apex:outputPanel>
+                                            <a href="{!$Page.CORECONNECT__CC_CommunityScheduledContentICS}?id={!MoreScheduledContent.CC.Id}" class="btn btn-primary btn-sm hidden-android">Add to Cal</a>
+                                        </div>
+                                    </li>
+                                </apex:repeat>
+                            </ul>
+                            <div class="pagination-wrapper clearfix">
+                                <div class="pull-right">
+                                    <div class="form-inline pull-left" role="form">
+                                        <div class="form-group">
+                                            <label for="page">Page</label>
+                                            <input type="text" class="form-control input-sm" id="page" name="page"
+                                            value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                        </div>
+                                        <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                    </div>
+                                    <ul class="pagination pagination-sm pull-right">
+                                        <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                            <li>
+                                                <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-primary" rerender="moreScheduledContent,moreScheduledContentPagination" status="rerenderScheduledContent"></apex:commandLink>
+                                            </li>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                            <li>
+                                                <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-primary" rerender="moreScheduledContent,moreScheduledContentPagination" status="rerenderScheduledContent"></apex:commandLink>
+                                            </li>
+                                        </apex:outputPanel>
+                                    </ul>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:form>
+                </section>
+                <!-- /.all-ScheduledContent -->
+                <apex:actionStatus id="rerenderScheduledContent" onstop="onScreenResize(determineBreakpoint());scrollToDiv('#content .all-ScheduledContent');"/>
+                </div>
+                <script>
+                    filter();
+                </script>
+                    
+        </apex:define>
+    </apex:composition>
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page > <!-- action="{!logOut}" -->
+    <!--<apex:iframe src="/connector/secur/logout.jsp?pageName=ss2" onload="alert(1);" />-->
+    <script>
+        function redirect() {
+               window.location="https://ssoeasy.babson.edu/loginformidentityproviderUAT1/sso/logoutSF2.aspx";
+            }
+    </script>
+    <iframe onload="redirect();"  src="/connector/secur/logout.jsp?pageName=ss2"/>
+
+
+</apex:page>

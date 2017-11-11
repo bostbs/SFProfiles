@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>BEE Documents</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <group>BEE_Business_Dev</group>
+        <group>BEE_Finance</group>
+        <group>BEE_Goldman_Sachs</group>
+        <group>BEE_Marketing</group>
+        <group>BEE_Operations</group>
+        <group>BEE_Standard_Users</group>
+        <group>BEE_Student_Users</group>
+        <group>BEE_Users</group>
+    </sharedTo>
+</DocumentFolder>

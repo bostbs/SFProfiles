@@ -1,0 +1,301 @@
+<!-- Header component -->
+<apex:component controller="BabsonHeaderComponentController" access="global" allowDML="true">
+
+<style>
+      .overlay {
+            background-color: #373632;
+            opacity: 0.6;
+            /* Generic for Major browsers */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            /* IE 5-7 */
+            filter: alpha(opacity=60);
+            /* Netscape */
+            -moz-opacity: 0.6;
+            /* Safari 1.x */
+            -khtml-opacity: 0.6;            
+            position: Fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 99;
+   
+
+    }
+        
+        .dialog {
+            position: relative;;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            outline: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translate3d(0, 0, 0);
+            max-width:70%;
+            margin-left: 20%;
+            margin-top: 0%;            
+            
+            z-index: 99;
+    }
+     .Processing
+        {
+            position: fixed;
+            background-color: white;
+            background: url('/img/loading32.gif') no-repeat;
+            background-repeat: no-;
+            background-position: center;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            z-index: 1004;
+            left: 0%;
+            top: 0%;
+        }
+</style>
+
+<script>
+
+var currentPageUrl='{!$CurrentPage.URL}';
+  Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.BabsonHeaderComponentController.saveUserLoginHistory}',currentPageUrl,
+            function(result, event){
+                if (event.status) {
+                   console.log('In success');
+                } 
+                else if (event.type === 'exception') {
+                    console.log('In success');
+                }
+            }, 
+            {escape: true}
+        );
+        console.log('In action');
+</script>
+ <script>
+         window.onload = function() {
+             showMainTC();
+        };
+        
+        function showMainTC(){
+            
+             var bodyLength = '{!body}';
+             var uName = '{!$User.LastName}';
+             var substring = 'Site';
+             //alert('uName.includes(substring)+'+uName.includes(substring));
+               
+             if(uName.includes(substring) == false){
+                 if({!isDateExist}== false && bodyLength.length!=0){
+                     $("#tid").show();
+                 }else if({!isDateExist}== true || bodyLength.length == 0){
+                      $("#tid").hide();   
+                      if(document.getElementById('tid_venture_TC') != null)
+                      showVentureTC();
+                 }
+             }
+        }
+     </script>
+<div id="header-source">
+    <div class="utility-nav container hidden-xs">
+        <ul id="utility" class="nav nav-pills pull-right">
+            <apex:outputPanel layout="none" rendered="{!$CurrentPage.Name == 'CORECONNECT__CC_CommunityHome' && ShowGettingStartedLink}">
+                <li>
+                    <a href="#start-tour" id="start-tour" data-alttext="Hide Get Started">{!$Label.CORECONNECT__CC_Header_Getting_Started}
+                        <span class="icon-expand"></span>
+                    </a>
+                </li>
+            </apex:outputPanel>
+        </ul>
+    </div>
+    <div id="header-wrap">
+
+        <!-- Site Header -->
+        <header id="header">
+            <!-- Getting Started -->
+            <c:BabsonGettingStarted />
+
+            <!-- Brand Bar -->
+            <c:BabsonBrandBar />
+
+            <!-- Title, user actions navigation -->
+            
+            <section id="header-title-actions">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Title -->
+                        <div class="col-xs-7 col-sm-6 col-md-5" id="header-title">
+                            <h1 style="margin-top:0px">
+                             <a href="{!$Site.BaseUrl}/BabsonHome?redirect=false">
+                                    <span>
+                                        <img src="{!$Resource.BabsonConnectorLogo}" style="width:10%; margin-top: -5px;"/>
+                                        {!$Label.BAB_Header_Community_Name}
+                                    </span>
+                                </a>
+                            </h1>
+                        </div>
+
+                        <!-- Search, Profile Strength, User -->
+                        <div class="col-xs-12 col-sm-6 col-md-7 {!IF(ISPICKVAL($User.UserType,'Guest'), 'guest','')}" id="header-actions">
+
+                            <!-- Search -->
+                            <div id="header-search" class="flex-item">
+                                <apex:outputPanel layout="none" rendered="{!$Profile.Name != GuestProfileName}">
+                                    <div id="search-desktop" class="">
+                                        <form action="{!$Page.Search}" id="header-search-form" method="get" class="navbar-form navbar-left" role="search">
+                                            <div class="input-group">
+                                                <input type="text" id="search-input" name="SearchString" class="form-control" placeholder="{!$Label.CORECONNECT__CC_Header_Search_Placeholder}" />
+                                                <button type="submit" id="search-button" class="btn btn-default">
+                                                    <span class="bab_icon-search"></span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </apex:outputPanel>
+                            </div>
+
+                            <!-- Profile Strength -->
+                            <div id="profile-strength" class="flex-item hidden-xs">
+                                <apex:outputPanel rendered="{!IF(CONTAINS($User.LastName, 'Site Guest User'), false, true)}">
+                                
+                                    <c:BabsonProfileStrength />
+                                </apex:outputPanel>
+                            </div>
+
+                            <!-- User -->
+                            <div id="header-user" class="flex-item">
+                                <ul class="nav nav-pills">
+                                    <apex:outputPanel layout="none" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+                                        <li class="dropdown user-toggle">
+                                            <div class="click-tip-wrapper">
+                                                <a href="#" class="click-tip-link">
+                                                    <span class="avatar">
+                                                        <img src="{!UserPhotos.smallPhotoUrl}" alt="{!IF(ISPICKVAL($User.UserType,'Guest'), 'Hi, Guest!', contact.FirstName)}" class="img-circle" />
+                                                    </span>
+                                                    <span class="hidden-xs hidden-sm text">{!IF(ISPICKVAL($User.UserType,'Guest'), 'Hi, Guest!','Hi, ' + contact.FirstName)}</span>
+                                                    <i class="fa fa-angle-down" />
+                                                </a>
+                                                <div class="click-tip-container">
+                                                    <div class="click-tip-inner">
+                                                        <ul class="user-nav">
+                                                            <li>
+                                                                <apex:outputPanel rendered="{!IF(CONTAINS($User.LastName, 'Site Guest User'), false, true)}">
+                                                                    <a href="{!$Page.MyProfilePage}"><!-- {!$Site.BaseUrl}/{!$User.Id} -->
+                                                                        <span class="icon-profile-sm"></span> <span class="text">{!$Label.CORECONNECT__CC_Header_My_Profile}</span>
+                                                                    </a>
+                                                                </apex:outputPanel>
+                                                            </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <apex:outputLink value="{!LogoutURL}" onclick="clearStorage();">
+                                                                <span class="icon-collapse"></span> <span class="text">{!$Label.CORECONNECT__CC_Header_Logout}</span>
+                                                            </apex:outputLink>
+                                                            <script type="text/javascript">
+                                                                function clearStorage(){
+                                                                    localStorage.setItem("followFilter", null);
+                                                                    localStorage.setItem("followFilterSelVal", null);
+                                                                    localStorage.setItem("recommendedFilter", null);
+                                                                }
+                                                              
+                                                            </script>
+                                                        </li>
+                                                    </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!ISPICKVAL($User.UserType,'Guest')}">
+                                        <li class="pull-right login">
+                                            <a href="{!$Label.BAB_Login_URL}"> 
+                                                <span class="icon-profile-sm"></span>{!$Label.site.login}
+                                            </a>
+                                        </li>
+                                    </apex:outputPanel>
+                                </ul>
+                            </div>
+
+                            <!-- Hamburger (mobile only) -->
+                            <div class="visible-xs" id="mobile-menu-trigger">
+                                <button ontouchstart="" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Navigation -->
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="collapse navbar-collapse" id="mainnav">
+                    <c:BabsonMegaNav />
+                </div>
+            </nav>
+        </header>
+    <!-- Babson Connector Terms and Condition Popup Start -->
+        <div id="tid"  style="display:none;" >
+            <div class="overlay"  id="over"></div>
+            <div class="dialog">
+                <div class="modal-body">
+                    <header class="well-header">
+                        <h3 >{!title}</h3>
+                    </header>
+                    <p><apex:outputText value="{!body}" escape="false" /></p>
+                    <p class="text-center"><button type="button" class="btn btn-primary"  onclick="acceptTM();return false;">Accept</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="redirect();return false;">Cancel</button></p>
+                </div>
+            </div>                           
+        </div>
+        <!-- Babson Connector Terms and Condition Popup end-->     
+    </div>
+</div>
+   <apex:form >
+      <apex:actionFunction action="{!updateContactTermTimeStamp}" name="acceptTerms"    oncomplete="hideTM();" status="loadingStatus2"></apex:actionFunction> 
+   </apex:form>
+ <apex:actionStatus startStyleClass="Processing" id="loadingStatus2"/>
+    <script>
+        function acceptAgreement(isDateExist, recordid){
+            if(isDateExist == 'false'){
+                $("#tid").show();
+                console.log('isDateExist  ::'+recordid );
+                document.getElementById('hidden').value =recordid;
+            }else{
+                $("#tid").hide();
+                window.open("{!$Page.VentureDetail}?id="+recordid,"_self");
+            }
+        
+        }
+        function showTM(){
+            $("#tid").show()
+        }
+        function redirect(){
+            $("#tid").hide();
+            window.open('{!$Label.BCTAC_Cancel_URL}','_self');
+        }
+        
+        function hideTM(){
+            $("#tid").hide();
+            //alert(document.getElementById('tid_venture_TC'));
+            if(document.getElementById('tid_venture_TC') != null)
+                showVentureTC();
+            return false;
+        }
+        function openDP(){
+            //alert('hi'+document.getElementById('hidden').value);
+            $("#tid").hide();
+            
+            
+            window.open("{!$Page.VentureDetail}?id="+document.getElementById('hidden').value,"_self");
+        
+        }
+        function acceptTM(){
+            acceptTerms();  
+        }
+    </script>
+</apex:component>

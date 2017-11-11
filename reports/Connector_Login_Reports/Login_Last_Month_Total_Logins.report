@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.CoreId__c</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>User.Constituency__c</field>
+    </columns>
+    <columns>
+        <field>USERNAME</field>
+    </columns>
+    <columns>
+        <field>ALIAS</field>
+    </columns>
+    <description>Not unique users</description>
+    <filter>
+        <criteriaItems>
+            <column>ACTIVE</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_NAME</column>
+            <operator>notContain</operator>
+            <value>QATest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>PROFILE</column>
+            <operator>equals</operator>
+            <value>Alumni Community - Alumni</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LOGIN_DATETIME</column>
+            <operator>equals</operator>
+            <value>LAST_MONTH</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>PROFILE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Login - Last Month Total Logins</name>
+    <params>
+        <name>active</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User</reportType>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LOGIN_DATETIME</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-05-08</startDate>
+    </timeFrameFilter>
+</Report>

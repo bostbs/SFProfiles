@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Allows for students from a second Academic Program to be tied to the project --></help>
+        <label><!-- Academic Program --></label>
+        <name>ACF_Academic_Program2__c</name>
+        <relationshipLabel><!-- Projects (Academic Program) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Academic Program --></label>
+        <name>ACF_Academic_Program__c</name>
+        <relationshipLabel><!-- Related OEL Projects --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Advisory Services/Consulting --></label>
+        <name>ACF_Advisory_Services_Consulting__c</name>
+    </fields><fields>
+        <label><!-- Analytics - Web/Mobile/Mkt Research --></label>
+        <name>ACF_Analytics_Web_Mobile_Mkt_Rsrch__c</name>
+    </fields><fields>
+        <label><!-- Business Analytics Concentration --></label>
+        <name>ACF_Business_Analytics_Concentration__c</name>
+    </fields><fields>
+        <label><!-- Business Org --></label>
+        <name>ACF_Business_Org__c</name>
+        <relationshipLabel><!-- OEL Projects --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Course Offering --></label>
+        <name>ACF_Course_Offering__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Course --></label>
+        <name>ACF_Course__c</name>
+        <relationshipLabel><!-- Projects (Course) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Deliverables --></label>
+        <name>ACF_Deliverables__c</name>
+    </fields><fields>
+        <label><!-- Description --></label>
+        <name>ACF_Description__c</name>
+    </fields><fields>
+        <label><!-- Entrepreneurship Concentration --></label>
+        <name>ACF_Entrepreneurship_Concentration__c</name>
+    </fields><fields>
+        <label><!-- Finance &amp; Accounting --></label>
+        <name>ACF_Finance_Accounting__c</name>
+    </fields><fields>
+        <label><!-- Finance Concentration --></label>
+        <name>ACF_Finance_Concentration__c</name>
+    </fields><fields>
+        <label><!-- Global Management Concentration --></label>
+        <name>ACF_Global_Management__c</name>
+    </fields><fields>
+        <label><!-- HR / Org Mgt / Change Mgt --></label>
+        <name>ACF_HR_Org_Mgt_Change_Mgt__c</name>
+    </fields><fields>
+        <label><!-- Jan - March GCTT Projects --></label>
+        <name>ACF_Jan_March_GCTT_Projects__c</name>
+    </fields><fields>
+        <label><!-- January Projects --></label>
+        <name>ACF_January_Projects__c</name>
+    </fields><fields>
+        <label><!-- March - May GCTT Projects --></label>
+        <name>ACF_March_May_GCTT_Projects__c</name>
+    </fields><fields>
+        <label><!-- March Projects --></label>
+        <name>ACF_March_Projects__c</name>
+    </fields><fields>
+        <label><!-- Marketing Concentration --></label>
+        <name>ACF_Marketing_Concentration__c</name>
+    </fields><fields>
+        <label><!-- May Projects --></label>
+        <name>ACF_May_Projects__c</name>
+    </fields><fields>
+        <label><!-- Ops/Logistics/Supply Chain --></label>
+        <name>ACF_Ops_Logistics_Supply_Chain__c</name>
+    </fields><fields>
+        <label><!-- Other --></label>
+        <name>ACF_Other__c</name>
+    </fields><fields>
+        <label><!-- Primary Project Manager --></label>
+        <name>ACF_Primary_Project_Manager__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Project Offering Status --></label>
+        <name>ACF_Project_Offering_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not applicable</masterLabel>
+            <translation><!-- Not applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required Core</masterLabel>
+            <translation><!-- Required Core --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Declined</masterLabel>
+            <translation><!-- Student Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Offered</masterLabel>
+            <translation><!-- Student Offered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Offered and Rolled-Over</masterLabel>
+            <translation><!-- Student Offered and Rolled-Over --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Selected</masterLabel>
+            <translation><!-- Student Selected --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Project Proposal --></label>
+        <name>ACF_Project_Proposal__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Project Year --></label>
+        <name>ACF_Project_Year__c</name>
+    </fields><fields>
+        <label><!-- Sales/Business Development --></label>
+        <name>ACF_Sales_Business_Development__c</name>
+    </fields><fields>
+        <label><!-- Sales &amp; Marketing --></label>
+        <name>ACF_Sales_Marketing__c</name>
+    </fields><fields>
+        <label><!-- September Projects --></label>
+        <name>ACF_September_Projects__c</name>
+    </fields><fields>
+        <label><!-- Sr. Project Manager --></label>
+        <name>ACF_Sr_Project_Manager__c</name>
+        <relationshipLabel><!-- Projects (Sr. Project Manager) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Strategy/Business Planning &amp; Forecasting --></label>
+        <name>ACF_Strategy_Bus_Planning_Forecasting__c</name>
+    </fields><fields>
+        <label><!-- August - December GCTT Projects --></label>
+        <name>August_December_GCTT_Projects__c</name>
+    </fields><fields>
+        <label><!-- May - August GCTT Projects --></label>
+        <name>May_August_GCTT_Projects__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Babson OEL Project Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description and Deliverables --></label>
+            <section>Description and Deliverables</section>
+        </sections>
+        <sections>
+            <label><!-- Project Scope Function Area --></label>
+            <section>Project Scope Function Area</section>
+        </sections>
+        <sections>
+            <label><!-- Timeline --></label>
+            <section>Timeline</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

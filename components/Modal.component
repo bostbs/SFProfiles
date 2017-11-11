@@ -1,0 +1,21 @@
+<apex:component layout="none">
+	<apex:attribute name="modalID" type="String" description="The modal ID - must be unique" default="myModal" required="true" />
+	<apex:attribute name="linkText" type="String" description="The text in the trigger link" default="Open" required="false" />
+	<apex:attribute name="modalText" type="String" description="The main modal content" default="Hello" required="false" />
+	<apex:attribute name="linkClass" type="String" description="Link class" default="" required="false" />
+	<apex:attribute name="modalClass" type="String" description="Modal class" default="" required="false" />
+
+	<a href="#" class="{!linkClass}" data-toggle="modal" data-target="#{!modalID}">{!linkText}</a>
+	
+	<div id="{!modalID}" class="modal fade {!modalClass}" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-body">
+					<p><apex:outputText value="{!modalText}" escape="false" /></p>
+					<p class="text-center"><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</apex:component>

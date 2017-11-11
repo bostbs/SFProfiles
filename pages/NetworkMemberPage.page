@@ -1,0 +1,114 @@
+<apex:page controller="NetworkMemberCtrl" sidebar="false" showHeader="false">
+    <apex:form >
+    	<div style="margin-left:10px" id="prefDiv">
+            <div class="col-xs-12 col-sm-6"> 
+                <div class="col-xs-12">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="10px;"> 
+                                <apex:inputCheckbox styleClass="pref" value="{!followme}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Follows Me</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10px;">
+                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableProfilePostEmail}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Posts on my profile</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10px;">
+                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableSharePostEmail}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Shares a post I made</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10px;">
+                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableLikeEmail}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Likes a post or comment I made</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10px;">
+                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableMentionsPostEmail}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Mentions me in a post</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10px;">
+                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisMentionsCommentEmail}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Mentions me in a comment</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10px;">
+                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisMentionsCommentEmail}" required="false"/>
+                            </td>
+                            <td>
+                                <label class="labelCls">Endorses me on a topic</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6"> 
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="10px;">
+                            <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableEndorsementEmail}" required="false"/>
+                        </td>
+                        <td>
+                            <label class="labelCls">Comments on my posts</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10px;">
+                            <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableChangeCommentEmail}" required="false"/>
+                        </td>
+                        <td>
+                            <label class="labelCls">Comments on a post on my profile</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10px;">
+                            <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableLaterCommentEmail}" required="false"/>
+                        </td>
+                        <td>
+                            <label class="labelCls">Comments after a post I've made</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10px;">
+                            <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableBookmarkEmail}" required="false"/>
+                        </td>
+                        <td>
+                            <label class="labelCls">Comments on an item I've bookmarked</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="10px;">
+                            <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisCommentAfterLikeEmail}" required="false"/>
+                        </td>
+                        <td>
+                            <label class="labelCls">Comments on an item I've liked</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <apex:commandButton action="{!save}" value="Save"/>
+    </apex:form>
+</apex:page>

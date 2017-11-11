@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Organization interested in the Babson Program or Interest Topic --></help>
+        <label><!-- Business Org --></label>
+        <name>ACF_Business_org__c</name>
+        <relationshipLabel><!-- Interests (Business Org) --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Contact interested in the Babson Program or Interest Topic --></help>
+        <label><!-- Contact --></label>
+        <name>ACF_Contact__c</name>
+        <relationshipLabel><!-- Interests --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Inquiry Date --></label>
+        <name>ACF_Inquiry_Date__c</name>
+    </fields><fields>
+        <label><!-- Interest Topic --></label>
+        <name>ACF_Interest_Topic__c</name>
+        <relationshipLabel><!-- Interests --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Lead --></label>
+        <name>ACF_Lead__c</name>
+        <relationshipLabel><!-- Interests --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Notes --></label>
+        <name>ACF_Notes__c</name>
+    </fields><fields>
+        <help><!-- Unique external ID used for data migration from Pivotal. --></help>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- Program --></label>
+        <name>ACF_Program__c</name>
+        <relationshipLabel><!-- Interests (Program) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- View --></label>
+        <name>ACF_View__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Interest</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Interests</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Interest Group Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Choose either Program OR Area.
+Create additional records for additional interest groups. --></errorMessage>
+        <name>Program_OR_Topic</name>
+    </validationRules></CustomObjectTranslation>

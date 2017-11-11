@@ -1,0 +1,7 @@
+<apex:page sidebar="false" showHeader="false">
+   <script>
+    window.onload = function(){
+          window.open("{!$Label.CustomBaseurl}");  
+       }       
+   </script>  
+</apex:page>

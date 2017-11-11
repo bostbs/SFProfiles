@@ -1,0 +1,2728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ForecastingSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableForecasts>false</enableForecasts>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>commitonly</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>commit</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>closedonly</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>closed</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>openpipeline</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>pipeline</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>commit</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>best case</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>omittedonly</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>omitted</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>bestcaseforecast</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>closed</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>commit</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>best case</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>pipelineonly</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>pipeline</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>commitforecast</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>closed</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>commit</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingCategoryMappings>
+        <forecastingItemCategoryApiName>bestcaseonly</forecastingItemCategoryApiName>
+        <weightedSourceCategories>
+            <sourceCategoryApiName>best case</sourceCategoryApiName>
+            <weight>1.0</weight>
+        </weightedSourceCategories>
+    </forecastingCategoryMappings>
+    <forecastingTypeSettings>
+        <active>false</active>
+        <adjustmentsSettings>
+            <enableAdjustments>false</enableAdjustments>
+            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+        </adjustmentsSettings>
+        <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <forecastRangeSettings>
+            <beginning>0</beginning>
+            <displaying>6</displaying>
+            <periodType>Month</periodType>
+        </forecastRangeSettings>
+        <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
+        <isAmount>false</isAmount>
+        <isAvailable>true</isAvailable>
+        <isQuantity>true</isQuantity>
+        <masterLabel>Product Families</masterLabel>
+        <name>OpportunityLineItemQuantity</name>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NAME</field>
+            <label>Opportunity Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.NAME</field>
+            <label>Account Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <label>Quantity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <label>Close Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <label>Stage</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <label>Probability (%)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FORECAST_CATEGORY</field>
+            <label>Forecast Category</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FULL_NAME</field>
+            <label>Owner Full Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <label>Contract Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.NAME</field>
+            <label>Contract Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.ALIAS</field>
+            <label>Opportunity Owner Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <label>Owner First Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.LAST_NAME</field>
+            <label>Owner Last Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>DESCRIPTION</field>
+            <label>Description</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <label>Expected Revenue</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <label>Lead Source</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <label>Next Step</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <label>Private</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.TYPE</field>
+            <label>Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <label>Last Modified By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSED</field>
+            <label>Closed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.WON</field>
+            <label>Won</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.SITE</field>
+            <label>Account Site</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <label>Fiscal Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <label>Fiscal Quarter</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <label>Fiscal Period</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <label>Opportunity Record Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <label>Last Activity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <label>Created Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <label>Last Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Er</field>
+            <label>Academic Program</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fa</field>
+            <label>Additional information</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fb</field>
+            <label>Advisory Services/Consulting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FE</field>
+            <label>Agreement Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Eu</field>
+            <label>Alumni Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Et</field>
+            <label>Alumni Event_Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Es</field>
+            <label>Alumni Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fc</field>
+            <label>Analytics - Web/Mobile/Mkt Research</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ev</field>
+            <label>Assignment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ew</field>
+            <label>August - December GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F1</field>
+            <label>Babson&apos;s Office of Experiential Learning</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ex</field>
+            <label>Babson Alum</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ey</field>
+            <label>Babson Center for Career Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ez</field>
+            <label>Babson Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F0</field>
+            <label>Babson Staff Member</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F2</field>
+            <label>Benefits Fair Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F3</field>
+            <label>Benefits Fair Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F4</field>
+            <label>Benefits Fair Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F5</field>
+            <label>Bill To Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fd</field>
+            <label>Challenge</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ft</field>
+            <label>Challenge importance to Organization</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F6</field>
+            <label>Check#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F9</field>
+            <label>Corporate Info Session 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F7</field>
+            <label>Corporate Info Session 1 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F8</field>
+            <label>Corporate Info Session 1 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FC</field>
+            <label>Corporate Info Session 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FA</field>
+            <label>Corporate Info Session 2 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FB</field>
+            <label>Corporate Info Session 2 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FD</field>
+            <label>Current Babson Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fe</field>
+            <label>Deliverables</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FF</field>
+            <label>Do Not Process</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FN</field>
+            <label>Email Invoice?</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FO</field>
+            <label>Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLV</field>
+            <label>Faculty Director</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N29000000XaUl</field>
+            <label>Faculty Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ff</field>
+            <label>Finance &amp; Accounting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FP</field>
+            <label>Former Experiential Learning Partner Org</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RRl53</field>
+            <label>Geocode</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FQ</field>
+            <label>GL Account Historical</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GG</field>
+            <label>GL Acct#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FR</field>
+            <label>Historical Invoice #</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FS</field>
+            <label>Hold Primary PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FT</field>
+            <label>Hold Sr. PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fg</field>
+            <label>HR / Org Mgt / Change Mgt</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FU</field>
+            <label>Invoice#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FV</field>
+            <label>Invoice# pt1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GH</field>
+            <label>Invoice# pt2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fh</field>
+            <label>Jan - March GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fi</field>
+            <label>January Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fj</field>
+            <label>March - May GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fk</field>
+            <label>March Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FW</field>
+            <label>May - August GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fl</field>
+            <label>May Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FX</field>
+            <label>Migrated Modified By</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FY</field>
+            <label>Migrated Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FZ</field>
+            <label>Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fu</field>
+            <label>Offering</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fm</field>
+            <label>Ops/Logistics/Supply Chain</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fn</field>
+            <label>Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fv</field>
+            <label>Other Referral</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fx</field>
+            <label>Payment Method</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fy</field>
+            <label>Payment Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fz</field>
+            <label>Payment Terms</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FG</field>
+            <label>Payroll Exists</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G0</field>
+            <label>Pivotal ID</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fw</field>
+            <label>PO#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FH</field>
+            <label>Pre Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FI</field>
+            <label>Processed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLa</field>
+            <label>Program Coordinator</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLf</field>
+            <label>Program Manager</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fo</field>
+            <label>Project Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G1</field>
+            <label>Referral Name Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G2</field>
+            <label>Referral Name Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G3</field>
+            <label>Referral Name Staff</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fp</field>
+            <label>Referral Name Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FJ</field>
+            <label>Related Faculty Agreement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FK</field>
+            <label>Related Sales Opportunity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fq</field>
+            <label>Sales/Business Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fr</field>
+            <label>Sales &amp; Marketing</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G4</field>
+            <label>Semesters Covered</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G5</field>
+            <label>September Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G6</field>
+            <label>Social Media</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G7</field>
+            <label>Special Instructions</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FL</field>
+            <label>Stage Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G8</field>
+            <label>Start Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fs</field>
+            <label>Strategy/Business Planning &amp; Forecasting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GB</field>
+            <label>Tabling Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G9</field>
+            <label>Tabling Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GA</field>
+            <label>Tabling Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GE</field>
+            <label>Taste of Babson Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GC</field>
+            <label>Taste of Babson Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GD</field>
+            <label>Taste of Babson Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GF</field>
+            <label>View</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FM</field>
+            <label>Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsSelectedSettings>
+            <field>OPPORTUNITY.NAME</field>
+            <field>ACCOUNT.NAME</field>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <field>FORECAST_CATEGORY</field>
+            <field>FULL_NAME</field>
+        </opportunityListFieldsSelectedSettings>
+        <opportunityListFieldsUnselectedSettings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <field>CONTRACT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <field>CORE.USERS.ALIAS</field>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <field>CORE.USERS.LAST_NAME</field>
+            <field>DESCRIPTION</field>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <field>OPPORTUNITY.TYPE</field>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <field>OPPORTUNITY.CLOSED</field>
+            <field>OPPORTUNITY.WON</field>
+            <field>ACCOUNT.SITE</field>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N3600000Rt4Er</field>
+            <field>00N3600000Rt4Fa</field>
+            <field>00N3600000Rt4Fb</field>
+            <field>00N3600000Rt4FE</field>
+            <field>00N3600000Rt4Eu</field>
+            <field>00N3600000Rt4Et</field>
+            <field>00N3600000Rt4Es</field>
+            <field>00N3600000Rt4Fc</field>
+            <field>00N3600000Rt4Ev</field>
+            <field>00N3600000Rt4Ew</field>
+            <field>00N3600000Rt4F1</field>
+            <field>00N3600000Rt4Ex</field>
+            <field>00N3600000Rt4Ey</field>
+            <field>00N3600000Rt4Ez</field>
+            <field>00N3600000Rt4F0</field>
+            <field>00N3600000Rt4F2</field>
+            <field>00N3600000Rt4F3</field>
+            <field>00N3600000Rt4F4</field>
+            <field>00N3600000Rt4F5</field>
+            <field>00N3600000Rt4Fd</field>
+            <field>00N3600000Rt4Ft</field>
+            <field>00N3600000Rt4F6</field>
+            <field>00N3600000Rt4F9</field>
+            <field>00N3600000Rt4F7</field>
+            <field>00N3600000Rt4F8</field>
+            <field>00N3600000Rt4FC</field>
+            <field>00N3600000Rt4FA</field>
+            <field>00N3600000Rt4FB</field>
+            <field>00N3600000Rt4FD</field>
+            <field>00N3600000Rt4Fe</field>
+            <field>00N3600000Rt4FF</field>
+            <field>00N3600000Rt4FN</field>
+            <field>00N3600000Rt4FO</field>
+            <field>00N3600000RtoLV</field>
+            <field>00N29000000XaUl</field>
+            <field>00N3600000Rt4Ff</field>
+            <field>00N3600000Rt4FP</field>
+            <field>00N3600000RRl53</field>
+            <field>00N3600000Rt4FQ</field>
+            <field>00N3600000Rt4GG</field>
+            <field>00N3600000Rt4FR</field>
+            <field>00N3600000Rt4FS</field>
+            <field>00N3600000Rt4FT</field>
+            <field>00N3600000Rt4Fg</field>
+            <field>00N3600000Rt4FU</field>
+            <field>00N3600000Rt4FV</field>
+            <field>00N3600000Rt4GH</field>
+            <field>00N3600000Rt4Fh</field>
+            <field>00N3600000Rt4Fi</field>
+            <field>00N3600000Rt4Fj</field>
+            <field>00N3600000Rt4Fk</field>
+            <field>00N3600000Rt4FW</field>
+            <field>00N3600000Rt4Fl</field>
+            <field>00N3600000Rt4FX</field>
+            <field>00N3600000Rt4FY</field>
+            <field>00N3600000Rt4FZ</field>
+            <field>00N3600000Rt4Fu</field>
+            <field>00N3600000Rt4Fm</field>
+            <field>00N3600000Rt4Fn</field>
+            <field>00N3600000Rt4Fv</field>
+            <field>00N3600000Rt4Fx</field>
+            <field>00N3600000Rt4Fy</field>
+            <field>00N3600000Rt4Fz</field>
+            <field>00N3600000Rt4FG</field>
+            <field>00N3600000Rt4G0</field>
+            <field>00N3600000Rt4Fw</field>
+            <field>00N3600000Rt4FH</field>
+            <field>00N3600000Rt4FI</field>
+            <field>00N3600000RtoLa</field>
+            <field>00N3600000RtoLf</field>
+            <field>00N3600000Rt4Fo</field>
+            <field>00N3600000Rt4G1</field>
+            <field>00N3600000Rt4G2</field>
+            <field>00N3600000Rt4G3</field>
+            <field>00N3600000Rt4Fp</field>
+            <field>00N3600000Rt4FJ</field>
+            <field>00N3600000Rt4FK</field>
+            <field>00N3600000Rt4Fq</field>
+            <field>00N3600000Rt4Fr</field>
+            <field>00N3600000Rt4G4</field>
+            <field>00N3600000Rt4G5</field>
+            <field>00N3600000Rt4G6</field>
+            <field>00N3600000Rt4G7</field>
+            <field>00N3600000Rt4FL</field>
+            <field>00N3600000Rt4G8</field>
+            <field>00N3600000Rt4Fs</field>
+            <field>00N3600000Rt4GB</field>
+            <field>00N3600000Rt4G9</field>
+            <field>00N3600000Rt4GA</field>
+            <field>00N3600000Rt4GE</field>
+            <field>00N3600000Rt4GC</field>
+            <field>00N3600000Rt4GD</field>
+            <field>00N3600000Rt4GF</field>
+            <field>00N3600000Rt4FM</field>
+        </opportunityListFieldsUnselectedSettings>
+        <quotasSettings>
+            <showQuotas>false</showQuotas>
+        </quotasSettings>
+    </forecastingTypeSettings>
+    <forecastingTypeSettings>
+        <active>false</active>
+        <adjustmentsSettings>
+            <enableAdjustments>false</enableAdjustments>
+            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+        </adjustmentsSettings>
+        <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <forecastRangeSettings>
+            <beginning>0</beginning>
+            <displaying>6</displaying>
+            <periodType>Month</periodType>
+        </forecastRangeSettings>
+        <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
+        <isAmount>true</isAmount>
+        <isAvailable>true</isAvailable>
+        <isQuantity>false</isQuantity>
+        <masterLabel>Product Families</masterLabel>
+        <name>OpportunityLineItemRevenue</name>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NAME</field>
+            <label>Opportunity Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.NAME</field>
+            <label>Account Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <label>Close Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <label>Stage</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <label>Probability (%)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FORECAST_CATEGORY</field>
+            <label>Forecast Category</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FULL_NAME</field>
+            <label>Owner Full Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <label>Contract Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.NAME</field>
+            <label>Contract Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.ALIAS</field>
+            <label>Opportunity Owner Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <label>Owner First Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.LAST_NAME</field>
+            <label>Owner Last Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>DESCRIPTION</field>
+            <label>Description</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <label>Expected Revenue</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <label>Lead Source</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <label>Next Step</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <label>Private</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <label>Quantity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.TYPE</field>
+            <label>Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <label>Last Modified By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSED</field>
+            <label>Closed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.WON</field>
+            <label>Won</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.SITE</field>
+            <label>Account Site</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <label>Fiscal Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <label>Fiscal Quarter</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <label>Fiscal Period</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <label>Opportunity Record Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <label>Last Activity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <label>Created Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <label>Last Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Er</field>
+            <label>Academic Program</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fa</field>
+            <label>Additional information</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fb</field>
+            <label>Advisory Services/Consulting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FE</field>
+            <label>Agreement Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Eu</field>
+            <label>Alumni Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Et</field>
+            <label>Alumni Event_Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Es</field>
+            <label>Alumni Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fc</field>
+            <label>Analytics - Web/Mobile/Mkt Research</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ev</field>
+            <label>Assignment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ew</field>
+            <label>August - December GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F1</field>
+            <label>Babson&apos;s Office of Experiential Learning</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ex</field>
+            <label>Babson Alum</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ey</field>
+            <label>Babson Center for Career Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ez</field>
+            <label>Babson Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F0</field>
+            <label>Babson Staff Member</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F2</field>
+            <label>Benefits Fair Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F3</field>
+            <label>Benefits Fair Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F4</field>
+            <label>Benefits Fair Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F5</field>
+            <label>Bill To Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fd</field>
+            <label>Challenge</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ft</field>
+            <label>Challenge importance to Organization</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F6</field>
+            <label>Check#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F9</field>
+            <label>Corporate Info Session 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F7</field>
+            <label>Corporate Info Session 1 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F8</field>
+            <label>Corporate Info Session 1 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FC</field>
+            <label>Corporate Info Session 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FA</field>
+            <label>Corporate Info Session 2 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FB</field>
+            <label>Corporate Info Session 2 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FD</field>
+            <label>Current Babson Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fe</field>
+            <label>Deliverables</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FF</field>
+            <label>Do Not Process</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FN</field>
+            <label>Email Invoice?</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FO</field>
+            <label>Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLV</field>
+            <label>Faculty Director</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N29000000XaUl</field>
+            <label>Faculty Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ff</field>
+            <label>Finance &amp; Accounting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FP</field>
+            <label>Former Experiential Learning Partner Org</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RRl53</field>
+            <label>Geocode</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FQ</field>
+            <label>GL Account Historical</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GG</field>
+            <label>GL Acct#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FR</field>
+            <label>Historical Invoice #</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FS</field>
+            <label>Hold Primary PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FT</field>
+            <label>Hold Sr. PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fg</field>
+            <label>HR / Org Mgt / Change Mgt</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FU</field>
+            <label>Invoice#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FV</field>
+            <label>Invoice# pt1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GH</field>
+            <label>Invoice# pt2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fh</field>
+            <label>Jan - March GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fi</field>
+            <label>January Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fj</field>
+            <label>March - May GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fk</field>
+            <label>March Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FW</field>
+            <label>May - August GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fl</field>
+            <label>May Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FX</field>
+            <label>Migrated Modified By</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FY</field>
+            <label>Migrated Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FZ</field>
+            <label>Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fu</field>
+            <label>Offering</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fm</field>
+            <label>Ops/Logistics/Supply Chain</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fn</field>
+            <label>Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fv</field>
+            <label>Other Referral</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fx</field>
+            <label>Payment Method</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fy</field>
+            <label>Payment Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fz</field>
+            <label>Payment Terms</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FG</field>
+            <label>Payroll Exists</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G0</field>
+            <label>Pivotal ID</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fw</field>
+            <label>PO#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FH</field>
+            <label>Pre Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FI</field>
+            <label>Processed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLa</field>
+            <label>Program Coordinator</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLf</field>
+            <label>Program Manager</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fo</field>
+            <label>Project Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G1</field>
+            <label>Referral Name Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G2</field>
+            <label>Referral Name Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G3</field>
+            <label>Referral Name Staff</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fp</field>
+            <label>Referral Name Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FJ</field>
+            <label>Related Faculty Agreement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FK</field>
+            <label>Related Sales Opportunity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fq</field>
+            <label>Sales/Business Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fr</field>
+            <label>Sales &amp; Marketing</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G4</field>
+            <label>Semesters Covered</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G5</field>
+            <label>September Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G6</field>
+            <label>Social Media</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G7</field>
+            <label>Special Instructions</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FL</field>
+            <label>Stage Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G8</field>
+            <label>Start Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fs</field>
+            <label>Strategy/Business Planning &amp; Forecasting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GB</field>
+            <label>Tabling Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G9</field>
+            <label>Tabling Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GA</field>
+            <label>Tabling Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GE</field>
+            <label>Taste of Babson Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GC</field>
+            <label>Taste of Babson Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GD</field>
+            <label>Taste of Babson Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GF</field>
+            <label>View</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FM</field>
+            <label>Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsSelectedSettings>
+            <field>OPPORTUNITY.NAME</field>
+            <field>ACCOUNT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <field>FORECAST_CATEGORY</field>
+            <field>FULL_NAME</field>
+        </opportunityListFieldsSelectedSettings>
+        <opportunityListFieldsUnselectedSettings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <field>CONTRACT.NAME</field>
+            <field>CORE.USERS.ALIAS</field>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <field>CORE.USERS.LAST_NAME</field>
+            <field>DESCRIPTION</field>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <field>OPPORTUNITY.TYPE</field>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <field>OPPORTUNITY.CLOSED</field>
+            <field>OPPORTUNITY.WON</field>
+            <field>ACCOUNT.SITE</field>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N3600000Rt4Er</field>
+            <field>00N3600000Rt4Fa</field>
+            <field>00N3600000Rt4Fb</field>
+            <field>00N3600000Rt4FE</field>
+            <field>00N3600000Rt4Eu</field>
+            <field>00N3600000Rt4Et</field>
+            <field>00N3600000Rt4Es</field>
+            <field>00N3600000Rt4Fc</field>
+            <field>00N3600000Rt4Ev</field>
+            <field>00N3600000Rt4Ew</field>
+            <field>00N3600000Rt4F1</field>
+            <field>00N3600000Rt4Ex</field>
+            <field>00N3600000Rt4Ey</field>
+            <field>00N3600000Rt4Ez</field>
+            <field>00N3600000Rt4F0</field>
+            <field>00N3600000Rt4F2</field>
+            <field>00N3600000Rt4F3</field>
+            <field>00N3600000Rt4F4</field>
+            <field>00N3600000Rt4F5</field>
+            <field>00N3600000Rt4Fd</field>
+            <field>00N3600000Rt4Ft</field>
+            <field>00N3600000Rt4F6</field>
+            <field>00N3600000Rt4F9</field>
+            <field>00N3600000Rt4F7</field>
+            <field>00N3600000Rt4F8</field>
+            <field>00N3600000Rt4FC</field>
+            <field>00N3600000Rt4FA</field>
+            <field>00N3600000Rt4FB</field>
+            <field>00N3600000Rt4FD</field>
+            <field>00N3600000Rt4Fe</field>
+            <field>00N3600000Rt4FF</field>
+            <field>00N3600000Rt4FN</field>
+            <field>00N3600000Rt4FO</field>
+            <field>00N3600000RtoLV</field>
+            <field>00N29000000XaUl</field>
+            <field>00N3600000Rt4Ff</field>
+            <field>00N3600000Rt4FP</field>
+            <field>00N3600000RRl53</field>
+            <field>00N3600000Rt4FQ</field>
+            <field>00N3600000Rt4GG</field>
+            <field>00N3600000Rt4FR</field>
+            <field>00N3600000Rt4FS</field>
+            <field>00N3600000Rt4FT</field>
+            <field>00N3600000Rt4Fg</field>
+            <field>00N3600000Rt4FU</field>
+            <field>00N3600000Rt4FV</field>
+            <field>00N3600000Rt4GH</field>
+            <field>00N3600000Rt4Fh</field>
+            <field>00N3600000Rt4Fi</field>
+            <field>00N3600000Rt4Fj</field>
+            <field>00N3600000Rt4Fk</field>
+            <field>00N3600000Rt4FW</field>
+            <field>00N3600000Rt4Fl</field>
+            <field>00N3600000Rt4FX</field>
+            <field>00N3600000Rt4FY</field>
+            <field>00N3600000Rt4FZ</field>
+            <field>00N3600000Rt4Fu</field>
+            <field>00N3600000Rt4Fm</field>
+            <field>00N3600000Rt4Fn</field>
+            <field>00N3600000Rt4Fv</field>
+            <field>00N3600000Rt4Fx</field>
+            <field>00N3600000Rt4Fy</field>
+            <field>00N3600000Rt4Fz</field>
+            <field>00N3600000Rt4FG</field>
+            <field>00N3600000Rt4G0</field>
+            <field>00N3600000Rt4Fw</field>
+            <field>00N3600000Rt4FH</field>
+            <field>00N3600000Rt4FI</field>
+            <field>00N3600000RtoLa</field>
+            <field>00N3600000RtoLf</field>
+            <field>00N3600000Rt4Fo</field>
+            <field>00N3600000Rt4G1</field>
+            <field>00N3600000Rt4G2</field>
+            <field>00N3600000Rt4G3</field>
+            <field>00N3600000Rt4Fp</field>
+            <field>00N3600000Rt4FJ</field>
+            <field>00N3600000Rt4FK</field>
+            <field>00N3600000Rt4Fq</field>
+            <field>00N3600000Rt4Fr</field>
+            <field>00N3600000Rt4G4</field>
+            <field>00N3600000Rt4G5</field>
+            <field>00N3600000Rt4G6</field>
+            <field>00N3600000Rt4G7</field>
+            <field>00N3600000Rt4FL</field>
+            <field>00N3600000Rt4G8</field>
+            <field>00N3600000Rt4Fs</field>
+            <field>00N3600000Rt4GB</field>
+            <field>00N3600000Rt4G9</field>
+            <field>00N3600000Rt4GA</field>
+            <field>00N3600000Rt4GE</field>
+            <field>00N3600000Rt4GC</field>
+            <field>00N3600000Rt4GD</field>
+            <field>00N3600000Rt4GF</field>
+            <field>00N3600000Rt4FM</field>
+        </opportunityListFieldsUnselectedSettings>
+        <quotasSettings>
+            <showQuotas>false</showQuotas>
+        </quotasSettings>
+    </forecastingTypeSettings>
+    <forecastingTypeSettings>
+        <active>false</active>
+        <adjustmentsSettings>
+            <enableAdjustments>false</enableAdjustments>
+            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+        </adjustmentsSettings>
+        <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <forecastRangeSettings>
+            <beginning>0</beginning>
+            <displaying>6</displaying>
+            <periodType>Month</periodType>
+        </forecastRangeSettings>
+        <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
+        <isAmount>false</isAmount>
+        <isAvailable>true</isAvailable>
+        <isQuantity>true</isQuantity>
+        <masterLabel>Opportunities</masterLabel>
+        <name>OpportunityQuantity</name>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NAME</field>
+            <label>Opportunity Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.NAME</field>
+            <label>Account Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <label>Quantity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <label>Close Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <label>Stage</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <label>Probability (%)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FORECAST_CATEGORY</field>
+            <label>Forecast Category</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FULL_NAME</field>
+            <label>Owner Full Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <label>Contract Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.NAME</field>
+            <label>Contract Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.ALIAS</field>
+            <label>Opportunity Owner Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <label>Owner First Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.LAST_NAME</field>
+            <label>Owner Last Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>DESCRIPTION</field>
+            <label>Description</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <label>Expected Revenue</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <label>Lead Source</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <label>Next Step</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <label>Private</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.TYPE</field>
+            <label>Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <label>Last Modified By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSED</field>
+            <label>Closed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.WON</field>
+            <label>Won</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.SITE</field>
+            <label>Account Site</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <label>Fiscal Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <label>Fiscal Quarter</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <label>Fiscal Period</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <label>Opportunity Record Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <label>Last Activity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <label>Created Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <label>Last Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Er</field>
+            <label>Academic Program</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fa</field>
+            <label>Additional information</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fb</field>
+            <label>Advisory Services/Consulting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FE</field>
+            <label>Agreement Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Eu</field>
+            <label>Alumni Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Et</field>
+            <label>Alumni Event_Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Es</field>
+            <label>Alumni Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fc</field>
+            <label>Analytics - Web/Mobile/Mkt Research</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ev</field>
+            <label>Assignment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ew</field>
+            <label>August - December GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F1</field>
+            <label>Babson&apos;s Office of Experiential Learning</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ex</field>
+            <label>Babson Alum</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ey</field>
+            <label>Babson Center for Career Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ez</field>
+            <label>Babson Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F0</field>
+            <label>Babson Staff Member</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F2</field>
+            <label>Benefits Fair Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F3</field>
+            <label>Benefits Fair Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F4</field>
+            <label>Benefits Fair Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F5</field>
+            <label>Bill To Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fd</field>
+            <label>Challenge</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ft</field>
+            <label>Challenge importance to Organization</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F6</field>
+            <label>Check#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F9</field>
+            <label>Corporate Info Session 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F7</field>
+            <label>Corporate Info Session 1 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F8</field>
+            <label>Corporate Info Session 1 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FC</field>
+            <label>Corporate Info Session 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FA</field>
+            <label>Corporate Info Session 2 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FB</field>
+            <label>Corporate Info Session 2 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FD</field>
+            <label>Current Babson Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fe</field>
+            <label>Deliverables</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FF</field>
+            <label>Do Not Process</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FN</field>
+            <label>Email Invoice?</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FO</field>
+            <label>Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLV</field>
+            <label>Faculty Director</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N29000000XaUl</field>
+            <label>Faculty Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ff</field>
+            <label>Finance &amp; Accounting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FP</field>
+            <label>Former Experiential Learning Partner Org</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RRl53</field>
+            <label>Geocode</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FQ</field>
+            <label>GL Account Historical</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GG</field>
+            <label>GL Acct#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FR</field>
+            <label>Historical Invoice #</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FS</field>
+            <label>Hold Primary PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FT</field>
+            <label>Hold Sr. PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fg</field>
+            <label>HR / Org Mgt / Change Mgt</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FU</field>
+            <label>Invoice#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FV</field>
+            <label>Invoice# pt1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GH</field>
+            <label>Invoice# pt2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fh</field>
+            <label>Jan - March GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fi</field>
+            <label>January Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fj</field>
+            <label>March - May GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fk</field>
+            <label>March Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FW</field>
+            <label>May - August GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fl</field>
+            <label>May Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FX</field>
+            <label>Migrated Modified By</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FY</field>
+            <label>Migrated Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FZ</field>
+            <label>Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fu</field>
+            <label>Offering</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fm</field>
+            <label>Ops/Logistics/Supply Chain</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fn</field>
+            <label>Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fv</field>
+            <label>Other Referral</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fx</field>
+            <label>Payment Method</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fy</field>
+            <label>Payment Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fz</field>
+            <label>Payment Terms</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FG</field>
+            <label>Payroll Exists</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G0</field>
+            <label>Pivotal ID</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fw</field>
+            <label>PO#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FH</field>
+            <label>Pre Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FI</field>
+            <label>Processed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLa</field>
+            <label>Program Coordinator</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLf</field>
+            <label>Program Manager</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fo</field>
+            <label>Project Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G1</field>
+            <label>Referral Name Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G2</field>
+            <label>Referral Name Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G3</field>
+            <label>Referral Name Staff</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fp</field>
+            <label>Referral Name Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FJ</field>
+            <label>Related Faculty Agreement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FK</field>
+            <label>Related Sales Opportunity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fq</field>
+            <label>Sales/Business Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fr</field>
+            <label>Sales &amp; Marketing</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G4</field>
+            <label>Semesters Covered</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G5</field>
+            <label>September Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G6</field>
+            <label>Social Media</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G7</field>
+            <label>Special Instructions</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FL</field>
+            <label>Stage Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G8</field>
+            <label>Start Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fs</field>
+            <label>Strategy/Business Planning &amp; Forecasting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GB</field>
+            <label>Tabling Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G9</field>
+            <label>Tabling Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GA</field>
+            <label>Tabling Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GE</field>
+            <label>Taste of Babson Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GC</field>
+            <label>Taste of Babson Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GD</field>
+            <label>Taste of Babson Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GF</field>
+            <label>View</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FM</field>
+            <label>Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsSelectedSettings>
+            <field>OPPORTUNITY.NAME</field>
+            <field>ACCOUNT.NAME</field>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <field>FORECAST_CATEGORY</field>
+            <field>FULL_NAME</field>
+        </opportunityListFieldsSelectedSettings>
+        <opportunityListFieldsUnselectedSettings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <field>CONTRACT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <field>CORE.USERS.ALIAS</field>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <field>CORE.USERS.LAST_NAME</field>
+            <field>DESCRIPTION</field>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <field>OPPORTUNITY.TYPE</field>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <field>OPPORTUNITY.CLOSED</field>
+            <field>OPPORTUNITY.WON</field>
+            <field>ACCOUNT.SITE</field>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N3600000Rt4Er</field>
+            <field>00N3600000Rt4Fa</field>
+            <field>00N3600000Rt4Fb</field>
+            <field>00N3600000Rt4FE</field>
+            <field>00N3600000Rt4Eu</field>
+            <field>00N3600000Rt4Et</field>
+            <field>00N3600000Rt4Es</field>
+            <field>00N3600000Rt4Fc</field>
+            <field>00N3600000Rt4Ev</field>
+            <field>00N3600000Rt4Ew</field>
+            <field>00N3600000Rt4F1</field>
+            <field>00N3600000Rt4Ex</field>
+            <field>00N3600000Rt4Ey</field>
+            <field>00N3600000Rt4Ez</field>
+            <field>00N3600000Rt4F0</field>
+            <field>00N3600000Rt4F2</field>
+            <field>00N3600000Rt4F3</field>
+            <field>00N3600000Rt4F4</field>
+            <field>00N3600000Rt4F5</field>
+            <field>00N3600000Rt4Fd</field>
+            <field>00N3600000Rt4Ft</field>
+            <field>00N3600000Rt4F6</field>
+            <field>00N3600000Rt4F9</field>
+            <field>00N3600000Rt4F7</field>
+            <field>00N3600000Rt4F8</field>
+            <field>00N3600000Rt4FC</field>
+            <field>00N3600000Rt4FA</field>
+            <field>00N3600000Rt4FB</field>
+            <field>00N3600000Rt4FD</field>
+            <field>00N3600000Rt4Fe</field>
+            <field>00N3600000Rt4FF</field>
+            <field>00N3600000Rt4FN</field>
+            <field>00N3600000Rt4FO</field>
+            <field>00N3600000RtoLV</field>
+            <field>00N29000000XaUl</field>
+            <field>00N3600000Rt4Ff</field>
+            <field>00N3600000Rt4FP</field>
+            <field>00N3600000RRl53</field>
+            <field>00N3600000Rt4FQ</field>
+            <field>00N3600000Rt4GG</field>
+            <field>00N3600000Rt4FR</field>
+            <field>00N3600000Rt4FS</field>
+            <field>00N3600000Rt4FT</field>
+            <field>00N3600000Rt4Fg</field>
+            <field>00N3600000Rt4FU</field>
+            <field>00N3600000Rt4FV</field>
+            <field>00N3600000Rt4GH</field>
+            <field>00N3600000Rt4Fh</field>
+            <field>00N3600000Rt4Fi</field>
+            <field>00N3600000Rt4Fj</field>
+            <field>00N3600000Rt4Fk</field>
+            <field>00N3600000Rt4FW</field>
+            <field>00N3600000Rt4Fl</field>
+            <field>00N3600000Rt4FX</field>
+            <field>00N3600000Rt4FY</field>
+            <field>00N3600000Rt4FZ</field>
+            <field>00N3600000Rt4Fu</field>
+            <field>00N3600000Rt4Fm</field>
+            <field>00N3600000Rt4Fn</field>
+            <field>00N3600000Rt4Fv</field>
+            <field>00N3600000Rt4Fx</field>
+            <field>00N3600000Rt4Fy</field>
+            <field>00N3600000Rt4Fz</field>
+            <field>00N3600000Rt4FG</field>
+            <field>00N3600000Rt4G0</field>
+            <field>00N3600000Rt4Fw</field>
+            <field>00N3600000Rt4FH</field>
+            <field>00N3600000Rt4FI</field>
+            <field>00N3600000RtoLa</field>
+            <field>00N3600000RtoLf</field>
+            <field>00N3600000Rt4Fo</field>
+            <field>00N3600000Rt4G1</field>
+            <field>00N3600000Rt4G2</field>
+            <field>00N3600000Rt4G3</field>
+            <field>00N3600000Rt4Fp</field>
+            <field>00N3600000Rt4FJ</field>
+            <field>00N3600000Rt4FK</field>
+            <field>00N3600000Rt4Fq</field>
+            <field>00N3600000Rt4Fr</field>
+            <field>00N3600000Rt4G4</field>
+            <field>00N3600000Rt4G5</field>
+            <field>00N3600000Rt4G6</field>
+            <field>00N3600000Rt4G7</field>
+            <field>00N3600000Rt4FL</field>
+            <field>00N3600000Rt4G8</field>
+            <field>00N3600000Rt4Fs</field>
+            <field>00N3600000Rt4GB</field>
+            <field>00N3600000Rt4G9</field>
+            <field>00N3600000Rt4GA</field>
+            <field>00N3600000Rt4GE</field>
+            <field>00N3600000Rt4GC</field>
+            <field>00N3600000Rt4GD</field>
+            <field>00N3600000Rt4GF</field>
+            <field>00N3600000Rt4FM</field>
+        </opportunityListFieldsUnselectedSettings>
+        <quotasSettings>
+            <showQuotas>false</showQuotas>
+        </quotasSettings>
+    </forecastingTypeSettings>
+    <forecastingTypeSettings>
+        <active>true</active>
+        <adjustmentsSettings>
+            <enableAdjustments>false</enableAdjustments>
+            <enableOwnerAdjustments>false</enableOwnerAdjustments>
+        </adjustmentsSettings>
+        <displayedCategoryApiNames>closedonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>commitonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>bestcaseonly</displayedCategoryApiNames>
+        <displayedCategoryApiNames>pipelineonly</displayedCategoryApiNames>
+        <forecastRangeSettings>
+            <beginning>0</beginning>
+            <displaying>6</displaying>
+            <periodType>Month</periodType>
+        </forecastRangeSettings>
+        <forecastedCategoryApiNames>commitonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>closedonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>pipelineonly</forecastedCategoryApiNames>
+        <forecastedCategoryApiNames>bestcaseonly</forecastedCategoryApiNames>
+        <isAmount>true</isAmount>
+        <isAvailable>true</isAvailable>
+        <isQuantity>false</isQuantity>
+        <masterLabel>Opportunities</masterLabel>
+        <name>OpportunityRevenue</name>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NAME</field>
+            <label>Opportunity Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.NAME</field>
+            <label>Account Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <label>Amount</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <label>Close Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <label>Stage</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <label>Probability (%)</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FORECAST_CATEGORY</field>
+            <label>Forecast Category</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>FULL_NAME</field>
+            <label>Owner Full Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <label>Contract Number</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CONTRACT.NAME</field>
+            <label>Contract Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.ALIAS</field>
+            <label>Opportunity Owner Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <label>Owner First Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CORE.USERS.LAST_NAME</field>
+            <label>Owner Last Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>DESCRIPTION</field>
+            <label>Description</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <label>Expected Revenue</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <label>Lead Source</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <label>Next Step</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <label>Private</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <label>Quantity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.TYPE</field>
+            <label>Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <label>Last Modified By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <label>Created By Alias</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CLOSED</field>
+            <label>Closed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.WON</field>
+            <label>Won</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>ACCOUNT.SITE</field>
+            <label>Account Site</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <label>Fiscal Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <label>Fiscal Quarter</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <label>Fiscal Period</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <label>Opportunity Record Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <label>Last Activity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <label>Created Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <label>Last Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Er</field>
+            <label>Academic Program</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fa</field>
+            <label>Additional information</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fb</field>
+            <label>Advisory Services/Consulting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FE</field>
+            <label>Agreement Type</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Eu</field>
+            <label>Alumni Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Et</field>
+            <label>Alumni Event_Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Es</field>
+            <label>Alumni Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fc</field>
+            <label>Analytics - Web/Mobile/Mkt Research</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ev</field>
+            <label>Assignment</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ew</field>
+            <label>August - December GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F1</field>
+            <label>Babson&apos;s Office of Experiential Learning</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ex</field>
+            <label>Babson Alum</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ey</field>
+            <label>Babson Center for Career Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ez</field>
+            <label>Babson Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F0</field>
+            <label>Babson Staff Member</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F2</field>
+            <label>Benefits Fair Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F3</field>
+            <label>Benefits Fair Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F4</field>
+            <label>Benefits Fair Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F5</field>
+            <label>Bill To Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fd</field>
+            <label>Challenge</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ft</field>
+            <label>Challenge importance to Organization</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F6</field>
+            <label>Check#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F9</field>
+            <label>Corporate Info Session 1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F7</field>
+            <label>Corporate Info Session 1 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4F8</field>
+            <label>Corporate Info Session 1 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FC</field>
+            <label>Corporate Info Session 2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FA</field>
+            <label>Corporate Info Session 2 Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FB</field>
+            <label>Corporate Info Session 2 Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FD</field>
+            <label>Current Babson Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fe</field>
+            <label>Deliverables</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FF</field>
+            <label>Do Not Process</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FN</field>
+            <label>Email Invoice?</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FO</field>
+            <label>Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLV</field>
+            <label>Faculty Director</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N29000000XaUl</field>
+            <label>Faculty Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Ff</field>
+            <label>Finance &amp; Accounting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FP</field>
+            <label>Former Experiential Learning Partner Org</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RRl53</field>
+            <label>Geocode</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FQ</field>
+            <label>GL Account Historical</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GG</field>
+            <label>GL Acct#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FR</field>
+            <label>Historical Invoice #</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FS</field>
+            <label>Hold Primary PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FT</field>
+            <label>Hold Sr. PM</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fg</field>
+            <label>HR / Org Mgt / Change Mgt</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FU</field>
+            <label>Invoice#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FV</field>
+            <label>Invoice# pt1</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GH</field>
+            <label>Invoice# pt2</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fh</field>
+            <label>Jan - March GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fi</field>
+            <label>January Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fj</field>
+            <label>March - May GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fk</field>
+            <label>March Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FW</field>
+            <label>May - August GCTT Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fl</field>
+            <label>May Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FX</field>
+            <label>Migrated Modified By</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FY</field>
+            <label>Migrated Modified Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FZ</field>
+            <label>Notes</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fu</field>
+            <label>Offering</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fm</field>
+            <label>Ops/Logistics/Supply Chain</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fn</field>
+            <label>Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fv</field>
+            <label>Other Referral</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fx</field>
+            <label>Payment Method</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fy</field>
+            <label>Payment Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fz</field>
+            <label>Payment Terms</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FG</field>
+            <label>Payroll Exists</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G0</field>
+            <label>Pivotal ID</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fw</field>
+            <label>PO#</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FH</field>
+            <label>Pre Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FI</field>
+            <label>Processed</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLa</field>
+            <label>Program Coordinator</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000RtoLf</field>
+            <label>Program Manager</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fo</field>
+            <label>Project Year</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G1</field>
+            <label>Referral Name Faculty</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G2</field>
+            <label>Referral Name Other</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G3</field>
+            <label>Referral Name Staff</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fp</field>
+            <label>Referral Name Student</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FJ</field>
+            <label>Related Faculty Agreement</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FK</field>
+            <label>Related Sales Opportunity</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fq</field>
+            <label>Sales/Business Development</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fr</field>
+            <label>Sales &amp; Marketing</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G4</field>
+            <label>Semesters Covered</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G5</field>
+            <label>September Projects</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G6</field>
+            <label>Social Media</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G7</field>
+            <label>Special Instructions</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FL</field>
+            <label>Stage Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G8</field>
+            <label>Start Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4Fs</field>
+            <label>Strategy/Business Planning &amp; Forecasting</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GB</field>
+            <label>Tabling Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4G9</field>
+            <label>Tabling Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GA</field>
+            <label>Tabling Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GE</field>
+            <label>Taste of Babson Event</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GC</field>
+            <label>Taste of Babson Event Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GD</field>
+            <label>Taste of Babson Event Occurred</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4GF</field>
+            <label>View</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N3600000Rt4FM</field>
+            <label>Work Due Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsSelectedSettings>
+            <field>OPPORTUNITY.NAME</field>
+            <field>ACCOUNT.NAME</field>
+            <field>OPPORTUNITY.AMOUNT</field>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <field>FORECAST_CATEGORY</field>
+            <field>FULL_NAME</field>
+        </opportunityListFieldsSelectedSettings>
+        <opportunityListFieldsUnselectedSettings>
+            <field>CONTRACT.CONTRACT_NUMBER</field>
+            <field>CONTRACT.NAME</field>
+            <field>CORE.USERS.ALIAS</field>
+            <field>CORE.USERS.FIRST_NAME</field>
+            <field>CORE.USERS.LAST_NAME</field>
+            <field>DESCRIPTION</field>
+            <field>OPPORTUNITY.EXP_AMOUNT</field>
+            <field>OPPORTUNITY.LEAD_SOURCE</field>
+            <field>OPPORTUNITY.NEXT_STEP</field>
+            <field>OPPORTUNITY.PRIVATE</field>
+            <field>OPPORTUNITY.QUANTITY</field>
+            <field>OPPORTUNITY.TYPE</field>
+            <field>UPDATEDBY_USER.ALIAS</field>
+            <field>CREATEDBY_USER.ALIAS</field>
+            <field>OPPORTUNITY.CLOSED</field>
+            <field>OPPORTUNITY.WON</field>
+            <field>ACCOUNT.SITE</field>
+            <field>OPPORTUNITY.FISCAL_YEAR</field>
+            <field>OPPORTUNITY.FISCAL_QUARTER</field>
+            <field>OPPORTUNITY.FISCAL_PERIOD</field>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <field>OPPORTUNITY.LAST_ACTIVITY</field>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N3600000Rt4Er</field>
+            <field>00N3600000Rt4Fa</field>
+            <field>00N3600000Rt4Fb</field>
+            <field>00N3600000Rt4FE</field>
+            <field>00N3600000Rt4Eu</field>
+            <field>00N3600000Rt4Et</field>
+            <field>00N3600000Rt4Es</field>
+            <field>00N3600000Rt4Fc</field>
+            <field>00N3600000Rt4Ev</field>
+            <field>00N3600000Rt4Ew</field>
+            <field>00N3600000Rt4F1</field>
+            <field>00N3600000Rt4Ex</field>
+            <field>00N3600000Rt4Ey</field>
+            <field>00N3600000Rt4Ez</field>
+            <field>00N3600000Rt4F0</field>
+            <field>00N3600000Rt4F2</field>
+            <field>00N3600000Rt4F3</field>
+            <field>00N3600000Rt4F4</field>
+            <field>00N3600000Rt4F5</field>
+            <field>00N3600000Rt4Fd</field>
+            <field>00N3600000Rt4Ft</field>
+            <field>00N3600000Rt4F6</field>
+            <field>00N3600000Rt4F9</field>
+            <field>00N3600000Rt4F7</field>
+            <field>00N3600000Rt4F8</field>
+            <field>00N3600000Rt4FC</field>
+            <field>00N3600000Rt4FA</field>
+            <field>00N3600000Rt4FB</field>
+            <field>00N3600000Rt4FD</field>
+            <field>00N3600000Rt4Fe</field>
+            <field>00N3600000Rt4FF</field>
+            <field>00N3600000Rt4FN</field>
+            <field>00N3600000Rt4FO</field>
+            <field>00N3600000RtoLV</field>
+            <field>00N29000000XaUl</field>
+            <field>00N3600000Rt4Ff</field>
+            <field>00N3600000Rt4FP</field>
+            <field>00N3600000RRl53</field>
+            <field>00N3600000Rt4FQ</field>
+            <field>00N3600000Rt4GG</field>
+            <field>00N3600000Rt4FR</field>
+            <field>00N3600000Rt4FS</field>
+            <field>00N3600000Rt4FT</field>
+            <field>00N3600000Rt4Fg</field>
+            <field>00N3600000Rt4FU</field>
+            <field>00N3600000Rt4FV</field>
+            <field>00N3600000Rt4GH</field>
+            <field>00N3600000Rt4Fh</field>
+            <field>00N3600000Rt4Fi</field>
+            <field>00N3600000Rt4Fj</field>
+            <field>00N3600000Rt4Fk</field>
+            <field>00N3600000Rt4FW</field>
+            <field>00N3600000Rt4Fl</field>
+            <field>00N3600000Rt4FX</field>
+            <field>00N3600000Rt4FY</field>
+            <field>00N3600000Rt4FZ</field>
+            <field>00N3600000Rt4Fu</field>
+            <field>00N3600000Rt4Fm</field>
+            <field>00N3600000Rt4Fn</field>
+            <field>00N3600000Rt4Fv</field>
+            <field>00N3600000Rt4Fx</field>
+            <field>00N3600000Rt4Fy</field>
+            <field>00N3600000Rt4Fz</field>
+            <field>00N3600000Rt4FG</field>
+            <field>00N3600000Rt4G0</field>
+            <field>00N3600000Rt4Fw</field>
+            <field>00N3600000Rt4FH</field>
+            <field>00N3600000Rt4FI</field>
+            <field>00N3600000RtoLa</field>
+            <field>00N3600000RtoLf</field>
+            <field>00N3600000Rt4Fo</field>
+            <field>00N3600000Rt4G1</field>
+            <field>00N3600000Rt4G2</field>
+            <field>00N3600000Rt4G3</field>
+            <field>00N3600000Rt4Fp</field>
+            <field>00N3600000Rt4FJ</field>
+            <field>00N3600000Rt4FK</field>
+            <field>00N3600000Rt4Fq</field>
+            <field>00N3600000Rt4Fr</field>
+            <field>00N3600000Rt4G4</field>
+            <field>00N3600000Rt4G5</field>
+            <field>00N3600000Rt4G6</field>
+            <field>00N3600000Rt4G7</field>
+            <field>00N3600000Rt4FL</field>
+            <field>00N3600000Rt4G8</field>
+            <field>00N3600000Rt4Fs</field>
+            <field>00N3600000Rt4GB</field>
+            <field>00N3600000Rt4G9</field>
+            <field>00N3600000Rt4GA</field>
+            <field>00N3600000Rt4GE</field>
+            <field>00N3600000Rt4GC</field>
+            <field>00N3600000Rt4GD</field>
+            <field>00N3600000Rt4GF</field>
+            <field>00N3600000Rt4FM</field>
+        </opportunityListFieldsUnselectedSettings>
+        <quotasSettings>
+            <showQuotas>false</showQuotas>
+        </quotasSettings>
+    </forecastingTypeSettings>
+</ForecastingSettings>

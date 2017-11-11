@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>ACF_Address_Locator__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Address to which payment will be sent</inlineHelpText>
+        <label>Address Locator</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>ACF_Compensation_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Compensation Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>ACF_Course_Release__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Course Release</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Employee_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>ACF_Faculty_Agreement__r.ACF_Faculty__r.Employee_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Employee ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Expected_Compensation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Compensation Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>ACF_Faculty_Agreement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Faculty Agreement</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Payroll</relationshipLabel>
+        <relationshipName>Payroll</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Faculty__c</fullName>
+        <externalId>false</externalId>
+        <formula>ACF_Faculty_Agreement__r.ACF_Faculty__r.FirstName + " " + ACF_Faculty_Agreement__r.ACF_Faculty__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Faculty</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Form_1099__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Form 1099?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>GL Account</label>
+        <referenceTo>GL_Account__c</referenceTo>
+        <relationshipLabel>Payroll</relationshipLabel>
+        <relationshipName>Payroll</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Lock__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If True, this payroll record is locked and cannot be changed.</inlineHelpText>
+        <label>Lock</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Payee_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+AND (ISPICKVAL(ACF_Address_Locator__c, "Business") ,  
+     ISPICKVAL(ACF_Faculty_Agreement__r.ACF_Faculty__r.hed__Primary_Address_Type__c, "Work")),
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingStreet &amp;  BR() &amp;    
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingCity &amp; " " &amp; 
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingState &amp; " " &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingPostalCode &amp;  BR() &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingCountry, 
+IF (
+ AND (ISPICKVAL(ACF_Address_Locator__c, "Business") ,  
+     ISPICKVAL((ACF_Faculty_Agreement__r.ACF_Faculty__r.hed__Secondary_Address_Type__c), "Work")),
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherStreet &amp;  BR() &amp;    
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherCity &amp; " " &amp; 
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherState &amp; " " &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherPostalCode &amp;  BR() &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherCountry,
+IF(
+AND (ISPICKVAL(ACF_Address_Locator__c, "Home") ,  
+     ISPICKVAL(ACF_Faculty_Agreement__r.ACF_Faculty__r.hed__Primary_Address_Type__c, "Home")),
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingStreet &amp;  BR() &amp;    
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingCity &amp; " " &amp; 
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingState &amp; " " &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingPostalCode &amp;  BR() &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingCountry, 
+IF (
+ AND (ISPICKVAL(ACF_Address_Locator__c, "Home") ,  
+     ISPICKVAL((ACF_Faculty_Agreement__r.ACF_Faculty__r.hed__Secondary_Address_Type__c), "Home")),
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherStreet &amp;  BR() &amp;    
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherCity &amp; " " &amp; 
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherState &amp; " " &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherPostalCode &amp;  BR() &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherCountry, 
+IF(
+AND (ISPICKVAL(ACF_Address_Locator__c, "Other") ,  
+     ISPICKVAL(ACF_Faculty_Agreement__r.ACF_Faculty__r.hed__Primary_Address_Type__c, "Other")),
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingStreet &amp;  BR() &amp;    
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingCity &amp; " " &amp; 
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingState &amp; " " &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingPostalCode &amp;  BR() &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.MailingCountry, 
+IF (
+ AND (ISPICKVAL(ACF_Address_Locator__c, "Other") ,  
+     ISPICKVAL((ACF_Faculty_Agreement__r.ACF_Faculty__r.hed__Secondary_Address_Type__c), "Other")),
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherStreet &amp;  BR() &amp;    
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherCity &amp; " " &amp; 
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherState &amp; " " &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherPostalCode &amp;  BR() &amp;
+    ACF_Faculty_Agreement__r.ACF_Faculty__r.OtherCountry,
+"Error: Payroll/Address Location or Contact/Preferred Address not specified"))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payee Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Pivotal_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Pivotal ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><fields>
+        <fullName>ACF_Total_Compensation__c</fullName>
+        <externalId>false</externalId>
+        <formula>ACF_Faculty_Agreement__r.Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Compensation (Calc)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>ACF_US_Citizen__c</fullName>
+        <externalId>false</externalId>
+        <formula>ACF_Faculty_Agreement__r.ACF_Faculty__r.ACF_US_Citizen__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>US Citizen?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("/"+Id, "View")</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Void__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Void</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Adjunct__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Adjunct</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>GL_Account2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is a test to see if I can relate GL Account (on Payroll) to GL Acct# on the Opportunity record</description>
+        <externalId>false</externalId>
+        <label>GL Account2</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Payroll (GL Account2)</relationshipLabel>
+        <relationshipName>Payroll1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>GL_Account_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <formula>GL_Account2__r.GL_Acct_Num__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GL Account Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>New_GL_Account_Field__c</fullName>
+        <externalId>false</externalId>
+        <formula>ACF_Faculty_Agreement__r.GL_Acct_Num__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New GL Account Field</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Offering__c</fullName>
+        <externalId>false</externalId>
+        <label>Offering</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Campaign.RecordType.Id</field>
+                <operation>equals</operation>
+                <value>012360000012HL6</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Payroll</relationshipLabel>
+        <relationshipName>Payroll</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Payroll</label><nameField>
+        <displayFormat>P-{000000000}</displayFormat>
+        <label>Payroll ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>Payroll</pluralLabel><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
+        <customTabListAdditionalFields>ACF_View__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACF_Faculty__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACF_Expected_Compensation_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_View__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_Faculty__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_View__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_Faculty__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_View__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_Faculty__c</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>ACF_View__c</columns>
+        <columns>ACF_Faculty__c</columns>
+        <columns>ACF_Faculty_Agreement__c</columns>
+        <columns>ACF_Expected_Compensation_Date__c</columns>
+        <columns>ACF_Total_Compensation__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>ACF_GL_Account__c</columns>
+        <columns>Offering__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews><listViews>
+        <fullName>Locked_payroll</fullName>
+        <columns>ACF_View__c</columns>
+        <columns>ACF_Faculty__c</columns>
+        <columns>ACF_Faculty_Agreement__c</columns>
+        <columns>ACF_Expected_Compensation_Date__c</columns>
+        <columns>ACF_Total_Compensation__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Payroll__c.Locked</value>
+        </filters>
+        <label>Locked Payroll</label>
+        <language>en_US</language>
+    </listViews><listViews>
+        <fullName>Payroll_to_be_paid_next_cycle</fullName>
+        <columns>ACF_View__c</columns>
+        <columns>ACF_Faculty__c</columns>
+        <columns>ACF_Faculty_Agreement__c</columns>
+        <columns>ACF_Total_Compensation__c</columns>
+        <columns>ACF_Expected_Compensation_Date__c</columns>
+        <columns>ACF_Lock__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Payroll__c.Unlocked</value>
+        </filters>
+        <filters>
+            <field>ACF_Expected_Compensation_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <label>Payroll to be paid next cycle</label>
+        <language>en_US</language>
+    </listViews><listViews>
+        <fullName>Unlocked_payroll</fullName>
+        <columns>ACF_View__c</columns>
+        <columns>ACF_Faculty__c</columns>
+        <columns>ACF_Faculty_Agreement__c</columns>
+        <columns>ACF_Expected_Compensation_Date__c</columns>
+        <columns>ACF_Total_Compensation__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Payroll__c.Unlocked</value>
+        </filters>
+        <label>Unlocked Payroll</label>
+        <language>en_US</language>
+    </listViews><recordTypes>
+        <fullName>Locked</fullName>
+        <active>true</active>
+        <label>Locked</label>
+        <picklistValues>
+            <picklist>ACF_Address_Locator__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Unlocked</fullName>
+        <active>true</active>
+        <label>Unlocked</label>
+        <picklistValues>
+            <picklist>ACF_Address_Locator__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><webLinks>
+        <fullName>New_Payroll</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Payroll</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a70/e?
+&amp;CF00N3600000Rt4GS={!Opportunity.Name}
+&amp;CF00N3600000Rt48l={!Opportunity.ACF_Offering__c}
+&amp;retURL={!Opportunity.Id}
+&amp;RecordType=012360000012HLK</url>
+    </webLinks></CustomObject>

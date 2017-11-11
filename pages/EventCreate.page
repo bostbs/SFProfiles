@@ -1,0 +1,414 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="EventCreateController" action="{!forwardToLogin}">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="pagetitle">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Title}</apex:define>
+
+    <apex:define name="body" > 
+    
+      <header class="container page-heading">
+        <h1 class="inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Title}</h1>
+      </header>
+        
+      <article class="container box">
+        <div class="row">
+          <div class="col-sm-8 col-md-9">
+
+            <apex:pageMessages rendered="{!$Permission.CORECONNECT__Create_ScheduledContent}"></apex:pageMessages>
+            
+            <apex:outputPanel rendered="{!NOT($Permission.CORECONNECT__Create_ScheduledContent)}">
+                <apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Access_Denied}"/>
+            </apex:outputPanel>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+                
+              <section class="tab-pane az-listing active" id="submit-ScheduledContent">
+              <apex:outputPanel rendered="{!$Permission.CORECONNECT__Create_ScheduledContent}">
+                <header>
+                  <h2>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Tab}</h2>
+                  <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Subtitle}" escape="false"/></p>
+                </header>
+                <apex:form >
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Title_Label}" for="ScheduledContentTitle" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Title_Help}</span>
+                    <apex:inputText value="{!CC.Name}" styleClass="form-control" id="ScheduledContentTitle" maxlength="60" />
+                  </div>
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Summary_Label}" for="ScheduledContentDescription" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Summary_Help}</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Short_Description__c}" styleClass="form-control" id="ScheduledContentDescription" richText="false" />
+                    <div class="help-block">
+                      {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Summary_Description}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Body_Label}" for="ScheduledContentBody" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Description__c}" styleClass="form-control" id="ScheduledContentBody" richText="true" />
+                  </div>
+
+                  <hr />
+
+                  <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Image_Title} <small>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Image_Instructions}</small></h3>
+                  <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Image_Requirements}" escape="false"/></p>
+                  <div class="form-group">
+
+                    <apex:inputFile value="{!att.body}" filename="{!att.name}" styleClass="file image" accept="gif,png,jpg,jpeg" />
+
+                  </div>
+
+                  <hr />
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Classification1_Label}" for="newsCollegeArea" />
+                        <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                        <apex:inputField value="{!CC.CORECONNECT__Classification1__c}" styleClass="form-control" id="newsCollegeArea" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Classification2_Label}" for="newsCollegeArea" />
+                        <span class="required">*</span>
+                        <apex:inputField value="{!CC.CORECONNECT__Classification2__c}" styleClass="form-control" id="newsCollegeArea2" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Default_Content}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Default_Content__c}" styleClass="form-control"/>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Trump_Content}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Trump_Content__c}" styleClass="form-control"/>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Interests}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Interests__c}" styleClass="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Affiliation}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Affiliation_1__c}" styleClass="form-control"/>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Region}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Region__c}" styleClass="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Industry}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Industry__c}" styleClass="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Affinities}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Affinities__c}" styleClass="form-control"/>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Who_s_Attending}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Who_s_Attending__c}" styleClass="form-control"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr />
+                  <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_Title} <small>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_Help}</small></h3>
+                  <div class="checkbox">
+                    <label>
+                      <apex:inputCheckbox value="{!CC.CORECONNECT__Is_All_Day_ScheduledContent__c}" id="ScheduledContentAllDay" />
+                      {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_AllDay}
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="ScheduledContentStartDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_StartDate}</label>
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span> <small>(mm/dd/yyyy)</small>
+                    <div class="row">
+                      <div class="col-xs-4 col-sm-3 col-md-2">
+                        <input type="text" value="{!cc.CORECONNECT__Start_Date__c}" class="form-control date" id="ScheduledContentStartDay" name="ScheduledContentStartDay" />
+                      </div>
+                      <div class="col-xs-1" style="text-align: center;line-height: 30px;width: auto;">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_At}</div>
+                      <div class="col-xs-4 col-sm-3 col-md-2">
+                        <input type="text" value="{!strstartTime}" class="form-control time" id="ScheduledContentStartTime" name="ScheduledContentStartTime" />
+                      </div>
+                    </div>
+                    <apex:inputHidden value="{!StartDateTimeString}" id="ScheduledContentStartDate" /> 
+                  </div>
+                  <div class="form-group">
+                    <label for="ScheduledContentEndDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_EndDate}</label> <small>(mm/dd/yyyy)</small>
+                    <div class="row">
+                      <div class="col-xs-4 col-sm-3 col-md-2">
+                        <input type="text" value="{!CC.CORECONNECT__End_Date__c}" class="form-control date" id="ScheduledContentEndDay" name="ScheduledContentEndDay" />
+                      </div>
+                      <div class="col-xs-1" style="text-align: center;line-height: 30px;width: auto;">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_At}</div>
+                      <div class="col-xs-4 col-sm-3 col-md-2">
+                        <input type="text" class="form-control time" id="ScheduledContentEndTime" name="ScheduledContentEndTime" value="{!strEndTime}"/>
+                      </div>
+                    </div>
+                    <apex:inputHidden value="{!EndDateTimeString}" id="ScheduledContentEndDate" />
+                  </div>
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_Location}" for="ScheduledContentLocation" />
+                    <span class="required">*</span>
+                    <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Details_Location_Help}</span>
+                    <apex:inputText value="{!CC.CORECONNECT__Location__c}" styleClass="form-control" id="ScheduledContentLocation" maxlength="80" />
+                  </div>
+                  
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_Street1}" for="ScheduledContentLocationStreet1" />
+                    <span class="required">*</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_Street_1__c}" styleClass="form-control" id="ScheduledContentLocationStreet1" html-maxlength="80"/>
+                  </div>
+                  
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_Street2}" for="ScheduledContentLocationStreet2" />
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_Street_2__c}" styleClass="form-control" id="ScheduledContentLocationStreet2" html-maxlength="80"/>
+                  </div>
+                  
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_Street3}" for="ScheduledContentLocationStreet3" />
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_Street_3__c}" styleClass="form-control" id="ScheduledContentLocationStreet3" html-maxlength="80"/>
+                  </div>
+                  
+                  <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3">
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_City}" for="ScheduledContentLocationCity" />
+                    <span class="required">*</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_City__c}" styleClass="form-control" id="ScheduledContentLocationCity" html-maxlength="30"/>
+                   </div>
+                   
+                    <div class="col-xs-4 col-sm-3 col-md-2"> 
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_State_Province}" for="ScheduledContentLocationStateProvince"/>
+                    <span class="required">*</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_State_Province__c}" styleClass="form-control" id="ScheduledContentLocationStateProvince" html-maxlength="20"/>
+                    </div>
+                    
+                    <div class="col-xs-4 col-sm-3 col-md-2"> 
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_Postal_Code}" for="ScheduledContentLocationPostalCode"/>
+                    <span class="required">*</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_Postal_Code__c}" styleClass="form-control" id="ScheduledContentLocationPostalCode" html-maxlength="10"/>
+                    </div>
+                    
+                    <div class="col-xs-4 col-sm-3 col-md-3"> 
+                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Location_Country}" for="ScheduledContentLocationCountry" />
+                    <span class="required">*</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Location_Country__c}" styleClass="form-control" id="ScheduledContentLocationCountry" html-maxlength="30" />
+                    </div>
+                    
+                    </div>
+                  </div>
+
+                  <hr />
+
+                  <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Registration_Title}</h3>
+                  <div class="row">
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Registration_RSVPLink}" for="ScheduledContentRSVPLink"/>
+                        <apex:inputField value="{!CC.CORECONNECT__RSVP_Link__c}" styleClass="form-control" id="ScheduledContentRSVPLink" onchange="formatURL($(this).val())" />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Registration_AdmissionFee}" for="ScheduledContentAdmissionFee" />
+                        <apex:inputField value="{!CC.CORECONNECT__Admission_Fee__c}" styleClass="form-control" id="ScheduledContentAdmissionFee" />
+                      </div>
+                    </div>
+                  
+                  <div class="col-sm-3">
+                      <div class="form-group">
+                         <apex:outputLabel value="{!$Label.BAB_Create_FreeText_ScheduledContent_ScheduledContent_Registration_HideRSVP}" for="ScheduledContentHideRSVP" /> 
+                        <apex:inputField value="{!CC.CORECONNECT__Hide_RSVP__c}" styleClass="form-control" id="ScheduledContentHideRSVP" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group form-submit">
+
+                    <apex:commandButton action="{!createScheduledContent}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Submit}" styleClass="btn btn-primary" />
+                    <apex:commandButton action="{!cancelScheduledContent}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Cancel}" styleClass="btn btn-default" />
+                  </div>
+                </apex:form>
+                </apex:outputPanel>
+              </section>
+            </div>
+          </div>
+            
+          <!--<apex:outputPanel rendered="{!$Permission.Create_FreeText || $Permission.Create_ScheduledContent}">
+            <aside class="sidebar col-sm-4 col-md-3">
+            </aside>
+          </apex:outputPanel>-->
+          
+        </div>
+      </article>
+
+    </apex:define>
+
+    <apex:define name="footerjs">
+<script>
+// initialize input widgets first
+        function createDateTime(el) {
+          var $formGroup    = $(el).parents('.form-group'),
+              dateVal       = $formGroup.find('input.date').val(), 
+                              //===undefined?'':$formGroup.find('input.date').val(), 
+              timeVal       = $formGroup.find('input.time').val(), 
+                              //===undefined || $formGroup.find('input.time').val()==='')?' 12:00 AM':$formGroup.find('input.time').val(), 
+              $hiddenField  = $formGroup.find('input[id*="Date"]'),
+              $hiddenFieldForDate = $formGroup.find('input[id*="FreeTextD"]');
+          
+          
+          var d=new Date($formGroup.find('input.date').val());
+          var dd = d.getUTCDate();
+          var mm = d.getUTCMonth() + 1;
+          var yyyy = d.getUTCFullYear();
+          
+          dateVal = mm+"/"+dd+"/"+yyyy;
+          
+          if (dateVal === undefined) dateVal = '';
+          if (timeVal === undefined) timeVal = '12:00 AM';
+          if (timeVal == '') timeVal = '12:00 AM';
+        
+          var dateTimeVal   = (dateVal + " " + timeVal).trim();
+          
+          console.log('#### dateTimeVal=' + dateTimeVal + ',dateVal=' + dateVal);
+        
+          $hiddenField.val(dateTimeVal);
+          $hiddenFieldForDate.val(dateVal);
+        }
+        
+        // html-data-show-upload="false" html-data-show-preview="false" html-accept="image/*" 
+       
+        // Add the timepicker to time elements
+        $('input.time').timepicker({
+          'scrollDefault' : 'now',
+          'timeFormat'    : 'g:i A',
+          'step'          : 15
+        });
+        
+        // Add the date picker to date elements
+        $('input.date').datepicker({
+          'format': 'mm/dd/yyyy',
+          'autoclose': true
+        });
+        
+        // Autofill end day with start day
+        $('#ScheduledContenttartDay').change( function() {
+          var startDay = $('#ScheduledContenttartDay').val(); //new Date( $('#ScheduledContenttartDay').val() );
+          var endDay   = $('#ScheduledContentEndDay').val();   //new Date( $('#ScheduledContentEndDay').val() );
+          if (endDay == '') {
+            endDay = '01/01/1900';
+          }
+          startDayArray = startDay.split('/');
+          startDay      = new Date(startDayArray[2] + '-' + startDayArray[1] + '-' + startDayArray[0]); // dd/mm/yyyy into yyyy-mm-dd
+          endDayArray   = endDay.split('/');
+          endDay        = new Date(endDayArray[2] + '-' + endDayArray[1] + '-' + endDayArray[0]); // dd/mm/yyyy into yyyy-mm-dd
+        
+          if (startDay >= endDay) {
+            $('#ScheduledContentEndDay').val( $(this).val() );
+            createDateTime( $('#ScheduledContentEndDay') );
+          }
+        });
+        
+        // Change hidden fields when date/time is changed.
+        $('input.date, input.time').change(function() {
+          createDateTime(this);
+        });
+        
+        // html-data-show-upload="false" html-data-show-preview="false" html-accept="image/*" 
+        $("input.file.image").fileinput({
+          showUpload: false, 
+          showPreview: false
+        });
+
+        // Disable time fields when All Day is checked
+        $('input[id*="ScheduledContentAllDay"]').change(function() {
+          if ( $(this).is(':checked') ) {
+            $('input.time').attr('disabled', 'disabled').val('').addClass('disabled');
+            $('input.time').each( function() {
+              createDateTime(this);
+            });
+          } else {
+            $('input.time').removeAttr('disabled').removeClass('disabled');
+            $('input.time').each( function() {
+              createDateTime(this);
+            });
+          }
+        });
+
+        function formatURL( url ) {
+          // If they didn't put in the http:// part, add it in for them.
+          var prefix = 'http://';
+          var prefixs = 'https://';
+          if ( url.substr(0, prefix.length) !== prefix ) {
+            if ( url.substr(0, prefixs.length) !== prefixs ) {
+              url = prefix + url;
+            }
+          }
+          $('input[id*="ScheduledContentRSVPLink"]').val(url);
+        }
+
+
+
+        // Disable time fields when All Day is checked 
+        $('input[id*="ScheduledContentAllDay"]').change(function() {
+          if ( $(this).is(':checked') ) {
+            $('input.time').attr('disabled', 'disabled').val('').addClass('disabled');
+            $('input.time').each( function() {
+              createDateTime(this);
+            });
+          } else {
+            $('input.time').removeAttr('disabled').removeClass('disabled');
+            $('input.time').each( function() {
+              createDateTime(this);
+            });
+          }
+        });
+
+</script>
+    </apex:define>
+  </apex:composition>
+</apex:page>

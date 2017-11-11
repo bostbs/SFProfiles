@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Consent Date --></label>
+        <name>ACF_Consent_Date__c</name>
+    </fields><fields>
+        <help><!-- Lookup to Course Offering for non-EE offerings --></help>
+        <label><!-- Course Offering --></label>
+        <name>ACF_Course_Offering__c</name>
+        <relationshipLabel><!-- Accolades --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Faculty/Speaker --></label>
+        <name>ACF_Faculty_Speaker__c</name>
+        <relationshipLabel><!-- Accolades --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Photo --></label>
+        <name>ACF_Photo__c</name>
+    </fields><fields>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- EE Program Offering --></label>
+        <name>ACF_Program_Offering__c</name>
+        <relationshipLabel><!-- Accolades --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Question --></label>
+        <name>ACF_Question__c</name>
+    </fields><fields>
+        <label><!-- Quotation --></label>
+        <name>ACF_Quotation__c</name>
+    </fields><fields>
+        <label><!-- Release Approved --></label>
+        <name>ACF_Release_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Student/Program Participant --></label>
+        <name>ACF_Student_Program_Participant__c</name>
+        <relationshipLabel><!-- Accolades --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Accolade</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Accolades</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Accolade Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Photo --></label>
+            <section>Photo</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

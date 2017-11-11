@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>How to use the Evaluations Object in Salesforce</description>
+    <internalUseOnly>true</internalUseOnly>
+    <keywords>Evaluations</keywords>
+    <name>Quick Reference Guide - Evaluations</name>
+    <public>false</public>
+</Document>

@@ -1,0 +1,26 @@
+<apex:component id="recommededDetailId">
+    
+    <apex:attribute name="sObject" description="Contains SObject info" type="SObject" required="true"/>
+	<apex:attribute name="ccContentPrefix" description="Contains SObject info" type="String" required="true"/>
+	<apex:attribute name="ccGroupPrefix" description="Contains SObject info" type="String" required="true"/>
+	
+	<apex:outputPanel rendered="{!sObject.id != null}">
+	    
+	    <apex:outputPanel rendered="{!LEFT(sObject.id,3) == '005'}">
+	        <img class="img-circle" src="{!sObject['SmallPhotoURL']}"/> <br/>
+	        {!sObject['Name']}
+	        {!sObject['Graduate_Year__c']}
+	    </apex:outputPanel>
+	    
+	    <apex:outputPanel rendered="{!LEFT(sObject.id,3) == ccContentPrefix}">
+	        {!sObject['Name']} <br/>
+	        {!sObject['CORECONNECT__Short_Description__c']}
+	    </apex:outputPanel>
+	    
+	    <apex:outputPanel rendered="{!LEFT(sObject.id,3) == ccGroupPrefix}">
+	        {!sObject['Name']} <br/>
+	        {!sObject['CORECONNECT__Group_Summary_Title__c']}
+	    </apex:outputPanel>
+	</apex:outputPanel>
+	
+</apex:component>

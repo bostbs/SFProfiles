@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Footer image for Babson College (SFDC Internal) Email messages</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>babson_college_chatter_foot</name>
+    <public>true</public>
+</Document>

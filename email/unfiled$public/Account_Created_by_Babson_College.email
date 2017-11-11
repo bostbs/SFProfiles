@@ -1,0 +1,3 @@
+Dear {!User.FirstName},
+
+This is to notify you that a new Account Record {!Account.Name} has been created with Babson College ownership.

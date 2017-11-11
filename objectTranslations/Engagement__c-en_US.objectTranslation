@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Business Org related to the engagement --></help>
+        <label><!-- Account --></label>
+        <name>ACF_Account__c</name>
+        <relationshipLabel><!-- Engagements --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Biography data related to the engagement --></help>
+        <label><!-- Biography --></label>
+        <name>ACF_Biography__c</name>
+    </fields><fields>
+        <label><!-- Campaign --></label>
+        <name>ACF_Campaign__c</name>
+        <relationshipLabel><!-- Engagements --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Contact --></label>
+        <name>ACF_Contact__c</name>
+        <relationshipLabel><!-- Engagements --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Dean --></label>
+        <name>ACF_Dean__c</name>
+        <relationshipLabel><!-- Engagements (Dean) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Dean&apos;s Acknowledgement --></label>
+        <name>ACF_Dean_s_Acknowledgement__c</name>
+    </fields><fields>
+        <label><!-- Engagement Interests --></label>
+        <name>ACF_Engagement_Interests__c</name>
+        <picklistValues>
+            <masterLabel>Accounting</masterLabel>
+            <translation><!-- Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analytics</masterLabel>
+            <translation><!-- Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Centers</masterLabel>
+            <translation><!-- Centers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classroom</masterLabel>
+            <translation><!-- Classroom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diversity</masterLabel>
+            <translation><!-- Diversity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economy</masterLabel>
+            <translation><!-- Economy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entrepreneuship</masterLabel>
+            <translation><!-- Entrepreneuship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership</masterLabel>
+            <translation><!-- Leadership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Impact</masterLabel>
+            <translation><!-- Social Impact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talent Acquisition</masterLabel>
+            <translation><!-- Talent Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Women</masterLabel>
+            <translation><!-- Women --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Engagement Priority --></label>
+        <name>ACF_Engagement_Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Med</masterLabel>
+            <translation><!-- Med --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Engagement Type --></label>
+        <name>ACF_Engagement_Type__c</name>
+        <picklistValues>
+            <masterLabel>Award recipient</masterLabel>
+            <translation><!-- Award recipient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blogger/Contributor</masterLabel>
+            <translation><!-- Blogger/Contributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classroom Guest Speaker</masterLabel>
+            <translation><!-- Classroom Guest Speaker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Host</masterLabel>
+            <translation><!-- Event Host --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Experiential Learning Partner</masterLabel>
+            <translation><!-- Experiential Learning Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry Captain</masterLabel>
+            <translation><!-- Industry Captain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informational Interviewer</masterLabel>
+            <translation><!-- Informational Interviewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Judge</masterLabel>
+            <translation><!-- Judge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keynote</masterLabel>
+            <translation><!-- Keynote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mock Interviewer</masterLabel>
+            <translation><!-- Mock Interviewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderator</masterLabel>
+            <translation><!-- Moderator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panelist</masterLabel>
+            <translation><!-- Panelist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Participant</masterLabel>
+            <translation><!-- Participant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruiter</masterLabel>
+            <translation><!-- Recruiter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speaker/Presenter</masterLabel>
+            <translation><!-- Speaker/Presenter --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Information to provide to Dean? --></label>
+        <name>ACF_Information_to_provide_to_Dean__c</name>
+    </fields><fields>
+        <help><!-- Who received initial call/email from this person/organization --></help>
+        <label><!-- Inquiry Received by --></label>
+        <name>ACF_Inquiry_Received_by__c</name>
+    </fields><fields>
+        <label><!-- Notes --></label>
+        <name>ACF_Notes__c</name>
+    </fields><fields>
+        <label><!-- Status of Engagement --></label>
+        <name>ACF_Status_of_Engagement__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect Inactive</masterLabel>
+            <translation><!-- Prospect Inactive --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- View --></label>
+        <name>ACF_View__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Engagement</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Engagements</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Engagement Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Prospective Engagement Layout</layout>
+        <sections>
+            <label><!-- Additional Notes --></label>
+            <section>Additional Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Engagement --></label>
+        <name>Engagement</name>
+    </recordTypes><recordTypes>
+        <label><!-- Prospective Engagement --></label>
+        <name>Prospective_Engagement</name>
+    </recordTypes></CustomObjectTranslation>

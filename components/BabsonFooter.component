@@ -1,0 +1,80 @@
+<apex:component controller="CORECONNECT.CC_CommunityFooterController" access="global">
+<div id="footer-source">
+  
+  <!-- Before gray area -->
+  <footer id="pre-footer-wrap">
+      <div class="container">
+        <c:BabsonFooterSocialCTA id="homePageFooterId"/>
+      </div> 
+  </footer>
+
+  <!-- In gray area -->
+  <footer id="footer-wrap">
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-push-4" id="footer-nav">
+            <div class="hidden-xs hidden-sm flex-item">
+              <ul class="nav" id="footer-mainnav">
+                  <apex:outputPanel layout="none" rendered="{!!IsBlank(Value1) && !IsBlank(Label1)}">
+                    <li><a href="{!Value1}">{!Label1}</a></li>
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="none" rendered="{!!IsBlank(Value2) && !IsBlank(Label2)}">
+                    <li><a href="{!Value2}">{!Label2}</a></li>
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="none" rendered="{!!IsBlank(Value3) && !IsBlank(Label3)}">
+                    <li><a href="{!Value3}">{!Label3}</a></li>
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="none" rendered="{!!IsBlank(Value4) && !IsBlank(Label4)}">
+                    <li><a href="{!Value4}">{!Label4}</a></li>
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="none" rendered="{!!IsBlank(Value5) && !IsBlank(Label5)}">
+                    <li><a href="{!Value5}">{!Label5}</a></li>
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="none" rendered="{!!IsBlank(Value6) && !IsBlank(Label6)}">
+                    <li><a href="{!Value6}">{!Label6}</a></li>
+                </apex:outputPanel>
+              </ul>
+            </div>
+
+            <div class="flex-item">
+              <ul class="nav" id="nav-social">
+                <li><a href="{!$Label.BAB_Blog_URL}" class="social blog" target="_blank">Blog</a></li>
+                <li><a href="{!$Label.BAB_Facebook_URL}" class="social facebook" target="_blank">Facebook</a></li>
+                <li><a href="{!$Label.BAB_Twitter_URL}" class="social twitter" target="_blank">Twitter</a></li>
+                <li><a href="{!$Label.BAB_Youtube_URL}" class="social youtube" target="_blank">YouTube</a></li>
+                <li><a href="{!$Label.BAB_LinkedIn_URL}" class="social linkedin" target="_blank">LinkedIn</a></li>
+                <li><a href="{!$Label.BAB_Instagram_URL}" class="social instagram" target="_blank">Instagram</a></li>
+                <!--<li><a href="{!$Label.BAB_Flickr_URL}" class="social flickr" target="_blank">Flickr</a></li>-->
+                <li class="last"><a href="{!$Label.More_Social_Media_URL}" class=" text" target="_blank">View More Social Media &raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-pull-8 col-md-4" id="footer-logo">
+            <span class="logo bab_icon-Babson_Wt"></span>
+            <div id="copyright-address">
+              <p class="address">
+                231 Forest Street<br />
+                Babson Park, MA 02457<br />
+                <a href="tel://1-781-235-1200">781-235-1200</a> / <a href="http://www.babson.edu/admission/visiting-babson/Pages/home.aspx" target="_blank">Directions</a>
+              </p>
+              <p>
+                  <div >
+                        <c:ModalTMC modalID="disclaimerModal" linkText="Terms of Use" linkClass="" modalText="" modalClass="text-left"/>
+                 </div>
+              </p>
+              <p class="copyright hidden-xs hidden-sm">
+                  {!$Label.coreconnect__cc_footer_copyright}
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="copyright visible-xs visible-sm">{!$Label.coreconnect__cc_footer_copyright}</p>
+      </div>
+    </div>
+  </footer>
+  <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(FooterJSBrandingResourceName))}">
+      <script type="text/javascript" src="{!FooterJSBrandingResourceName}"></script>
+    </apex:outputPanel>
+</div>
+</apex:component>

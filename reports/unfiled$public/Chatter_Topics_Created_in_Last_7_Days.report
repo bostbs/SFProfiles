@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Topic$Name</field>
+    </columns>
+    <columns>
+        <field>Topic$Description</field>
+    </columns>
+    <columns>
+        <field>Topic$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Topic$TalkingAbout</field>
+    </columns>
+    <description>Chatter Topics Created in Last Week</description>
+    <format>Tabular</format>
+    <name>Chatter Topics Created in Last 7 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ca_collab_2_0__Chatter_Topics_1_0__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Topic$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST7</interval>
+    </timeFrameFilter>
+</Report>

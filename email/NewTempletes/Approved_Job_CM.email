@@ -1,0 +1,43 @@
+<html>
+	<body>
+		{!CORECONNECT__CC_Community_Content__c.OwnerFirstName}, 
+		<p>	
+
+			Thank you for sharing your job opportunity with the Babson community. The posting for {!CORECONNECT__CC_Community_Content__c.Title__c} with {!CORECONNECT__CC_Community_Content__c.Name} has been approved and is now posted on the Babson Connector. <br>
+		</p>
+		
+		<p>
+			For reference here is what you submitted. <br><hr>
+				<strong>Job Title:</strong> {!CORECONNECT__CC_Community_Content__c.Title__c}<br> 
+				<strong>Company:</strong> {!CORECONNECT__CC_Community_Content__c.Name}<br>
+				<strong>Job Summary:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}<br> 
+				<strong>Job Description:</strong><br>{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}<br><br>
+				<strong>Industry:</strong> {!CORECONNECT__CC_Community_Content__c.Industry__c} <br> 
+				<strong>Job Location:</strong> {!CORECONNECT__CC_Community_Content__c.Job_Location__c}<br> 
+				<strong>Applicant Type:</strong> {!CORECONNECT__CC_Community_Content__c.Applicant_Type__c}<br> 
+				<strong>Region:</strong> {!CORECONNECT__CC_Community_Content__c.Region__c} <br> 
+				<strong>Job Status:</strong> {!CORECONNECT__CC_Community_Content__c.Job_Status__c} <br> 
+<strong>Job Level:</strong> {!CORECONNECT__CC_Community_Content__c.Job_Level__c} <br> 
+				<strong>Degree Requirements:</strong> {!CORECONNECT__CC_Community_Content__c.Degree_Requirements__c}<br> 
+				<strong>Work Eligibility Requirements:</strong> {!CORECONNECT__CC_Community_Content__c.Work_Eligibility_Fields__c}<br>
+				<strong>Perferred Start Date:</strong> {!CORECONNECT__CC_Community_Content__c.Preferred_Start_Date__c}
+		</p>
+		<hr></hr>
+		<p>
+			<strong>Publish Date:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}  <br> 
+			<strong>Archive Date:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}
+		</p>
+		<hr>
+		<p>
+			Want to view or make changes to your job posting?<br>
+1. Visit the <a href="https://babson.force.com/connector">Babson Connector</a> and log in<br>
+2. Once logged in, you can visit <a href="https://babson.force.com/connector/JobDetail?id={!CORECONNECT__CC_Community_Content__c.Id}">{!CORECONNECT__CC_Community_Content__c.Title__c}</a>, update your job posting, or submit a new position. </p>
+		<p>
+			Thank you again for your posting. If you have any questions, please reply to this email. Best wishes in filling youir open position.<br><br>
+			Peter Latvis  <br>
+			Community Manager<br>
+			Babson Connector<br>
+			<a href="mailto:communitymanager@babson.edu" target="_top">communitymanager@babson.edu</a>
+		</p>
+	</body>
+</html>

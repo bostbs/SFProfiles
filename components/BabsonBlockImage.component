@@ -1,0 +1,29 @@
+<apex:component layout="none">
+    <apex:attribute name="imgSrc" type="String" description="Image Source" default="" required="false" /> <!-- background image -->
+    <apex:attribute name="title" type="String" description="Title" default="" required="true" /> <!-- Title -->
+    <apex:attribute name="text" type="String" description="Text" default="" required="false" /> <!-- sub text -->
+    <apex:attribute name="link" type="String" description="Link" default="#" required="false" /> <!-- click through -->
+    <apex:attribute name="isLarge" type="Boolean" description="Is large?" default="false" required="false" /> <!-- larger padding and size -->
+    <apex:attribute name="blockClass" type="String" description="Class" default="" required="false" /> <!-- provide default background -->
+
+    <!-- 
+    Why so many spans? http://salesforce.stackexchange.com/questions/51535/rerendering-outputlink-with-block-elements-inside-of-it
+    -->
+
+    <div class="babson-block-image {!blockClass} {!IF(isLarge, 'large', '')} {!IF(imgSrc == 'none', 'noimg', 'withimg')}" style="{!IF(imgSrc != 'none', 'background-image: url('+imgSrc+');', '')}">
+        <a href="{!link}">
+            <span class="inner">
+                <span class="text">
+                    <apex:outputPanel layout="none" rendered="{!isLarge}">
+                        <span class="h1">{!title}</span>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!!isLarge}">
+                        <span class="h3" style="font-weight:bold; font-family:verdana,sans-serif;">{!title}</span>
+                    </apex:outputPanel>
+                    
+                    <span class="paragraph truncate-75" style="font-size:1.8rem;">{!IF(AND(NOT(ISBLANK(text)),!isLarge),LEFT(text, 75)+'...', text)}</span>
+                </span>
+            </span>
+        </a>
+    </div>
+</apex:component>

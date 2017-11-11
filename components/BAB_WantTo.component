@@ -1,0 +1,28 @@
+<apex:component layout="none">
+	<div class="container" id="i-want-to">
+		<div class="row">
+			<div class="col-xs-4 col-md-2">
+				<a href="#" class="square babson-blocklink-green"><span class="content"><i class="fa fa-calendar" /><span class="text">View Upcoming Events</span></span></a>
+			</div>
+
+			<div class="col-xs-4 col-md-2">
+				<a href="#" class="square babson-blocklink-blue"><span class="content"><i class="fa fa-calendar" /><span class="text">View Upcoming Events</span></span></a>
+			</div>
+
+			<div class="col-xs-4 col-md-2">
+				<a href="#" class="square babson-blocklink-gold"><span class="content"><i class="fa fa-calendar" /><span class="text">View Upcoming Events</span></span></a>
+			</div>
+
+			<div class="col-xs-4 col-md-2">
+				<a href="#" class="square babson-blocklink-yellow"><span class="content"><i class="fa fa-calendar" /><span class="text">View Upcoming Events</span></span></a>
+			</div>
+			<div class="col-xs-4 col-md-2">
+				<a href="#" class="square babson-blocklink-gray"><span class="content"><i class="fa fa-calendar" /><span class="text">View Upcoming Events</span></span></a>
+			</div>
+
+			<div class="col-xs-4 col-md-2">
+				<a href="#" class="square babson-blocklink-teal"><span class="content"><i class="fa fa-calendar" /><span class="text">View Upcoming Events</span></span></a>
+			</div>
+		</div>
+	</div>
+</apex:component>

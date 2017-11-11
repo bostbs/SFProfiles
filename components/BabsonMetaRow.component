@@ -1,0 +1,47 @@
+<apex:component layout="none">
+    <apex:attribute name="label" type="String" description="Button" default="" required="true" />
+    <apex:attribute name="value" type="String" description="String Value"  required="false" />
+    <apex:attribute name="numValue" type="Integer" description="Number Value"  required="false" />
+    <apex:attribute name="dateValue" type="Date" description="Date Value"  required="false" /> <!-- have to pass into component as date or num, not string -->
+    <apex:attribute name="currencyValue" type="Integer" description="Currency Value"  required="false" />
+    <apex:attribute name="isPrivate" type="Boolean" description="Is private?"  required="false" default="true"/>
+    <apex:attribute name="linkValue" type="String" description="String Value"  required="false" />
+    <apex:attribute name="mailtoValue" type="String" description="Mailto Value"  required="false" />
+    <apex:attribute name="userId" type="String" description="UserId"  required="false" />
+    <apex:attribute name="linkedinField" type="Boolean" description="linkedinField"  required="false" />
+    <apex:attribute name="dateTimeValue" type="Date" description="Date Time Value"  required="false" /> 
+    <apex:attribute name="linkLabel" type="string" description="link label"  required="false" />
+    <apex:attribute name="helpText" type="string" description="helpText"  required="false" /> 
+    
+    <apex:outputPanel layout="none" rendered="{!IF(userId = $User.Id,true,isPrivate)}">
+        <apex:outputPanel layout="none" rendered="{!label != '' && (value != null || numValue != null || dateValue != null || currencyValue != null || linkValue != null || mailtoValue != null || linkedinField) || dateTimeValue!=null}">
+            <div class="row meta-row">
+                <div class="col-xs-4 text-right">
+                    <p>{!label}</p>
+                </div>
+                <div class="col-xs-8">
+                    <h5>
+                            <i class="{!IF(AND(userId = $User.Id, !isPrivate),'fa fa-eye-slash','')}"></i>&nbsp; 
+                            
+                           
+                            <apex:outputPanel layout="none" rendered="{!value != ''}" ><apex:outputText style="word-break:break-word;cursor:pointer" escape="false" value="{!value}"  rendered="{!value != '0'}"   title="{!helpText}"   /></apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!numValue != null}">{!numValue}</apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!dateTimeValue!= null}"><apex:outputText value="{0, date, EE, MMM d, YYYY,HH:mm:ss }"><apex:param value="{!dateTimeValue}" /></apex:outputText></apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!dateValue != null}"><apex:outputText value="{0, date, EE, MMMM d, YYYY}"><apex:param value="{!dateValue}" /></apex:outputText></apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!currencyValue != null}"><apex:outputText value="{0,number, $###,##0}"><apex:param value="{!currencyValue}"/></apex:outputText></apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!AND(linkValue != '',linkLabel == '')}">
+                                <a href="{!IF(!OR(contains(linkValue, "http://"),contains(linkValue, "https://")), "http://", "")}{!linkValue}" target="_blank">{!linkValue}</a>
+                            </apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!mailtoValue != ''}">
+                                <a href="#" target="_blank" onclick="javascript: window.location.href='mailto:{!mailtoValue}'; return false;">{!mailtoValue}</a>
+                            </apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!AND(linkValue != '',linkLabel != '')}">
+                                <a href="/connector/{!linkValue}" target="_self">{!linkLabel}</a>
+                            </apex:outputPanel>
+        
+                    </h5>
+                </div>
+            </div>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:component>

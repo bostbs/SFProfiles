@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Available only to Finance on locked Invoice records.</description>
+    <interviewLabel>Unlock Invoice {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Unlock Invoice</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>ruOppInv</name>
+        <label>ruOppInv</label>
+        <locationX>119</locationX>
+        <locationY>70</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInvOppId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012360000012HLC</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <startElementReference>ruOppInv</startElementReference>
+    <variables>
+        <name>varInvOppId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

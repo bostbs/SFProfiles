@@ -1,0 +1,5 @@
+<apex:page sidebar="false" showHeader="False">
+    <script>
+    	window.onload = window.open("https://cs19.salesforce.com/servlet/servlet.su?oid=00D290000000Z15&retURL=%252F00329000008aWHf&sunetworkid=0DB36000000RKXA&sunetworkuserid=005290000013uDG");
+    </script>
+</apex:page>

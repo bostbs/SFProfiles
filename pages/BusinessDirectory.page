@@ -1,0 +1,206 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="BusinessDirectoryController" cache="false" action="{!SaveCurrentToCookie}">
+    <style>
+        .chosen-container-single .chosen-single span{
+            overflow:initial !important;
+        }
+        .branding .h3, .branding h3, .sfdcBody .h3, .sfdcBody h3 {
+        font-size: 1.8rem !important;
+    }
+    </style>
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">{!$Label.BAB_Business_Account_Title}</apex:define>
+        <apex:define name="body" >
+
+            <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.BAB_Business_Account_Title}" subtitle="{!TodayString}" showActions="{!$Permission.Create_Businesses}"
+                                btnText="{!$Label.BAB_Business_Create_Submit}" btnLink="{!$Page.BusinessCreate}" />
+
+
+            <c:BabsonPageSubheader title="" subTitle="{!$Label.BAB_Business_Directory_Sub_header_Label}" />
+
+
+            <!-- Thank you message from CC_CommunityCreateFTSC -->
+            <apex:outputPanel layout="none" rendered="{!$CurrentPage.parameters.thankyou == 'true'}">
+                <div class="container">
+                    <div class="alert alert-success fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>{!$Label.BAB_Business_Submission_Message}
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+
+            <!-- Main Content -->
+            <div class="container">
+                <!-- Featured News Header-->
+                <section class="well">
+                    <header class="well-header">
+                        <h3 id="featured-news">{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), $Label.BAB_Jobs_Featured_SSF, $Label.BAB_Business_Account_Featured)}</h3>
+                    </header>
+
+                    <!-- Display of Featured News-->
+                    <div class="row">
+                        <div class="col-xs-12 news-slider">
+                            <ul id="featured-slider" class="bxslider">
+                                <apex:repeat value="{!lstCommunityContent}" var="BusinessAccount" rows="8">
+                                    <div class="col-xs-6 col-md-3 margin-bottom-sm slide-group">
+                                        <c:BabsonBlockImage title="{!BusinessAccount.Name}" text="{!BusinessAccount.Business_Summary__c}" link="{!$Page.BusinessDetail}?id={!BusinessAccount.Id}"  imgSrc="{!IF(mapCCIdToisAttachment[BusinessAccount.Id],URLFOR($Action.Attachment.Download, mapOfCCToAttachId[BusinessAccount.Id]),'none')}" blockClass="news" isLarge="false"/>
+                                    </div>
+                                </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                    <!-- Remaining News -->
+                        <section class="well">
+                            <apex:form >
+                                <header class="well-header">
+                                    <h3>{!$Label.BAB_Business_Accounts_More}</h3>
+                                    <a class="btn btn-link tip" data-toggle="popover" data-placement="top" title="{!$Label.BAB_Business_Accounts_More}" data-content="{!$Label.CORECONNECT__CC_FreeText_More_Tooltip}">
+                                        <span class="icon-question"></span>
+                                    </a>
+                                </header>
+                                <apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="moreFreeText,moreFreeTextPagination" >
+                                    <apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+                                </apex:actionFunction>
+
+                                <!-- Navbar/Filtering -->
+                                <nav class="navbar navbar-default filter-row">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#filter-navbar">
+                                            <span class="sr-only">Toggle Filters</span>
+                                            <span class="icon-menu"></span>
+                                        </button>
+                                    </div>
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="filter-navbar">
+                                        <apex:outputPanel layout="none" id="filterPanel" rendered="{!!isAutomatedfiltering}">
+                                            <div class="navbar-form navbar-left" role="form">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="college_area">{!$Label.coreconnect__cc_freetext_filter_label}</label>
+                                                    <label class="visible-xs">{!$Label.BAB_Business_Filter_Classification1}</label>
+                                                    <apex:selectList value="{!Classification1}" multiselect="false" size="1" styleClass="form-control chosen" onchange="console.log('--1-');Filter();" html-data-placeholder="{!$Label.BAB_Business_Filter_Classification1}">
+                                                        <apex:selectOptions value="{!Classification1Values}"/>
+                                                    </apex:selectList>
+                                                </div>
+                                               <!--  <div class="form-group">
+                                                    <label class="sr-only" for="Classification_type2">{!$Label.coreconnect__cc_freetext_filter_classification2_label}</label>
+                                                    <label class="visible-xs">{!$Label.BAB_Business_Filter_Classification2}</label>
+                                                    <apex:selectList value="{!ClassificationType2}" multiselect="false" size="1" styleClass="form-control chosen" onchange="console.log('--2-');Filter();" html-data-placeholder="{!$Label.BAB_Business_Filter_Classification2}">
+                                                        <apex:selectOptions value="{!ClassificationValues2}"/>
+                                                    </apex:selectList>
+                                                </div> -->
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="Classification_type3">{!$Label.coreconnect__cc_freetext_filter_classification2_label}</label>
+                                                    <label class="visible-xs">{!$Label.BAB_Business_Filter_Classification3}</label>
+                                                    <apex:selectList value="{!ClassificationType3}" multiselect="false" size="1" styleClass="form-control chosen" onchange="Filter();" html-data-placeholder="{!$Label.BAB_Business_Filter_Classification3}">
+                                                        <apex:selectOptions value="{!ClassificationValues3}"/>
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                        </apex:outputPanel>
+                                        <apex:actionFunction action="{!Filter}" name="Filter" reRender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:actionFunction>
+                                        <div class="pagination-wrapper pull-right hidden-xs">
+                                            <apex:outputPanel id="moreFreeTextPagination" layout="block">
+                                                <div class="form-inline pull-left" role="form">
+                                                    <div class="form-group">
+                                                        <label for="page">Page</label>
+                                                        <input type="text" class="form-control input-sm" id="page" name="page" value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                                    </div>
+                                                    <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                                </div>
+                                                <ul class="pagination pagination-sm pull-right hidden-xs">
+                                                    <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                        <li>
+                                                            <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-success" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                        <li>
+                                                            <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-success" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                </ul>
+                                            </apex:outputPanel>
+                                        </div>
+                                    </div><!-- /.navbar-collapse -->
+                                </nav>
+                                <apex:outputPanel id="moreFreeText" layout="block">
+                                    <apex:outputPanel layout="none" rendered="{!ListOfMoreBusinessRecords.size == 0}">
+                                        <div class="alert alert-warning" role="alert">{!$Label.BAB_Business_No_Match_Message}
+                                        </div>
+                                    </apex:outputPanel>
+
+                                    <!-- Remaining Content Display -->
+                                    <div class="row other-content">
+                                        <apex:repeat value="{!ListOfMoreBusinessRecords}" var="MoreBusinessRecord">
+                                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                <c:BabsonBlockLink blockClass="babson-cardlink-alt-green news notch-bl" title="{!MoreBusinessRecord.CC.Name}" metaTitle="" text="{!MoreBusinessRecord.CC.Business_Summary__c}"  imgSrc=""  link="{!$Page.BusinessDetail}?id={!MoreBusinessRecord.CC.id}"/>
+                                                <!--subTitle="{!MoreBusinessRecord.FreeTextDate}" -->
+                                            </div>
+                                        </apex:repeat>
+                                    </div>
+
+                                    <script>
+                                        // Put this here for re-render
+                                        if (typeof truncateText != 'undefined'){
+                                            truncateText.doGroup($('.other-content .h3'), 40);
+                                            truncateText.doGroup($('.truncate-75'), 75);
+                                        }
+                                    </script>
+
+
+                                    <div class="pagination-wrapper">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <c:BabsonTermsOfUseModal />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="pull-right">
+
+                                                    <div class="form-inline pull-left" role="form">
+                                                        <div class="form-group">
+                                                            <label for="page">Page</label>
+                                                            <input type="text" class="form-control input-sm" id="page" name="page"
+                                                            value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                                        </div>
+                                                        <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                                    </div>
+
+
+
+                                                    <ul class="pagination pagination-sm pull-right">
+                                                        <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                        <li>
+                                                            <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-success"  rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                    <li>
+                                                        <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-success" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                    </li>
+                                                </apex:outputPanel>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                </apex:outputPanel>
+                            </apex:form>
+                        </section>
+                    </div>
+                    <!-- /.all-news -->
+                    <apex:actionStatus id="rerenderFreeText" onstop="onScreenResize(determineBreakpoint())"/>
+
+                    <script>
+                        Filter();
+                    </script>
+            </apex:define>
+        </apex:composition>
+    </apex:page>

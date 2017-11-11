@@ -1,0 +1,44 @@
+<html>
+	<body>
+		{!CORECONNECT__CC_Community_Content__c.OwnerFirstName},  
+		<p>
+			Thank you for submitting {!CORECONNECT__CC_Community_Content__c.Title__c} with {!CORECONNECT__CC_Community_Content__c.Name}  to be posted in the Jobs section of the Babson Connector. Our team will review your post (typically within one to two business days). Once approved, you’ll receive a confirmation and your posting will appear on the Babson Connector.
+
+		</p>
+		
+		<p>
+			For reference here is what you submitted. <br><hr>
+				<strong>Job Title:</strong> {!CORECONNECT__CC_Community_Content__c.Title__c}<br> 
+				<strong>Company:</strong> {!CORECONNECT__CC_Community_Content__c.Name}<br>
+				<strong>Job Summary:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}<br> 
+				<strong>Job Description:</strong><br>{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}<br><br>
+				<strong>Industry:</strong> {!CORECONNECT__CC_Community_Content__c.Industry__c} <br> 
+				<strong>Job Location:</strong> {!CORECONNECT__CC_Community_Content__c.Job_Location__c}<br> 
+				<strong>Applicant Type:</strong> {!CORECONNECT__CC_Community_Content__c.Applicant_Type__c}<br> 
+				<strong>Region:</strong> {!CORECONNECT__CC_Community_Content__c.Region__c} <br> 
+				<strong>Job Status:</strong> {!CORECONNECT__CC_Community_Content__c.Job_Status__c} <br> 
+<strong>Job Level:</strong> {!CORECONNECT__CC_Community_Content__c.Job_Level__c} <br> 
+				<strong>Degree Requirements:</strong> {!CORECONNECT__CC_Community_Content__c.Degree_Requirements__c}<br> 
+				<strong>Work Eligibility Requirements:</strong> {!CORECONNECT__CC_Community_Content__c.Work_Eligibility_Fields__c}<br>
+				<strong>Perferred Start Date:</strong> {!CORECONNECT__CC_Community_Content__c.Preferred_Start_Date__c}
+		</p>
+
+<hr>
+<p>
+			<strong>Publish Date:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}  <br> 
+			<strong>Archive Date:</strong> {!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}
+</p>
+
+<hr>
+		<p>
+			If you have any questions, please feel free to reply to this email.
+		</p>
+		<p>
+			Sincerely,<br><br>
+			Peter Latvis  <br>
+			Community Manager<br>
+			Babson Connector<br>
+			<a href="mailto:communitymanager@babson.edu" target="_top">communitymanager@babson.edu</a>
+		</p>
+	</body>
+</html>

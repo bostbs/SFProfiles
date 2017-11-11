@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Trump_Content__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Default_Content__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification1__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__Classification2__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <description>Events that occured or were posted in this month.</description>
+    <filter>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>CORECONNECT__CC_Community_Content__c.CORECONNECT__ScheduledContent</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CORECONNECT__CC_Community_Content__c.CORECONNECT__Start_Date__c</column>
+            <operator>equals</operator>
+            <value>THIS_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <operator>equals</operator>
+            <value>THIS_MONTH</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Event Count - This Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$CORECONNECT__CC_Community_Content__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CORECONNECT__CC_Community_Content__c.CORECONNECT__Start_Date__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

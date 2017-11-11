@@ -1,0 +1,27 @@
+<apex:page standardController="CORECONNECT__CC_Community_Content__c" extensions="SendApprovalComments">
+    <apex:form id="formId">
+    <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock rendered="{!!isSuccess}">
+            <apex:pageBlockSection title="More information Section">
+                <apex:outputLabel value="Please provide message ."/>
+                <apex:inputTextarea id="newDesc" value="{!emailMsg}"/>
+                <apex:commandButton value="Send Email" action="{!sendEmail}" rerender="formId" status="counterStatus"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!isSuccess}">
+            <apex:outputLink value="/{!CORECONNECT__CC_Community_Content__c.id}">Back</apex:outputLink> <br></br>
+                        You email has been sent successfully.
+        </apex:pageBlock>
+        
+        <apex:actionstatus id="counterStatus">
+        <apex:facet name="start">
+            <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.65;width:100%;">
+                <div class="waitingHolder" style="top: 100px; width: 91px;">
+                <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                <span class="waitingDescription">Loading...</span>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionstatus>
+    </apex:form>
+</apex:page>

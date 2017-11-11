@@ -1,0 +1,28 @@
+<apex:component layout="none" rendered="{!!($User.LastName == 'Site Guest User' && $CurrentPage.Name == 'BabsonLogin')}">
+   <!-- <section id="footer-social-ctas">
+        <apex:outputLink rendered="{!$Label != null}" styleClass="facebook" value="{!$Label.Facebook_URL}" target="_blank">
+            <sp class="outersp bab_icon-Facebook-48px"><sp class="path1"></sp><sp class="path2"></sp></sp>
+            <span>{!$Label.Facebook_Text}</span>
+        </apex:outputLink>
+
+        <apex:outputLink rendered="{!$Label != null}" styleClass="twitter" value="{!$Label.Twitter_URL}" target="_blank">
+            <sp class="outersp bab_icon-Twitter-48px"><sp class="path1"></sp><sp class="path2"></sp></sp>
+            <span>{!$Label.Twitter_Text}</span>
+        </apex:outputLink>
+
+        <apex:outputLink rendered="{!$Label != null}" styleClass="linkedin" value="{!$Label.LinkedIn_URL}" target="_blank">
+            <sp class="outersp bab_icon-LinkedIn-48px"><sp class="path1"></sp><sp class="path2"></sp><sp class="path3"></sp></sp>
+            <span>{!$Label.LinkedIn_Text}</span>
+        </apex:outputLink>
+
+        <apex:outputLink rendered="{!$Label != null}" styleClass="instagram" value="{!$Label.Instagram_URL}" target="_blank">
+            <sp class="outersp bab_icon-Instagram-48px"><sp class="path1"></sp><sp class="path2"></sp><sp class="path3"></sp></sp>
+            <span>{!$Label.Instagram_Text}</span>
+        </apex:outputLink>
+
+        <apex:outputLink rendered="{!$Label != null}" styleClass="flickr" value="{!$Label.Flickr_URL}" target="_blank">
+            <sp class="outersp bab_icon-Flickr-48px"><sp class="path1"></sp><sp class="path2"></sp><sp class="path3"></sp></sp>
+            <span>{!$Label.Flickr_Text}</span>
+        </apex:outputLink>
+    </section>-->
+</apex:component>

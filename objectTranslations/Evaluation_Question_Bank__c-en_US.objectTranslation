@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Question as it will display on evaluation forms --></help>
+        <label><!-- Evaluation Question --></label>
+        <name>ACF_Evaluation_Question__c</name>
+    </fields><fields>
+        <label><!-- Instructions --></label>
+        <name>ACF_Instructions__c</name>
+    </fields><fields>
+        <label><!-- Parent Question --></label>
+        <name>ACF_Parent_Question__c</name>
+        <relationshipLabel><!-- Evaluation Question Bank --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Pivotal ID --></label>
+        <name>ACF_Pivotal_ID__c</name>
+    </fields><fields>
+        <label><!-- Question Category --></label>
+        <name>ACF_Question_Category__c</name>
+        <picklistValues>
+            <masterLabel>Facilities Score</masterLabel>
+            <translation><!-- Facilities Score --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facilities Service Score</masterLabel>
+            <translation><!-- Facilities Service Score --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faculty Score</masterLabel>
+            <translation><!-- Faculty Score --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key Score</masterLabel>
+            <translation><!-- Key Score --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations Service Score</masterLabel>
+            <translation><!-- Operations Service Score --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Question</masterLabel>
+            <translation><!-- Standard Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Score</masterLabel>
+            <translation><!-- Technology Score --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Question Owner --></label>
+        <name>ACF_Question_owner__c</name>
+        <picklistValues>
+            <masterLabel>BEE</masterLabel>
+            <translation><!-- BEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCD</masterLabel>
+            <translation><!-- CCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCD EL</masterLabel>
+            <translation><!-- CCD EL --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Reverse Scale --></label>
+        <name>ACF_Reverse_Scale__c</name>
+    </fields><fields>
+        <label><!-- Scale High Annotation --></label>
+        <name>ACF_Scale_High_Annotation__c</name>
+    </fields><fields>
+        <label><!-- Scale Low Annotation --></label>
+        <name>ACF_Scale_Low_Annotation__c</name>
+    </fields><fields>
+        <label><!-- Scale Points --></label>
+        <name>ACF_Scale_Points__c</name>
+        <picklistValues>
+            <masterLabel>1 to 10</masterLabel>
+            <translation><!-- 1 to 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 to 5</masterLabel>
+            <translation><!-- 1 to 5 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Scale Points (migrated) --></label>
+        <name>ACF_Scale_Points_migrated__c</name>
+    </fields><fields>
+        <help><!-- historical --></help>
+        <label><!-- Scale Type --></label>
+        <name>ACF_Scale_Type__c</name>
+        <picklistValues>
+            <masterLabel>Ascending</masterLabel>
+            <translation><!-- Ascending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Descending</masterLabel>
+            <translation><!-- Descending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- How the scale will be displayed on the evaluation form --></help>
+        <label><!-- Scale (low to high) --></label>
+        <name>ACF_Scale__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Evaluation Question Bank</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Evaluation Question Bank</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Evaluation Question Bank Layout</layout>
+        <sections>
+            <label><!-- Additional BEE details --></label>
+            <section>Additional BEE details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

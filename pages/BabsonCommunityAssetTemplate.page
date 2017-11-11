@@ -1,0 +1,7 @@
+<apex:page showHeader="false" >
+
+<c:BabsonHeader />
+
+<c:BabsonFooter />
+
+</apex:page>

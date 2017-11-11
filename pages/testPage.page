@@ -1,0 +1,17 @@
+<apex:page standardController="Account">
+    <apex:pagemessages />
+    asdddds
+   <!-- <apex:form >
+        <apex:sectionHeader title="Account" subtitle="{!Account.Name}"/>
+        <apex:pageBlock title="Account Address" mode="edit">
+            <apex:pageblockButtons >
+                <apex:commandButton value="Save" action="{!Save}" />
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection title="Address Finder">
+                <pca:AddressFinder label="Billing11" record="{!Account}" address="EditPage" />  
+                 <apex:inputText id="BillingCity" value="{!Account.BillingCity}"/>                 
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>-->
+</apex:page>

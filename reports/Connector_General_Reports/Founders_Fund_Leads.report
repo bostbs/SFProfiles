@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CoreID__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Phone__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Email__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Founders_Fund__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Funding_Link__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Industry__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.Pledged_Dollars__c</field>
+    </columns>
+    <columns>
+        <field>CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_OWNER_NAME</column>
+            <operator>notContain</operator>
+            <value>Stephen Noe</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <operator>notContain</operator>
+            <value>Larry Fillion</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_OWNER_NAME</column>
+            <operator>notContain</operator>
+            <value>QATest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_OWNER_NAME</column>
+            <operator>notContain</operator>
+            <value>Community Manager</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <operator>notContain</operator>
+            <value>old -2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <operator>notContain</operator>
+            <value>old -1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <operator>notContain</operator>
+            <value>old -3</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <operator>notContain</operator>
+            <value>Community Manager</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CORECONNECT__CC_Community_Content__c.CORECONNECT__Community_Content_Status__c</column>
+            <operator>equals</operator>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>CORECONNECT__CC_Community_Content__c.Venture</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CORECONNECT__CC_Community_Content__c.Founders_Fund__c</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Founders Fund Leads</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$CORECONNECT__CC_Community_Content__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2017-06-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-05-01</startDate>
+    </timeFrameFilter>
+</Report>

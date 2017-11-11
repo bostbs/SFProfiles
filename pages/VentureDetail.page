@@ -1,0 +1,267 @@
+<apex:page showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="false" 
+           applyHtmlTag="false" 
+           applyBodyTag="false" 
+           docType="html-5.0" 
+           standardController="CORECONNECT__CC_Community_Content__c" 
+           extensions="VentureDetailController" 
+           action="{!GoToList}">
+     
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">{!CORECONNECT__CC_Community_Content__c.Name}</apex:define>
+    
+        <apex:define name="body" >
+            <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.BAB_Venture_Detail_Title}" breadCrumbText="{!$Label.BAB_Venture_Create_Back_To_Venture}" breadCrumbLink="{!$Page.Ventures}" showActions="{!$Permission.Create_Ventures}" btnText2="{!$Label.coreconnect__cc_scheduledcontent_update}" btnLink2="{!$Page.VentureCreate}?Id={!CORECONNECT__CC_Community_Content__c.Id}&Clone=true" showUpdate="{! IF(CORECONNECT__CC_Community_Content__c.ownerId == $User.Id ,true,false) }" />
+           <!-- <c:BabsonPageHeader title="{!$Label.BAB_Venture_Detail_Title}" breadCrumbText="{!$Label.BAB_Venture_Create_Back_To_Venture}" breadCrumbLink="{!$Page.Ventures}" showActions="{!$Permission.Create_Ventures}" btnText="{!$Label.BAB_Venture_Create_Sumit}" btnLink="{!$Page.VentureCreate}" btnText2="{!$Label.coreconnect__cc_scheduledcontent_update}" btnLink2="{!$Page.VentureCreate}?Id={!CORECONNECT__CC_Community_Content__c.Id}&Clone=true" showUpdate="{! IF(CORECONNECT__CC_Community_Content__c.ownerId == $User.Id ,true,false) }" />-->
+            
+                <div class="container">
+                    <header class="detail-header clearfix">
+                            <h1 class="float-left"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.Name}"  /></h1> 
+                            <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}">
+                                <div class="chatter-follow float-left"><chatter:follow entityId="{!CORECONNECT__CC_Community_Content__c.Id}" /></div>
+                            </apex:outputPanel>
+                            <h5 class="clear">{!FreeTextPublishDate}</h5>
+                    </header>
+        <apex:form >
+        
+        <!-- Dialog for Directory terms of Use -->
+                <div id="tid_venture_TC" style="display: none;">
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                        <div class="modal-body">
+                            <header class="well-header">
+                                <h3>{!title}</h3>
+                            </header>
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="return acceptTM_Venture_TC();">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM_Venture_TC();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>
+        
+                    <div class="row">
+                        <div class="{!IF(AttachmentId != null,'col-sm-4 col-sm-push-8','hidden')} detail-image">
+                            <apex:outputPanel layout="none" rendered="{!AttachmentId != null}" >
+                                <img src="{!URLFOR($Action.Attachment.Download, AttachmentId)}" alt="" class="img-responsive" />
+                            </apex:outputPanel>
+                        </div>
+                        
+        
+                        <div class="{!IF(AttachmentId != null,'col-sm-8 col-sm-pull-4','col-sm-8 col-sm-push-2')} detail-text">
+        
+                            <!-- Article Content -->
+                            <article class="news-details"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}" escape="false"></apex:outputText></article>
+        
+                            <!-- Article Meta -->
+                            <div class="container-fluid meta-container">
+
+                                <c:BabsonMetaRow label="{!$Label.BAB_Venture_Create_View_Number_of_backer_Label}" numValue="{!CORECONNECT__CC_Community_Content__c.Backers__c}" />
+
+                                <c:BabsonMetaRow label="{!$Label.BAB_Venture_Create_View_Pledged_Dollars_Label}" currencyValue="{!CORECONNECT__CC_Community_Content__c.Pledged_Dollars__c}" />
+
+                                <c:BabsonMetaRow label="{!$Label.BAB_Venture_Create_View_Deadline_Label}" dateValue="{!CORECONNECT__CC_Community_Content__c.Deadline__c}" />
+                                <!--value="{!CORECONNECT__CC_Community_Content__c.Alumni_Name_Affiliation__c}" -->
+
+                                    <div class="row meta-row">
+                                    <div class="col-xs-4 text-right">
+                                        <p>{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Alumni_Name_Affiliation__c.label}</p>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        
+                                        <h5>
+                                            <apex:outputlink target="_self" value="/{!CORECONNECT__CC_Community_Content__c.OwnerId}">
+                                                {!CORECONNECT__CC_Community_Content__c.Alumni_Name_Affiliation__c}
+                                            </apex:outputlink>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--<c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Alumni_Name_Affiliation__c.label}" 
+                                                value="{!CORECONNECT__CC_Community_Content__c.OwnerId}" 
+                                                />-->
+                                <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Additional_Team_Members__c.label}" 
+                                                        value="{!CORECONNECT__CC_Community_Content__c.Additional_Team_Members__c}" 
+                                                        />
+                                
+                                                                
+                            </div>
+                            
+                            <!-- Dialog for Directory terms of Use -->
+<!--                <div id="tid_venture_TC" style="display: none;">
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                        <div class="modal-body">
+                            <header class="well-header">
+                                <h3>{!title}</h3>
+                            </header>
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="return acceptTM_Venture_TC();">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM_Venture_TC();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>
+                
+-->                
+                            <div id="tid_venture" style="display: none;">
+                                <div class="overlay"  id="over"></div>
+                                <div class="dialog">                                  
+                                    <div class="modal-body">
+                                        <p><apex:outputText value="{!$Label.BAB_Support_this_Venture_Terms}" escape="false" /></p>
+                                        <p class="text-center"><button type="button" class="btn btn-primary"  onclick="openFundingLink('{!CORECONNECT__CC_Community_Content__c.Funding_Link__c}');">Ok</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM_Venture()">Cancel</button></p>
+                                    </div>
+                                </div>                           
+                            </div>
+                            
+                            <div class="col-xs-12 actions">
+                                <apex:outputPanel layout="none"   rendered="{!if(CORECONNECT__CC_Community_Content__c.Funding_Link__c!=null,true,false)}" >
+                                   <!-- <input type ="button" lass="btn btn-alt"  value="SUPPORT THIS VENTURE" />-->
+                                    <a href=""  onclick="showTM_Venture()" class="btn btn-alt"><span class='icon-submit'></span> SUPPORT THIS VENTURE</a>
+                               <!--     <a class="btn btn-alt" href=""  onclick="showTM()"  > <span class='icon-submit' style="font-style: arial;" > SUPPORT THIS VENTURE </span></a>
+                                    <a class="btn btn-link tip" title="" data-toggle="popover"  data-placement="top" data-content="{!$Label.CC_Community_Contents_Funding_Link}{!$Label.CC_Community_Contents_Funding_Link1}" >
+                                        <span class="icon-question" size="large" style="color:#005172; fornt-size:large;" ></span>
+                                    </a> -->
+                                </apex:outputPanel>                          
+                            </div>
+        
+                        </div>
+                    </div>
+                    <apex:actionFunction action="{!updateContactTermTimeStamp}" name="acceptTerms_Ventures_TC" status="loadingStatus2"></apex:actionFunction> 
+     </apex:form>   
+                    <!-- Chatter -->
+                    <!--<apex:outputPanel rendered="{!IF(OR(CONTAINS($User.LastName, 'Site Guest User'), CONTAINS($Profile.Name, 'Alumni Community - SSF')), false, true)}">-->
+                    <apex:outputPanel rendered="{!IF($Profile.Name != GuestProfileName, true, false)}">
+                        <section id="comments">
+                            <div class="row">
+                                <div class="comments {!IF(AttachmentId != null,'col-xs-12 col-md-8','col-xs-12 col-md-8 col-md-push-2')}">
+                                    <chatter:feed entityId="{!$CurrentPage.parameters.id}" />
+                                </div>
+                            </div>
+                            <style>
+                                .chatterUserGuestBadge{        
+                                    display:none;      
+                                }
+                            </style>
+                        </section>
+                    </apex:outputPanel>
+                </div>
+               
+         <!--       
+                <div id="tid" style="display: none;">
+                      <div class="overlay"  id="over"></div>
+                      <div   class="dialog"  >  
+                          
+                           <div class="modal-body">
+                            <p><apex:outputText value="{!$Label.BAB_Support_this_Venture_Terms}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="openFundingLink('{!CORECONNECT__CC_Community_Content__c.Funding_Link__c}');">Ok</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM()">Cancel</button></p>
+                          </div>
+                      </div>                  
+                </div> 
+                -->
+        </apex:define>
+    </apex:composition>
+    
+<style>
+
+        .overlay {
+        background-color: #373632;
+        opacity: 0.6;
+        /* Generic for Major browsers */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        /* IE 5-7 */
+        filter: alpha(opacity=60);
+        /* Netscape */
+        -moz-opacity: 0.6;
+        /* Safari 1.x */
+        -khtml-opacity: 0.6;            
+        position: Fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 99;
+       
+
+        }
+        
+        .dialog {
+            position: relative;;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            outline: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translate3d(0, 0, 0);
+            max-width:100%;
+            margin-left: 0%;
+            margin-top: 0%;            
+            
+            z-index: 99;
+    }
+    #flagTypeI{
+    margin-right: 30px;
+    }
+   #flagTypeS{
+  margin-right: 30px;
+  }
+</style>
+
+<script>
+function showTM_Venture(){
+
+    $("#tid_venture").show();
+
+}
+function openFundingLink(url){
+
+    window.open('https://'+url);
+     $("#tid_venture").hide();
+
+}
+function hideTM_Venture(){
+
+    $("#tid_venture").hide();
+
+}
+
+function showTM_Venture_TC(){
+
+    $("#tid_venture_TC").show();
+
+}
+
+function hideTM_Venture_TC(){
+
+    $("#tid_venture_TC").hide();
+    window.location.href = '/connector/ventures';
+
+}
+    window.onload=function(){
+        showMainTC();
+        
+    }
+
+    function showVentureTC(){
+        var isDateExist = '{!isDateExist}';
+        console.log('isDateExist2  ::'+isDateExist );
+        if(isDateExist == 'false'){
+             $("#tid_venture_TC").show();
+        }else{
+           $("#tid_venture_TC").hide();
+        }
+        
+    }
+   
+   
+    function acceptTM_Venture_TC(){
+      acceptTerms_Ventures_TC();  
+      return false;
+    }
+</script>
+</apex:page>

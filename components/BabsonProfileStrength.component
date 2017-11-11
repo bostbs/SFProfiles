@@ -1,0 +1,6 @@
+<apex:component layout="none" controller="BabsonProfileStrengthController">
+	<apex:outputPanel layout="none">
+		<p class="meta"><span class="hidden-sm">{!$Label.Profile_strength}</span> <span class="percentage">{!IF(percentComplete > 100, 100, percentComplete)}%</span></p>
+		<div class="outer hidden-sm"><div class="inner" style="width: {!percentComplete}%"></div></div>
+	</apex:outputPanel>
+</apex:component>

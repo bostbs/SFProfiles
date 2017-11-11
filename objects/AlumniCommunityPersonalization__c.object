@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Content_Personalization_Field_1__c</fullName>
+        <description>API Name of the field on the CC Community Content object that will be used first to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the CC Community Content object that will be used first to find personalized results</inlineHelpText>
+        <label>Content Personalization Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Personalization_Field_2__c</fullName>
+        <description>API Name of the field on the CC Community Content object that will be used second to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the CC Community Content object that will be used second to find personalized results</inlineHelpText>
+        <label>Content Personalization Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Personalization_Field_3__c</fullName>
+        <description>API Name of the field on the CC Community Content object that will be used third to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the CC Community Content object that will be used third to find personalized results</inlineHelpText>
+        <label>Content Personalization Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Personalization_Field_4__c</fullName>
+        <description>API Name of the field on the CC Community Content object that will be used fourth to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the CC Community Content object that will be used fourth to find personalized results</inlineHelpText>
+        <label>Content Personalization Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Personalization_Field_5__c</fullName>
+        <description>API Name of the field on the CC Community Content object that will be used fifth to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the CC Community Content object that will be used fifth to find personalized results</inlineHelpText>
+        <label>Content Personalization Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Personalization_Field_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Personalization Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Type_Home_Page_Tile_1__c</fullName>
+        <description>API Name of the CC Community Content Record Type that should be displayed in tile 1 on the Home Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the CC Community Content Record Type that should be displayed in tile 1 on the Home Page</inlineHelpText>
+        <label>Content Type Home Page Tile 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Type_Home_Page_Tile_2__c</fullName>
+        <description>API Name of the CC Community Content Record Type that should be displayed in tile 2 on the Home Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the CC Community Content Record Type that should be displayed in tile 2 on the Home Page</inlineHelpText>
+        <label>Content Type Home Page Tile 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Type_Home_Page_Tile_3__c</fullName>
+        <description>API Name of the CC Community Content Record Type that should be displayed in tile 3 on the Home Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the CC Community Content Record Type that should be displayed in tile 3 on the Home Page</inlineHelpText>
+        <label>Content Type Home Page Tile 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Type_Home_Page_Tile_4__c</fullName>
+        <description>API Name of the CC Community Content Record Type that should be displayed in tile 4 on the Home Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the CC Community Content Record Type that should be displayed in tile 4 on the Home Page</inlineHelpText>
+        <label>Content Type Home Page Tile 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Type_Home_Page_Tile_5__c</fullName>
+        <description>API Name of the CC Community Content Record Type that should be displayed in tile 5 on the Home Page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the CC Community Content Record Type that should be displayed in tile 5 on the Home Page</inlineHelpText>
+        <label>Content Type Home Page Tile 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Content_Type_Home_Page_Tile_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Type Home Page Tile 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Personalization_Field_1__c</fullName>
+        <description>API Name of the field on the Contact object that will be used first to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the Contact object that will be used first to find personalized results</inlineHelpText>
+        <label>User Personalization Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Personalization_Field_2__c</fullName>
+        <description>API Name of the field on the Contact object that will be used second to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the Contact object that will be used second to find personalized results</inlineHelpText>
+        <label>User Personalization Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Personalization_Field_3__c</fullName>
+        <description>API Name of the field on the Contact object that will be used third to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the Contact object that will be used third to find personalized results</inlineHelpText>
+        <label>User Personalization Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Personalization_Field_4__c</fullName>
+        <description>API Name of the field on the Contact object that will be used fourth to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the Contact object that will be used fourth to find personalized results</inlineHelpText>
+        <label>User Personalization Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Personalization_Field_5__c</fullName>
+        <description>API Name of the field on the Contact object that will be used fifth to find personalized results</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the field on the Contact object that will be used fifth to find personalized results</inlineHelpText>
+        <label>User Personalization Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Personalization_Field_6__c</fullName>
+        <externalId>false</externalId>
+        <label>User Personalization Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><customSettingsType>List</customSettingsType><description>Used for the personalization of content in the Alumni Community</description><enableFeeds>false</enableFeeds><label>Alumni Community Personalization</label><visibility>Public</visibility></CustomObject>

@@ -1,0 +1,166 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="CORECONNECT.CC_CommunityGroupController" cache="false" action="{!forwardToLogin}">
+	<apex:composition template="{!$Site.Template}">
+		<apex:define name="pagetitle">{!$label.CORECONNECT__CORECONNECT__CC_Groups_Title}</apex:define>
+		<apex:define name="body" >
+
+			<!-- Page Heading -->
+			<c:BabsonPageHeader title="{!$Label.coreconnect__cc_groups_title}" subtitle="" showActions="{!$Permission.CORECONNECT__Create_Groups}" btnText="{!$Label.coreconnect__cc_groups_create}" btnLink="{!$Page.CORECONNECT__CC_CommunityCreateGroup}" />
+
+			<!-- Sub Heading 
+			<apex:outputPanel layout="none" rendered="{!IF(LOWER($Label.CORECONNECT__CC_Groups_Enable_Summary) == 'true','true','false')}">
+				<c:BabsonPageSubheader title="{!$Label.CORECONNECT__CC_Groups_Summary_Title}" subTitle="{!$Label.CORECONNECT__CC_Groups_Summary}" />
+			</apex:outputPanel> -->
+
+			<div class="container">
+
+
+					<apex:form >
+						<nav class="navbar navbar-default filter-row">
+							<div class="ec-groups-toolbar">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle Filters</span>
+										<span class="icon-menu"></span>
+									</button>
+								</div>
+								<apex:actionFunction action="{!SelectAGroup}" name="selectAGroup" reRender="groupsPanel,paginationTop,paginationBottom" ></apex:actionFunction>
+								<apex:actionFunction action="{!SelectACategory}" name="selectACateogory" ></apex:actionFunction>
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse margin-top-sm border-bottom" id="bs-example-navbar-collapse-1">
+									<apex:outputPanel id="groupOwnershipFilter">
+										<ul class="nav navbar-nav pull-left sub-tabs margin-right-sm">
+											<li class="{!MyGroupActive}">
+												<apex:commandLink action="{!OnlyGroupsIJoined}" value="{!$Label.coreconnect__cc_groups_filter_my_groups}" rerender="groupOwnershipFilter, groupsPanel,paginationTop,paginationBottom"></apex:commandLink>
+											</li>
+											<li class="{!AllActive}">
+												<apex:commandLink action="{!AllGroups}" value="{!$Label.coreconnect__cc_groups_filter_all_groups}" rerender="groupOwnershipFilter, groupsPanel,paginationTop,paginationBottom"></apex:commandLink>
+											</li>
+										</ul>
+									</apex:outputPanel>
+									<div class="navbar-form navbar-left">
+										<div class="form-group">
+											<apex:selectList id="categoryPicklist" value="{!TargetCategory}" multiselect="false" size="1" styleClass="form-control chosen" onchange="selectACateogory()" html-data-placeholder="{!$Label.coreconnect__cc_groups_filter_category_placeholder}">
+												<apex:selectOptions value="{!GroupCategoryPicklist}"/>
+											</apex:selectList>
+										</div>
+									</div>
+									<div class="pagination-wrapper pull-right hidden-xs hidden-sm">
+										<apex:outputPanel id="paginationTop" >
+											<div class="form-inline pull-left" role="form">
+												<div class="form-group">
+													<label for="pageInputAbove">Page</label>
+													<input type="text" class="form-control input-sm" id="pageInputAbove" name="page" value="{!pageNumber}" onchange="goToPage(this.value)" />
+												</div>
+												<div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+											</div>
+											<ul class="pagination pagination-sm pull-right hidden-xs">
+												<apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+													<li>
+														<apex:commandLink value="<" styleClass="btn btn-success" action="{!prevSet}" rerender="groupsPanel,paginationTop,paginationBottom" status="rerenderGroups"></apex:commandLink>
+													</li>
+												</apex:outputPanel>
+												<apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+													<li>
+														<apex:commandLink value=">" styleClass="btn btn-success" action="{!nextSet}" rerender="groupsPanel,paginationTop,paginationBottom" status="rerenderGroups"></apex:commandLink>
+													</li>
+												</apex:outputPanel>
+											</ul>
+											<apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="groupsPanel,paginationTop,paginationBottom" >
+												<apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+											</apex:actionFunction>
+										</apex:outputPanel>
+									</div>
+								</div>
+								<!-- /.navbar-collapse -->
+							</div>
+							<!-- /.container-fluid -->
+						</nav>
+						<apex:outputPanel id="groupsPanel">
+							<apex:outputPanel layout="none" rendered="{!ListOfGroups.size == 0}">
+								<div class="alert alert-warning"><p>Don't see any {!$Label.coreconnect__cc_groups_title}? Click on the <strong>{!$Label.coreconnect__cc_groups_filter_all_groups}</strong> button above to to see all available {!$Label.coreconnect__cc_groups_title} and join one!
+								</p></div>
+							</apex:outputPanel>
+
+							<div class="row">
+								<apex:repeat value="{!ListOfGroups}" var="rec" >
+									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 {!rec.cg.Id}">
+										<!-- You are a member, or group is not private -->
+										<apex:outputPanel rendered="{!(rec.MyGroupRole!='None'&&rec.MyGroupRole!='Requested' )|| rec.cg.CollaborationType!='Private'}">
+											<!-- text  = member/requested/manager/admin -->
+											<c:BabsonBlock blockClass="babson-card-alt-group" title="{!rec.cg.Name}" text="{!IF(rec.MyGroupRole=='Standard',$Label.coreconnect__cc_groups_result_member , '')}{!IF(rec.MyGroupRole=='Requested',$Label.coreconnect__cc_groups_result_requested , '')}{!IF(rec.MyGroupRole=='Admin',$Label.coreconnect__cc_groups_result_owner , '')}{!IF(rec.MyGroupRole=='Manager',$Label.coreconnect__cc_groups_result_manager , '')}" subTitle="{!rec.cg.MemberCount} {!IF(rec.cg.MemberCount == 1, $Label.coreconnect__cc_groups_result_single_member, $Label.coreconnect__cc_groups_result_multiple_members)}"  imgSrc="{!IF(CONTAINS(rec.cg.FullPhotoUrl, '0F9/F'),DefaultGroupLogo,rec.cg.FullPhotoUrl)}"  imgLink="{!$Page.GroupDetail}?id={!rec.cg.Id}" btnText="{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Public',$Label.coreconnect__cc_groups_result_join,'')}{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Private',$Label.coreconnect__cc_groups_result_request_to_join,'')}" btnLink="{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Public','#join','')}{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Private','#request','')}" textIconClass="{!IF(rec.MyGroupRole=='Standard','fa fa-check-circle-o' , '')}{!IF(rec.MyGroupRole=='Requested','fa detfa-hourglass-end' , '')}{!IF(rec.MyGroupRole=='Admin','fa fa-gears' , '')}{!IF(rec.MyGroupRole=='Manager','fa fa-gears', '')}"/>
+										</apex:outputPanel>
+
+
+										<!-- You are not a member AND group is private -->
+										<apex:outputPanel rendered="{!(rec.MyGroupRole=='None' || rec.MyGroupRole=='Requested' )&& rec.cg.CollaborationType=='Private'}">
+											<!-- Meta title = requested/private group -->
+											<c:BabsonBlock blockClass="babson-card-alt-group" title="{!rec.cg.Name}" text="{!IF(rec.MyGroupRole=='Requested',$Label.coreconnect__cc_groups_result_requested , 'Private Group')}" subTitle="{!rec.cg.MemberCount} {!IF(rec.cg.MemberCount == 1, $Label.coreconnect__cc_groups_result_single_member, $Label.coreconnect__cc_groups_result_multiple_members)}" imgSrc="{!IF(CONTAINS(rec.cg.FullPhotoUrl, '0F9/F'),DefaultGroupLogo,rec.cg.FullPhotoUrl)}" btnText="{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Public',$Label.coreconnect__cc_groups_result_join,'')}{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Private',$Label.coreconnect__cc_groups_result_request_to_join,'')}" btnLink="{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Public','#join','')}{!IF(rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Private','#request','')}"/>
+										</apex:outputPanel>
+
+
+											<!-- Join -->
+											<apex:commandLink value="{!$Label.coreconnect__cc_groups_result_join}" action="{!JoinTheGroup}" styleClass="{!rec.cg.Id} hidden" rendered="{!rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Public'}" rerender="groupsPanel" status="rerenderGroupsNoScroll">
+												<apex:param name="targetId" value="{!rec.cg.id}" assignTo="{!TargetId}" ></apex:param>
+											</apex:commandLink>
+
+											<!-- Request to join  -->
+											<apex:commandLink value="{!$Label.coreconnect__cc_groups_result_request_to_join}" action="{!RequestToJoinTheGroup}" styleClass="{!rec.cg.Id} hidden" rendered="{!rec.MyGroupRole=='None' && rec.cg.CollaborationType=='Private'}" rerender="groupsPanel" status="rerenderGroupsNoScroll">
+												<apex:param name="targetId" value="{!rec.cg.id}" assignTo="{!TargetId}" ></apex:param>
+											</apex:commandLink>
+			
+										<script>
+											$(document).ready(function() {
+												clickSpoof.init($('div.{!rec.cg.id} a.btn'), $('a.{!rec.cg.id}'));
+											});
+											</script>
+									</div>
+									
+
+								</apex:repeat>
+							</div>
+
+
+						</apex:outputPanel>
+
+
+						<div class="pagination-wrapper">
+							<div class="pull-right">
+								<apex:outputPanel id="paginationBottom" >
+									<div class="form-inline pull-left" role="form">
+										<div class="form-group">
+											<label for="pageInputBelow">Page</label>
+											<input type="text" class="form-control input-sm" id="pageInputBelow" name="page" value="{!pageNumber}" onchange="goToPage(this.value)" />
+										</div>
+										<div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+									</div>
+									<ul class="pagination pagination-sm pull-right">
+										<apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+											<li>
+												<apex:commandLink value="<" action="{!prevSet}" rerender="groupsPanel,paginationTop,paginationBottom" status="rerenderGroups"></apex:commandLink>
+											</li>
+										</apex:outputPanel>
+										<apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+											<li>
+												<apex:commandLink value=">" action="{!nextSet}" rerender="groupsPanel,paginationTop,paginationBottom" status="rerenderGroups"></apex:commandLink>
+											</li>
+										</apex:outputPanel>
+									</ul>
+									<apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="groupsPanel,paginationTop,paginationBottom" >
+										<apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+									</apex:actionFunction>
+								</apex:outputPanel>
+							</div>
+						</div>
+					</apex:form>
+
+				<!-- /.all-news -->
+				<apex:actionStatus id="rerenderGroups" onstop="onScreenResize(determineBreakpoint());scrollToDiv('#content .all-news');"/>
+				<apex:actionStatus id="rerenderGroupsNoScroll" onstop="onScreenResize(determineBreakpoint());"/>
+			</div>
+		</apex:define>
+		<apex:define name="footerjs">
+
+		</apex:define>
+	</apex:composition>
+</apex:page>

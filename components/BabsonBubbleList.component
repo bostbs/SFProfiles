@@ -1,0 +1,11 @@
+<apex:component >
+	<apex:attribute name="items" type="String[]" description="Items"  required="false" />
+	<apex:attribute name="styleClass" type="String" description="Class"  required="false" />
+
+	<div class="bubble-list {!styleClass}">
+		<apex:repeat value="{!items}" var="item">
+			<div class="bubble">{!item}</div>
+		</apex:repeat>
+	</div>
+	
+</apex:component>

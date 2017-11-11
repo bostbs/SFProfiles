@@ -1,0 +1,196 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="JobsController" cache="false" action="{!SaveCurrentToCookie}">
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle"> {!$Label.BAB_Jobs_Title}</apex:define>
+        <apex:define name="body" >
+
+            <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.BAB_Jobs_Title}" subtitle="{!TodayString}" showActions="{!$Permission.Create_Jobs}" btnText="{!$Label.BAB_Submit_Job}" btnLink="{!$Page.JobCreate}" />
+
+            <!-- Sub Heading 
+            <c:BabsonPageSubheader title="{!$Label.BAB_Jobs_Summary_Title}" subTitle="{!$Label.BAB_Jobs_Summary}" />  -->
+            
+            <!-- Thank you message from CC_CommunityCreateFTSC -->
+            <apex:outputPanel layout="none" rendered="{!$CurrentPage.parameters.thankyou == 'true'}">
+                <div class="container">
+                    <div class="alert alert-success fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>{!$Label.BAB_Job_Submission_Message}</strong>&nbsp;
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+
+            <!-- Main Content -->
+            <div class="container">
+                <!-- Featured News Header-->
+                <section class="well">
+                    <header class="well-header">
+                        <h3 id="featured-jobs">{! IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), $Label.BAB_Jobs_Featured_SSF, $Label.BAB_Jobs_Featured)}</h3>
+                    </header>
+
+                    <!-- Display of Featured Jobs-->
+                    <div class="row">
+                        <div class="col-xs-12 jobs-slider">
+                            <ul id="featured-slider" class="bxslider">
+                                <apex:repeat value="{!lstCommunityContent}" var="FreeText" rows="8">
+                                    <div class="col-xs-6 col-md-3 margin-bottom-sm slide-group">
+                                        <c:BabsonBlockImage title="{!FreeText.Title__c}" text="{!FreeText.CORECONNECT__Short_Description__c}" link="{!$Page.JobDetail}?id={!FreeText.Id}"  imgSrc="{!IF(mapCCIdToisAttachment[FreeText.Id],URLFOR($Action.Attachment.Download, mapOfCCToAttachId[FreeText.Id]),'none')}" blockClass="job" isLarge="false"/>
+                                    </div>
+                                </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                    <!-- Remaining Jobs -->
+                        <section class="well">
+                            <apex:form >
+                                <header class="well-header">
+                                    <h3>{!$Label.BAB_Jobs_More}</h3>
+                                    <a class="btn btn-link tip" data-toggle="popover" data-placement="top" title="{!$Label.BAB_Jobs_More}" data-content="{!$Label.BAB_Job_More_Tooltip}">
+                                        <span class="icon-question"></span>
+                                    </a>
+                                </header>
+                                <apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="moreFreeText,moreFreeTextPagination" >
+                                    <apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+                                </apex:actionFunction>
+
+                                <!-- Navbar/Filtering -->
+                                <nav class="navbar navbar-default filter-row">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#filter-navbar">
+                                            <span class="sr-only">Toggle Filters</span>
+                                            <span class="icon-menu"></span>
+                                        </button>
+                                    </div>
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="filter-navbar">
+                                        <apex:outputPanel layout="none" id="filterPanel" rendered="{!!isAutomatedfiltering}">
+                                            <div class="navbar-form navbar-left" role="form">
+                                                <!-- <div class="form-group">
+                                                    <label class="sr-only" for="college_area">{!$Label.coreconnect__cc_freetext_filter_label}</label>
+                                                    <apex:selectList value="{!Classification1}" multiselect="false" size="1" styleClass="form-control chosen" onchange="console.log('--1-');Filter();" html-data-placeholder="{!$Label.BAB_Job_Filter_Classification1_Placeholder}">
+                                                        <apex:selectOptions value="{!Classification1Values}"/>
+                                                    </apex:selectList>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="Classification_type2">{!$Label.coreconnect__cc_freetext_filter_classification2_label}</label>
+                                                    <label class="visible-xs">{!$Label.BAB_Job_Filter_Classification2_Placeholder}</label>
+                                                    <apex:selectList value="{!ClassificationType2}" multiselect="false" size="1" styleClass="form-control chosen" onchange="console.log('--2-');Filter();" html-data-placeholder="{!$Label.BAB_Job_Filter_Classification2_Placeholder}">
+                                                        <apex:selectOptions value="{!ClassificationValues2}"/>
+                                                    </apex:selectList>
+                                                </div> -->
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="Classification_type3">{!$Label.coreconnect__cc_freetext_filter_classification2_label}</label>
+                                                    <label class="visible-xs">{!$Label.BAB_Job_Filter_Classification3_Placeholder}</label>
+                                                    <apex:selectList value="{!ClassificationType3}" multiselect="false" size="1" styleClass="form-control chosen" onchange="console.log('--3-');Filter();" html-data-placeholder="{!$Label.BAB_Job_Filter_Classification3_Placeholder}">
+                                                        <apex:selectOptions value="{!ClassificationValues3}"/>
+                                                    </apex:selectList>
+                                                </div>
+
+                                            </div>
+                                        </apex:outputPanel>
+                                        <apex:actionFunction action="{!Filter}" name="Filter" reRender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:actionFunction>
+                                        <div class="pagination-wrapper pull-right hidden-xs">
+                                            <apex:outputPanel id="moreFreeTextPagination" layout="block">
+                                                <div class="form-inline pull-left" role="form">
+                                                    <div class="form-group">
+                                                        <label for="page">Page</label>
+                                                        <input type="text" class="form-control input-sm" id="page" name="page" value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                                    </div>
+                                                    <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                                </div>
+                                                <ul class="pagination pagination-sm pull-right hidden-xs">
+                                                    <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                        <li>
+                                                            <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-job" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                        <li>
+                                                            <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-job" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                        </li>
+                                                    </apex:outputPanel>
+                                                </ul>
+                                            </apex:outputPanel>
+                                        </div>
+                                    </div><!-- /.navbar-collapse -->
+                                </nav>
+                                <apex:outputPanel id="moreFreeText" layout="block">
+                                    <apex:outputPanel layout="none" rendered="{!ListOfMoreFreeText.size == 0}">
+                                        <div class="alert alert-warning" role="alert">
+                                            <strong>{!$Label.BAB_Job_No_Match_Message}</strong>
+                                        </div>
+                                    </apex:outputPanel>
+                                 
+                                    <!-- Remaining Content Display -->
+                                    <div class="row other-content">
+                                        <apex:repeat value="{!ListOfMoreFreeText}" var="MoreFreeText">
+                                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                <c:BabsonBlockLink blockClass="babson-cardlink-alt-job notch-br job" title="{!MoreFreeText.CC.Title__c}" metaTitle="" subTitle="{!MoreFreeText.FreeTextDate}" text="{!MoreFreeText.CC.CORECONNECT__Short_Description__c}"  imgSrc=""  link="{!$Page.JobDetail}?id={!MoreFreeText.CC.id}"/>
+                                            </div>
+                                        </apex:repeat>
+                                    </div>
+
+                                    <script>
+                                        // Put this here for re-render
+                                        if (typeof truncateText != 'undefined'){
+                                            truncateText.doGroup($('.other-content .h3'), 40);
+                                            truncateText.doGroup($('.truncate-75'), 75);
+                                        }
+                                    </script>
+                                    
+                             
+                                    <div class="pagination-wrapper">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <c:Modal modalID="disclaimerModal" linkText="Job Posting Terms of Use" linkClass="btn btn-primary" modalText="Job postings are posted as a courtesy to our alumni and members of the Babson College (&quot;College&quot;) community (&quot;Users&quot;). The College does not review, vet, screen, background check, evaluate, approve, endorse or recommend individual employers or job postings and a posting does not constitute an endorsement, warranty, or recommendation of any kind.<br><br>
+    The College makes no representations or assurances about job listings or the accuracy of the information provided by the poster or employer. The College is not responsible for safety, wages, working conditions, or any other term, condition, or aspect of employment. As a condition of using this Portal, Users acknowledge that they are solely responsible for reviewing and evaluating any posted position and (ii) conducting their own investigation before applying or accepting employment. Users acknowledge that by using the Portal they accept and assume all related risks and will hold the College and its Trustees, officers, employees and agents harmless from and against any claim, loss, action, cause of action, and expense, including reasonable attorneys’ fees occasioned thereby." modalClass="text-left"/>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">    
+                                                <div class="pull-right">
+                                                    <div class="form-inline pull-left" role="form">
+                                                        <div class="form-group">
+                                                            <label for="page">Page</label>
+                                                            <input type="text" class="form-control input-sm" id="page" name="page"
+                                                        value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                                        </div>
+                                                        <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                                    </div>
+                                                    <ul class="pagination pagination-sm pull-right">
+                                                        <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                            <li>
+                                                                <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-job"  rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                            </li>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                            <li>
+                                                                <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-job" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                            </li>
+                                                        </apex:outputPanel>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:form>
+                        </section> 
+
+
+                    </div>
+                    <!-- /.all-news -->
+                    <apex:actionStatus id="rerenderFreeText" onstop="onScreenResize(determineBreakpoint())"/>
+
+                    <script>
+                        Filter();
+                    </script>
+            </apex:define>
+        </apex:composition>
+    </apex:page>

@@ -1,0 +1,9 @@
+<apex:component layout="none" >
+	<apex:attribute name="url" type="String" description="URL" default="" required="true" />
+	<apex:attribute name="text" type="String" description="Text" default="" required="true" />
+	<apex:attribute name="external" type="Boolean" description="External Link?" default="false" />
+    
+	<apex:outputPanel rendered="{! IF( url != '', IF( AND( CONTAINS(url,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true ), false)}" layout="none"><!--- BAB-542 -->
+		<li><a href="{!url}" target="{!IF(external,'_blank','')}">{!text}</a></li>
+	</apex:outputPanel>
+</apex:component>

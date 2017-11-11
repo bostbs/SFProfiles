@@ -1,0 +1,98 @@
+<apex:page showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="false" 
+           applyHtmlTag="false" 
+           applyBodyTag="false" 
+           docType="html-5.0" 
+           standardController="CORECONNECT__CC_Community_Content__c" 
+           extensions="JobDetailController" 
+           action="{!SaveCurrentToCookie}">
+    
+            <apex:composition template="{!$Site.Template}">
+                <apex:define name="pagetitle"> {!CORECONNECT__CC_Community_Content__c.Title__c} </apex:define>
+                <apex:define name="body" >
+                       <!-- Page Heading -->
+                        <c:BabsonPageHeader title="{!$Label.Jobs_Title}" breadCrumbText="{!$Label.BAB_Job_Detail_Back_To_Jobs}" breadCrumbLink="{!$Page.Jobs}" showActions="{!$Permission.Create_Jobs}" showUpdate="{!isOwner}" btnText="{!$Label.BAB_Submit_Job}" btnLink="{!$Page.JobCreate}#submit-ScheduledContent" btnText2="{!$Label.coreconnect__cc_scheduledcontent_update}" btnLink2="{!$Page.JobCreate}?Id={!CORECONNECT__CC_Community_Content__c.Id}&Clone=true"/>
+                        <div class="container">
+                            <header class="detail-header clearfix">
+                                    <h1 class="float-left"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.Title__c}"  /></h1>
+                                    <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}">
+                                        <div class="chatter-follow float-left"><chatter:follow entityId="{!CORECONNECT__CC_Community_Content__c.Id}" /></div>
+                                    </apex:outputPanel>
+                                    <h5 class="clear"><apex:outputText value="{0, date, EE, MMMM d, YYYY}"><apex:param value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_Desired_Publish_Date__c}" /></apex:outputText></h5>
+                            </header>
+                            <div class="row">
+                                <div class="{!IF(AttachmentId != null,'col-sm-4 col-sm-push-8','hidden')} detail-image">
+                                    <apex:outputPanel layout="none" rendered="{!AttachmentId != null}">
+                                        <img src="{!URLFOR($Action.Attachment.Download, AttachmentId)}" alt="" class="img-responsive" />
+                                    </apex:outputPanel>
+                                </div>
+        
+                                <div class="{!IF(AttachmentId != null,'col-sm-8 col-sm-pull-4','col-sm-8 col-sm-push-2')} detail-text">
+                                    
+                                    <!-- Article Content -->
+                                    <div class="row">
+                                        <article class="news-details"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Short_Description__c}" escape="false"></apex:outputText></article>
+                                    </div>
+                                    <div class="row">
+                                        <article class="news-details"><apex:outputText value="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__Description__c}" escape="false"></apex:outputText></article>
+                                    </div>
+                                    
+                                    <!-- Article Meta -->
+                                    <div class="container-fluid meta-container">
+        
+                                        <!-- <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.CORECONNECT__FreeText_End_Date__c.label}" dateValue="{!CORECONNECT__CC_Community_Content__c.CORECONNECT__FreeText_End_Date__c}" />
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Industry__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Industry__c}" />
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Interests__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Interests__c}" />
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Affiliation__c}" />
+
+                                         <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Region__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Region__c}" />
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affinities__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Affinities__c}" />
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Industry__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Industry__c}" />
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Applicant_Type__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Applicant_Type__c}" />
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Job_Location__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Job_Location__c}" />
+                                        
+                                        -->
+                                        <c:BabsonMetaRow label="{!$Label.BAB_Create_Job_Company_Name_Label}" value="{!CORECONNECT__CC_Community_Content__c.Name}" />
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Job_Level__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Job_Level__c}" />
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Location_Type__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Location_Type__c}" />
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Job_Status__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Job_Status__c}" />
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Degree_Requirements__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Degree_Requirements__c}" />    
+
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Preferred_Start_Date__c.label}" dateValue="{!CORECONNECT__CC_Community_Content__c.Preferred_Start_Date__c}" />  
+                                        
+                                        <c:BabsonMetaRow label="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Work_Eligibility_Fields__c.label}" value="{!CORECONNECT__CC_Community_Content__c.Work_Eligibility_Fields__c}" /> 
+
+                                        
+                                        <c:BabsonMetaRow label="Owner" value="{!CORECONNECT__CC_Community_Content__c.owner.name}" />
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Chatter -->
+                            <apex:outputPanel rendered="{!IF(OR(CONTAINS($User.LastName, 'Site Guest User'), CONTAINS($Profile.Name, 'Alumni Community - SSF')), false, true)}">
+                                <section id="comments">
+                                    <div class="row">
+                                        <div class="comments {!IF(AttachmentId != null,'col-xs-12 col-md-8','col-xs-12 col-md-8 col-md-push-2')}">
+                                            <chatter:feed entityId="{!$CurrentPage.parameters.id}" />
+                                        </div>
+                                    </div>
+                                </section>
+                            </apex:outputPanel>
+                        </div> 
+                </apex:define>
+            </apex:composition>
+        
+</apex:page>

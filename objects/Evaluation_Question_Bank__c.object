@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>ACF_Evaluation_Question__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Question as it will display on evaluation forms</inlineHelpText>
+        <label>Evaluation Question</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>ACF_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>Instructions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>ACF_Parent_Question__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Question</label>
+        <referenceTo>Evaluation_Question_Bank__c</referenceTo>
+        <relationshipLabel>Evaluation Question Bank</relationshipLabel>
+        <relationshipName>Evaluation_Question_Bank</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Pivotal_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Pivotal ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><fields>
+        <fullName>ACF_Question_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Question Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Key Score</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facilities Score</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Faculty Score</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Score</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facilities Service Score</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operations Service Score</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Question_owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Question Owner</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BEE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCD EL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Reverse_Scale__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reverse Scale</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Scale_High_Annotation__c</fullName>
+        <externalId>false</externalId>
+        <label>Scale High Annotation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Scale_Low_Annotation__c</fullName>
+        <externalId>false</externalId>
+        <label>Scale Low Annotation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Scale_Points__c</fullName>
+        <externalId>false</externalId>
+        <label>Scale Points</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1__2__3__4__5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1__2__3__4__5__6__7__8__9__10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Scale_Points_migrated__c</fullName>
+        <externalId>false</externalId>
+        <label>Scale Points (migrated)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Scale_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>historical</inlineHelpText>
+        <label>Scale Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ascending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Descending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Scale__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( 
+NOT(ISBLANK(ACF_Scale_Low_Annotation__c)), 
+ACF_Scale_Low_Annotation__c + "__" + TEXT(ACF_Scale_Points__c) + "__" + ACF_Scale_High_Annotation__c, ""
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>How the scale will be displayed on the evaluation form</inlineHelpText>
+        <label>Scale (low to high)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Hold the evaluation questions related to answers stored in Salesforce</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>Evaluation Question Bank</label><nameField>
+        <label>Evaluation Question Name</label>
+        <type>Text</type>
+    </nameField><pluralLabel>Evaluation Question Bank</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>ACF_Evaluation_Question__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACF_Question_Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACF_Scale__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER.ALIAS</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_Evaluation_Question__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_Question_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_Scale__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER.ALIAS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_Evaluation_Question__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_Question_Category__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_Scale__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATEDBY_USER.ALIAS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_Evaluation_Question__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_Question_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_Scale__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><startsWith>Vowel</startsWith><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>ACF_Evaluation_Question__c</columns>
+        <columns>ACF_Scale__c</columns>
+        <columns>ACF_Question_Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews></CustomObject>

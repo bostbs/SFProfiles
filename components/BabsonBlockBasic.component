@@ -1,0 +1,24 @@
+<apex:component layout="none">
+	<apex:attribute name="blockClass" type="String" description="Class" default="babson-block-alt-blue" required="false" />
+	<apex:attribute name="imgSrc" type="String" description="Image Source" default="" required="false" />
+	<apex:attribute name="title" type="String" description="Title" default="" required="true" />
+	<apex:attribute name="text" type="String" description="Text" default="" required="false" />
+	<apex:attribute name="btnLink" type="String" description="Link" default="#" required="false" />
+	<apex:attribute name="btnText" type="String" description="Link" default="#" required="false" />
+	<apex:attribute name="btnExternal" type="Boolean" description="External Link" default="false" required="false" />
+
+	<div class="{!blockClass}">
+		<div class="inner">
+			<div class="header">
+				<h3>{!title}</h3>
+			</div>
+			<div class="content">
+				<p><img src="{!imgSrc}" /></p>
+				<p class="truncate-75">{!text}</p>
+			</div>
+			<div class="footer">
+				<p><a href="{!btnLink}" class="btn">{!btnText}<apex:outputPanel layout="none" rendered="{!btnExternal == false}"></apex:outputPanel><apex:outputPanel layout="none" rendered="{!btnExternal}">&nbsp;<i class="fa fa-external-link"></i></apex:outputPanel></a></p>
+			</div>
+		</div>
+	</div>
+</apex:component>

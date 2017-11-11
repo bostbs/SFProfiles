@@ -1,0 +1,40 @@
+<apex:component layout="none" controller="GetStartted">
+    <section id="getting-started" class="{!IF(ISPICKVAL($User.UserType,'Guest'), 'guest','')}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-5 col-lg-6">
+                    <h4>{!$Label.BAB_Getting_Started_Header} {!IF(ISPICKVAL($User.UserType,'Guest'), '',name)}</h4>
+                    <!--BAB-539 -->
+                    <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}"> 
+                        <p>{!$Label.BAB_Getting_Started_Description}</p>
+                    </apex:outputPanel>  
+                    
+                    <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), true, false)}"> <!-- SSF -->
+                        <p>{!$Label.BAB_Getting_Started_Description_SSF}</p>
+                    </apex:outputPanel> 
+                </div>
+                <div class="col-xs-9 col-md-6  col-lg-5 actions">
+                    <p>
+                        <!--BAB-539 -->
+                    <!--<apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}"> <!-- non-ssf -->
+                        <apex:outputPanel > <!-- non-ssf -->
+                            <a href="{!$Page.MyProfilePage}" class="btn"><span class="hidden-xs">Update Your </span>Profile</a> 
+                        </apex:outputPanel>
+
+                        <!-- Alumni -->
+                        <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), false, true)}">
+                            <a href="{!$Label.BAB_Getting_Started_Tour_URL}" class="btn">Tour <span class="hidden-xs">the Community</span> </a>
+                        </apex:outputPanel>
+                        <!-- SSF -->
+                        <apex:outputPanel rendered="{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), true, false)}">
+                            <a href="{!$Label.BAB_Getting_Started_Tour_URL_SSF}" class="btn">Tour <span class="hidden-xs">the Community</span> </a>
+                        </apex:outputPanel>
+                    </p>
+                </div>
+                <div class="col-xs-3 col-md-1 text-right">
+                    <a href="#" id="hide-getting-started">Hide <span><i class="fa fa-close"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</apex:component>

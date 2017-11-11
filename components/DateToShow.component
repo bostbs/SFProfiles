@@ -1,0 +1,12 @@
+<apex:component layout="none">
+
+	<apex:attribute name="date1" type="Date" description="Date 1" default="" required="true" />
+	<apex:attribute name="date2" type="Date" description="Date 1" default="" required="true" />
+
+	<apex:outputText value="{0,date,MMMM d', 'yyyy}" escape="false" rendered="{!date1 != null}">
+		<apex:param value="{!date1}" />
+	</apex:outputText>
+	<apex:outputText value="{0,date,MMMM d', 'yyyy}" escape="false" rendered="{!date2 != null && date1 == null}">
+		<apex:param value="{!date2}" />
+	</apex:outputText>
+</apex:component>

@@ -1,0 +1,14 @@
+<apex:component layout="none" controller="SyncLinkedInProfile">
+    <div class="linkedin-sync">
+        <div class="flexme icon">
+            <i class="fa fa-linkedin-square"></i>
+        </div>
+        <div class="flexme">
+            <h3>Import your Profile Data from LinkedIn</h3>
+            <h6>Keep your Babson profile always up-to-date by importing your LinkedIn profile. LinkedIn data will overwrite the info below when you import.  <br></br> Please note: If you have chosen to hide select fields or your entire LinkedIn Public profile, data from those fields will not be imported to the Babson Connector when you import.</h6>       <!-- text added for #15670 and #15226 tickets -->
+        </div>
+        <div class="flexme text-right actions">
+           <apex:outputLink value="{!myEndPoint}" id="theLink" styleClass="btn btn-alt"><span class="text">Import</span> </apex:outputLink>
+        </div>
+    </div>
+</apex:component>

@@ -1,0 +1,3 @@
+<apex:page showHeader="true" sidebar="true" standardController="CORECONNECT__CC_Community_Content__c" action="{!redirectUser}" extensions="CC_CommunityContentRedirectController">
+	<apex:detail subject="{!$CurrentPage.parameters.Id}" relatedList="true" showChatter="true"/>
+</apex:page>

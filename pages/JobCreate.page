@@ -1,0 +1,306 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="true" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="JobCreateController" action="{!forwardToLogin}">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="pagetitle">{!$Label.BAB_Create_Job_Title}</apex:define>
+
+    <apex:define name="body" > 
+    
+
+      <c:BabsonPageHeader title="{!$Label.BAB_Create_Job_Title}" breadCrumbText="{!$Label.BAB_Jobs_Create_Back_To_Jobs}" breadCrumbLink="{!$Page.Jobs}"/>
+            
+        
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-8 col-md-push-2">
+
+            <apex:pageMessages rendered="{!$Permission.Create_Jobs}"></apex:pageMessages>
+            
+            <apex:outputPanel layout="block" style="border:1px solid grey" rendered="{!IF(CC.CORECONNECT__Community_Content_Status__c=='Rejected',true,false)}">
+                <h3> Need more Info </h3>
+                <apex:outputText value="{!CC.More_Info_Required__c}"/> 
+            </apex:outputPanel>
+            <br></br>
+            <apex:outputPanel rendered="{!NOT($Permission.Create_Jobs)}">
+                <apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Access_Denied}"/>
+            </apex:outputPanel>
+
+              <section id="submit-ScheduledContent" class="no-margin-top">
+              <apex:outputPanel rendered="{!$Permission.Create_Jobs}">
+
+                <p><apex:outputText value="{!$Label.BAB_Create_Job_Subtitle}" escape="false"/></p>
+ 
+                <apex:form >
+                <div class="form-group">
+                    <apex:outputLabel value="{!$Label.BAB_Create_Job_Company_Name_Label}" for="ScheduledContentName" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <span class="help-inline">{!$Label.BAB_Create_Job_Company_Name_Help}</span>
+                    <apex:inputText value="{!CC.Name}" styleClass="form-control" id="ScheduledContentName" maxlength="50" />
+                  </div>
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.BAB_Create_Job_Title_Label}" for="ScheduledContentTitle" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <span class="help-inline">{!$Label.BAB_Create_Job_Title_Help}</span>
+                    <apex:inputText value="{!CC.Title__c}" styleClass="form-control" id="ScheduledContentTitle" maxlength="50" />
+                  </div>
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.BAB_Create_Job_Summary_Label}" for="ScheduledContentDescription" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <span class="help-inline">{!$Label.BAB_Create_Job_Summary_Help}</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Short_Description__c}" styleClass="form-control" id="ScheduledContentDescription" richText="false" />
+                    <div class="help-block">
+                      {!$Label.BAB_Create_Job_Summary_Description}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$Label.BAB_Create_Job_Body_Label}" for="ScheduledContentBody" />
+                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                    <apex:inputTextArea value="{!CC.CORECONNECT__Description__c}" styleClass="form-control" id="ScheduledContentBody" richText="true" />
+                  </div>
+
+                  <hr />
+
+                  <h3>{!$Label.BAB_Create_Job_Image_Title} <small>{!$Label.BAB_Create_Job_Image_Instructions}</small></h3>
+                  <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Image_Requirements}" escape="false"/></p>
+                  <div class="form-group">
+
+                    <apex:inputFile value="{!att.body}" filename="{!att.name}" styleClass="file image" accept="gif,png,jpg,jpeg" />
+
+                  </div>
+
+                  <hr />
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Create_Job_Classification1_Label}" for="newsCollegeArea" />
+                        <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                        <apex:inputField value="{!CC.Industry__c}" styleClass="form-control" id="newsCollegeArea" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <!-- <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Create_Job_Classification2_Label}" for="newsCollegeArea2" />
+                        <span class="required">*</span> 
+                        <span class="help-inline">{!$Label.BAB_Job_Create_Location_Help_Text}</span>
+                        <apex:inputField value="{!CC.Job_Location__c}" styleClass="form-control" id="newsCollegeArea2" />
+                      </div> -->
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="form-group">
+                        <apex:outputLabel value="Work Eligibility Requirements" for="workReq" />
+                        <span class="required">*</span>
+                        <apex:inputField value="{!CC.Work_Eligibility_Fields__c}" styleClass="form-control" id="workReq" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Create_Job_Classification3_Label}" for="newsCollegeArea3" />
+                        <span class="required">*</span>
+                        <apex:inputField value="{!CC.Applicant_Type__c}" styleClass="form-control" id="newsCollegeArea3" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <apex:outputPanel rendered="{!IF( OR(CONTAINS($Profile.Name, 'Alumni Community - SSF'),CONTAINS($Profile.Name, 'Alumni Community - Alumni') ), false, true )}">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <apex:outputLabel value="{!$Label.BAB_Event_Create_Default_Content}" for="newsCollegeArea" />
+                          <apex:inputField value="{!CC.Default_Content__c}" styleClass="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <apex:outputLabel value="{!$Label.BAB_Event_Create_Trump_Content}" for="newsCollegeArea" />
+                          <apex:inputField value="{!CC.Trump_Content__c}" styleClass="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Interests__c.label}" for="newsCollegeArea" />
+                          <apex:inputField value="{!CC.Interests__c}" styleClass="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation_1__c.label}" for="newsCollegeArea" />
+                          <apex:inputField value="{!CC.Affiliation_1__c}" styleClass="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="ccol-xs-12">
+                        <div class="form-group">
+                          <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation_2__c.label}" for="newsCollegeArea" />
+                          <apex:inputField value="{!CC.Affiliation_2__c}" styleClass="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                  </apex:outputPanel>
+                  
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Region__c.label}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Region__c}" styleClass="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!--<div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.BAB_Event_Create_Industry}" for="newsCollegeArea" />
+                        <apex:inputField value="{!CC.Industry__c}" styleClass="form-control" />
+                      </div>
+                    </div>
+                  </div>-->
+                  
+                  <apex:outputPanel rendered="{!IF( OR(CONTAINS($Profile.Name, 'Alumni Community - SSF'),CONTAINS($Profile.Name, 'Alumni Community - Alumni') ), false, true )}">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="form-group">
+                          <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affinities__c.label}" for="newsCollegeArea" />
+                          <apex:inputField value="{!CC.Affinities__c}" styleClass="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                  </apex:outputPanel>
+                  
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Job_Level__c.label}" for="JobLevel" />
+                    <span class="required">*</span>
+                    <apex:inputField value="{!CC.Job_Level__c}" styleClass="form-control" id="JobLevel"/>
+                  </div>
+                  
+                 <!--<div class="form-group">
+                    <!--<apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Location_Type__c.label}" for="JobLocationType" />-->
+                    <!--<span class="required">*</span>
+                    <apex:inputField value="{!CC.Location_Type__c}" styleClass="form-control" id="JobLocationType"/>
+                  </div>-->
+                  
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Job_Status__c.label}" for="JobStatus" />
+                    <span class="required">*</span>
+                    <apex:inputField value="{!CC.Job_Status__c}" styleClass="form-control" id="JobStatus" />
+                  </div>
+                  
+                  <div class="form-group">
+                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Degree_Requirements__c.label}" for="JobDegree" />
+                    <apex:inputField value="{!CC.Degree_Requirements__c}" styleClass="form-control" id="JobDegree" />
+                  </div>
+                  
+                  <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Title}</h3>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="newsStartDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Label}</label>
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                            <apex:outputPanel rendered="{!jobId == ''}">
+                              <apex:inputField value="{!CC.CORECONNECT__FreeText_Desired_Publish_Date__c}"  styleClass="form-control date"  id="jobStartDay"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!jobId != ''}" styleClass="outputField">
+                              <apex:outputField value="{!CC.CORECONNECT__FreeText_Desired_Publish_Date__c}"  styleClass="form-control date"  id="jobStartDayOutput"/>
+                            </apex:outputPanel> 
+                            <div class="help-block">
+                              {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Help}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="ScheduledContentEndDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Archive_Date_Label}</label>
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                             <apex:inputField value="{!CC.CORECONNECT__FreeText_End_Date__c}" styleClass="form-control date"   id="newsEndDay"/>  
+                            <div class="help-block">
+                              {!$Label.BAB_Create_Job_Publishing_Archive_Date_Help}
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                        <div class="row">
+                          <div class="col-xs-6">
+                              <div class="form-group">
+                                <apex:outputLabel value="Preferred Start Date" for="startDate" />
+                                <apex:inputField value="{!CC.Preferred_Start_Date__c}" styleClass="form-control" id="startDate" />
+                            </div>
+                          </div>
+                            
+                        </div>
+                     
+                  
+                  
+                  <div class="form-group form-submit">
+                    <apex:commandButton action="{!createJob}" value="{!IF( NOT(ISBLANK(CC.Id)) ,$Label.BAB_Create_Job_Update, $Label.BAB_Create_Job_Submit)}" styleClass="btn btn-primary" />
+                    <apex:commandButton action="{!cancelJob}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_ScheduledContent_Cancel}" styleClass="btn btn-default" />
+
+                    <c:Modal modalID="disclaimerModal" linkText="Job Posting Terms of Use" linkClass="btn btn-primary"  modalClass="text-left" modalText="All job listings are posted at the discretion of Babson College (&quot;College&quot;). The College will not post jobs that appear to discriminate against applicants on the basis of race, color, religion, creed, age, national origin, disabled or Vietnam Era veteran status, sexual orientation, disability, or gender. The College also reserves the right to refuse to post jobs that do not support the interests of the College and to remove a job posting at any time in its sole discretion. By submitting a job listing, you represent, warrant, and covenant that all information provided is accurate and complete to the best of your knowledge; that the position actually exists at the time of the posting; and that you will comply with all applicable laws and regulations relating to the job listing." />
+                  </div>
+
+                </apex:form>
+                </apex:outputPanel>
+              </section>
+          </div>
+        </div>
+      </div>
+    </apex:define>
+
+    
+    <apex:define name="footerjs">
+        <script>
+            /*function createDate(el) {
+                  var $formGroup    = $(el).parents('.form-group'),
+                      dateVal       = $formGroup.find('input.date').val(), 
+                      $hiddenFieldForDate = $formGroup.find('input[id*="Job"]');
+                  
+                  var d=new Date($formGroup.find('input.date').val());
+                  var dd = d.getUTCDate();
+                  var mm = d.getUTCMonth() + 1;
+                  var yyyy = d.getUTCFullYear();
+                  
+                  dateVal = mm+"/"+dd+"/"+yyyy;
+                  
+                  if (dateVal === undefined) dateVal = '';
+                  
+                  console.log('dateVal=' , dateVal);
+                  $hiddenFieldForDate.val(dateVal);
+                }
+                
+            $('input.date').change(function() {
+              createDate(this);
+            });
+        
+            // Add the date picker to date elements
+            $('input.date').datepicker({
+              'format': 'mm/dd/yyyy',
+              'autoclose': true
+            });*/
+            
+            // html-data-show-upload="false" html-data-show-preview="false" html-accept="image/*" 
+            $("input.file.image").fileinput({
+              showUpload: false, 
+              showPreview: false
+            });
+            
+        </script>
+    </apex:define>
+  </apex:composition>
+</apex:page>

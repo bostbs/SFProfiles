@@ -1,0 +1,427 @@
+<apex:page showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="true" 
+           applyHtmlTag="false" 
+           applyBodyTag="false" 
+           docType="html-5.0" 
+           controller="BusinessCreateController"
+           action="{!goToBusinessDirectoryPage}" >
+
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">
+            <apex:outputPanel rendered="{!businessId == ''}" layout="none">
+                {!$Label.BAB_Business_Submit_Business}
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!CC.Name != ''}" layout="none">
+                {!CC.Name}
+            </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="body" >
+
+             <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.BAB_Business_Submit_Business}" breadCrumbText="{!$Label.BAB_Business_Account_Detail_Back_To_Business_Accounts}" breadCrumbLink="{!$Page.BusinessDirectory}"/>
+
+
+                <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-8 col-md-push-2">
+                    
+                        <apex:pageMessages ></apex:pageMessages>
+                    
+                        <apex:outputPanel rendered="{!NOT($Permission.Create_Businesses)}">
+                            <apex:outputText value="{!$Label.coreconnect__cc_create_freetext_scheduledcontent_access_denied}"/>
+                        </apex:outputPanel>
+
+                        <apex:outputPanel layout="none" rendered="{!userBusinessCount > 2 && businessId == ''}">
+                          <div class="alert alert-info">{!$Label.BAB_Business_Max_Alotted}</div>
+                        </apex:outputPanel>
+                    
+                        <apex:outputPanel rendered="{!$Permission.Create_Businesses && (userBusinessCount < 3 || businessId != '' )}">
+                          <p><apex:outputText value="{!$Label.BAB_Create_Business_Subtitle}" escape="false"/></p>
+                          <apex:form >
+                  
+                            <div class="form-group">
+                              <!-- {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Title_Label} -->
+                              <apex:outputLabel value="Name" for="newsTitle" />
+                              <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                              <span class="help-inline">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_title_help}</span>
+                              <apex:inputText value="{!CC.Name}" styleClass="form-control" id="newsTitle" maxlength="60"/>
+                            </div>
+                            
+                            <div class="form-group">
+                              <apex:outputLabel value="{!$Label.BAB_Create_Business_Summary_Label}" for="newsDescription" />
+                              <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                              <span class="help-inline">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_summary_help}</span>
+                              <apex:inputTextArea value="{!CC.Business_Summary__c}" styleClass="form-control" id="newsDescription" richText="false" />
+                              <div class="help-block">
+                                {!$Label.BAB_Create_Business_Summary_Description}
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <apex:outputLabel value="{!$Label.BAB_Create_Business_Body_Label}" for="newsBody" />
+                              <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                             <apex:inputfield value="{!CC.Business_Descriptions__c}" styleClass="form-control" id="newsBody" />
+                              <!--<apex:inputField value="{!CC.Business_Description__c}" styleClass="form-control" id="newsBody"/>-->
+                            </div>
+                            <hr />
+                  
+                            <h3>{!$Label.BAB_Create_Business_Image_Label} <small>{!$Label.BAB_Create_Business_Record_Image_Instructions}</small></h3>
+                            <p><apex:outputText value="{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_image_requirements}" escape="false"/></p>
+                            <div class="form-group">
+                              <apex:inputFile value="{!att.body}" filename="{!att.name}" styleClass="file image" accept="gif,png,jpg,jpeg" />
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <!-- <div class="form-group">
+                                  <apex:outputLabel value="{!$Label.BAB_Create_Business_Classification1_Label}" for="newsCollegeArea" />
+                                  <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                  <apex:inputField value="{!CC.CORECONNECT__Classification1__c}" styleClass="form-control" id="newsCollegeArea"/>
+                                </div> -->
+                              </div>
+                            </div>
+                            
+                            <!-- <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$Label.BAB_Create_Business_Classification2_Label}" for="newsCollegeArea2" />
+                                  <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                  <apex:inputField value="{!CC.Business_Location_Classification_Filter__c}" styleClass="form-control"  id="newsCollegeArea2"/>
+                                </div>
+                              </div>
+                            </div> -->
+                            
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$Label.BAB_Create_Business_Classification3_Label}" for="newsCollegeArea3" />
+                                  <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                  <apex:inputField value="{!CC.Business_Industry__c}" styleClass="form-control"  id="newsCollegeArea3"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Family_Business__c.label}" for="Family_Business__c" />
+                                  <apex:inputField value="{!CC.Family_Business__c}" styleClass="form-control"  id="Family_Business__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Start_up__c.label}" for="Start_up__c" />
+                                  <apex:inputField value="{!CC.Start_up__c}" styleClass="form-control"  id="Start_up__c"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <!-- <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.My_Company_Discount__c.label}" for="My_Company_Discount__c" />
+                                  <apex:inputField value="{!CC.My_Company_Discount__c}" styleClass="form-control"  id="My_Company_Discount__c"/>
+                                </div> -->
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$Label.BAB_Create_Business_Classification1_Label}" for="newsCollegeArea" />
+                                  <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                  <apex:inputField value="{!CC.CORECONNECT__Classification1__c}" styleClass="form-control" id="newsCollegeArea" onchange="displayDiscount(this.value);"/>
+                                      <!--<apex:actionSupport event="onchange" reRender="discountCoupon" />
+                                  </apex:inputField>-->
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row" id="discountCoupon" style="{!IF(CC.CORECONNECT__Classification1__c='Yes','display:block','display:none')}">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Discount_Coupon_Code__c.label}" for="Discount_Coupon_Code__c" />
+                                  <apex:inputField value="{!CC.Discount_Coupon_Code__c}" styleClass="form-control"  id="DiscountCoupon_Code"/>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Matching_Gift_Company__c.label}" for="Matching_Gift_Company__c" />
+                                  <apex:inputField value="{!CC.Matching_Gift_Company__c}" styleClass="form-control"  id="Matching_Gift_Company__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.My_Company_Online__c.label}" for="My_Company_Online__c" />
+                                  <apex:inputField value="{!CC.My_Company_Online__c}" styleClass="form-control"  id="My_Company_Online__c"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            <apex:outputPanel rendered="{!IF( OR(CONTAINS($Profile.Name, 'Alumni Community - SSF'),CONTAINS($Profile.Name, 'Alumni Community - Alumni') ), false, true )}">
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group" id="default_content"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Default_Content__c.label}" for="Default_Content__c" />
+                                    <apex:inputField value="{!CC.Default_Content__c}" styleClass="form-control" id="Default_Content__c"/>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                            
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8"> 
+                                  <div class="form-group" id="trump_content"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Trump_Content__c.label}" for="Trump_Content__c" />
+                                    <apex:inputField value="{!CC.Trump_Content__c}" styleClass="form-control" id="Trump_Content__c"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Interests}" for="Interests__c" />
+                                    <apex:inputField value="{!CC.Interests__c}" styleClass="form-control" id="Interests__c"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Affiliation}" for="Affiliation_1__c" />
+                                    <apex:inputField value="{!CC.Affiliation_1__c}" styleClass="form-control" id="Affiliation_1__c"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Affiliation1}" for="Affiliation_2__c" />
+                                    <apex:inputField value="{!CC.Affiliation_2__c}" styleClass="form-control" id="Affiliation_2__c"/>
+                                  </div>
+                                </div>
+                              </div>
+                            </apex:outputPanel>
+
+                            
+                            <apex:outputPanel rendered="{!IF( OR(CONTAINS($Profile.Name, 'Alumni Community - SSF'),CONTAINS($Profile.Name, 'Alumni Community - Alumni') ), false, true )}">
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Affinities}" for="Affinities__c" />
+                                    <apex:inputField value="{!CC.Affinities__c}" styleClass="form-control" id="Affinities__c"/>
+                                  </div>
+                                </div>
+                              </div>
+                            </apex:outputPanel>
+                            
+                            <!-- <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group"> 
+                                  <apex:outputLabel value="{!$Label.BAB_Business_Create_Location}" for="CORECONNECT__Location__c" />
+                                  <apex:inputField value="{!CC.CORECONNECT__Location__c}" styleClass="form-control" id="CORECONNECT__Location__c"/>
+                                </div>
+                              </div>
+                            </div> -->
+                            
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group"> 
+                                  <apex:outputLabel value="{!$Label.BAB_Business_Create_Phone}" for="Phone__c" />
+                                  <apex:inputField value="{!CC.Phone__c}" styleClass="form-control" id="Phone__c"/>
+                                </div>
+                              </div>
+                            </div>
+                                
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group"> 
+                                  <apex:outputLabel value="{!$Label.BAB_Business_Create_Website}" for="Website__c" />
+                                  <apex:inputField value="{!CC.Website__c}" styleClass="form-control" id="Website__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group"> 
+                                  <apex:outputLabel value="{!$Label.BAB_Business_Create_Email}" for="Email__c" />
+                                  <apex:inputField value="{!CC.Email__c}" styleClass="form-control" id="Email__c"/>
+                                </div>
+                              </div>
+                            </div> -->
+                            
+                            <div class="row  margin-top-sm margin-bottom-sm">
+                              <div class="col-xs-12">
+                                <h4>Business Address</h4>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Address_1__c.label}" for="Address_1__c" />
+                                  <apex:inputField value="{!CC.Address_1__c}" styleClass="form-control"  id="Address_1__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Address_2__c.label}" for="Address_2__c" />
+                                  <apex:inputField value="{!CC.Address_2__c}" styleClass="form-control"  id="Address_2__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Address_3__c.label}" for="Address_3__c" />
+                                  <apex:inputField value="{!CC.Address_3__c}" styleClass="form-control"  id="Address_3__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.City__c.label}" for="City__c" />
+                                  <apex:inputField value="{!CC.City__c}" styleClass="form-control"  id="City__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Country__c.label}" for="Country__c" />
+                                  <apex:inputField value="{!CC.Country__c}" styleClass="form-control"  id="Country__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.State_Province__c.label}" for="State_Province__c" />
+                                  <span class="help-inline">{!$Label.BAB_Create_Business_State_Help}</span>
+                                  <span id="stateField">
+                                      <apex:inputField value="{!CC.State_Province__c}" styleClass="form-control"  id="State_Province__c"/>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Postal_Code__c.label}" for="Postal_Code__c" />
+                                  <apex:inputField value="{!CC.Postal_Code__c}" styleClass="form-control"  id="Postal_Code__c"/>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- User relation to business fields -->
+                            <div class="row  margin-top-sm margin-bottom-sm">
+                              <div class="col-xs-12">
+                                <h4>My Role in the Business</h4>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Function__c.label}" for="Function__c" />
+                                  <apex:inputField value="{!CC.Function__c}" styleClass="form-control"  id="Function__c"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Level__c.label}" for="Level__c" />
+                                  <apex:inputField value="{!CC.Level__c}" styleClass="form-control"  id="Level__c"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Title__c.label}" for="Title__c" />
+                                  <apex:inputField value="{!CC.Title__c}" styleClass="form-control"  id="Title__c"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group">
+                                  <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Part_Time__c.label}" for="Part_Time__c" />
+                                  <apex:inputField value="{!CC.Part_Time__c}" styleClass="form-control"  id="Part_Time__c"/>
+                                </div>
+                              </div>
+                            </div>
+
+                            
+                            <div class="row  margin-top-sm margin-bottom-sm">
+                              <div class="col-xs-12">
+                                <h4>Make Public?</h4>
+                              </div>
+                            </div>
+                            <div class="row">
+                              
+                              <div class="col-sm-12 col-md-8">
+                                <div class="form-group"> 
+                                  <apex:outputLabel value="{!$Label.BAB_Include_in_Alumni_Business_Directory}" for="Publish_Business__c" />
+                                  <apex:inputField value="{!CC.I_am_the_CEO_President_Founder_or_Owne__c}" styleClass="form-control" id="Publish_Business__c"/>
+<!--                                   <p class="meta">{!$Label.BAB_Publish_Business_While_CEO}</p>
+ -->                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                            </div> 
+                  
+                          <div class="form-group form-submit">
+                              <apex:commandButton action="{!createBusinessRecord}" value="{!$Label.BAB_Business_Submit_Business}" styleClass="btn btn-info" />
+                              <apex:commandButton action="{!cancelBusinessRecord}" value="{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_cancel}" styleClass="btn btn-default" />
+                          </div>
+                      </apex:form>
+                    </apex:outputPanel>
+                  </div>
+                </div>
+                </div>
+          
+        <script>
+          // initialize input widgets first
+          $(document).ready(function () {
+            // html-data-show-upload="false" html-data-show-preview="false" html-accept="image/*"
+            $("input.file.image").fileinput({
+              showUpload: false,
+              showPreview: false
+            });
+            
+            console.log('## select : ',$('select'));
+            
+            //$('select').addClass('form-control');
+            
+            $('#stateField').find('select').removeAttr('disabled');//.addClass('form-control').attr('disabled');
+          });
+          function displayDiscount(value){
+            if('Yes'==value){
+              document.getElementById("discountCoupon").style.display="block";
+              document.getElementById("j_id0:j_id1:j_id436:DiscountCoupon_Code").value =" ";
+            }
+            else{
+              document.getElementById("discountCoupon").style.display="none";
+            }
+          }
+          
+          </script>
+        </apex:define>     
+    </apex:composition>
+
+</apex:page>

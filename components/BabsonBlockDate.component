@@ -1,0 +1,29 @@
+<apex:component layout="none" controller="BabsonDateBlockController">
+	<apex:attribute name="imgSrc" type="String" description="Image Source" default="" required="false" />
+	<apex:attribute name="title" type="String" description="Title" default="" required="true" />
+	<apex:attribute name="city" type="String" description="City" default="" required="false" />
+	<apex:attribute name="state" type="String" description="State" default="" required="false" />
+	<apex:attribute name="link" type="String" description="Link" default="" required="false" />
+	<apex:attribute name="startDate" type="Date" description="Start Date" default="" required="false" assignTo="{!cStartDate}"/>
+	<apex:attribute name="endDate" type="Date" description="End Date" default="" required="false" assignTo="{!cEndDate}"/>
+
+	<!-- 
+	Why so many spans? http://salesforce.stackexchange.com/questions/51535/rerendering-outputlink-with-block-elements-inside-of-it
+	-->
+	<div class="babson-block-date {!IF(imgSrc == 'none', 'noimg', 'withimg')}" style="{!IF(imgSrc != 'none', 'background-image: url('+imgSrc+');', '')}">
+		<a href="{!link}">
+			<span class="inner">
+				<span class="date-banner">
+					<span class="h3">{!startDayNum}</span>
+					<span class="day">{!startDay}</span>
+					<span class="month">{!startMonth}</span>
+				</span>
+				<span class="text">
+					<span class="h3">{!title}</span>
+					<span class="paragraph">{!startTime}&nbsp;-&nbsp;{!endTime}</span>
+					<apex:outputPanel rendered="{city != '' && state != ''}" layout="none"><span class="paragraph">{!city}, {!state}</span></apex:outputPanel>
+				</span>
+			</span>
+		</a>
+	</div>
+</apex:component>

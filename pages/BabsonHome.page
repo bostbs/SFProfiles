@@ -1,0 +1,265 @@
+<apex:page showHeader="false"
+            sidebar="false"
+            standardStylesheets="false"
+            applyHtmlTag="false"
+            applyBodyTag="false"
+            docType="html-5.0"
+            cache="true"
+            controller="BabsonHomeController"
+         >
+          
+        <!--added on 09-March-2017, ER09032017 for pagination in chatter feed-->
+     <script>
+         window.onload = function() {
+             var bodyLength = '{!body}';
+
+             if({!isDateExist}== false && bodyLength.length!=0){
+                 $("#tid").show();
+             }else if({!isDateExist}== true || bodyLength.length == 0){
+                  $("#tid").hide();   
+             }
+        };
+     </script>
+     
+     <style>
+     .branding .h3, .branding h3, .sfdcBody .h3, .sfdcBody h3 {
+         font-size: 1.8rem !important;
+     }     
+     .chatterUserGuestBadge{
+         display:none;
+     }
+     .showmorefeeditemscontainer{
+         display:none !important;
+     }
+     .cxallfeedactions .feeditemActionMenu .zen-options{
+         margin-left:-100px;
+     }
+      #footer-social-ctas{
+                 flex-wrap:nowrap !important; 
+            
+        }
+              .buttonLinks{
+                 flex-wrap:nowrap !important; 
+              }
+                   
+            .pager div
+            {
+                float: left;
+                margin: 0 3px;
+                display: inline-block;
+                cursor:pointer;
+            }
+
+            .pager div.disabled
+            {
+                opacity: 0.5;
+            }
+
+            
+            .pager 
+            {
+                overflow: hidden;
+            }
+            .feedcontainerdiv {
+                height:1045px;
+                overflow-y:auto;
+            }
+            
+  .text-left babson-block-venture{
+      height:187px;
+  }
+            
+        </style>
+        <!--/ER09032017--> 
+
+    <apex:composition template="{!$Site.Template}">
+
+        <apex:define name="pagetitle">Babson Home test</apex:define>
+
+            <apex:define name="body" >
+             
+         <!--     
+             <apex:outputPanel layout="none"  rendered="{!IF(CONTAINS($User.LastName, 'Site Guest User'), true, false)}">
+                 <div id="tid"  style="display:none;" >
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                        <div class="modal-body">
+                            <header class="well-header">
+                                <h3 >{!title}</h3>
+                            </header>
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="acceptTM();return false;">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>
+             </apex:outputPanel>
+                -->
+                <apex:form id="homePageFormId" html-autocomplete="off">
+                
+                    <!--
+                    <apex:actionFunction name="filterLinks" action="{!fetchMyLinks}" rerender="myLinkId" >
+                        <apex:param name="firstParam" assignTo="{!linkFilter}" value="" />
+                    </apex:actionFunction>
+                    <apex:actionFunction name="followFilterLinks" action="{!fetchMyLinks}" rerender="myLinkId" >
+                        <apex:param name="firstParam" assignTo="{!followFilter}" value="" />
+                    </apex:actionFunction>
+                    -->
+                    <!--added for filtering on  20-03-2017 and  commented above functions-->
+                  <!--  <apex:actionFunction name="filterMyLinks" action="{!fetchMyLinks}" rerender="myLinkPnl" >
+                        <apex:param name="firstParam" assignTo="{!linkFilter}" value="" />
+                        <apex:param name="secondParam" assignTo="{!followFilter}" value="" />
+                    </apex:actionFunction>
+                    -->
+                    
+                    
+                    <apex:actionFunction name="filterRecommendedSection" action="{!fetchRecommendedContent}" rerender="homeRecommendedSectionId" >
+                        <apex:param name="firstParam" assignTo="{!recommendedFilter}" value="" />
+                    </apex:actionFunction>
+                    <apex:actionFunction action="{!updateContactTermTimeStamp}" name="acceptTerms"    oncomplete="hideTM();" status="loadingStatus2"></apex:actionFunction> 
+                </apex:form>
+
+                 
+        </apex:define>
+   
+    
+    </apex:composition>
+    
+ <script src="{!URLFOR($Resource.pagingationResource, 'paginga.jquery.js')}"></script>
+        
+    <script>  
+        $(function() {
+        /*<!--    $("#publishersharebutton").click(function(){
+               window.top.location.href = window.top.location.href; 
+            }); -->
+            */
+            $(".paginate").paginga({
+                // use default options
+                itemsPerPage: 6,
+                itemsContainer: ".feedcontainer",
+                item: "> div.feeditem"
+
+            });
+        });
+    </script>
+
+    <!--/ER09032017-->
+    <!--Links colors Search and Post-->
+    <style>
+    #jobDiv ul li  a:hover{
+        background:#9eb284 !important;
+        color:#fff !important;
+        display:inherit !important;
+    }
+    #jobDiv a{
+        color:#9eb284 !important;
+    }
+    
+    .zen-options a {
+        
+    }
+  <!--  .cxallfeedactions .feeditemActionMenu .zen-options a, .feedcommentactions .commentActionMenu .zen-options a{
+    
+        padding: 0px;!important;
+            font-size: 1em;!important;
+            width:100px
+    
+    
+    }-->
+    </style>
+     <style>
+          .overlay {
+                background-color: #373632;
+                opacity: 0.6;
+                /* Generic for Major browsers */
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                /* IE 5-7 */
+                filter: alpha(opacity=60);
+                /* Netscape */
+                -moz-opacity: 0.6;
+                /* Safari 1.x */
+                -khtml-opacity: 0.6;            
+                position: Fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 99;
+       
+
+        }
+        
+        .dialog {
+            position: relative;;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            outline: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translate3d(0, 0, 0);
+            max-width:70%;
+            margin-left: 20%;
+            margin-top: 0%;            
+            
+            z-index: 99;
+    }
+     .Processing
+        {
+            position: fixed;
+            background-color: white;
+            background: url('/img/loading32.gif') no-repeat;
+            background-repeat: no-;
+            background-position: center;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            z-index: 1004;
+            left: 0%;
+            top: 0%;
+        }
+</style>
+
+    <input type="text"  value=""  id="hidden"/>
+    <script>
+    Filter();
+    
+    function acceptAgreement(isDateExist, recordid){
+        console.log('isDateExist  ::'+isDateExist );
+        if(isDateExist == 'false'){
+             $("#tid").show();
+             console.log('isDateExist  ::'+recordid );
+             document.getElementById('hidden').value =recordid;
+        }else{
+           $("#tid").hide();
+           window.open("{!$Page.VentureDetail}?id="+recordid,"_self");
+        }
+        
+    }
+    function showTM(){
+        $("#tid").show()
+    }
+    function redirect(){
+       $("#tid").hide();
+       window.open('{!$label.BCTAC_Cancel_URL}','_self');
+    }
+   
+    function hideTM(){
+        $("#tid").hide();
+        return false;
+    }
+    function openDP(){
+         //alert('hi'+document.getElementById('hidden').value);
+         $("#tid").hide();
+         window.open("{!$Page.VentureDetail}?id="+document.getElementById('hidden').value,"_self");
+         
+    }
+    function acceptTM(){
+      acceptTerms();  
+    }
+    </script>
+    
+</apex:page>

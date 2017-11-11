@@ -1,0 +1,90 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" contentType="text/javascript" controller="CORECONNECT.CC_CommunityTemplateController">
+<apex:variable var="mainJS" value="{!URLFOR($Resource.CORECONNECT__CC_Community, 'script/main.min.js')}" />
+
+var meta = document.createElement('meta');
+meta.httpEquiv = "X-UA-Compatible";
+meta.content = "IE=edge";
+document.getElementsByTagName('head')[0].appendChild(meta);
+
+var meta2 = document.createElement('meta');
+meta2.name = "viewport";
+meta2.content = "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no";
+document.getElementsByTagName('head')[0].appendChild(meta2);
+
+$('head link[rel="shortcut icon"]').remove();
+var linkFavIcon = document.createElement('link');
+linkFavIcon.rel = "shortcut icon";
+linkFavIcon.href = "{!FaviconURL}";
+linkFavIcon.type = "image/x-icon";
+document.getElementsByTagName('head')[0].appendChild(linkFavIcon);
+
+document.write('<script src="{!mainJS}"></script>');
+
+    var communityPageURL = location.href;
+    var entityIdURL = '{!$CurrentPage.Parameters.entityId}';
+   // alert(entityIdURL);
+    if ( (communityPageURL.includes('_ui/core/userprofile/') || communityPageURL.includes('_ui/core/chatter/')) ) {
+    
+        //alert('inside');
+        if( !communityPageURL.includes('topics')){
+           // alert('topics');
+            var query = window.location.search.substring(1);
+            
+            var id;
+            var vars = query.split("&amp;");
+            
+            for(var i=0; i &lt; vars.length ; i++){
+            
+                var pair = vars[i].split("=");
+                if (pair[0] == "u") {
+                
+                  id = pair[1];
+                }
+            }
+            //alert(id);
+            if(id != undefined) {
+                window.location = '{!$Site.Prefix}/MyProfilePage?userId='+id;
+            } else {
+                window.location = '{!$Site.Prefix}/MyProfilePage';
+            }
+        }
+    }
+
+$(window).on('load', function() {
+
+    // Load the community template and parse it for the elements we want to swap
+    // out on the current page.
+    
+    $.get("{!$Page.BabsonCommunityAssetTemplate}", function(data){
+            
+        var template = $(data);
+
+        // Stick the whole element in there. If you were to only insert
+        // el.html(), you'd be missing the container. Alternatively,
+        // you could use el[0].outerHTML, but jQuery is smart enough
+        // to do so for you if you pass it a jQuery object.
+        //$(".utility-nav").html( template.find('#utility') );
+        $("#header-destination")
+            // .container is being added to this element even though it was
+            // removed in CC_CommunityHeader.component, so remove it here
+            // until the root cause is discovered.
+            .removeClass('container')
+            .html( template.find('#header-source') );
+
+        // Prevent errors in scripts in the footer wrapper from killing
+        // execution of this page.
+        try {
+            $("#footer-desination").html( template.find('#footer-source') );
+        } catch(exception) {
+            console.warn("Caught:", exception);
+        }
+
+        // Needed to make Salesforce (CoreConnect?) do its thing. Without it,
+        // you get an empty page.
+        $( "body" ).addClass("ready");
+        
+        
+    });
+
+});
+</apex:page>

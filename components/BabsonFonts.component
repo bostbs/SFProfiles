@@ -1,0 +1,4 @@
+<apex:component layout="none" >
+    <script src="https://use.typekit.net/lmr8fyk.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</apex:component>

@@ -1,0 +1,351 @@
+<apex:page showHeader="false"
+           sidebar="false"
+           standardStylesheets="false"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           docType="html-5.0"
+           controller="VenturesController"
+           cache="false"
+           action="{!SaveCurrentToCookie}"  id="pgm">
+           
+           <style>
+                .branding .h3, .branding h3, .sfdcBody .h3, .sfdcBody h3 {
+                    font-size: 1.8rem !important;
+                }
+           </style>
+   
+
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">{!$Label.BAB_Venture_Title}</apex:define>
+        <apex:define name="body" >
+
+            <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.BAB_Venture_Heading_Title}" subtitle="{!TodayString}" showActions="{!$Permission.Create_Ventures}" btnText="{!$Label.BAB_Venture_Create_Sumit}" btnLink="{!$Page.VentureCreate}" />
+
+            <!-- Sub Heading
+            <c:BabsonPageSubheader title="{!$Label.BAB_Venture_Summary_Title}" subTitle="{!$Label.BAB_Venture_Summary}" /> -->
+
+            <!-- Thank you message from CC_CommunityCreateFTSC -->
+            <apex:outputPanel layout="none" rendered="{!$CurrentPage.parameters.thankyou == 'true'}">
+                <div class="container">
+                    <div class="alert alert-success fade in" role="alert" Style="display:{!IF(isVentureUpdated == true,'none', 'block')}" >
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>{!$Label.BAB_Venture_Submission_Message}</strong>
+                    </div>
+                    <div class="alert alert-success fade in" role="alert"  Style="display:{!IF(isVentureUpdated == true,'block', 'none')}" >
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>
+                            {!$Label.BAB_Venture_Updation_Message}                        
+                        </strong>
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+
+            <!-- Main Content -->
+            <div class="container">
+                <!-- Featured Venture Header-->
+                <section class="well">
+                    <header class="well-header">
+                        <h3 id="featured-news">{!IF( CONTAINS($Profile.Name, 'Alumni Community - SSF'), $Label.BAB_Venture_Featured_SSF,  $Label.BAB_Venture_Featured)}</h3>
+                    </header>
+
+                    <!-- Display of Featured Ventures-->
+                    <div class="row">
+                   
+                        <div class="col-xs-12 ventures-slider" >
+                            <ul id="featured-slider" class="bxslider">
+                                <apex:repeat value="{!lstCommunityContent}" var="Venture" rows="8">
+                                    <div class="col-xs-6 col-md-3 margin-bottom-sm slide-group"  onclick="acceptAgreement_Venture('{!isDateExist}','{!Venture.Id}');return false;">
+                                        <c:BabsonBlockImage title="{!Venture.Name}" text="{!Venture.CORECONNECT__Short_Description__c}" link=""  imgSrc="{!IF(mapCCIdToisAttachment[Venture.Id],URLFOR($Action.Attachment.Download, mapOfCCToAttachId[Venture.Id]),'none')}" isLarge="false" blockClass="venture"/>
+                                    </div>
+                                </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                 </section>
+
+                <!-- Dialog for Directory terms of Use -->
+                <div id="tid_venture" style="display: none;">
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                        <div class="modal-body">
+                            <header class="well-header">
+                                <h3 >{!title}</h3>
+                            </header>
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="acceptTM_Venture();">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM_Venture();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>
+                <!-- Remaining Venture -->
+                <section class="well">
+                    <apex:form >
+                        <header class="well-header">
+                            <h3>{!$Label.BAB_Venture_More}</h3>
+                            <a class="btn btn-link tip" data-toggle="popover" data-placement="top" title="{!$Label.BAB_Venture_More}" data-content="{!$Label.BAB_Venture_More_Tooltip}">
+                                <span class="icon-question"></span>
+                            </a>
+                        </header>
+                        <apex:actionFunction action="{!GoToPage}" name="goToPage" reRender="moreFreeText,moreFreeTextPagination" >
+                            <apex:param name="param" assignTo="{!SpecifiedPageNumber}" value="param" />
+                        </apex:actionFunction>
+
+                        <!-- Navbar/Filtering -->
+                        <nav class="navbar navbar-default filter-row">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#filter-navbar">
+                                    <span class="sr-only">Toggle Filters</span>
+                                    <span class="icon-menu"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="filter-navbar">
+                                <apex:outputPanel layout="none" id="filterPanel" rendered="{!!isAutomatedfiltering}">
+                                    <div class="navbar-form navbar-left" role="form">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="college_area">{!$Label.BAB_Venture_Filter_Label}</label>
+                                            <label class="visible-xs">{!$Label.BAB_Venture_Filter_Placeholder}</label>
+                                            <apex:selectList value="{!Classification1}" multiselect="false" size="1" styleClass="form-control chosen" onchange="Filter();onScreenResize(determineBreakpoint());" html-data-placeholder="{!$Label.BAB_Venture_Filter_Placeholder}">
+                                                <apex:selectOptions value="{!Classification1Values}"/>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="Classification_type2">{!$Label.BAB_Venture_Filter_Classification_2_Label}</label>
+                                            <label class="visible-xs">{!$Label.BAB_Venture_Filter_Classification2_Placeholder}</label>
+                                            <apex:selectList value="{!ClassificationType2}" multiselect="false" size="1" styleClass="form-control chosen" onchange="Filter();onScreenResize(determineBreakpoint());" html-data-placeholder="{!$Label.BAB_Venture_Filter_Classification2_Placeholder}">
+                                                <apex:selectOptions value="{!ClassificationValues2}"/>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="Classification_type3">{!$Label.BAB_Venture_Filter_Classification_3_Label}</label>
+                                            <label class="visible-xs">{!$Label.BAB_Venture_Filter_Classification3_Placeholder}</label>
+                                            <apex:selectList value="{!ClassificationType3}" multiselect="false" size="1" styleClass="form-control chosen" onchange="Filter();onScreenResize(determineBreakpoint());" html-data-placeholder="{!$Label.BAB_Venture_Filter_Classification3_Placeholder}">
+                                                <apex:selectOptions value="{!ClassificationValues3}"/>
+                                            </apex:selectList>
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                                <apex:actionFunction action="{!Filter}" name="Filter" reRender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:actionFunction>
+                                <div class="pagination-wrapper pull-right hidden-xs">
+                                    <apex:outputPanel id="moreFreeTextPagination" layout="block">
+                                        <div class="form-inline pull-left" role="form">
+                                            <div class="form-group">
+                                                <label for="page">Page</label>
+                                                <input type="text" class="form-control input-sm" id="page" name="page" value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                            </div>
+                                            <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                        </div>
+                                        <ul class="pagination pagination-sm pull-right hidden-xs">
+                                            <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                <li>
+                                                    <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-success" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                </li>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                <li>
+                                                    <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-success" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                </li>
+                                            </apex:outputPanel>
+                                        </ul>
+                                    </apex:outputPanel>
+                                </div>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>
+                        <apex:outputPanel id="moreFreeText" layout="block">
+                            <apex:outputPanel layout="none" rendered="{!ListOfMoreVenture.size == 0}">
+                                <div class="alert alert-warning" role="alert">
+                                    <strong>{!$Label.BAB_Venture_No_Match_Message}</strong>
+                                </div>
+                            </apex:outputPanel>
+
+                            <!-- Remaining Content Display -->
+                            <div class="row other-content">
+                            
+                                <apex:repeat value="{!ListOfMoreVenture}" var="MoreFreeText">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"  onclick="acceptAgreement_Venture('{!isDateExist}','{!MoreFreeText.CC.id}');return false;">
+                                        <apex:outputPanel rendered="{!if(isDateExist== true,true,false)}">
+                                        
+                                            <c:BabsonBlockLink blockClass="babson-cardlink-alt-venture venture" title="{!MoreFreeText.CC.Name}" metaTitle="" subTitle="{!MoreFreeText.FreeTextDate}" text="{!MoreFreeText.CC.CORECONNECT__Short_Description__c}"  imgSrc=""  link="{!$Page.VentureDetail}?id={!MoreFreeText.CC.id}"/>
+                                       </apex:outputPanel>
+                                       <apex:outputPanel rendered="{!if(isDateExist== false,true,false)}">
+                                            <c:BabsonBlockLink blockClass="babson-cardlink-alt-venture venture" title="{!MoreFreeText.CC.Name}" metaTitle="" subTitle="{!MoreFreeText.FreeTextDate}" text="{!MoreFreeText.CC.CORECONNECT__Short_Description__c}"  imgSrc=""  link=""/>
+                                       </apex:outputPanel>
+                                    </div>
+                                </apex:repeat>
+                            </div>
+
+                            <script>
+                                // Put this here for re-render
+                                if (typeof truncateText != 'undefined'){
+                                    truncateText.doGroup($('.other-content .h3'), 40);
+                                    truncateText.doGroup($('.truncate-75'), 75);
+                                }
+                            </script>
+
+
+                            <div class="pagination-wrapper">
+                                <div class="row">
+                               <!--    <div class="col-xs-12 col-sm-6">
+                                         <c:Modal modalID="disclaimerModal" linkText="Ventures Terms of Use" linkClass="btn btn-primary" modalText="Information regarding ventures is posted solely as a courtesy to our alumni and members of the Babson College (&quot;College&quot;) community (&quot;Users&quot;). The College does not review, vet, screen, background check, evaluate, approve, endorse or recommend individual ventures or backers and a posting does not constitute an endorsement, recommendation, or investment advice of any kind. The College does not function as a broker-dealer, securities exchange, or investment advisor. The College makes no representations or assurances about ventures, backers, or the accuracy of the financial or other information provided by the poster. The College is not a partner, joint venturer, broker, agent, financial institution, creditor, or insurer for any poster, user, backer, or venture, and does not provide business, legal, accounting, or tax advice of any kind relating to any posted venture. Investing in any venture involves at least some level of risk. The College is not responsible for any aspect of the venture, including any backers, and/or the viability, advisability, suitability, or outcome of any venture. Users acknowledge that by using the Portal they are solely responsible for reviewing and evaluating any posted information before participating or making any investment decisions, assume all related risks, and will hold the College and its Trustees, officers, employees and agents harmless from and against any claim, loss, action, cause of action, and expense, including reasonable attorneys’ fees occasioned thereby. Users are strongly encouraged to seek legal counsel and other professional advice prior to entering into any business transaction with a venture." modalClass="text-left"/>
+                                   </div>
+                                    -->
+                                     <div class="col-xs-12 col-sm-6">
+                                            <c:VentureTerms />
+                                            
+                                        </div>
+                                    <div class="col-xs-12 col-sm-6">            
+                                        <div class="pull-right">
+                                            <div class="form-inline pull-left" role="form">
+                                                <div class="form-group">
+                                                    <label for="page">Page</label>
+                                                    <input type="text" class="form-control input-sm" id="page" name="page"
+                                                value="{!pageNumber}" onchange="goToPage(this.value)" />
+                                                </div>
+                                                <div class="form-group">&nbsp;of {!IF(TotalPages == 0,"1", TotalPages)}</div>
+                                            </div>
+                                            <ul class="pagination pagination-sm pull-right">
+                                                <apex:outputPanel layout="none" rendered="{!hasPrevSet==true}">
+                                                    <li>
+                                                        <apex:commandLink value="<" action="{!prevSet}" styleClass="btn btn-success"  rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                    </li>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel layout="none" rendered="{!hasNextSet==true}">
+                                                    <li>
+                                                        <apex:commandLink value=">" action="{!nextSet}" styleClass="btn btn-success" rerender="moreFreeText,moreFreeTextPagination" status="rerenderFreeText"></apex:commandLink>
+                                                    </li>
+                                                </apex:outputPanel>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                         <apex:actionFunction action="{!updateContactTermTimeStamp}" name="acceptTerms_Ventures"    oncomplete="openDP_Venture();" status="loadingStatus2"></apex:actionFunction> 
+                    </apex:form>
+                </section>
+
+                        
+                </div>
+                <!--
+                <div id="tid" style="display: none;">
+                    <div class="overlay"  id="over"></div>
+                    <div class="dialog">
+                        <div class="modal-body">
+                            <p><apex:outputText value="{!body}" escape="false" /></p>
+                            <p class="text-center"><button type="button" class="btn btn-primary"  onclick="acceptTM();">Accept</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideTM();return false;">Cancel</button></p>
+                        </div>
+                    </div>                           
+                </div>
+                -->
+                <!-- /.all-news -->
+                <apex:actionStatus id="rerenderFreeText" onstop="onScreenResize(determineBreakpoint())"/>
+                <apex:actionStatus startStyleClass="Processing" id="loadingStatus2"/>
+                
+                
+            </apex:define>
+        </apex:composition>
+        
+        <style>
+          .overlay {
+                background-color: #373632;
+                opacity: 0.6;
+                /* Generic for Major browsers */
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+                /* IE 5-7 */
+                filter: alpha(opacity=60);
+                /* Netscape */
+                -moz-opacity: 0.6;
+                /* Safari 1.x */
+                -khtml-opacity: 0.6;            
+                position: Fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 99;
+       
+
+        }
+        
+        .dialog {
+            position: relative;;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            outline: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translate3d(0, 0, 0);
+            max-width:70%;
+            margin-left: 20%;
+            margin-top: 0%;            
+            
+            z-index: 99;
+    }
+     .Processing
+        {
+            position: fixed;
+            background-color: white;
+            background: url('/img/loading32.gif') no-repeat;
+            background-repeat: no-;
+            background-position: center;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            z-index: 1004;
+            left: 0%;
+            top: 0%;
+        }
+</style>
+
+
+    <input type="text"  value=""  id="hidden_Venture"/>
+    <script>
+    Filter();
+    
+    function acceptAgreement_Venture(isDateExist, recordid){
+        console.log('isDateExist  ::'+isDateExist );
+        if(isDateExist == 'false'){
+             $("#tid_venture").show();
+             console.log('isDateExist  ::'+recordid );
+             document.getElementById('hidden_Venture').value =recordid;
+        }else{
+           $("#tid_venture").hide();
+           window.open("{!$Page.VentureDetail}?id="+recordid,"_self");
+        }
+        
+    }
+    function showTM_Venture(){
+        $("#tid_venture").show();
+    }
+   
+    function hideTM_Venture(){
+        $("#tid_venture").hide();
+        return false;
+    }
+    function openDP_Venture(){
+         //alert('hi'+document.getElementById('hidden').value);
+         $("#tid_venture").hide();
+         if(document.getElementById('hidden_Venture').value != null && document.getElementById('hidden_Venture').value != '')
+            window.open("{!$Page.VentureDetail}?id="+document.getElementById('hidden_Venture').value,"_self");
+         
+    }
+    function acceptTM_Venture(){
+      acceptTerms_Ventures();  
+    }
+    </script>
+    
+    </apex:page>

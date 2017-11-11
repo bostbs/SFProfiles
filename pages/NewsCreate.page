@@ -1,0 +1,450 @@
+<apex:page showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="true" 
+           applyHtmlTag="false" 
+           applyBodyTag="false" 
+           docType="html-5.0" 
+           controller="NewsCreateController"
+           action="{!goToNewsPage}">
+  
+	        
+	        
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">
+            <apex:outputPanel rendered="{!freeTextId == ''}" layout="none">
+                {!$Label.CORECONNECT__CC_FreeText_Submit_FreeText_ScheduledContent}
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!CC.Name != ''}" layout="none">
+                {!CC.Name}
+            </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="body" >
+
+             <!-- Page Heading -->
+            <c:BabsonPageHeader title="{!$Label.CORECONNECT__CC_FreeText_Submit_FreeText_ScheduledContent}" breadCrumbText="{!$Label.CORECONNECT__CC_FreeText_Detail_Back_To_FreeText}" breadCrumbLink="{!$Page.News}"/>
+
+
+            <apex:outputPanel rendered="{!freeTextId == ''}">
+
+                <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-8 col-md-push-2">
+                    
+                        <apex:pageMessages rendered="{!$Permission.CORECONNECT__Create_FreeText}"></apex:pageMessages>
+                    
+                        <apex:outputPanel rendered="{!NOT($Permission.CORECONNECT__Create_FreeText)}">
+                            <apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Access_Denied}"/>
+                        </apex:outputPanel>
+                    
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                          <section class="tab-pane az-listing active" id="submit-news">
+                          <apex:outputPanel rendered="{!$Permission.CORECONNECT__Create_FreeText}">
+                            <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Subtitle}" escape="false"/></p>
+                            <apex:form >
+                    
+                              <div class="form-group">
+                                <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Title_Label}" for="newsTitle" />
+                                <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Title_Help}</span>
+                                <apex:inputText value="{!CC.Name}" styleClass="form-control" id="newsTitle" maxlength="60"/>
+                              </div>
+                              <div class="form-group">
+                                <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Summary_Label}" for="newsDescription" />
+                                <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Summary_Help}</span>
+                                <apex:inputTextArea value="{!CC.CORECONNECT__Short_Description__c}" styleClass="form-control" id="newsDescription" richText="false" />
+                                <div class="help-block">
+                                  {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Summary_Description}
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Body_Label}" for="newsBody" />
+                                <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                <apex:inputField value="{!CC.CORECONNECT__Description__c}" styleClass="form-control" id="newsBody"/>
+                              </div>
+                              <hr />
+                    
+                              <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Label} <small>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Instructions}</small></h3>
+                              <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Requirements}" escape="false"/></p>
+                              <div class="form-group">
+                                <apex:inputFile value="{!att.body}" filename="{!att.name}" styleClass="file image" accept="gif,png,jpg,jpeg" />
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group">
+                                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Classification1_Label}" for="newsCollegeArea" />
+                                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                    <apex:inputField value="{!CC.CORECONNECT__Classification1__c}" styleClass="form-control" id="newsCollegeArea"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group">
+                                    <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Classification2_Label}" for="newsCollegeArea" />
+                                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                    <apex:inputField value="{!CC.CORECONNECT__Classification2__c}" styleClass="form-control"  id="newsCollegeArea2"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group" id="default_content"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Default_Content__c.label}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Default_Content__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8"> 
+                                  <div class="form-group" id="trump_content"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Trump_Content__c.label}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Trump_Content__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Interests}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Interests__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Affiliation}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Affiliation_1__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Affiliation1}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Affiliation_2__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Region}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Region__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Industry}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Industry__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Affinities}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Affinities__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Source}" for="newsCollegeArea" />
+                                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                    <apex:inputField value="{!CC.Source__c}" styleClass="form-control" />
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Topic}" for="newsCollegeArea" />
+                                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                    <apex:inputField value="{!CC.Topic__c}" styleClass="form-control" />
+                                  </div>
+                                </div>
+                              </div>
+                                  
+                              <!-- <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_News_Create_Author}" for="newsCollegeArea" />
+                                    <apex:inputField value="{!CC.Author__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div> -->
+                    
+                              <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Title}</h3>
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  <div class="form-group">
+                                    <label for="newsStartDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Label}</label>
+                                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                    <apex:inputField value="{!CC.CORECONNECT__FreeText_Desired_Publish_Date__c}"  styleClass="form-control date"  id="newsStartDay"/>
+                                    <div class="help-block">
+                                      {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Help}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6">
+                                  <div class="form-group">
+                                    <label for="ScheduledContentEndDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Archive_Date_Label}</label>
+                                    <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                                    <!-- <input type="date" class="form-control date" id="newsEndDay" name="newsEndDay" /> -->
+                                    <apex:inputField value="{!CC.CORECONNECT__FreeText_End_Date__c}" styleClass="form-control date" id="newsEndDay"/>  
+                                    <div class="help-block">
+                                      {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Archive_Date_Help}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> 
+                              <div class="row">
+                            </div> 
+                    
+                            <div class="form-group form-submit">
+                                <apex:commandButton action="{!createFreeText}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Submit}" styleClass="btn btn-info" />
+                                <apex:commandButton action="{!cancelFreeText}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Cancel}" styleClass="btn btn-default" />
+                            </div>
+                        </apex:form>
+                    </apex:outputPanel>
+                    </section>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </apex:outputPanel>   
+
+        <apex:outputPanel rendered="{!freeTextId != ''}">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-md-8 col-md-push-2">
+                <apex:pageMessages rendered="{!$Permission.CORECONNECT__Create_FreeText}"></apex:pageMessages>
+        
+                <apex:outputPanel rendered="{!NOT($Permission.CORECONNECT__Create_FreeText)}">
+                    <apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Access_Denied}"/>
+                </apex:outputPanel>
+                
+                <!-- Tab panes -->
+                <div class="tab-content">
+                <apex:outputPanel rendered="{!$Permission.CORECONNECT__Create_FreeText}" >
+                  <section class="tab-pane az-listing active" id="submit-news">
+                      <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Subtitle}" escape="false"/></p>
+                    <apex:form >
+        
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Title_Label}" for="newsTitle" />
+                        <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                        <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Title_Help}</span>
+                        <apex:inputText value="{!CC.Name}" styleClass="form-control" id="newsTitle"/>
+                      </div>
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Summary_Label}" for="newsDescription" />
+                        <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                        <span class="help-inline">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Summary_Help}</span>
+                        <apex:inputTextArea value="{!CC.CORECONNECT__Short_Description__c}" styleClass="form-control" id="newsDescription"/>
+                        <div class="help-block">
+                          {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Summary_Description}
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Body_Label}" for="newsBody" />
+                        <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                        <apex:inputField value="{!CC.CORECONNECT__Description__c}" styleClass="form-control" id="newsBody"/>
+                      </div>
+                      <hr />
+        
+                      <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Label} <small>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Instructions}</small></h3>
+                      <p><apex:outputText value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Requirements}" escape="false"/></p>
+                      <div class="form-group">
+        
+                        <apex:inputFile value="{!att.body}" filename="{!att.name}" styleClass="file image" accept="gif,png,jpg,jpeg" />
+        
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group">
+                            <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Classification1_Label}" for="newsCollegeArea" />
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                            <apex:inputField value="{!CC.CORECONNECT__Classification1__c}" styleClass="form-control" id="newsCollegeArea"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group">
+                            <apex:outputLabel value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Classification2_Label}" for="newsCollegeArea" />
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                            <apex:inputField value="{!CC.CORECONNECT__Classification2__c}" styleClass="form-control"  id="newsCollegeArea2"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Default_Content}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Default_Content__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8"> 
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Trump_Content}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Trump_Content__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Interests}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Interests__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Affiliation}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Affiliation_1__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Region}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Region__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Industry}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Industry__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Affinities}" for="newsCollegeArea" />
+                            <apex:inputField value="{!CC.Affinities__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Source}" for="newsCollegeArea" />
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                            <apex:inputField value="{!CC.Source__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Topic}" for="newsCollegeArea" />
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                            <apex:inputField value="{!CC.Topic__c}" styleClass="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                          
+                      <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                          <div class="form-group"> 
+                            <apex:outputLabel value="{!$Label.BAB_News_Create_Author}" for="newsCollegeArea" />
+                            <apex:inputText value="{!CC.Author__c}" styleClass="form-control"/>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Title}</h3>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="newsStartDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Label}</label>
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+                            <!-- <input type="date" class="form-control date" id="newsStartDay" name="newsStartDay" /> -->
+                            <apex:inputField value="{!CC.CORECONNECT__FreeText_Desired_Publish_Date__c}" styleClass="form-control date" type="date" id="newsStartDay" />  
+                            <div class="help-block">
+                              {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Help}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="ScheduledContentEndDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Archive_Date_Label}</label>
+                            <span class="required">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_Form_Required}</span>
+<!--                             <input type="date" class="form-control date" id="newsEndDay" name="newsEndDay" /> -->
+                             <apex:inputField value="{!CC.CORECONNECT__FreeText_End_Date__c}" styleClass="form-control date" type="date"  id="newsEndDay"/>  
+                            <div class="help-block">
+                              {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Archive_Date_Help}
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <div class="row">
+                    </div>     
+        
+                      <div class="form-group form-submit">
+        
+                        <apex:commandButton action="{!createFreeText}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Submit}" styleClass="btn btn-info" />
+                        <apex:commandButton action="{!cancelFreeText}" value="{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Cancel}" styleClass="btn btn-default" />
+                      </div>
+                    </apex:form>
+                    
+                  </section>
+                 </apex:outputPanel>
+                </div>
+              </div>
+            </div>
+          </div>
+        </apex:outputPanel>
+        <script>
+          // initialize input widgets first
+          $(document).ready(function () {
+            // html-data-show-upload="false" html-data-show-preview="false" html-accept="image/*"
+            $("input.file.image").fileinput({
+              showUpload: false,
+              showPreview: false
+            });
+          });
+          
+          </script>
+        </apex:define>     
+    </apex:composition>
+</apex:page>

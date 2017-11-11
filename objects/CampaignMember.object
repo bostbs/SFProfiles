@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Create_Opportunity</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>ACF_Alumni_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Alumni Discount</label>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Arrival_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Arrival Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>ACF_Cancellation_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Commuter_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Commuter Discount</label>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Cvent_Amount_Ordered__c</fullName>
+        <externalId>false</externalId>
+        <label>Cvent Amount Ordered</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>ACF_Cvent_Amount_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Cvent Amount Paid</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>ACF_Cvent_Discount_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Cvent Discount Name</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Cvent_Discounts_Applied__c</fullName>
+        <externalId>false</externalId>
+        <label>Cvent Discounts Applied</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>ACF_Departure_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Departure Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>ACF_Evening_MBA_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Evening MBA Discount</label>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Group_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Group Discount</label>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Invoice</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Opportunity.RecordType.Id</field>
+                <operation>equals</operation>
+                <value>012360000012HLC</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.RecordType.Id</field>
+                <operation>equals</operation>
+                <value>012360000012HsP</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Campaign Members</relationshipLabel>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Pivotal_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Pivotal ID</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><fields>
+        <fullName>ACF_Registration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>ACF_Registration_Motivation__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Motivation</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>ACF_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Program_Participant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>------------------</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asst. Instructor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Faculty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guest Instructor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guest Speaker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>--------------</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coach</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panelist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mock Interviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Rooming_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Rooming Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Bounces__c</fullName>
+        <description>Bounces</description>
+        <externalId>false</externalId>
+        <label>Bounces</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>City</fullName>
+    </fields><fields>
+        <fullName>Clicks__c</fullName>
+        <description>Clicks</description>
+        <externalId>false</externalId>
+        <label>Clicks</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>CompanyOrAccount</fullName>
+    </fields><fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Country</fullName>
+    </fields><fields>
+        <fullName>Cvent_Confirmation_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Cvent Confirmation Number</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Cvent_Registration_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Cvent Registration ID</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Description</fullName>
+    </fields><fields>
+        <fullName>DoNotCall</fullName>
+    </fields><fields>
+        <fullName>Email</fullName>
+    </fields><fields>
+        <fullName>EmailEvents__c</fullName>
+        <description>This field will be used to store email events with timestamp such as open, click, etc.</description>
+        <externalId>false</externalId>
+        <label>Email Events</label>
+        <length>10000</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields><fields>
+        <fullName>Fax</fullName>
+    </fields><fields>
+        <fullName>FirstName</fullName>
+    </fields><fields>
+        <fullName>FirstRespondedDate</fullName>
+    </fields><fields>
+        <fullName>Forwards__c</fullName>
+        <description>Forwards</description>
+        <externalId>false</externalId>
+        <label>Forwards</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+    </fields><fields>
+        <fullName>HasOptedOutOfFax</fullName>
+    </fields><fields>
+        <fullName>HasResponded</fullName>
+    </fields><fields>
+        <fullName>LastName</fullName>
+    </fields><fields>
+        <fullName>LeadId</fullName>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alumni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alumni and Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Babson Centers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Babson Senior Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data.com (Prospector)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Faculty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friend of Babson</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grad CCD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grad OEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Previous Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Referral - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic Partnerships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Site</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>MobilePhone</fullName>
+    </fields><fields>
+        <fullName>Opens__c</fullName>
+        <description>Opens</description>
+        <externalId>false</externalId>
+        <label>Opens</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Phone</fullName>
+    </fields><fields>
+        <fullName>PostalCode</fullName>
+    </fields><fields>
+        <fullName>Salutation</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Mr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ms.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mrs.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prof.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>State</fullName>
+    </fields><fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Action Triggered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AlumniCurrentStudent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clicked on Link</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coach</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Download Offered Item</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Bounced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FacultyGuestSpeaker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No-Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opened Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panelist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect - Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect - Cold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect - Converted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect - Hot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect - Warm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchase Item</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subscribe to Publication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unsubscribe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Watched Video</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Street</fullName>
+    </fields><fields>
+        <fullName>Title</fullName>
+    </fields><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><enableFeeds>false</enableFeeds><recordTypes>
+        <fullName>Demo_2_ACF</fullName>
+        <active>true</active>
+        <description>demo for ACF campaign template</description>
+        <label>Demo_2_ACF</label>
+        <picklistValues>
+            <picklist>ACF_Role__c</picklist>
+            <values>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asst%2E Instructor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Faculty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guest Instructor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guest Speaker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Participant</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes></CustomObject>

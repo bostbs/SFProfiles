@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>ACF_Academic_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Academic Program</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Id</field>
+                <operation>equals</operation>
+                <value>012360000007uz2</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>GL Accounts</relationshipLabel>
+        <relationshipName>GL_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>GL Accounts</relationshipLabel>
+        <relationshipName>GL_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Activity_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Billable_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Business_Organization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Business Organization</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Business Organization</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>GL Accounts (Business Organization)</relationshipLabel>
+        <relationshipName>GL_Accounts1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Contracted_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Contracted Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>ACF_Contracted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Contracted Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>ACF_Contracted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Contracted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ACF_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>ACF_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_GL_Account__c</fullName>
+        <externalId>false</externalId>
+        <label>GL Account</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Management_Center_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( ACF_Management_Center__c , 
+"112", "BEE Custom Programs",
+"113", "BEE Open-Enrollment Programs",
+"114", "BEE Consortium Programs",
+"115", "BEE Institute Programs",
+"116", "BEE Research Centers",
+"122", "BEE Administrative Account",
+"123", "Graduate Corporate Programs",
+"146", "Europe Institute Programs",
+"150", "Enterprise Admin",
+"154", "Center for Women's Leadership",
+"190", "Enterprise - SEE",
+"191", "Enterprise - MEE",
+"192", "Enterprise - Short Courses",
+"193", "Enterprise - Other",
+"UNKNOWN")</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Management Center Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ACF_Management_Center__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>112-BEE Custom Prgm
+113-BEE OE Prgs
+114 BEE Consortium Pgms
+115 BEE Institute Pgms
+116 BEE Research Ctrs
+122 BEE Admin Acct
+123 Grad Corp Pgms
+146 Eu Inst Pgms
+150 Ent Admin
+154 Ctr for W Ldrshp
+190 Ent-SEE
+191 Ent-MEE
+192 Ent-Short
+193 Other</inlineHelpText>
+        <label>Management Center</label>
+        <picklist>
+            <picklistValues>
+                <fullName>112</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>113</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>114</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>115</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>116</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>122</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>123</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>146</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>150</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>154</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>190</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>191</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>192</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>193</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>ACF_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Opportunity.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Standard Sales</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>GL Accounts</relationshipLabel>
+        <relationshipName>GL_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ACF_Pivotal_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Pivotal ID</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><fields>
+        <fullName>ACF_Temp_GL_Name__c</fullName>
+        <description>Temp field to build the GL Account name with the proper format and compare against the value in the GL Account Name (API:Name) field.  Needed since validation rule cannot be applied to the standard, indexed field.</description>
+        <externalId>false</externalId>
+        <formula>ACF_Fiscal_Year__c + ":" +  TEXT(ACF_Management_Center__c ) + "-" +  ACF_Activity_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Temp GL Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>GL Account</label><nameField>
+        <label>GL Account Name</label>
+        <type>Text</type>
+    </nameField><pluralLabel>GL Accounts</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>ACF_GL_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACF_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACF_Management_Center_Name__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_GL_Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACF_Management_Center_Name__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_GL_Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACF_Management_Center_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_GL_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACF_Management_Center_Name__c</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>ACF_Fiscal_Year__c</columns>
+        <columns>ACF_GL_Account__c</columns>
+        <columns>ACF_Description__c</columns>
+        <columns>ACF_Management_Center_Name__c</columns>
+        <columns>ACF_Management_Center__c</columns>
+        <columns>ACF_Activity_Code__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews><listViews>
+        <fullName>Current_GL_Accounts</fullName>
+        <columns>NAME</columns>
+        <columns>ACF_GL_Account__c</columns>
+        <columns>ACF_Description__c</columns>
+        <columns>ACF_Management_Center_Name__c</columns>
+        <columns>ACF_Fiscal_Year__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACF_Fiscal_Year__c</field>
+            <operation>equals</operation>
+            <value>2018</value>
+        </filters>
+        <label>Current GL Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>BEE_Business_Dev</group>
+            <group>BEE_Finance</group>
+            <group>BEE_Goldman_Sachs</group>
+            <group>BEE_Marketing</group>
+            <group>BEE_Operations</group>
+            <group>BEE_Standard_Users</group>
+            <group>BEE_Student_Users</group>
+            <group>BEE_Users</group>
+        </sharedTo>
+    </listViews><validationRules>
+        <fullName>Validate_GL_Account_Name_field_format</fullName>
+        <active>true</active>
+        <errorConditionFormula>Name  &lt;&gt;  ACF_Temp_GL_Name__c</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Must have the format: Fiscal Year]:[Mgmnt Center]-[Activity Code] (e.g., 2017:113-1234).</errorMessage>
+    </validationRules></CustomObject>

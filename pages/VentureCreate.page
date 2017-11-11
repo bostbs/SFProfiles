@@ -1,0 +1,339 @@
+<apex:page showHeader="false" 
+           sidebar="false" 
+           standardStylesheets="true" 
+           applyHtmlTag="false" 
+           applyBodyTag="false" 
+           docType="html-5.0" 
+           controller="VentureCreateController"
+           action="{!goToVenturePage}">
+    
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="pagetitle">
+            <apex:outputPanel rendered="{!ventureId == ''}" layout="none"> <!-- Label need to be changed -->
+                {!$Label.BAB_Venture_Create_Title}   
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!CC.Name != ''}" layout="none">
+                {!CC.Name}
+            </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="body" >
+            <!-- Page Heading -->
+            
+            <!-- Label need to be changed  -->
+            <c:BabsonPageHeader title="{!$Label.BAB_Venture_Create_Heading}" breadCrumbText="{!$Label.BAB_Venture_Create_Back_To_Venture}" breadCrumbLink="{!$Page.Ventures}"/>
+            
+    
+
+                <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-8 col-md-push-2">    
+                    
+                        <apex:pageMessages rendered="{!$Permission.Create_Ventures}"></apex:pageMessages>
+                        
+                        <apex:outputPanel rendered="{!NOT($Permission.Create_Ventures)}">
+                            <apex:outputText value="{!$Label.coreconnect__cc_create_freetext_scheduledcontent_access_denied}"/>
+                        </apex:outputPanel>
+                
+                        <div class="tab-content">
+                          <section id="submit-news" class="no-margin-top">
+                            <apex:outputPanel rendered="{!$Permission.Create_Ventures}"> 
+                            <p><apex:outputText value="{!$Label.BAB_Venture_Create_SubTitle}" escape="false"/></p> 
+                            <apex:form >
+                    
+                              <div class="form-group">
+                                <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Name.label}" for="ventureTitle" />
+                                <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                <span class="help-inline">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_title_help}</span>
+                                <apex:inputText value="{!CC.Name}" styleClass="form-control" id="ventureTitle" maxlength="60"/>
+                              </div>
+                              <div class="form-group">
+                                <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.CORECONNECT__Short_Description__c.label}" for="ventureDescription" />
+                                <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                <span class="help-inline">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_summary_help}</span>
+                                <apex:inputTextArea value="{!CC.CORECONNECT__Short_Description__c}" styleClass="form-control" id="ventureDescription" richText="false" />
+                                <div class="help-block">
+                                  {!$Label.BAB_Venture_Create_Summary_Description} <!-- Need to change the label -->
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.CORECONNECT__Description__c.label}" for="ventureBody" />
+                                <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                <apex:inputField value="{!CC.CORECONNECT__Description__c}" styleClass="form-control" id="ventureBody"/>
+                              </div>
+                              <hr />
+                    
+                              <h3>{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Image_Label} <small>{!$Label.BAB_Venture_Create_Image_Instructions}</small></h3>
+                              <p><apex:outputText value="{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_image_requirements}" escape="false"/></p> 
+                              <div class="form-group">
+                                <apex:inputFile value="{!att.body}" filename="{!att.name}" styleClass="file image" accept="gif,png,jpg,jpeg" />
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group">
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Filter_Label}" for="ventureCollegeArea" />
+                                    <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                    <apex:inputField value="{!CC.CORECONNECT__Classification1__c}" styleClass="form-control" id="ventureCollegeArea"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group">
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Filter_Classification_2_Label}" for="ventureCollegeArea" />
+                                    <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                    <apex:inputField value="{!CC.CORECONNECT__Classification2__c}" styleClass="form-control"  id="ventureCollegeArea2"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group">
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Filter_Classification_3_Label}" for="ventureCollegeArea" />
+                                    <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                    <apex:inputField value="{!CC.CORECONNECT__Classification3__c}" styleClass="form-control"  id="ventureCollegeArea3"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <apex:outputPanel rendered="{!IF( OR(CONTAINS($Profile.Name, 'Alumni Community - SSF'),CONTAINS($Profile.Name, 'Alumni Community - Alumni') ), false, true )}">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-8">
+                                    <div class="form-group" id="default_content"> 
+                                      <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Default_Content__c.label}" for="newsCollegeArea" />
+                                      <apex:inputField value="{!CC.Default_Content__c}" styleClass="form-control"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-8"> 
+                                    <div class="form-group" id="trump_content"> 
+                                      <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Trump_Content__c.label}" for="newsCollegeArea" />
+                                      <apex:inputField value="{!CC.Trump_Content__c}" styleClass="form-control"/>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-8">
+                                    <div class="form-group"> 
+                                      <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Interests__c.label}" for="ventureCollegeArea" />
+                                      <apex:inputField value="{!CC.Interests__c}" styleClass="form-control"/>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-8">
+                                    <div class="form-group"> 
+                                      <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation_1__c.label}" for="ventureCollegeArea" />
+                                      <apex:inputField value="{!CC.Affiliation_1__c}" styleClass="form-control"/>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-8">
+                                    <div class="form-group"> 
+                                      <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affiliation_2__c.label}" for="ventureCollegeArea" />
+                                      <apex:inputField value="{!CC.Affiliation_2__c}" styleClass="form-control"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </apex:outputPanel>
+
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Region__c.label}" for="ventureCollegeArea" />
+                                    <apex:inputField value="{!CC.Region__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Industry__c.label}" for="ventureCollegeArea" />
+                                    <apex:inputField value="{!CC.Industry__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <apex:outputPanel rendered="{!IF( OR(CONTAINS($Profile.Name, 'Alumni Community - SSF'),CONTAINS($Profile.Name, 'Alumni Community - Alumni') ), false, true )}">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-8">
+                                    <div class="form-group"> 
+                                      <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Affinities__c.label}" for="ventureCollegeArea" />
+                                      <apex:inputField value="{!CC.Affinities__c}" styleClass="form-control"/>
+                                    </div>
+                                  </div>
+                                </div>
+                              </apex:outputPanel>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Create_View_Number_of_backer_Label}" for="ventureCollegeArea" />
+                                    <apex:inputField value="{!CC.Backers__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                               <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Create_View_Funding_Link_Label}" for="ventureCollegeArea" />
+                                    <apex:inputField value="{!CC.Funding_Link__c}" styleClass="form-control"  onchange="validateURL(this.value)" id="fundingLinkInput"/>
+                                    <div  id="error"  style="display:none;color:red;">You must provide a fully qualified website address in the funding link field.</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <script>
+                                 function validateURL(URL){
+                                    
+                                     var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+                                    if (!re.test(URL)) { 
+                                        document.getElementById('error').style.display='block';
+                                        document.getElementById('j_id0:j_id1:j_id514:fundingLinkInput').value = '';
+
+                                        return false;
+                                    }
+                                     document.getElementById('error').style.display='none';
+                                 
+                                 }
+                              </script>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Create_View_Pledged_Dollars_Label}" for="ventureCollegeArea" />
+                                    <apex:inputField value="{!CC.Pledged_Dollars__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$Label.BAB_Venture_Create_View_Deadline_Label}" for="ventureCollegeArea" />
+                                    <apex:inputField value="{!CC.Deadline__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Alumni_Name_Affiliation__c.label}" for="ventureCollegeArea" />
+                                    <!--<span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>-->
+                                    <apex:inputText disabled="true" value="{!CC.Alumni_Name_Affiliation__c}" styleClass="form-control"/>                                                                                                          
+                                  </div>
+                                </div>
+                              </div>                    
+                              
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="{!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Additional_Team_Members__c.label}" for="ventureCollegeArea" />                                    
+                                    <div class="help-block">
+                                      {!$ObjectType.CORECONNECT__CC_Community_Content__c.fields.Additional_Team_Members__c.InlineHelpText}
+                                    </div>
+                                    <apex:inputField value="{!CC.Additional_Team_Members__c}" styleClass="form-control"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-12 col-md-8">
+                                  <div class="form-group">
+                                    <apex:inputField value="{!CC.Founders_Fund__c}" styleClass="form-control"/>
+                                    <label style="margin-left: 5px;">
+                                        I'd like to learn more about the Founder's Fund Pledge
+                                        <a title="" data-toggle="popover" data-placement="top" data-content="{!$Label.FoundersFundHelpText}" class="btn btn-link tip">
+                                            <span class="icon-question"></span>
+                                        </a>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <h3>{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_publishing_title}</h3>
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  <div class="form-group">
+                                    <label for="newsStartDay">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_publishing_publish_date_label}</label>
+                                    <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                    <apex:outputPanel rendered="{!ventureId == ''}">
+                                      <apex:inputField value="{!CC.CORECONNECT__FreeText_Desired_Publish_Date__c}"  styleClass="form-control date"  id="ventureStartDay"/>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!ventureId != ''}" styleClass="outputField">
+                                      <apex:outputField value="{!CC.CORECONNECT__FreeText_Desired_Publish_Date__c}"  styleClass="form-control date"  id="ventureStartDayOutput"/>
+                                    </apex:outputPanel>
+                                    <div class="help-block">
+                                      {!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Publish_Date_Help} <!-- Need to change the label -->    
+                                    </div> 
+                                  </div>
+                                </div>
+                                <div class="col-xs-6">
+                                  <div class="form-group">
+                                    <label for="ScheduledContentEndDay">{!$Label.CORECONNECT__CC_Create_FreeText_ScheduledContent_FreeText_Publishing_Archive_Date_Label}</label>
+                                    <span class="required">{!$Label.coreconnect__cc_create_freetext_scheduledcontent_form_required}</span>
+                                    <!-- <input  class="form-control date" id="newsEndDay" name="newsEndDay" /> -->
+                                    <apex:inputField value="{!CC.CORECONNECT__FreeText_End_Date__c}" styleClass="form-control date"  id="ventureEndDay"/>  
+                                    <div class="help-block">
+                                      {!$Label.BAB_Venture_Create_Published_Archive_Date_Help} <!-- Need to change the label -->  
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> 
+                              <div class="row">
+                            </div> 
+                            
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                  <div class="form-group"> 
+                                    <apex:outputLabel value="Terms of Use" style="font-size: 22px; font-weight: normal; color: #064" for="ventureCollegeArea" />
+                                     
+                                    <p>
+                                        <apex:outputText value="{!$Label.BAB_Venture_Create_TermsofUse}" style="float: left" />
+                                    </p>
+                                  </div>
+                                </div>
+                            </div>
+                                                                               
+                            <div class="form-group form-submit">
+                                <!-- Need to change the label -->  
+                                <apex:commandButton action="{!createVenture}" value="{!IF( NOT(ISBLANK(CC.Id)) ,$Label.BAB_Create_Venture_Update, $Label.BAB_Venture_Create_Sumit)}" styleClass="btn btn-info"  id="ventureUpdate" />
+                                <apex:commandButton action="{!cancelVenture}" value="{!$Label.coreconnect__cc_create_freetext_scheduledcontent_freetext_cancel}" styleClass="btn btn-default" />
+                                <!-- Need to change the label  
+                                <c:Modal modalID="disclaimerModal" linkText="Ventures Terms of Use" linkClass="btn btn-primary"  modalClass="text-left" modalText="{!body }"  titletext="{!title}"/> 
+                                   --> 
+                            </div>
+                        </apex:form>
+                     </apex:outputPanel>
+                    </section>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+        <script>
+          // initialize input widgets first
+          $(document).ready(function () {
+            // html-data-show-upload="false" html-data-show-preview="false" html-accept="image/*"
+            $("input.file.image").fileinput({
+              showUpload: false,
+              showPreview: false
+            });
+          });
+          
+          </script>
+        </apex:define>
+
+    </apex:composition>
+ 
+</apex:page>

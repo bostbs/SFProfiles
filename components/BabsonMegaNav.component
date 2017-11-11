@@ -1,0 +1,266 @@
+<apex:component access="global" layout="none" controller="BabsonMegaNavController">
+    <nav class="container">
+        <ul class="nav nav-justified babson-navigation">
+          <li  class="" id="link-connect-babson">
+            <a href="#" ><span>{!$Label.BAB_CWB_Page_Header}</span> <i class="fa fa-angle-down" /></a>
+            <ul class="visible-xs">
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_1_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_1_Header_Button}" external="{!alumniL2Setting.CWB_Tile_1_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_2_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_2_Header_Button}" external="{!alumniL2Setting.CWB_Tile_2_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_3_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_3_Header_Button}" external="{!alumniL2Setting.CWB_Tile_3_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_4_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_4_Header_Button}" external="{!alumniL2Setting.CWB_Tile_4_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_5_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_5_Header_Button}" external="{!alumniL2Setting.CWB_Tile_5_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_6_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_6_Header_Button}" external="{!alumniL2Setting.CWB_Tile_6_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_7_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_7_Header_Button}" external="{!alumniL2Setting.CWB_Tile_7_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_8_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_8_Header_Button}" external="{!alumniL2Setting.CWB_Tile_8_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWB_Tile_9_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_9_Header_Button}" external="{!alumniL2Setting.CWB_Tile_9_Button_URL_External__c}"/>
+                <c:ListedLink url="{!$Page.ConnectWithBabson}" text="{!$Label.BAB_CWB_Page_Header}"/>
+            </ul>
+          </li>
+          <li  class="" id="link-connect-alumni">
+            <a href="#" ><span>{!$Label.BAB_CWA_Page_Header}</span> <i class="fa fa-angle-down" /></a>
+            <ul class="visible-xs">
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_1_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_1_Header_Button}" external="{!alumniL2Setting.CWA_Tile_1_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_2_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_2_Header_Button}" external="{!alumniL2Setting.CWA_Tile_2_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_3_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_3_Header_Button}" external="{!alumniL2Setting.CWA_Tile_3_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_4_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_4_Header_Button}" external="{!alumniL2Setting.CWA_Tile_4_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_5_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_5_Header_Button}" external="{!alumniL2Setting.CWA_Tile_5_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_6_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_6_Header_Button}" external="{!alumniL2Setting.CWA_Tile_6_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_7_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_7_Header_Button}" external="{!alumniL2Setting.CWA_Tile_7_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_8_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_8_Header_Button}" external="{!alumniL2Setting.CWA_Tile_8_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CWA_Tile_9_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_9_Header_Button}" external="{!alumniL2Setting.CWA_Tile_9_Button_URL_External__c}"/>
+                <c:ListedLink url="{!$Page.ConnectWithAlumni}" text="{!$Label.BAB_CWA_Page_Header}"/>
+            </ul>
+          </li>
+          <li  class="" id="link-get-involved">
+            <a href="#"><span>{!$Label.BAB_GI_Page_Header}</span> <i class="fa fa-angle-down" /></a>
+            <ul class="visible-xs">
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_1_Button_URL__c}" text="{!$Label.BAB_GI_Tile_1_Header_Button}" external="{!alumniL2Setting.GI_Tile_1_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_2_Button_URL__c}" text="{!$Label.BAB_GI_Tile_2_Header_Button}" external="{!alumniL2Setting.GI_Tile_2_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_3_Button_URL__c}" text="{!$Label.BAB_GI_Tile_3_Header_Button}" external="{!alumniL2Setting.GI_Tile_3_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_4_Button_URL__c}" text="{!$Label.BAB_GI_Tile_4_Header_Button}" external="{!alumniL2Setting.GI_Tile_4_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_5_Button_URL__c}" text="{!$Label.BAB_GI_Tile_5_Header_Button}" external="{!alumniL2Setting.GI_Tile_5_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_6_Button_URL__c}" text="{!$Label.BAB_GI_Tile_6_Header_Button}" external="{!alumniL2Setting.GI_Tile_6_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_7_Button_URL__c}" text="{!$Label.BAB_GI_Tile_7_Header_Button}" external="{!alumniL2Setting.GI_Tile_7_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_8_Button_URL__c}" text="{!$Label.BAB_GI_Tile_8_Header_Button}" external="{!alumniL2Setting.GI_Tile_8_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GI_Tile_9_Button_URL__c}" text="{!$Label.BAB_GI_Tile_9_Header_Button}" external="{!alumniL2Setting.GI_Tile_9_Button_URL_External__c}"/>
+                <!-- <c:ListedLink url="{!$Page.GiveToBabson}" text="{!$Label.BAB_GI_Page_Header}"/> -->
+            </ul>
+          </li>
+          <li  class="" id="link-career-services">
+            <a href="#"><span>{!$Label.BAB_CS_Page_Header}</span> <i class="fa fa-angle-down" /></a>
+            <ul class="visible-xs">
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_1_Button_URL__c}" text="{!$Label.BAB_CS_Tile_1_Header_Button}"  external="{!alumniL2Setting.CS_Tile_1_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_2_Button_URL__c}" text="{!$Label.BAB_CS_Tile_2_Header_Button}" external="{!alumniL2Setting.CS_Tile_2_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_3_Button_URL__c}" text="{!$Label.BAB_CS_Tile_3_Header_Button}" external="{!alumniL2Setting.CS_Tile_3_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_4_Button_URL__c}" text="{!$Label.BAB_CS_Tile_4_Header_Button}" external="{!alumniL2Setting.CS_Tile_4_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_5_Button_URL__c}" text="{!$Label.BAB_CS_Tile_5_Header_Button}" external="{!alumniL2Setting.CS_Tile_5_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_6_Button_URL__c}" text="{!$Label.BAB_CS_Tile_6_Header_Button}" external="{!alumniL2Setting.CS_Tile_6_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_7_Button_URL__c}" text="{!$Label.BAB_CS_Tile_7_Header_Button}" external="{!alumniL2Setting.CS_Tile_7_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_8_Button_URL__c}" text="{!$Label.BAB_CS_Tile_8_Header_Button}" external="{!alumniL2Setting.CS_Tile_8_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.CS_Tile_9_Button_URL__c}" text="{!$Label.BAB_CS_Tile_9_Header_Button}" external="{!alumniL2Setting.CS_Tile_9_Button_URL_External__c}"/>
+                <c:ListedLink url="{!$Page.CareerServices}" text="{!$Label.BAB_CS_Page_Header}"/>
+            </ul>
+          </li>
+          <li  class="" id="link-give-babson">
+            <a href="#"><span>{!$Label.BAB_GTB_Page_Header} </span> <i class="fa fa-angle-down" /></a>
+            <ul class="visible-xs">
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_1_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_1_Header_Button}"  external="{!alumniL2Setting.GTB_Tile_1_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_2_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_2_Header_Button}" external="{!alumniL2Setting.GTB_Tile_2_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_3_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_3_Header_Button}" external="{!alumniL2Setting.GTB_Tile_3_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_4_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_4_Header_Button}" external="{!alumniL2Setting.GTB_Tile_4_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_5_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_5_Header_Button}" external="{!alumniL2Setting.GTB_Tile_5_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_6_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_6_Header_Button}" external="{!alumniL2Setting.GTB_Tile_6_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_7_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_7_Header_Button}" external="{!alumniL2Setting.GTB_Tile_7_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_8_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_8_Header_Button}" external="{!alumniL2Setting.GTB_Tile_8_Button_URL_External__c}"/>
+                <c:ListedLink url="{!alumniL2Setting.GTB_Tile_6_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_9_Header_Button}" external="{!alumniL2Setting.GTB_Tile_9_Button_URL_External__c}"/>
+
+                
+                
+                <c:ListedLink url="{!$Page.GiveToBabson}" text="{!$Label.BAB_GTB_Page_Header}"/>
+            </ul>
+          </li>
+          <!--<li  class="visible-xs mobile-only">
+            <a href="#">Secondary Link</a>
+          </li>
+          <li  class="visible-xs mobile-only">
+            <a href="#">Secondary Link</a>
+          </li>
+          <li  class="visible-xs mobile-only">
+            <a href="#">Secondary Link</a>
+          </li>
+          <li  class="visible-xs mobile-only">
+            <a href="#">Secondary Link</a>
+          </li>-->
+          <li  class="visible-xs mobile-close">
+            <a href="#"><i class="fa fa-angle-up" /></a>
+          </li>
+        </ul>
+    </nav>
+
+    <section id="meganav" class="hidden-xs">
+        <div class="container meganav" id="meganav-connect-babson">
+            <!-- <a href="#" class="close-nav"><span><i class="fa fa-close"></i></span></a> -->
+            <div class="row">
+                <div class="hidden-xs col-md-5 megnav-text">
+                    <h2>{!$Label.BAB_CWB_Page_Header_Desc}</h2>
+                    <p><a href="{!$Page.ConnectWithBabson}" class="btn btn-alt">{!$Label.BAB_CWB_Page_Header}</a></p>
+                </div>
+                <div class="col-xs-12 col-md-7 megnav-links">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_1_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_1_Header_Button}" external="{!alumniL2Setting.CWB_Tile_1_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_2_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_2_Header_Button}" external="{!alumniL2Setting.CWB_Tile_2_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_3_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_3_Header_Button}" external="{!alumniL2Setting.CWB_Tile_3_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_4_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_4_Header_Button}" external="{!alumniL2Setting.CWB_Tile_4_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul>    
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_5_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_5_Header_Button}" external="{!alumniL2Setting.CWB_Tile_5_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_6_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_6_Header_Button}" external="{!alumniL2Setting.CWB_Tile_6_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_7_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_7_Header_Button}" external="{!alumniL2Setting.CWB_Tile_7_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_8_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_8_Header_Button}" external="{!alumniL2Setting.CWB_Tile_8_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWB_Tile_9_Button_URL__c}" text="{!$Label.BAB_CWB_Tile_9_Header_Button}" external="{!alumniL2Setting.CWB_Tile_9_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    
+        <div class="container meganav" id="meganav-connect-alumni" >
+            <!-- <a href="#" class="close-nav"><span><i class="fa fa-close"></i></span></a> -->
+            <div class="row">
+                <div class="hidden-xs col-md-5 megnav-text">
+                    <h2>{!$Label.BAB_CWA_Page_Header_Desc}</h2>
+                    <p><a href="{!$Page.ConnectWithAlumni}" class="btn btn-alt">{!$Label.BAB_CWA_Page_Header}</a></p>
+                </div>
+                <div class="col-xs-12 col-md-7 megnav-links">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_1_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_1_Header_Button}" external="{!alumniL2Setting.CWA_Tile_1_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_2_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_2_Header_Button}" external="{!alumniL2Setting.CWA_Tile_2_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_3_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_3_Header_Button}" external="{!alumniL2Setting.CWA_Tile_3_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_4_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_4_Header_Button}" external="{!alumniL2Setting.CWA_Tile_4_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_5_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_5_Header_Button}" external="{!alumniL2Setting.CWA_Tile_5_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_6_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_6_Header_Button}" external="{!alumniL2Setting.CWA_Tile_6_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_7_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_7_Header_Button}" external="{!alumniL2Setting.CWA_Tile_7_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_8_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_8_Header_Button}" external="{!alumniL2Setting.CWA_Tile_8_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CWA_Tile_9_Button_URL__c}" text="{!$Label.BAB_CWA_Tile_9_Header_Button}" external="{!alumniL2Setting.CWA_Tile_9_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="container meganav" id="meganav-get-involved" >
+            <!-- <a href="#" class="close-nav"><span><i class="fa fa-close"></i></span></a> -->
+            <div class="row">
+                <div class="hidden-xs col-md-5 megnav-text">
+                    <h2>{!$Label.BAB_GI_Page_Header_Desc}</h2>
+                    <p><a href="{!$Page.GetInvolved}" class="btn btn-alt">{!$Label.BAB_GI_Page_Header}</a></p>
+                </div>
+                <div class="col-xs-12 col-md-7 megnav-links">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_1_Button_URL__c}" text="{!$Label.BAB_GI_Tile_1_Header_Button}" external="{!alumniL2Setting.GI_Tile_1_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_2_Button_URL__c}" text="{!$Label.BAB_GI_Tile_2_Header_Button}" external="{!alumniL2Setting.GI_Tile_2_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_3_Button_URL__c}" text="{!$Label.BAB_GI_Tile_3_Header_Button}" external="{!alumniL2Setting.GI_Tile_3_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_4_Button_URL__c}" text="{!$Label.BAB_GI_Tile_4_Header_Button}" external="{!alumniL2Setting.GI_Tile_4_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_5_Button_URL__c}" text="{!$Label.BAB_GI_Tile_5_Header_Button}" external="{!alumniL2Setting.GI_Tile_5_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul>    
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_6_Button_URL__c}" text="{!$Label.BAB_GI_Tile_6_Header_Button}" external="{!alumniL2Setting.GI_Tile_6_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_7_Button_URL__c}" text="{!$Label.BAB_GI_Tile_7_Header_Button}" external="{!alumniL2Setting.GI_Tile_7_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_8_Button_URL__c}" text="{!$Label.BAB_GI_Tile_8_Header_Button}" external="{!alumniL2Setting.GI_Tile_8_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GI_Tile_9_Button_URL__c}" text="{!$Label.BAB_GI_Tile_9_Header_Button}" external="{!alumniL2Setting.GI_Tile_9_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="container meganav" id="meganav-career-services" >
+            <!-- <a href="#" class="close-nav"><span><i class="fa fa-close"></i></span></a> -->
+            <div class="row">
+                <div class="hidden-xs col-md-5 megnav-text">
+                    <h2>{!$Label.BAB_CS_Page_Header_Desc}</h2>
+                    <p><a href="{!$Page.CareerServices}" class="btn btn-alt">{!$Label.BAB_CS_Page_Header}</a></p>
+                </div>
+                <div class="col-xs-12 col-md-7 megnav-links">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_1_Button_URL__c}" text="{!$Label.BAB_CS_Tile_1_Header_Button}"  external="{!alumniL2Setting.CS_Tile_1_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_2_Button_URL__c}" text="{!$Label.BAB_CS_Tile_2_Header_Button}" external="{!alumniL2Setting.CS_Tile_2_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_3_Button_URL__c}" text="{!$Label.BAB_CS_Tile_3_Header_Button}" external="{!alumniL2Setting.CS_Tile_3_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_4_Button_URL__c}" text="{!$Label.BAB_CS_Tile_4_Header_Button}" external="{!alumniL2Setting.CS_Tile_4_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_5_Button_URL__c}" text="{!$Label.BAB_CS_Tile_5_Header_Button}" external="{!alumniL2Setting.CS_Tile_5_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul>    
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_6_Button_URL__c}" text="{!$Label.BAB_CS_Tile_6_Header_Button}" external="{!alumniL2Setting.CS_Tile_6_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_7_Button_URL__c}" text="{!$Label.BAB_CS_Tile_7_Header_Button}" external="{!alumniL2Setting.CS_Tile_7_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_8_Button_URL__c}" text="{!$Label.BAB_CS_Tile_8_Header_Button}" external="{!alumniL2Setting.CS_Tile_8_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.CS_Tile_9_Button_URL__c}" text="{!$Label.BAB_CS_Tile_9_Header_Button}" external="{!alumniL2Setting.CS_Tile_9_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        
+        <div class="container meganav" id="meganav-give-babson" >
+            <div class="row">
+                <div class="hidden-xs col-md-5 megnav-text">
+                    <h2>{!$Label.BAB_GTB_Page_Header_Desc}</h2>
+                    <p><a href="{!$Page.GiveToBabson}" class="btn btn-alt">{!$Label.BAB_GTB_Page_Header}</a></p> 
+                </div>
+                <div class="col-xs-12 col-md-7 megnav-links">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul>
+                                     <c:ListedLink url="{!$Page.GiveToBabson}" text="{!$Label.BAB_GTB_Page_Header}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_2_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_2_Header_Button}" external="{!alumniL2Setting.GTB_Tile_2_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_3_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_3_Header_Button}" external="{!alumniL2Setting.GTB_Tile_3_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_4_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_4_Header_Button}" external="{!alumniL2Setting.GTB_Tile_4_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_5_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_5_Header_Button}" external="{!alumniL2Setting.GTB_Tile_5_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul>    
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_6_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_6_Header_Button}" external="{!alumniL2Setting.GTB_Tile_6_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_7_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_7_Header_Button}" external="{!alumniL2Setting.GTB_Tile_7_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_8_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_8_Header_Button}" external="{!alumniL2Setting.GTB_Tile_8_Button_URL_External__c}"/>
+                                    <c:ListedLink url="{!alumniL2Setting.GTB_Tile_9_Button_URL__c}" text="{!$Label.BAB_GTB_Tile_9_Header_Button}" external="{!alumniL2Setting.GTB_Tile_9_Button_URL_External__c}"/>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+    </section>
+</apex:component>

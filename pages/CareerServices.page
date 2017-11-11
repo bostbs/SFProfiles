@@ -1,0 +1,79 @@
+<apex:page showHeader="false" 
+			sidebar="false" 
+			standardStylesheets="false" 
+			applyHtmlTag="false" 
+			applyBodyTag="false" 
+			docType="html-5.0" 
+			controller="Level2TemplateController"
+			>
+
+	<apex:composition template="{!$Site.Template}">
+		<apex:define name="pagetitle">{!$Label.BAB_CS_Page_Title}</apex:define>
+			<apex:define name="body" >
+
+			<header class="banner-header" style="background-image: url('{!$Site.Prefix}/servlet/servlet.ImageServer?id={!alumniL2Setting.CS_Splash_Image__c}&oid={!$Organization.Id}');">
+				<div class="text-row">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								 <h2>{!$Label.BAB_CS_Page_Header}</h2>
+								 <h5>{!$Label.BAB_CS_Page_Header_Desc}</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="container">
+				<div class="row row-no-margin">
+				    <apex:outputPanel layout="none" rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_1_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4  {!IF(alumniL2Setting.CS_Tile_1_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_1_Block_Color__c}" title="{!$Label.BAB_CS_Tile_1_Header}" text="{!$Label.BAB_CS_Tile_1_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_1_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_1_Header_Button}" iconClass="{!alumniL2Setting.CS_Tile_1_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_1_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_2_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_2_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_2_Block_Color__c}" title="{!$Label.BAB_CS_Tile_2_Header}" text="{!$Label.BAB_CS_Tile_2_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_2_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_2_Header_Button}" iconClass="{!alumniL2Setting.CS_Tile_2_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_2_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_3_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_3_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_3_Block_Color__c}" title="{!$Label.BAB_CS_Tile_3_Header}" text="{!$Label.BAB_CS_Tile_3_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_3_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_3_Header_Button}" iconClass="{!alumniL2Setting.CS_Tile_3_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_3_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none"  rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_4_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_4_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_4_Block_Color__c}" title="{!$Label.BAB_CS_Tile_4_Header}" text="{!$Label.BAB_CS_Tile_4_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_4_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_4_Header_Button}" iconClass="{!alumniL2Setting.CS_Tile_4_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_4_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_5_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_5_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_5_Block_Color__c}" title="{!$Label.BAB_CS_Tile_5_Header}" text="{!$Label.BAB_CS_Tile_5_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_5_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_5_Header_Button}" iconClass="{!alumniL2Setting.CS_Tile_5_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_5_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none"  rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_6_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_6_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_6_Block_Color__c}" title="{!$Label.BAB_CS_Tile_6_Header}" text="{!$Label.BAB_CS_Tile_6_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_6_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_6_Header_Button}" iconClass="{!alumniL2Setting.CS_Tile_6_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_6_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_7_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_7_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_7_Block_Color__c}" title="{!$Label.BAB_CS_Tile_7_Header}" text="{!$Label.BAB_CS_Tile_7_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_7_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_7_Header_Button}" iconClass="fa {!alumniL2Setting.CS_Tile_7_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_7_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_8_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_8_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_8_Block_Color__c}" title="{!$Label.BAB_CS_Tile_8_Header}" text="{!$Label.BAB_CS_Tile_8_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_8_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_8_Header_Button}" iconClass="fa {!alumniL2Setting.CS_Tile_8_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_8_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!IF( AND( CONTAINS(alumniL2Setting.CS_Tile_9_Button_URL__c,'JobCreate'), CONTAINS($Profile.Name, 'Alumni Community - SSF') ) ,false, true )}">
+					<div class="col-xs-12 col-sm-6 col-md-4 {!IF(alumniL2Setting.CS_Tile_9_Block_Color__c == 'hidden','hidden','')}">
+						<c:BabsonBlockFull blockClass="{!alumniL2Setting.CS_Tile_9_Block_Color__c}" title="{!$Label.BAB_CS_Tile_9_Header}" text="{!$Label.BAB_CS_Tile_9_Header_Desc}" btnLink="{!alumniL2Setting.CS_Tile_9_Button_URL__c}" btnText="{!$Label.BAB_CS_Tile_9_Header_Button}" iconClass="fa {!alumniL2Setting.CS_Tile_9_Icon__c}" btnExternal="{!alumniL2Setting.CS_Tile_9_Button_URL_External__c}" />
+					</div>
+					</apex:outputPanel>
+				</div>
+			</div> 
+   
+		</apex:define>
+	</apex:composition>	
+</apex:page>

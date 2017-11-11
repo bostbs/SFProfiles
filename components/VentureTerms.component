@@ -1,0 +1,24 @@
+<apex:component layout="none">
+
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#termsOfUse">Venture Terms of Use</a>
+    
+    <div id="termsOfUse" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div aria-labelledby="ctl00_PlaceHolderMain_ctl00_label" style="display:inline" class="ms-rtestate-field" id="ctl00_PlaceHolderMain_ctl00__ControlWrapper_RichHtmlField">
+                        <h1 class="castor-rteElement-H1"><span>Venture Terms of Use</span></h1>
+                        <span><br /></span>
+                        
+                        <p>Information regarding ventures is posted solely as a courtesy to our alumni and members of the Babson College (&quot;College&quot;) community (&quot;Users&quot;). The College does not review, vet, screen, background check, evaluate, approve, endorse or recommend individual ventures or backers and a posting does not constitute an endorsement, recommendation, or investment advice of any kind. The College does not function as a broker-dealer, securities exchange, or investment advisor. The College makes no representations or assurances about ventures, backers, or the accuracy of the financial or other information provided by the poster. The College is not a partner, joint venturer, broker, agent, financial institution, creditor, or insurer for any poster, user, backer, or venture, and does not provide business, legal, accounting, or tax advice of any kind relating to any posted venture. Investing in any venture involves at least some level of risk. The College is not responsible for any aspect of the venture, including any backers, and/or the viability, advisability, suitability, or outcome of any venture. Users acknowledge that by using the Portal they are solely responsible for reviewing and evaluating any posted information before participating or making any investment decisions, assume all related risks, and will hold the College and its Trustees, officers, employees and agents harmless from and against any claim, loss, action, cause of action, and expense, including reasonable attorneys’ fees occasioned thereby. Users are strongly encouraged to seek legal counsel and other professional advice prior to entering into any business transaction with a venture.</p>
+                        
+                        <p class="text-center"><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button></p>
+                    </div>
+               </div>
+           </div>
+      </div>
+   </div>
+
+
+</apex:component>

@@ -6,6 +6,7 @@ public with sharing class MyProfilePageController {
 
     @TestVisible private User user;
     private boolean isEdit = false;
+     public boolean isError {get;set;}
     public String gradYear {get;set;}
     public List<String> lstAffinities {get;set;}
     public List<String> lstContactMeAbout {get;set;}
@@ -26,12 +27,28 @@ public with sharing class MyProfilePageController {
     public String displayMsg{get;set;}
     public Map<string,string> mpStates{get; set;}
     public List<CORECONNECT__CC_Community_Content__c> listUserBusinessInfo {get;set;}
-
+    public NetworkMember netobj{get;set;}    
+    public boolean allFeedEmail {get; set;}
+    public boolean followme {get; set;}
+    public boolean postonprofile {get; set;}
+    public boolean sharepost {get; set;}
+    public boolean likepost {get; set;}
+    public boolean mentionpost {get; set;}
+    public boolean mentioncomt {get; set;}
+    public boolean endorses {get; set;}
+    public boolean commentpost {get; set;}
+    public boolean comentprof {get; set;}
+    public boolean commentaft {get; set;}
+    public boolean commentbookmrk {get; set;}
+    public boolean commentlike {get; set;}
+    
     public User getUser() {
+        system.debug('Flow: Get User');
         return user;
     }
 
     public MyProfilePageController() {
+        system.debug('Flow:in MyProfilePageController ');                   
         displayMsg='';
         showFeedLink=true;isval=false;
         if(String.isNotEmpty(ApexPages.currentPage().getParameters().get('userId'))){
@@ -39,16 +56,56 @@ public with sharing class MyProfilePageController {
         }
         if(String.isNotEmpty(ApexPages.currentPage().getParameters().get('displayMsg'))){
             displayMsg=ApexPages.currentPage().getParameters().get('displayMsg');
+             if(displayMsg.contains('problem while')){
+                iserror = true;
+            }else{
+                iserror = false;
+            }
         }
          mpStates = new Map<string,string>();       
-        Schema.DescribeFieldResult fieldResult = hed__Address__c.Mailing_State__c.getDescribe();        
-        for(Schema.PicklistEntry ple: fieldResult.getpicklistvalues()){     
-            mpStates.put(ple.getvalue(),ple.getlabel());        
-                
-                    
-        }       
-        
+         Schema.DescribeFieldResult fieldResult = hed__Address__c.Mailing_State__c.getDescribe();        
+         for(Schema.PicklistEntry ple: fieldResult.getpicklistvalues()){     
+            mpStates.put(ple.getvalue(),ple.getlabel());
+        }
+
     }
+
+
+//Created by Irakli to retreive Notification preferences
+public void retrieveNotificationPreferences(){
+		string uId = UserInfo.getUserId();
+        Network AlumniCommunity = [SELECT Id FROM Network WHERE Name ='Alumni']; //User existing custom label to assing as conditional variable insetad of had coded 'Alumni'
+        netobj=[SELECT MemberId,PreferencesDisableAllFeedsEmail,PreferencesDisableBookmarkEmail,
+                            PreferencesDisableChangeCommentEmail,PreferencesDisableDirectMessageEmail,
+                            PreferencesDisableEndorsementEmail,PreferencesDisableFollowersEmail,
+                            PreferencesDisableItemFlaggedEmail,PreferencesDisableLaterCommentEmail,
+                            PreferencesDisableLikeEmail,PreferencesDisableMentionsPostEmail,
+                            PreferencesDisableMessageEmail,PreferencesDisablePendingReviewEmail,
+                            PreferencesDisableProfilePostEmail,PreferencesDisableSharePostEmail,
+                            PreferencesDisCommentAfterLikeEmail,PreferencesDisMentionsCommentEmail,
+                            PreferencesDisProfPostCommentEmail
+                            FROM NetworkMember WHERE MemberId =:uId and NetworkId=:AlumniCommunity.id];
+           
+ 		system.debug('Irakli original netobj ====>'+netObj);
+        allFeedEmail = (netObj.PreferencesDisableAllFeedsEmail ? false:true);     
+        followme = (netObj.PreferencesDisableFollowersEmail ? false:true);
+        postonprofile =(netObj.PreferencesDisableProfilePostEmail  ? false:true);
+        sharepost =(netObj.PreferencesDisableSharePostEmail  ? false:true);
+        likepost =(netObj.PreferencesDisableLikeEmail  ? false:true);
+        mentionpost =(netObj.PreferencesDisableMentionsPostEmail   ? false:true);
+        mentioncomt =(netObj.PreferencesDisMentionsCommentEmail  ? false:true);
+        endorses =(netObj.PreferencesDisableEndorsementEmail ? false:true);
+        commentpost =(netObj.PreferencesDisableChangeCommentEmail  ? false:true);
+        comentprof =(netObj.PreferencesDisProfPostCommentEmail ? false:true);
+        commentaft =(netObj.PreferencesDisableLaterCommentEmail  ? false:true);
+        commentbookmrk =(netObj.PreferencesDisableBookmarkEmail  ? false:true);
+        commentlike =(netObj.PreferencesDisCommentAfterLikeEmail   ? false:true);
+
+        system.debug('Irakli original reveresed netobj ====>'+netObj);
+    //test removed line
+    //
+    //test line 2
+}
 
     public void setup(){
         isEdit = false;
@@ -61,24 +118,22 @@ public with sharing class MyProfilePageController {
         if(!isValidId)
         userId = UserInfo.getUserId();
         user = getUserDetails(userId);
-        system.debug('1==========');
-        
         homeAddress1 = getAddress('Home 1');
         homeAddress2 = getAddress('Home 2');
         homeAddress3 = getAddress('Home 3');
         homeAddress4 = getAddress('Home 4');
         
-        //Added By Anisha, JIRA Ticket #15693
+        //JIRA Ticket #15693
         List<hed__Address__c> hometownAddresses = [SELECT Id, hed__MailingStreet__c, hed__MailingStreet2__c, hed_MailingStreet3__c, 
                                                                             Public_hed_MailingStreet__c, hed__MailingCity__c, 
                                                                             Mailing_State__c, hed__MailingPostalCode__c, Mailing_Country__c, 
                                                                             Public_Home_Address__c, Public_hed_MailingCity__c, 
                                                                             Public_hed_MailingState__c, Public_hed_MailingPostalCode__c, Public_hed_MailingCountry__c,
                                                                             hed__Address_Type__c, hed__Parent_Account__c, Phone__c, Public_Phone__c
-                                                                        FROM hed__Address__c 
-                                                                        WHERE hed__Parent_Contact__c =: contactId and hed__Address_Type__c='Home Town'
-                                                                        ORDER BY LastModifiedDate DESC 
-                                                                        LIMIT 1];
+                                                                            FROM hed__Address__c 
+                                                                            WHERE hed__Parent_Contact__c =: contactId and hed__Address_Type__c='Home Town'
+                                                                            ORDER BY LastModifiedDate DESC 
+                                                                            LIMIT 1];
         if(contactId != null){
             Contact con = [Select id, AccountId from Contact where Id=:ContactId];
             if(!hometownAddresses.isEmpty())
@@ -100,7 +155,6 @@ public with sharing class MyProfilePageController {
         
         fetch_CC_Venture();
         if(!Test.isRunningTest()){
-            
             fetch_Contribution_User();
         }
             
@@ -108,6 +162,10 @@ public with sharing class MyProfilePageController {
         formatUserInterests();
         formatBabsonAffinities();
         
+        //Created by Irakli to retrieve preferences
+        retrieveNotificationPreferences();
+
+
         // guest users should never be able to access this page
         if (user.usertype == 'GUEST') {
             throw new NoAccessException();
@@ -115,7 +173,7 @@ public with sharing class MyProfilePageController {
     }
     
     private User getUserDetails(String userId){
-        
+        system.debug('Flow:getUserDetails ');
         List<User> objUser = new List<User>( [SELECT id, email, username, usertype, communitynickname, timezonesidkey, languagelocalekey, firstname, lastname, phone, title,
                 street, city, country, postalcode, state, localesidkey, mobilephone, extension, fax, fullphotourl, Public_Graduate_Year__c, Public_Undergraduate_Year__c,
                 Graduate_Year__c,Undergraduate_Year__c,Constituency__c,Contact.Public_Constituency__c , Preferred_constituency__c,
@@ -123,7 +181,7 @@ public with sharing class MyProfilePageController {
                 Contact.MailingCity, Contact.MailingState, Contact.MailingCountry, Contact.MailingPostalCode, Contact.MailingStreet,
                 Contact.Phone, Contact.Undergraduate_Year__c, Contact.Graduate_Year__c, Contact.MobilePhone, Contact.Contact_me_about__c, 
                 Contact.Degree__c, Contact.Graduate_Program__c, Contact.Facebook__c, Contact.Twitter__c, Contact.LinkedIn__c,Contact.Email,
-                Contact.Instagram__c, Contact.Blog__c, Contact.Other__c, Contact.Skype__c,
+                Contact.Instagram__c, Contact.Blog__c, Contact.Other__c, Contact.Skype__c,Contact.Summary_LTA__c,
                 Contact.Public_Undergraduate_Year__c, Contact.Public_Email__c, Contact.Public_Phone__c,
                 Contact.Public_Graduate_Year__c, Contact.Public_MobilePhone__c, Contact.Public_Contact_me_about__c, Contact.Public_Degree__c, 
                 Contact.Public_Graduate_Program__c, Contact.Public_Facebook__c, Contact.Public_Twitter__c,Contact.Public_LinkedIn__c,
@@ -150,32 +208,34 @@ public with sharing class MyProfilePageController {
                 Contact.Public_Instagram__c, Contact.Public_Blog__c, Contact.Public_Other__c, Contact.Public_Skype__c,
                 Contact.Public_Associations__c,Contact.Public_LinkedIn_Interests__c,Contact.Public_Languages__c,Contact.Public_Skills__c,Contact.Public_Certifications__c,Contact.Public_Summary_Primary_Job__c,Contact.Public_Start_Date_Primary_Job__c,Contact.Public_Past_Position_Primary_Job__c,Contact.Public_Following__c,Contact.Public_Headline__c,Contact.Public_Company_Location__c,Contact.Public_Current_Share_Item__c,Contact.Public_Summary__c,Contact.Public_Specialties__c,
                 Contact.January__c,Contact.February__c,Contact.March__c,Contact.April__c,Contact.May__c,Contact.June__c,Contact.July__c,Contact.August__c,Contact.September__c,Contact.October__c,Contact.November__c,Contact.December__c,Contact.Public_Summary_Secondary_Job__c,Contact.Public_Start_Date_Secondary_Job__c,
-                    Contact.Public_Summary_Tertiary_Job__c,Contact.Start_Date_Tertiary_Job__c,
-                    Contact.Summary_Secondary_Job__c,Contact.Summary_Tertiary_Job__c,Contact.Start_Date_Secondary_Job__c,Contact.Public_Start_Date_Tertiary_Job__c,Contact.Public_Past_Position_Secondary_Job__c,Contact.Public_Past_Position_Tertiary_Job__c,Contact.Past_Position_Secondary_Job__c,
-                    Contact.Past_Position_Tertiary_Job__c,Contact.Secondary_Company_Location__c,
-                Contact.Public_Secondary_Company_Location__c,
-                Contact.Tertiary_Company_Location__c,
+                Contact.Public_Summary_Tertiary_Job__c,Contact.Start_Date_Tertiary_Job__c,
+                Contact.Summary_Secondary_Job__c,Contact.Summary_Tertiary_Job__c,Contact.Start_Date_Secondary_Job__c,Contact.Public_Start_Date_Tertiary_Job__c,Contact.Public_Past_Position_Secondary_Job__c,Contact.Public_Past_Position_Tertiary_Job__c,Contact.Past_Position_Secondary_Job__c,
+                Contact.Past_Position_Tertiary_Job__c,Contact.Secondary_Company_Location__c,
+                Contact.Public_Secondary_Company_Location__c,contact.Public_Linkedin_Sync_Time_Stamp__c, contact.Public_Email_Address__c, Contact.Title_Primary_Job__c, contact.Public_Title_Primary_Job__c,contact.Title_Secondary_Job__c, contact.Title_Tertiary_Job__c, contact.Public_Title_Secondary_Job__c, contact.Public_Title_Tertiary_Job__c,
+                Contact.Tertiary_Company_Location__c, contact.Summary_Primary_Job_LTA__c,contact.Summary_Secondary_Job_LTA__c, contact.Summary_Tertiary_Job_LTA__c,
                 Contact.Public_Tertiary_Company_Location__c,Contact.hed__Preferred_Email__c,Contact.Email_Address__c,
                 Contact.Home_town_city__c, Contact.Home_town_State__c, Contact.Home_town_country__c, Contact.Public_Home_Town_city__c, Contact.Public_home_town_state__c, Contact.Public_home_town_Country__c,
-                Show_giving_information__c, Show_Education_information__c, Show_Home_town_Information__c, Show_Business_3_Section__c , Show_Business_4_Section__c 
+                Show_giving_information__c, Show_Education_information__c, Show_Home_town_Information__c, Show_Business_3_Section__c , Show_Business_4_Section__c,
+                UserPreferencesDisableAllFeedsEmail, UserPreferencesDisableMessageEmail, UserPreferencesEnableAutoSubForFeeds, UserPreferencesDisableBookmarkEmail, 
+                UserPreferencesDisableChangeCommentEmail, UserPreferencesDisableEndorsementEmail,  UserPreferencesDisableFileShareNotificationsForApi, 
+                UserPreferencesDisableFollowersEmail, UserPreferencesDisableLaterCommentEmail, UserPreferencesDisableLikeEmail, 
+                UserPreferencesDisableMentionsPostEmail, UserPreferencesDisableProfilePostEmail, UserPreferencesDisableSharePostEmail, 
+                UserPreferencesDisCommentAfterLikeEmail, UserPreferencesDisMentionsCommentEmail, UserPreferencesDisProfPostCommentEmail
                 FROM User
-                
-                
-                
                 WHERE id = : userId]);
                 
             if(!objUser.isEmpty()){
-                
+                system.debug('Flow:if objuser is not empty');
                 accountId = objUser[0].Contact.AccountId;
                 contactId = objUser[0].ContactId;
                 return objUser[0];
+                
             }
             
             return null;
     }
 
     Private hed__Address__c getAddress(String addressLineNo){
-        
         system.debug('contactId========='+contactId);
         List<hed__Address__c> lstHomeAddress = new List<hed__Address__c>([SELECT Id, hed__MailingStreet__c, hed__MailingStreet2__c, hed_MailingStreet3__c, 
                                                                             Public_hed_MailingStreet__c, hed__MailingCity__c, 
@@ -183,25 +243,21 @@ public with sharing class MyProfilePageController {
                                                                             Public_Home_Address__c, Public_hed_MailingCity__c, 
                                                                             Public_hed_MailingState__c, Public_hed_MailingPostalCode__c, Public_hed_MailingCountry__c,
                                                                             hed__Address_Type__c, hed__Parent_Account__c, Phone__c, Public_Phone__c
-                                                                        FROM hed__Address__c 
-                                                                        WHERE hed__Parent_Contact__c =: contactId
-                                                                        AND Address_Line_No__c =: addressLineNo
-                                                                        ORDER BY LastModifiedDate DESC 
-                                                                        LIMIT 1]);
+                                                                            FROM hed__Address__c 
+                                                                            WHERE hed__Parent_Contact__c =: contactId
+                                                                            AND Address_Line_No__c =: addressLineNo
+                                                                            ORDER BY LastModifiedDate DESC 
+                                                                            LIMIT 1]);
                 
         if(!lstHomeAddress.isEmpty()){
-            
             return lstHomeAddress[0];
         }
-        
         return new hed__Address__c(hed__Parent_Contact__c = contactId, hed__Parent_Account__c = accountId, Address_Line_No__c = addressLineNo);
     }
     
 
     
     private List<CORECONNECT__CC_Community_Content__c> getUserBusinessInformation(){
-        
-        
         List<CORECONNECT__CC_Community_Content__c> lstUserBusinessInfo = new List<CORECONNECT__CC_Community_Content__c>([SELECT Id, Name ,I_am_the_CEO_President_Founder_or_Owne__c
                                                         FROM CORECONNECT__CC_Community_Content__c 
                                                         WHERE RecordType.Name = 'Business' 
@@ -209,14 +265,12 @@ public with sharing class MyProfilePageController {
                                                         AND LineNo__c != null
                                                         AND LineNo__c like 'Business %'
                                                         ORDER BY LineNo__c DESC]);
-
         return lstUserBusinessInfo;
     }
     
     
     /* Method to fetch Community Content records to show on View Profile */
     private void fetch_CC_Venture() {
-        
         lstUserVentures = new List<String>();
         for(CORECONNECT__CC_Community_Content__c cc : [SELECT Id, Name 
                                                         FROM CORECONNECT__CC_Community_Content__c 
@@ -244,15 +298,10 @@ public with sharing class MyProfilePageController {
     /* In this we are fetching chatter activity for the user Id whose user is viewing the profile */
     @TestVisible
     public void fetch_Contribution_User() {
-        
         system.debug('COMMUNITY_ID============='+COMMUNITY_ID+'============='+ user.Id);
-        
         ConnectApi.UserDetail userDetail = ConnectApi.ChatterUsers.getUser(COMMUNITY_ID, user.Id);
-        
         if(userDetail.chatterActivity != null) {
-            
             Integer totalCount = ((ConnectApi.ChatterActivity) userDetail.chatterActivity).commentCount + ((ConnectApi.ChatterActivity) userDetail.chatterActivity).postCount;
-            
             mapOfContribution.put('Posts & Comments', totalCount);
             mapOfContribution.put('Comments Received', ((ConnectApi.ChatterActivity) userDetail.chatterActivity).commentReceivedCount);
             mapOfContribution.put('Likes Received', ((ConnectApi.ChatterActivity) userDetail.chatterActivity).likeReceivedCount);
@@ -260,7 +309,6 @@ public with sharing class MyProfilePageController {
         
         Decimal percentile = 0.0;
         if(userDetail.chatterInfluence != null) {   
-            
             percentile = Decimal.valueOf((String) ((ConnectApi.GlobalInfluence) userDetail.chatterInfluence).percentile);
         }
         
@@ -289,7 +337,7 @@ public with sharing class MyProfilePageController {
     }
     public boolean isVal{get; set;}
     public PageReference save() {
-         // assume we'll pass validation
+        // assume we'll pass validation
         isVal = false;
         // Manual checks
         if( String.isBlank(user.contact.firstName)){             
@@ -353,10 +401,8 @@ public with sharing class MyProfilePageController {
             try {
                 user.firstname = user.contact.firstname;
                 user.lastname = user.contact.lastname;
-                system.debug('user.contact'+user.contact);
-                
+                user.email = user.contact.Preferred_Email__c;
                 update user;
-
                 // Upsert addresses if filled out
                 if( String.isNotBlank(homeAddress1.hed__MailingStreet__c) && String.isNotBlank(homeAddress1.hed__MailingCity__c) && String.isNotBlank(homeAddress1.Mailing_Country__c)){
                     homeAddress1.Address_Line_No__c = 'Home 1';
@@ -392,16 +438,28 @@ public with sharing class MyProfilePageController {
                     upsert homeAddress4;
                 }
                 
-                //Added By Anisha, JIRA Ticket #15693
-                upsert hometownAddress;
+                if( String.isNotBlank(hometownAddress.hed__MailingCity__c) || String.isNotBlank(hometownAddress.Mailing_State__c) || String.isNotBlank(hometownAddress.Mailing_Country__c)|| 
+                    String.isNotBlank(hometownAddress.Id)){
+
+                    hometownAddress.hed__Address_Type__c = 'Home Town';
+                    hometownAddress.Address_Line_No__c = 'Home Town';
+                    upsert hometownAddress;
+                }
+                //JIRA Ticket #15693
+                //upsert hometownAddress;
                 //End of #15693
-                
                 if (user.contact != null) {
                     update user.contact;
-                }
-                
+                 }
+                 saveUserPreferences(); //update notification preferences//Irakli
+
                 fetch_user_Affiliations();
-        System.debug('++isVal++'+isVal);
+                System.debug('++isVal++'+isVal);
+        
+        
+                pagereference ref = new pagereference('/MyProfilePage');
+                ref.setRedirect(true);
+                return ref;
                 
             } catch(Exception e) {
                 system.debug('e====='+e.getMessage());
@@ -415,8 +473,7 @@ public with sharing class MyProfilePageController {
         System.debug('++isVal++'+isVal);
         setup();
         isEdit = isVal;
-        return null;
-           
+        return null;           
     }
 
     public PageReference changePassword() {
@@ -426,22 +483,7 @@ public with sharing class MyProfilePageController {
     public void cancel() {
         setup();
     }
-
-    /*public static void setContactFields(Contact c, User u) {
-        c.title = u.title;
-        c.firstname = u.firstname;
-        c.lastname = u.lastname;
-        c.email = u.email;
-        c.phone = u.phone;
-        c.mobilephone = u.mobilephone;
-        c.fax = u.fax;
-        c.mailingstreet = u.street;
-        c.mailingcity = u.city;
-        c.mailingstate = u.state;
-        c.mailingpostalcode = u.postalcode;
-        c.mailingcountry = u.country;
-    }*/
-
+    
     public static Boolean validateEmail(String email) {
         Boolean res = true;
             
@@ -472,7 +514,7 @@ public with sharing class MyProfilePageController {
             Matcher MyMatcher = MyPattern.matcher(zip);
             Pattern MyPatternAlt = Pattern.compile(zipRegexAlt);
             Matcher MyMatcherAlt = MyPatternAlt.matcher(zip);
-    
+            
             if (MyMatcher.matches() || MyMatcherAlt.matches()) {
                 res = true;
             }
@@ -480,46 +522,28 @@ public with sharing class MyProfilePageController {
         else{
             res = true;
         }
-       
-
-        return res; 
+       return res; 
     }
     
     /*  Affiliation, the controller should query to find all Affiliation records where hed_Contact_c = the current user. 
     For each Affiliation record found, the hed_Account_c.Name should be returned to the page*/
     @TestVisible
     private void fetch_user_Affiliations(){
-        
         List<hed__Affiliation__c> lstUserAffiliationRecords = new List<hed__Affiliation__c>([SELECT Id, Name, Public_hed_Account__c, hed__Account__r.Name
                                 FROM hed__Affiliation__c
                                 WHERE hed__Contact__c =: user.ContactId]);
         
         lstUserAffiliations = new List<String>();
         for(hed__Affiliation__c affiliation : lstUserAffiliationRecords){
-         
-            lstUserAffiliations.add(affiliation.hed__Account__r.Name);
+           lstUserAffiliations.add(affiliation.hed__Account__r.Name);
         }
     }
     
     /* redirect SSF To Home Page if this page is accessed with invalid id or its own id */
-    public PageReference redirectToHomePage(){
-        
+    public PageReference redirectToHomePage(){     
         system.debug('strUserIdParam============'+strUserIdParam.length());
         //redirect to babson home
-        /*
-        if(strUserIdParam.length() >= 15){
-            
-            //if( (String.isBlank(strUserIdParam) || UserInfo.getUserId().substring(0, 15).equalsIgnoreCase(strUserIdParam.substring(0, 15))) &&  BAB_Util.is_SSFUser() ){
-            if( (String.isBlank(strUserIdParam) || UserInfo.getUserId().substring(0, 15).equalsIgnoreCase(strUserIdParam.substring(0, 15))) ){                
-                return Page.BabsonHome;
-            }
-            
-        }else if(strUserIdParam.length() < 15 && BAB_Util.is_SSFUser()){
-            
-            return Page.BabsonHome;
-        }
-        */
-        setup();
+          setup(); 
         return null;
     }
 
@@ -537,9 +561,29 @@ public with sharing class MyProfilePageController {
         if (user.contact.Babson_Preferred_Affinities__c != null){
             listBabsonInterests = user.contact.Babson_Preferred_Affinities__c.split(';'); 
         }
+      }
+    
+
+    public void saveUserPreferences(){
+        system.debug('Irakli Before Save netObj====>'+netObj);
+
+        netObj.PreferencesDisableAllFeedsEmail      =  (allFeedEmail ? false:true);
+        netObj.PreferencesDisableFollowersEmail     =  (followme ? false:true);
+        netObj.PreferencesDisableProfilePostEmail   =  (postonprofile  ? false:true);
+        netObj.PreferencesDisableSharePostEmail     =  (sharepost ? false:true);
+        netObj.PreferencesDisableLikeEmail          =  (likepost ? false:true);
+        netObj.PreferencesDisableMentionsPostEmail  =  (mentionpost ? false:true);
+        netObj.PreferencesDisMentionsCommentEmail   =  (mentioncomt ? false:true);
+        netObj.PreferencesDisableEndorsementEmail   =  (endorses ? false:true);
+        netObj.PreferencesDisableChangeCommentEmail =  (commentpost  ? false:true);
+        netObj.PreferencesDisProfPostCommentEmail   =  (comentprof ? false:true);
+        netObj.PreferencesDisableLaterCommentEmail  =  (commentaft ? false:true);
+        netObj.PreferencesDisableBookmarkEmail      =  (commentbookmrk ? false:true);
+        netObj.PreferencesDisCommentAfterLikeEmail  =  (commentlike ? false:true);
         
-    }
-    
-    
+       system.debug('Irakli after Save netObj====>'+netObj);
+
+           update netobj; 
+        }
     
 }

@@ -7,7 +7,7 @@
     <label>MyProfilePage</label>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>36</minorNumber>
+        <minorNumber>44</minorNumber>
         <namespace>hed</namespace>
     </packageVersions>
 </ApexPage>

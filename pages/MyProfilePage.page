@@ -1,17 +1,15 @@
 <apex:page id="portalUserProfilePage" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="MyProfilePageController" action="{!redirectToHomePage}" >
           <apex:composition template="{!$Site.Template}">
             <apex:define name="pagetitle">{!$Label.site.my_profile_page}</apex:define>
-          <style>
-    .communityName {
-        margin: 0 !important;
-        word‐wrap: break‐word !important;
-        
-    }
-
-</style>
+        <style>
+            .communityName {
+                margin: 0 !important;
+                word‐wrap: break‐word !important;
+            }
+        </style>
              
             <apex:define name="body">
-    
+            <apex:pageMessages />
                 <!-- Edit Modal -->
                 <div id="editForm" class="modal fade" role="dialog">
                     <div class="modal-dialog">
@@ -44,7 +42,6 @@
                                                             clickSpoof.init($('.saveLink'), $('.saveBtn')); // Save action
                                                             clickSpoof.init($('#edit-form-dismiss'),$('.cancelBtn')); // Close modal action
                                                             collapseTrigger.initCollection($('.profile-edit-block'));
-                                                           
                                                         });
                  
                                                          function finalCheck(val){
@@ -884,103 +881,103 @@
                                                         </div>
                                                     </div>
                                                 </div>-->
-<div class="collapse-target content">
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-                <div>
-                    <h4>Undergraduate</h4>
-                </div><br/><br/>
-                <div class="visibility-check">
-                    <label>Degree Year</label>
-                    <input type="text" disabled="true" value="{!user.contact.Undergraduate_Year__c}" />
-                    <apex:inputCheckbox value="{!user.contact.Public_Undergraduate_Year__c}"/>
-                </div><br/><br/>
-                <div class="visibility-check">
-                    <label>Preferred Degree Year</label>
-                    <apex:outputPanel layout="none" rendered="{!user.contact.Undergraduate_Year__c != ''}">
-                        <apex:inputField value="{!user.contact.Undergraduate_Preferred_Year__c}"/>
-                    </apex:outputPanel>
-                    <apex:outputPanel layout="none" rendered="{!user.contact.Undergraduate_Year__c == ''}">
-                        <input type="text" disabled="true" value="{!user.contact.Undergraduate_Preferred_Year__c}" />
-                    </apex:outputPanel>
-                    <apex:inputCheckbox value="{!user.contact.Public_Undergraduate_Preferred_Year__c}"/>
-                </div><br/><br/>
-                <div class="visibility-check">
-                    <label>Degree</label>
-                    <input type="text" disabled="true" value="{!user.contact.Degree__c}" />
-                    <apex:inputCheckbox value="{!user.contact.Public_Degree__c}"/>
-                </div> <br/><br/>
-                <div class="visibility-check">
-                    <label>Honors</label>
-                    <input type="text" disabled="true" value="{!user.contact.Undergraduate_Honors__c}" />
-                    <apex:inputCheckbox value="{!user.contact.Public_Undergraduate_Honors__c}"/>
-                </div> <br/><br/>
-            
-        </div>
-        <div class="col-md-4">
-            <div>
-                <h4>Graduate</h4>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Degree Year</label>
-                <input type="text" disabled="true" value="{!user.contact.Graduate_Year__c}" />
-                <apex:inputCheckbox value="{!user.contact.Public_Graduate_Year__c}"/>
-            </div>  <br/><br/>
-            <div class="visibility-check">
-                <label>Preferred Degree Year</label>
-                <apex:outputPanel layout="none" rendered="{!user.contact.Graduate_Year__c != ''}">
-                    <apex:inputField value="{!user.contact.Graduate_Preferred_Year__c}"/>
-                </apex:outputPanel>
-                <apex:outputPanel layout="none" rendered="{!user.contact.Graduate_Year__c == ''}">
-                    <input type="text" disabled="true" value="{!user.contact.Graduate_Preferred_Year__c}" />
-                </apex:outputPanel>
-                <apex:inputCheckbox value="{!user.contact.Public_Graduate_Preferred_Year__c}"/>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Degree</label>
-                <input type="text" disabled="true" value="{!user.contact.Graduate_Degree__c}" />
-                <apex:inputCheckbox value="{!user.contact.Public_Graduate_Degree__c}"/>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Program</label>
-                <input type="text" disabled="true" value="{!user.contact.Graduate_Program__c}" />
-                <apex:inputCheckbox value="{!user.contact.Public_Graduate_Program__c}"/>
-            </div><br/><br/>
-        </div>
-        <div class="col-md-4">
-            <div >
-                <h4>Certificate</h4>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Certificate Year</label>
-                <input type="text" disabled="true" value="{!user.contact.Certificate_Degree_Year__c}" />
-                <apex:inputCheckbox value="{!user.contact.Public_Certificate_Degree_Year__c}"/>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Preferred Certificate Year</label>
-                <apex:outputPanel layout="none" rendered="{!user.contact.Certificate_Degree_Year__c != ''}">
-                    <apex:inputField value="{!user.contact.Certificate_Preferred_Year__c}"/>
-                </apex:outputPanel>
-                <apex:outputPanel layout="none" rendered="{!user.contact.Certificate_Degree_Year__c == ''}">
-                    <input type="text" disabled="true" value="{!user.contact.Certificate_Preferred_Year__c}" />
-                </apex:outputPanel>
-                <apex:inputCheckbox value="{!user.contact.Public_Certificate_Preferred_Year__c}"/>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Certificate Name</label>
-                <input type="text" disabled="true" value="{!user.contact.Certificate_Degree__c}" />
-                <apex:inputCheckbox value="{!user.contact.Public_Certificate_Degree__c}"/>
-            </div><br/><br/>
-            <div class="visibility-check">
-                <label>Program</label>
-                <input type="text" disabled="true" value="{!user.contact.Certificate_Program__c}" />
-                <apex:inputCheckbox value="{!user.contact.Public_Certificate_Program__c}"/>
-            </div><br/><br/>
-        </div>
-    </div>
-    </div>
-</div>
+                                        <div class="collapse-target content">
+                                            <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                        <div>
+                                                            <h4>Undergraduate</h4>
+                                                        </div><br/><br/>
+                                                        <div class="visibility-check">
+                                                            <label>Degree Year</label>
+                                                            <input type="text" disabled="true" value="{!user.contact.Undergraduate_Year__c}" />
+                                                            <apex:inputCheckbox value="{!user.contact.Public_Undergraduate_Year__c}"/>
+                                                        </div><br/><br/>
+                                                        <div class="visibility-check">
+                                                            <label>Preferred Degree Year</label>
+                                                            <apex:outputPanel layout="none" rendered="{!user.contact.Undergraduate_Year__c != ''}">
+                                                                <apex:inputField value="{!user.contact.Undergraduate_Preferred_Year__c}"/>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel layout="none" rendered="{!user.contact.Undergraduate_Year__c == ''}">
+                                                                <input type="text" disabled="true" value="{!user.contact.Undergraduate_Preferred_Year__c}" />
+                                                            </apex:outputPanel>
+                                                            <apex:inputCheckbox value="{!user.contact.Public_Undergraduate_Preferred_Year__c}"/>
+                                                        </div><br/><br/>
+                                                        <div class="visibility-check">
+                                                            <label>Degree</label>
+                                                            <input type="text" disabled="true" value="{!user.contact.Degree__c}" />
+                                                            <apex:inputCheckbox value="{!user.contact.Public_Degree__c}"/>
+                                                        </div> <br/><br/>
+                                                        <div class="visibility-check">
+                                                            <label>Honors</label>
+                                                            <input type="text" disabled="true" value="{!user.contact.Undergraduate_Honors__c}" />
+                                                            <apex:inputCheckbox value="{!user.contact.Public_Undergraduate_Honors__c}"/>
+                                                        </div> <br/><br/>
+                                                    
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div>
+                                                        <h4>Graduate</h4>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Degree Year</label>
+                                                        <input type="text" disabled="true" value="{!user.contact.Graduate_Year__c}" />
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Graduate_Year__c}"/>
+                                                    </div>  <br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Preferred Degree Year</label>
+                                                        <apex:outputPanel layout="none" rendered="{!user.contact.Graduate_Year__c != ''}">
+                                                            <apex:inputField value="{!user.contact.Graduate_Preferred_Year__c}"/>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!user.contact.Graduate_Year__c == ''}">
+                                                            <input type="text" disabled="true" value="{!user.contact.Graduate_Preferred_Year__c}" />
+                                                        </apex:outputPanel>
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Graduate_Preferred_Year__c}"/>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Degree</label>
+                                                        <input type="text" disabled="true" value="{!user.contact.Graduate_Degree__c}" />
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Graduate_Degree__c}"/>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Program</label>
+                                                        <input type="text" disabled="true" value="{!user.contact.Graduate_Program__c}" />
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Graduate_Program__c}"/>
+                                                    </div><br/><br/>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div >
+                                                        <h4>Certificate</h4>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Certificate Year</label>
+                                                        <input type="text" disabled="true" value="{!user.contact.Certificate_Degree_Year__c}" />
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Certificate_Degree_Year__c}"/>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Preferred Certificate Year</label>
+                                                        <apex:outputPanel layout="none" rendered="{!user.contact.Certificate_Degree_Year__c != ''}">
+                                                            <apex:inputField value="{!user.contact.Certificate_Preferred_Year__c}"/>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!user.contact.Certificate_Degree_Year__c == ''}">
+                                                            <input type="text" disabled="true" value="{!user.contact.Certificate_Preferred_Year__c}" />
+                                                        </apex:outputPanel>
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Certificate_Preferred_Year__c}"/>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Certificate Name</label>
+                                                        <input type="text" disabled="true" value="{!user.contact.Certificate_Degree__c}" />
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Certificate_Degree__c}"/>
+                                                    </div><br/><br/>
+                                                    <div class="visibility-check">
+                                                        <label>Program</label>
+                                                        <input type="text" disabled="true" value="{!user.contact.Certificate_Program__c}" />
+                                                        <apex:inputCheckbox value="{!user.contact.Public_Certificate_Program__c}"/>
+                                                    </div><br/><br/>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
                                             </div>
                                             <div class="profile-edit-block" style="display:{!IF(user.Show_giving_information__c,'block','none')}">
                                                 <header>
@@ -1075,17 +1072,23 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>Title</label>
-                                                                <apex:inputField value="{!user.contact.Headline__c}"/>
+                                                                <apex:outputPanel >
+                                                                    <input type="text" value="{!user.contact.Headline__c}" disabled="true"/>
+                                                                </apex:outputPanel>
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Headline__c}"/>
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>LinkedIn Interests</label>
-                                                                <apex:inputField id="LinkedInInterests" value="{!user.contact.LinkedIn_Interests__c}"/>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" id="LinkedInInterests" value="{!user.contact.LinkedIn_Interests__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                
                                                                 <apex:inputCheckbox value="{!user.contact.Public_LinkedIn_Interests__c}"/>
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>Languages</label>
-                                                                <apex:inputField id="Languages" value="{!user.contact.Languages__c}"/>
+                                                                <apex:outputPanel >
+                                                                    <input type="text" id="Languages" value="{!user.contact.Languages__c}" disabled="true"/>
+                                                                </apex:outputPanel>                                                                
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Languages__c}"/>
                                                             </div>
                                                             
@@ -1093,58 +1096,174 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>Skills</label>
-                                                                 <apex:inputField id="skills" value="{!user.contact.Skills__c}"/>
+                                                                <apex:outputPanel >
+                                                                    <input type="text" id="skills" value="{!user.contact.Skills__c}" disabled="true"/>
+                                                                </apex:outputPanel>                                                                
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Skills__c}"/>   
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>Certifications</label>
-                                                                <apex:inputField id="certifications" value="{!user.contact.Certifications__c}"/>
+                                                                <apex:outputPanel >
+                                                                    <input type="text" id="certifications" value="{!user.contact.Certifications__c}" disabled="true"/>
+                                                                </apex:outputPanel>                                                               
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Certifications__c}"/>
                                                             </div>
-                                                            <div class="col-xs-12 col-sm-4 ">
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Email_Address__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Email_Address__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Email_Address__c}"/>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Title_Primary_Job__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Title_Primary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                               
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Title_Primary_Job__c}"/>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>{!$ObjectType.Contact.fields.Summary_Primary_Job__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Summary_Primary_Job__c}"/>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Summary_Primary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Summary_Primary_Job__c}"/>
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>{!$ObjectType.Contact.fields.Start_Date_Primary_Job__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Start_Date_Primary_Job__c}"/>
+                                                                <apex:outputPanel >
+                                                                    <input type="text" value="{!user.contact.Start_Date_Primary_Job__c}" disabled="true"/>
+                                                                </apex:outputPanel>
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Start_Date_Primary_Job__c}"/>
                                                             </div>
+                                                            </div>
+                                                        <div class="row">
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>{!$ObjectType.Contact.fields.Company_Location__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Company_Location__c}"/>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Company_Location__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Company_Location__c}"/>
                                                             </div>
-                                                            
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Title_Secondary_Job__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Title_Secondary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                               
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Title_Secondary_Job__c}"/>
+                                                            </div>     
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">       
+                                                                <label>{!$ObjectType.Contact.fields.Summary_Secondary_Job__c.Label}</label> 
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Summary_Secondary_Job__c}" disabled="true"/>         
+                                                                </apex:outputpanel>                                                                
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Summary_Secondary_Job__c}"/>       
+                                                            </div>   
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">       
+                                                                <label>{!$ObjectType.Contact.fields.Start_Date_Secondary_Job__c.Label}</label> 
+                                                                <apex:outputPanel >
+                                                                    <input type="text" value="{!user.contact.Start_Date_Secondary_Job__c}" disabled="true"/>
+                                                                </apex:outputPanel>                                                                        
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Start_Date_Secondary_Job__c}"/>        
+                                                            </div>      
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">       
+                                                                <label>{!$ObjectType.Contact.fields.Secondary_Company_Location__c.Label}</label> 
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Secondary_Company_Location__c}" disabled="true"/>        
+                                                                </apex:outputpanel>                                                                
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Secondary_Company_Location__c}"/>      
+                                                            </div>
+                                                           <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Title_Tertiary_Job__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Title_Tertiary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                 
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Title_Tertiary_Job__c}"/>
+                                                            </div>                                                                                                                          
+                                                        </div>
+                                                        <div class="row">                                                            
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">       
+                                                                <label>{!$ObjectType.Contact.fields.Summary_Tertiary_Job__c.Label}</label> 
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Summary_Tertiary_Job__c}" disabled="true"/>            
+                                                                </apex:outputpanel>                                                                     
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Summary_Tertiary_Job__c}"/>        
+                                                            </div>      
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">       
+                                                                <label>{!$ObjectType.Contact.fields.Start_Date_Tertiary_Job__c.Label}</label>                                                                 
+                                                                <apex:outputPanel >
+                                                                    <input type="text" value="{!user.contact.Start_Date_Tertiary_Job__c}" disabled="true"/>
+                                                                </apex:outputPanel>                                                                
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Start_Date_Tertiary_Job__c}"/>     
+                                                            </div>      
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">       
+                                                                <label>{!$ObjectType.Contact.fields.Tertiary_Company_Location__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Tertiary_Company_Location__c}" disabled="true"/>       
+                                                                </apex:outputpanel>                                                               
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Tertiary_Company_Location__c}"/>       
+                                                            </div>
+                                                        </div> 
+                                                        <div class="row">       
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Past_Position_Primary_Job__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Past_Position_Primary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Past_Position_Primary_Job__c}"/>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Past_Position_Secondary_Job__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Past_Position_Secondary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                               
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Past_Position_Secondary_Job__c}"/>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-4 visibility-check">
+                                                                <label>{!$ObjectType.Contact.fields.Past_Position_Tertiary_Job__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Past_Position_Tertiary_Job__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                                
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Past_Position_Tertiary_Job__c}"/>
+                                                            </div>
                                                         </div>
                                                         <div class="row">
                                                             
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
-                                                                <label>{!$ObjectType.Contact.fields.Past_Position_Primary_Job__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Past_Position_Primary_Job__c}"/>
-                                                                <apex:inputCheckbox value="{!user.contact.Public_Past_Position_Primary_Job__c}"/>
+                                                                <label>{!$ObjectType.Contact.fields.Summary__c.Label}</label>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Summary__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                               
+                                                                <apex:inputCheckbox value="{!user.contact.Public_Summary__c}"/>
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>{!$ObjectType.Contact.fields.Following__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Following__c}"/>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Following__c}" disabled="true"/>
+                                                                </apex:outputpanel>                                                               
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Following__c}"/>
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
                                                                 <label>{!$ObjectType.Contact.fields.Current_Share_Item__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Current_Share_Item__c}"/>
+                                                                <apex:outputpanel >
+                                                                    <input type="text" value="{!user.contact.Current_Share_Item__c}"  disabled="true"/>
+                                                                </apex:outputpanel>                                                                
                                                                 <apex:inputCheckbox value="{!user.contact.Public_Current_Share_Item__c}"/>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-4 visibility-check">
-                                                                <label>{!$ObjectType.Contact.fields.Summary__c.Label}</label>
-                                                                <apex:inputField value="{!user.contact.Summary__c}"/>
-                                                                <apex:inputCheckbox value="{!user.contact.Public_Summary__c}"/>
+                                                                  <label>{!$ObjectType.Contact.fields.Linkedin_Sync_Time_Stamp__c.Label}</label>                                                               
+                                                                <apex:outputPanel >
+                                                                    <input type="text" value="{!user.contact.Linkedin_Sync_Time_Stamp__c}" disabled="true" />
+                                                                    <input type="Checkbox" value="{!user.contact.Public_Linkedin_Sync_Time_Stamp__c}" disabled="true"/>
+                                                                </apex:outputPanel>                                                               
+                                                           <!--      <apex:inputCheckbox value="{!user.contact.Public_Linkedin_Sync_Time_Stamp__c}"/> -->
+
                                                             </div>
                                                             <div class="col-xs-12 col-sm-4 ">
                                                                 <!-- <label>{!$ObjectType.Contact.fields.Specialties__c.Label}</label>
@@ -1155,6 +1274,202 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+                                             <!--Notification Preferences added by Anisha-->
+                                             <div class="profile-edit-block">
+                                                <header>
+                                                    <h3>Notification Preferences</h3>
+                                                    <a href="#" class="collapse-trigger ">
+                                                        <span class="flip-icon">
+                                                            <i class="bab_icon-expand" />
+                                                        </span>
+                                                    </a>
+    
+                                                </header>
+                                                <div class="collapse-target content">
+                                                    <div class="container-fluid">
+                                                        <div class="row" style="margin-left:7px"> 
+                                                            <apex:inputcheckbox id="allPref" styleClass="allPref" value="{!allFeedEmail}"/>
+                                                            <label class="labelCls">Enable email notifications
+                                                            <a class="btn btn-link tip" data-content="{!$Label.BAB_Enable_email_notification_ToolTip_Desc}" data-placement="top" data-toggle="popover" title="{!$Label.BAB_Enable_email_notification_Title}" data-original-title="{!$Label.site.my_profile}">
+                                                           <span class="icon-question"></span>
+                                                            </a>
+                                                            </label>
+                                                             <div class="row" style="margin-left:10px" id="prefDiv">
+                                                                <div class="col-xs-12 col-sm-6"> 
+                                                                    <div class="col-xs-12">
+                                                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <!--<apex:inputField onclick="modifyPrefs()" styleClass="pref" value="{!netobj.PreferencesDisableFollowersEmail}"/>-->
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!followme}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Follows Me</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!postonprofile}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Posts on my profile</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!sharepost}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Shares a post I made</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!likepost}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Likes a post or comment I made</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!mentionpost}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Mentions me in a post</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!mentioncomt}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Mentions me in a comment</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="10px;">
+                                                                                    <apex:inputCheckbox styleClass="pref" value="{!endorses}" required="false"/>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <label class="labelCls">Endorses me on a topic</label>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="col-xs-12 col-sm-6"> 
+                                                                    <table cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                            <td width="10px;">
+                                                                                <apex:inputCheckbox styleClass="pref" value="{!commentpost}" required="false"/>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label class="labelCls">Comments on my posts</label>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="10px;">
+                                                                                <apex:inputCheckbox styleClass="pref" value="{!comentprof}" required="false"/>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label class="labelCls">Comments on a post on my profile</label>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="10px;">
+                                                                                <apex:inputCheckbox styleClass="pref" value="{!commentaft}" required="false"/>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label class="labelCls">Comments after a post I've made</label>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="10px;">
+                                                                                <apex:inputCheckbox styleClass="pref" value="{!commentbookmrk}" required="false"/>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label class="labelCls">Comments on an item I've bookmarked</label>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="10px;">
+                                                                                <apex:inputCheckbox styleClass="pref" value="{!commentlike}" required="false"/>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label class="labelCls">Comments on an item I've liked</label>
+                                                                            </td>
+                                                                        </tr>
+                                                                      <!--  <tr>
+                                                                            <td width="10px;">
+                                                                                <apex:inputField styleClass="pref" value="{!netobj.PreferencesDisableDirectMessageEmail}" required="false"/>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label class="labelCls">Comments on an item I've created</label>
+                                                                            </td> 
+                                                                        </tr> -->
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <script>
+                                                                var selectAll;
+                                                                var eleArr = document.getElementsByName("portalUserProfilePage:j_id0:theForm:allPref");
+                                                                for(var i =0; i<eleArr.length; i++){
+                                                                    eleArr[i].addEventListener("change", modifyAllChecks);
+                                                                    selectAll = eleArr[i];
+                                                                }
+                                                                
+                                                                if(selectAll.checked == true ||selectAll.checked =='true'){
+                                                                    $('#prefDiv').show();  
+                                                                }
+                                                                else
+                                                                    $('#prefDiv').hide(); 
+                                                                
+                                                                
+                                                                
+                                                                function modifyAllChecks(){
+                                                                      console.log(selectAll);
+                                                                    var checkArr =  $("#prefDiv :checkbox");
+                                                                    //alert(checkArr.length);
+                                                                    //alert(selectAll.checked);   
+                                                                    if(selectAll.checked == true ||selectAll.checked =='true'){
+                                                                        $('#prefDiv').show();  
+                                                                    }
+                                                                    else{
+                                                                       $('#prefDiv').hide();
+                                                                    } 
+                                                                }
+                                                                
+                                                                function modifyPrefs(){
+                                                                    var checkCount = 0;
+                                                                    var checkArr =  $("#prefDiv :checkbox");
+                                                                    for(var i=0; i<checkArr.length; i++){
+                                                                        if(checkArr[i].checked)
+                                                                            checkCount++;
+                                                                    }
+                                                                    
+                                                                    if(checkCount == checkArr.length)
+                                                                        selectAll.checked = true;
+                                                                    else
+                                                                        selectAll.checked = false;
+                                                                }
+                                                             
+                                                            </script>
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <style>
+                                                .labelCls{
+                                                    padding:5px;
+                                                }
+                                            </style>
+                                            
+                                             <!--End of notifcation preferences-->
                                         </apex:outputPanel>
                                     </div>
                                     <div class="container-fluid">
@@ -1268,7 +1583,8 @@
                                         <div class="col-xs-12 margin-bottom-sm">
                                             <apex:outputPanel rendered="{!IF(user.id = $User.Id,true,false)}" >
                                                <apex:outputPanel rendered="{!IF(displayMsg !='',true,false)}" > 
-                                                <b><apex:outputText value="{!displayMsg}" style="color: #064;"/> </b><br></br><hr></hr>
+                                                <b><apex:outputText value="{!displayMsg}"  style="color:{!if(isError == true,'#ff0000','#064')}" escape="false"/> 
+                                                </b><br></br><hr></hr>
                                                 </apex:outputPanel>
                                                 <i class="fa fa-eye-slash" />= Only I can see
                                                 <!-- <button class="btn btn-link tip" data-content="Some text" data-placement="top" data-toggle="popover" title="" data-original-title="Some text">
@@ -1533,25 +1849,26 @@
                                                 <h3>LinkedIn</h3>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.LinkedIn__c.Label}"  isPrivate="{!user.Contact.Public_LinkedIn__c}" linkValue="{!user.Contact.LinkedIn__c}" linkedinField="true"/>
     
-                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Email_Address__c .Label}" value="{!user.Contact.Email_Address__c }" isPrivate="{!user.Contact.Public_Preferred_Email__c }" linkedinField="true"/>
+                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Email_Address__c .Label}" value="{!user.Contact.Email_Address__c }" isPrivate="{!user.Contact.Public_Email_Address__c}" linkedinField="true"/>
                                                
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="Title" value="{!user.Contact.Headline__c}" isPrivate="{!user.Contact.Public_Headline__c}" linkedinField="true"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.LinkedIn_Interests__c.Label}" value="{!user.Contact.LinkedIn_Interests__c}" isPrivate="{!user.Contact.Public_LinkedIn_Interests__c}" linkedinField="true"/>
                                                  <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Languages__c.Label}" value="{!user.Contact.Languages__c}" isPrivate="{!user.Contact.Public_Languages__c}" linkedinField="true"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Skills__c.Label}" value="{!user.Contact.Skills__c}" isPrivate="{!user.Contact.Public_Skills__c}" linkedinField="true"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Certifications__c.Label}" value="{!user.Contact.Certifications__c}" isPrivate="{!user.Contact.Public_Certifications__c}" linkedinField="true"/>
-                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary_Primary_Job__c.Label}" value="{!user.Contact.Summary_Primary_Job__c}" isPrivate="{!user.Contact.Public_Summary_Primary_Job__c}" linkedinField="true"/>
+                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Title_Primary_Job__c.Label}" value="{!user.Contact.Title_Primary_Job__c}" isPrivate="{!user.Contact.Public_Title_Primary_Job__c}" linkedinField="true"/>
+                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary_Primary_Job__c.Label}" value="{!user.Contact.Summary_Primary_Job__c}" isPrivate="{!user.Contact.Public_Summary_Primary_Job__c}" linkedinField="true" helpText="{!user.Contact.Summary_Primary_Job_LTA__c}"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Start_Date_Primary_Job__c.Label}" dateValue="{!user.Contact.Start_Date_Primary_Job__c}" isPrivate="{!user.Contact.Public_Start_Date_Primary_Job__c}" linkedinField="true"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Company_Location__c.Label}" value="{!user.Contact.Company_Location__c}" isPrivate="{!user.Contact.Public_Company_Location__c}" linkedinField="true"/>
-    
-                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary_Secondary_Job__c.Label}" value="{!user.Contact.Summary_Secondary_Job__c}" isPrivate="{!user.Contact.Public_Summary_Secondary_Job__c}" linkedinField="true"/>
-    
-                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Start_Date_Secondary_Job__c.Label}" dateValue="{!user.Contact.Start_Date_Secondary_Job__c}" isPrivate="{!user.Contact.Public_Start_Date_Secondary_Job__c}" linkedinField="true"/>
+                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Title_Secondary_Job__c.Label}" value="{!user.Contact.Title_Secondary_Job__c}" isPrivate="{!user.Contact.Public_Title_Secondary_Job__c}" linkedinField="true"/>
+                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary_Secondary_Job__c.Label}" value="{!user.Contact.Summary_Secondary_Job__c}" isPrivate="{!user.Contact.Public_Summary_Secondary_Job__c}" linkedinField="true" helpText="{!user.Contact.Summary_Secondary_Job_LTA__c}"/>
+                                                
+                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Start_Date_Secondary_Job__c.Label}" dateValue="{!user.Contact.Start_Date_Secondary_Job__c}" isPrivate="{!user.Contact.Public_Start_Date_Secondary_Job__c}" linkedinField="true"/>
     
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Secondary_Company_Location__c.Label}" value="{!user.Contact.Secondary_Company_Location__c}" isPrivate="{!user.Contact.Public_Secondary_Company_Location__c}" linkedinField="true"/>  
-                                               
+                                               <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Title_Tertiary_Job__c.Label}" value="{!user.Contact.Title_Tertiary_Job__c}" isPrivate="{!user.Contact.Public_Title_Tertiary_Job__c}" linkedinField="true"/>
     
-                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary_Tertiary_Job__c.Label}" value="{!user.Contact.Summary_Tertiary_Job__c}" isPrivate="{!user.Contact.Public_Summary_Tertiary_Job__c}" linkedinField="true"/>
+                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary_Tertiary_Job__c.Label}" value="{!user.Contact.Summary_Tertiary_Job__c}" isPrivate="{!user.Contact.Public_Summary_Tertiary_Job__c}" linkedinField="true" helpText="{!user.Contact.Summary_Tertiary_Job_LTA__c}"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Start_Date_Tertiary_Job__c.Label}" dateValue="{!user.Contact.Start_Date_Tertiary_Job__c}" isPrivate="{!user.Contact.Public_Start_Date_Tertiary_Job__c}" linkedinField="true"/>
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Tertiary_Company_Location__c.Label}" value="{!user.Contact.Tertiary_Company_Location__c}" isPrivate="{!user.Contact.Public_Tertiary_Company_Location__c}" linkedinField="true"/>  
                                                
@@ -1568,11 +1885,12 @@
                                               
                                                 <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Current_Share_Item__c.Label}" value="{!user.Contact.Current_Share_Item__c}" isPrivate="{!user.Contact.Public_Current_Share_Item__c}" linkedinField="true"/>
     
-                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary__c.Label}" value="{!user.Contact.Summary__c}" isPrivate="{!user.Contact.Public_Summary__c}" linkedinField="true"/>
-    
+                                                <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Summary__c.Label}" value="{!user.Contact.Summary__c}" isPrivate="{!user.Contact.Public_Summary__c}" linkedinField="true"   helpText="{!user.Contact.Summary_LTA__c}"/>
                                                 <!-- <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Specialties__c.Label}" value="{!user.Contact.Specialties__c}" isPrivate="{!user.Contact.Public_Specialties__c}" linkedinField="true"/> -->
     
-                                                <!--<c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Linkedin_Sync_Time_Stamp__c.Label}" dateTimeValue="{!user.Contact.Linkedin_Sync_Time_Stamp__c}" isPrivate="{!user.Contact.LinkedIn__c}" linkedinField="true"/>-->
+                                                <apex:outputPanel >
+                                                    <c:BabsonMetaRow userId="{!user.Id}" label="{!$ObjectType.Contact.fields.Linkedin_Sync_Time_Stamp__c.Label}" dateTimeValue="{!user.Contact.Linkedin_Sync_Time_Stamp__c}" isPrivate="{!user.contact.Public_Linkedin_Sync_Time_Stamp__c}" linkedinField="true"/>
+                                                </apex:outputPanel>
     
     
                                             </div>
@@ -1591,6 +1909,12 @@
             
                                     .chatterUserGuestBadge{        
                                      display:none;      
+                                     }
+                                     #flagTypeI{
+                                     margin-right: 30px;
+                                      }
+                                    #flagTypeS{
+                                    margin-right: 30px;
                                      }
                                     </style>
                                 </section>
